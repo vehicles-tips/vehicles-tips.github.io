@@ -81,32 +81,61 @@
       <p>I studied at <strong>ATi School of Automotive Technology</strong> and hold a valid <strong>MAC License for Air Conditioning systems</strong>.</p>
     </section>
     
+<style>
+  /* Animated clickable links */
+  .animated-links a {
+    position: relative;
+    color: var(--brand);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  .animated-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--brand);
+    transition: width 0.3s ease;
+  }
+  .animated-links a:hover {
+    color: #fff;                /* hover text color */
+    transform: scale(1.05);     /* subtle grow pulse */
+  }
+  .animated-links a:hover::after {
+    width: 100%;                /* underline slides in */
+  }
+</style>
+
 <div class="grid">
-        <div>
-          <h3 style="margin:6px 0 6px 0">My Work & Knowledge</h3>
-          <ul>
-            <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
-            <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
-          </ul>
-          <p class="links" style="margin-top:8px">
-            📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
-            🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Influencer Page</a>
-          </p>
-        </div>
-        <div>
-          <h3 style="margin:6px 0 6px 0">Follow & Ask</h3>
-          <p>
-            Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re
-            having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and
-            buy the right parts.
-          </p>
-          <p>
-            Looking for a specific part or need a <strong>repair quote</strong>? You’re always welcome to ask. I may not reply
-            instantly, but I’ll respond as soon as I’m available. I’m also proud to be <strong>Filipino 🇵🇭</strong> and
-            communicate clearly to make sure you get honest, quality service. 💪😎
-          </p>
-        </div>
-      </div>
+  <div>
+    <h3 style="margin:6px 0 6px 0">My Work & Knowledge</h3>
+    <ul>
+      <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
+      <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
+    </ul>
+    <p class="animated-links" style="margin-top:8px">
+      📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
+      🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Influencer Page</a>
+    </p>
+  </div>
+  <div>
+    <h3 style="margin:6px 0 6px 0">Follow & Ask</h3>
+    <p>
+      Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re
+      having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and
+      buy the right parts.
+    </p>
+    <p>
+      Looking for a specific part or need a <strong>repair quote</strong>? You’re always welcome to ask. I may not reply
+      instantly, but I’ll respond as soon as I’m available. I’m also proud to be <strong>Filipino 🇵🇭</strong> and
+      communicate clearly to make sure you get honest, quality service. 💪😎
+    </p>
+  </div>
+</div>
+
         
     <!-- Services -->
     <section id="services">
