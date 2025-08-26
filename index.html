@@ -6,7 +6,7 @@
   <title>Vehicle Tips Auto Mechanics | Mobile Mechanic – We Come To You!</title>
   <meta name="description" content="Trusted mobile mechanic serving Virginia Beach, Norfolk & Chesapeake. 20+ years experience. We install your parts, offer honest tips & quotes. Call (980) 292-3462." />
 
-  <!-- Favicons (optional; keep if you uploaded these) -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -19,7 +19,7 @@
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
 
-    /* Header (white so your logo pops) */
+    /* Header */
     header{background:#ffffff;color:#111;text-align:center;padding:28px 16px 20px}
     header img{max-width:260px;height:auto;margin-bottom:10px}
     header h1{margin:0 0 6px;font-size:2rem;color:#111}
@@ -46,23 +46,15 @@
     .highlight{font-weight:800}
     footer{padding:18px;text-align:center;background:#000;color:#fff}
 
-    /* Contact links = white for contrast on dark card */
+    /* Contact links white on dark */
     #contact a{color:var(--ink);text-decoration:underline}
     #contact a:visited{color:var(--ink)}
-
-    /* Debug panel */
-    details#debug { max-width:960px; margin:10px auto 0; padding:0 16px; }
-    details#debug summary { cursor:pointer; color:#bbb; }
-    #debug ul { background:#0a0a0a; border:1px solid #333; border-radius:8px; padding:8px 12px; list-style:disc; margin:8px 0 0 18px; }
-    #debug li.ok { color:#86efac; }      /* green */
-    #debug li.fail { color:#fca5a5; }    /* red */
   </style>
 </head>
 <body>
 
   <header>
-    <!-- No src: script sets this dynamically when a valid file is found -->
-    <img id="site-logo" alt="VehiclesTips Logo" style="display:none">
+    <img src="vehiclestips-logo.png" alt="VehiclesTips Logo">
     <h1>Vehicle Tips Auto Mechanics</h1>
     <p class="highlight">Mobile Mechanic – We Come To You!</p>
     <div class="cta">
@@ -78,6 +70,7 @@
   </nav>
 
   <main>
+    <!-- About / Trust -->
     <section id="about">
       <h2>Trusted Mobile Mechanic Near You</h2>
       <p>Looking for a mobile mechanic you can trust in <strong>Virginia Beach, Norfolk, or Chesapeake</strong>? Vehicle Tips Auto Mechanics has over <strong>20 years of experience</strong> working on cars of all makes and models.</p>
@@ -86,26 +79,25 @@
 
       <div class="grid">
         <div>
-          <h3 style="margin:6px 0 6px">My Work & Knowledge</h3>
+          <h3>My Work & Knowledge</h3>
           <ul>
             <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
             <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
-            <li> As a <strong>content creator</strong> passionate about cars, I also collaborate with brands and welcome sponsorship opportunities. Feel free to reach out via <strong>email for more info</strong>.</li>
-
+            <li>💡 I also collaborate with brands and welcome sponsorship opportunities. Reach out via <strong>email</strong>.</li>
           </ul>
-          <p class="links" style="margin-top:8px">
+          <p class="links">
             📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
             🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Influencer Page</a>
           </p>
         </div>
         <div>
-          <h3 style="margin:6px 0 6px">Follow & Ask</h3>
+          <h3>Follow & Ask</h3>
           <p>Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and buy the right parts.</p>
           <p>Looking for a specific part or need a <strong>repair quote</strong>? You’re always welcome to ask. I may not reply instantly, but I’ll respond as soon as I’m available. I’m also proud to be <strong>Filipino 🇵🇭</strong> and communicate clearly to make sure you get honest, quality service. 💪😎</p>
         </div>
       </div>
 
-      <div style="margin-top:8px">
+      <div>
         <span class="pill">We Come To You</span>
         <span class="pill">Install Your Parts</span>
         <span class="pill">Honest Quotes</span>
@@ -113,6 +105,7 @@
       </div>
     </section>
 
+    <!-- Services -->
     <section id="services">
       <h2>Our Mobile Mechanic Services</h2>
       <ul>
@@ -133,6 +126,7 @@
       </ul>
     </section>
 
+    <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
       <p>📍 <strong>Service Area:</strong> Virginia Beach, Norfolk &amp; Chesapeake</p>
@@ -148,58 +142,5 @@
 
   <footer>© 2025 Vehicle Tips Auto Mechanics — Hosted on GitHub Pages</footer>
 
-  <!-- Debug panel (click to see which paths work) -->
-  <details id="debug">
-    <summary>🔧 Logo debug (click to open)</summary>
-    <ul id="debug-list"></ul>
-  </details>
-
-  <!-- Smart logo loader: tries multiple filenames/paths, shows first that works -->
-  <script>
-  (function(){
-    const candidates = [
-      "vehiclestips-logo.png",
-      "vehiclestips-logo.jpg",
-      "vehiclestips-logo.JPG",
-      "images/vehiclestips-logo.png",
-      "images/vehiclestips-logo.jpg",
-      "images/vehiclestips-logo.JPG",
-      "logo-icon.jpg",
-      "images/logo-icon.jpg",
-      "sd.JPG",
-      "images/sd.JPG",
-      "xa.JPG",
-      "images/xa.JPG"
-    ];
-    const img = document.getElementById("site-logo");
-    const dbg = document.getElementById("debug-list");
-
-    function log(item, ok){
-      const li = document.createElement("li");
-      li.textContent = (ok ? "✅ " : "❌ ") + item;
-      li.className = ok ? "ok" : "fail";
-      dbg.appendChild(li);
-    }
-
-    let i = 0;
-    function tryNext(){
-      if(i >= candidates.length) return;
-      const src = candidates[i++];
-      const tester = new Image();
-      tester.onload = function(){
-        log(src, true);
-        img.src = src + "?v=" + Date.now();
-        img.style.display = "inline-block";
-      };
-      tester.onerror = function(){
-        log(src, false);
-        tryNext();
-      };
-      tester.src = src + "?v=" + Date.now();
-    }
-    tryNext();
-  })();
-  </script>
 </body>
 </html>
-
