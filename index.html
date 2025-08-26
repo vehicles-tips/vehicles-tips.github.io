@@ -14,45 +14,47 @@
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
 
-    /* Header with background image (free Unsplash) */
+    /* Header with background image */
     header{
       background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600') center/cover no-repeat;
-      color:#fff; text-align:center; padding:60px 16px; position:relative;
+      color:#fff;
+      text-align:center;
+      padding:60px 16px;
+      position:relative;
     }
-    header::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55)}
+    header::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.55);
+    }
     header *{position:relative; z-index:1}
-    header h1{margin:0 0 6px; font-size:2rem; color:#fff}
-    header p{margin:0 0 14px; font-size:1.05rem; color:#fff}
-    .cta{display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
-    .btn{background:var(--brand); color:var(--brand-ink); padding:10px 16px; border-radius:999px; text-decoration:none; font-weight:700; box-shadow:0 4px 14px rgba(0,0,0,.35)}
-    .btn.secondary{background:transparent; color:#fff; border:1px solid #fff}
+    header h1{margin:0 0 6px;font-size:2rem;color:#fff}
+    header p{margin:0 0 14px;font-size:1.05rem;color:#fff}
+    .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .btn{background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+    .btn.secondary{background:transparent;color:#fff;border:1px solid #fff}
 
     /* Nav */
-    nav{background:#0e0e0e; display:flex; gap:18px; justify-content:center; padding:10px 12px; font-size:.95rem; flex-wrap:wrap; border-top:1px solid #ffffff14; border-bottom:1px solid #ffffff14}
-    nav a{color:var(--brand); text-decoration:none; font-weight:700}
+    nav{background:#0e0e0e;display:flex;gap:18px;justify-content:center;padding:10px 12px;font-size:.95rem;flex-wrap:wrap;border-top:1px solid #ffffff14;border-bottom:1px solid #ffffff14}
+    nav a{color:var(--brand);text-decoration:none;font-weight:700}
     nav a:hover{color:#fff}
 
     /* Layout */
-    main{max-width:960px; margin:20px auto; padding:0 16px}
-    section{background:var(--card); border-radius:14px; box-shadow:0 6px 16px rgba(0,0,0,.5); padding:18px; margin:16px 0}
-    h2{margin:6px 0 10px; font-size:1.35rem; color:var(--brand)}
+    main{max-width:960px;margin:20px auto;padding:0 16px}
+    section{background:var(--card);border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.5);padding:18px;margin:16px 0}
+    h2{margin:6px 0 10px;font-size:1.35rem;color:var(--brand)}
     ul{margin:0 0 0 18px}
-    .grid{display:grid; grid-template-columns:1fr; gap:14px}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
     @media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
-    .pill{display:inline-block; background:var(--brand-soft); color:var(--ink); padding:4px 10px; border-radius:999px; font-size:.85rem; margin:4px 6px 0 0}
-    .links a{display:inline-block; margin-right:14px; color:var(--brand); text-decoration:underline}
+    .pill{display:inline-block;background:var(--brand-soft);color:var(--ink);padding:4px 10px;border-radius:999px;font-size:.85rem;margin:4px 6px 0 0}
+    .links a{display:inline-block;margin-right:14px;color:var(--brand);text-decoration:underline}
     .links a:hover{color:#fff}
     .highlight{font-weight:800}
-    footer{padding:18px; text-align:center; background:#000; color:#fff}
+    footer{padding:18px;text-align:center;background:#000;color:#fff}
 
-    /* Contact links white on dark */
-    #contact a{color:var(--ink); text-decoration:underline}
+    #contact a{color:var(--ink);text-decoration:underline}
     #contact a:visited{color:var(--ink)}
-
-    /* Payments */
-    .badge{display:inline-block; padding:2px 8px; border-radius:999px; background:#ffffff18; color:#fff; font-size:.8rem; margin-left:8px}
-    .note{color:var(--muted); font-size:.95rem; margin-top:6px}
-    .disabled-btn{opacity:.5; pointer-events:none; cursor:not-allowed}
   </style>
 </head>
 <body>
@@ -80,33 +82,6 @@
       <p>Looking for a mobile mechanic you can trust in <strong>Virginia Beach, Norfolk, or Chesapeake</strong>? Vehicle Tips Auto Mechanics has over <strong>20 years of experience</strong> working on cars of all makes and models.</p>
       <p>Whether you need reliable service to save money, someone to <strong>install your parts</strong>, or just honest <strong>tips and advice</strong>, I’m always happy to help. Your car deserves the right care — at the right price.</p>
       <p>I studied at <strong>ATi School of Automotive Technology</strong> and hold a valid <strong>MAC License for Air Conditioning systems</strong>.</p>
-
-      <div class="grid">
-        <div>
-          <h3>My Work & Knowledge</h3>
-          <ul>
-            <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
-            <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
-            <li>💡 Open to brand collaborations and sponsorships — contact by email</li>
-          </ul>
-          <p class="links">
-            📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
-            🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Influencer Page</a>
-          </p>
-        </div>
-        <div>
-          <h3>Follow & Ask</h3>
-          <p>Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and buy the right parts.</p>
-          <p>Looking for a specific part or need a <strong>repair quote</strong>? You’re always welcome to ask. I may not reply instantly, but I’ll respond as soon as I’m available. I’m also proud to be <strong>Filipino 🇵🇭</strong> and communicate clearly to make sure you get honest, quality service. 💪😎</p>
-        </div>
-      </div>
-
-      <div>
-        <span class="pill">We Come To You</span>
-        <span class="pill">Install Your Parts</span>
-        <span class="pill">Honest Quotes</span>
-        <span class="pill">Virginia Beach • Norfolk • Chesapeake</span>
-      </div>
     </section>
 
     <!-- Services -->
@@ -129,47 +104,28 @@
         <li>Much more — just ask!</li>
       </ul>
 
-      <!-- Complete Vehicle Check special -->
-      <div style="margin-top:16px; padding:14px; border:1px solid #ffffff22; border-radius:12px; background:#121212;">
-        <h3 style="margin:6px 0 8px 0; color:#f04a1d;">Complete Vehicle Check — $29.99</h3>
-        <p style="margin:0 0 8px 0;">
-          Get a quick, affordable health check before repairs or a road trip. We inspect your car
-          from the <strong>inside to the outside to the underside</strong> and provide a simple report.
-        </p>
-        <ul style="margin:0 0 8px 18px;">
-          <li>Brake evaluation: pad life, rotor condition/spec, fluid condition</li>
-          <li>Underbody, leaks, belts & hoses, visible wear</li>
-          <li>Test-drive assessment: noise, vibration, steering, braking feel</li>
-          <li>Interior & exterior visual check: lights, wipers, tires, bulbs</li>
-          <li>OBD-II scan for codes and pending issues</li>
-          <li>Notes on smells/sounds/feel to help diagnose early problems</li>
+      <!-- Pre-Check Service -->
+      <div style="margin-top:20px; padding:16px; border:1px solid #f04a1d; border-radius:10px; background:#1f1f1f;">
+        <h3 style="color:#f04a1d; margin-top:0;">🚗 Pre-Check Vehicle Analysis — Only $29.99</h3>
+        <p>Before you commit to repairs, get peace of mind with a complete vehicle check-up:</p>
+        <ul>
+          <li>Full inspection — inside, outside, and underneath</li>
+          <li>Brake specs with rotor & fluid condition</li>
+          <li>Test drive to check real-world performance</li>
+          <li>Visual check-up: smell, feel, and overall condition</li>
+          <li>Computer code scan for hidden issues</li>
         </ul>
-        <p style="margin:0; color:#cccccc;">
-          <em>Note:</em> This is a general checkup (not a state inspection). The $29.99 fee may be
-          <strong>credited toward your repair</strong> if you choose to proceed with service.
-        </p>
+        <div style="text-align:center; margin-top:10px;">
+          <a class="btn" href="tel:+19802923462">📞 Call to Book</a>
+        </div>
       </div>
     </section>
 
-    <!-- Payments & Fees (PayPal: Coming Soon) -->
+    <!-- Payments -->
     <section id="payments">
-      <h2>Payments & Fees <span class="badge">PayPal Coming Soon</span></h2>
-      <p>💳 I accept secure payments through <strong>PayPal</strong> (credit cards, debit cards, or PayPal account). A payment link will be provided once your service is confirmed.</p>
-      <p>🚐 A small <strong>Mobile Service Fee</strong> may apply to cover travel and time within Virginia Beach, Norfolk, and Chesapeake. This fee is applied to your total and may be waived if service is completed.</p>
-      <p class="note">Note: Online payments are being activated as I complete bank and paperwork setup.</p>
-
-      <!-- Disabled placeholder PayPal button -->
-      <div style="text-align:center; margin-top:12px;">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="disabled-btn" aria-disabled="true">
-          <!-- When ready: replace YOUR-PAYPAL-BUSINESS-EMAIL and remove class="disabled-btn" -->
-          <input type="hidden" name="cmd" value="_xclick">
-          <input type="hidden" name="business" value="YOUR-PAYPAL-BUSINESS-EMAIL">
-          <input type="hidden" name="item_name" value="Mobile Mechanic Service Payment">
-          <input type="hidden" name="currency_code" value="USD">
-          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="Pay Now with PayPal">
-        </form>
-        <div class="note">Button disabled until PayPal Business is connected.</div>
-      </div>
+      <h2>Payments & Fees</h2>
+      <p>💳 Pay securely by <strong>cash</strong> or <strong>PayPal</strong> (credit/debit cards accepted via PayPal). Online payment setup is coming soon.</p>
+      <p>🚐 A small <strong>Mobile Service Fee</strong> may apply for travel within Virginia Beach, Norfolk, and Chesapeake.</p>
     </section>
 
     <!-- Contact -->
@@ -179,7 +135,7 @@
       <p>⏰ <strong>Hours:</strong> Mon–Sat, 9 AM – 5 PM</p>
       <p>📞 <strong>Phone:</strong> <a href="tel:+19802923462">(980) 292-3462</a></p>
       <p>✉️ <strong>Email:</strong> <a href="mailto:VehiclesTips@gmail.com">VehiclesTips@gmail.com</a></p>
-      <div class="cta" style="margin-top:8px">
+      <div class="cta">
         <a class="btn" href="tel:+19802923462">📞 Call Now</a>
         <a class="btn" href="mailto:VehiclesTips@gmail.com?subject=Service%20Quote%20Request">✉️ Get a Quote</a>
       </div>
@@ -190,4 +146,3 @@
 
 </body>
 </html>
-
