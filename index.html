@@ -1,75 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vehicle Tips LLC | Mobile Mechanic</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vehicle Tips Auto Mechanics | Mobile Mechanic – We Come To You!</title>
+  <meta name="description" content="Trusted mobile mechanic serving Virginia Beach, Norfolk & Chesapeake. 20+ years experience. We install your parts, offer honest tips & quotes. Call (980) 292-3462." />
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #f4f4f9; }
-    header { background: #2c3e50; color: #fff; padding: 20px; text-align: center; }
-    nav { background: #34495e; text-align: center; padding: 10px; }
-    nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    section { padding: 20px; max-width: 900px; margin: auto; background: #fff; margin-top: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h2 { color: #2c3e50; }
-    ul { margin-left: 20px; }
-    footer { background: #2c3e50; color: #fff; text-align: center; padding: 10px; margin-top: 20px; }
+    /* ===== VehiclesTips brand (orange/black/white) ===== */
+    :root{
+      --bg:#111111;          /* page background (dark) */
+      --card:#1a1a1a;        /* section cards */
+      --ink:#ffffff;         /* main text */
+      --muted:#cccccc;       /* secondary text */
+      --brand:#f04a1d;       /* VehiclesTips orange-red */
+      --brand-ink:#ffffff;   /* text on brand buttons */
+      --brand-soft:#f04a1d22;/* soft accent for pills */
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    header{background:var(--brand);color:var(--brand-ink);padding:36px 16px;text-align:center}
+    header h1{margin:0 0 6px 0;font-size:2rem}
+    header p{margin:0 0 16px 0;font-size:1.05rem}
+    .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .btn{background:var(--brand-ink);color:#111;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+    .btn.secondary{background:transparent;color:#fff;border:1px solid #ffffff66}
+    nav{background:#0e0e0e;display:flex;gap:18px;justify-content:center;padding:10px 12px;font-size:.95rem;flex-wrap:wrap;border-top:1px solid #ffffff14;border-bottom:1px solid #ffffff14}
+    nav a{color:var(--brand);text-decoration:none;font-weight:700}
+    nav a:hover{color:#fff}
+    main{max-width:960px;margin:24px auto;padding:0 16px}
+    section{background:var(--card);border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.5);padding:18px;margin:16px 0}
+    h2{margin:6px 0 10px 0;font-size:1.35rem;color:var(--brand)}
+    ul{margin:0 0 0 18px}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    @media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+    .pill{display:inline-block;background:var(--brand-soft);color:var(--ink);padding:4px 10px;border-radius:999px;font-size:.85rem;margin:4px 6px 0 0}
+    .links a{display:inline-block;margin-right:14px;color:var(--brand)}
+    .links a:hover{color:#fff}
+    .highlight{font-weight:800}
+    footer{padding:18px;text-align:center;color:var(--muted)}
+    /* Optional hero image (replace src below or delete) */
+    .hero{max-width:960px;margin:12px auto 0;padding:0 16px}
+    .hero img{width:100%;border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,.5)}
   </style>
 </head>
 <body>
+
   <header>
-    <h1>🚗 Vehicle Tips LLC</h1>
-    <p>Mobile Mechanic – We Come To You!</p>
+    <h1>Vehicle Tips Auto Mechanics</h1>
+    <p class="highlight">Mobile Mechanic – We Come To You!</p>
+    <div class="cta">
+      <a class="btn" href="tel:+19802923462">📞 Call Now: (980) 292-3462</a>
+      <a class="btn secondary" href="mailto:VehiclesTips@gmail.com">✉️ Email Us</a>
+    </div>
   </header>
 
+  <!-- Optional free stock photo from Unsplash (safe to use).
+       Replace with your own upload like logo/banner later. -->
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1400&auto=format&fit=crop"
+         alt="Mobile mechanic at work">
+  </div>
+
   <nav>
-    <a href="#tips">Tips</a>
+    <a href="#about">About / Trust</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="tips">
-  <h2>Why Choose Vehicle Tips Auto Mechanics?</h2>
-  <p>
-    Looking for a trusted mobile mechanic near you in <strong>Virginia Beach, Norfolk, or Chesapeake</strong>?  
-    Vehicle Tips Auto Mechanics has over <strong>20 years of experience</strong> working on cars.  
-    We’re here to help you service your vehicle, save money, and keep you on the road.  
-  </p>
-  <p>
-    Need someone to <strong>install your parts</strong>? Or just looking for expert <strong>tips and advice</strong>?  
-    We’re always happy to help.
-  </p>
-  </section>
+  <main>
 
-  <section id="services">
-  <h2>Our Mobile Mechanic Services</h2>
-  <ul>
-    <li>Cabin and air filter replacement</li>
-    <li>Starting and charging diagnostic</li>
-    <li>Engine diagnostic</li>
-    <li>Check engine light diagnostic</li>
-    <li>Battery jump start</li>
-    <li>Steering and suspension repair</li>
-    <li>Fluid flush and fuel filter service</li>
-    <li>Heating and cooling service</li>
-    <li>Overheating diagnostic</li>
-    <li>Air conditioner diagnostic</li>
-    <li>Tune-up service</li>
-    <li>Small engine repair</li>
-    <li>Windshield wiper diagnostic</li>
-    <li>Much more – just ask!</li>
-  </ul>
-</section>
+    <!-- Combined Trust + About + Your Message -->
+    <section id="about">
+      <h2>Trusted Mobile Mechanic Near You</h2>
+      <p>
+        Looking for a mobile mechanic you can trust in <strong>Virginia Beach, Norfolk, or Chesapeake</strong>?
+        Vehicle Tips Auto Mechanics has over <strong>20 years of experience</strong> working on cars of all makes and models.
+      </p>
+      <p>
+        Whether you need reliable service to save money, someone to <strong>install your parts</strong>, or just honest
+        <strong>tips and advice</strong>, I’m always happy to help. Your car deserves the right care — at the right price.
+      </p>
+      <p>
+        I studied at <strong>ATi School of Automotive Technology</strong> and hold a valid
+        <strong>MAC License for Air Conditioning systems</strong>.
+      </p>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: <strong>(980) 292-3462</strong></p>
-    <p>📧 Email: <strong>VehiclesTips@gmail.com</strong></p>
-    <p>📍 Service Area: <strong>Virginia Beach, Norfolk & Chesapeake</strong></p>
-    <p>⏰ Hours: <strong>Mon–Sat, 8 AM – 8 PM</strong></p>
-  </section>
+      <div class="grid">
+        <div>
+          <h3 style="margin:6px 0 6px 0">My Work & Knowledge</h3>
+          <ul>
+            <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
+            <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
+          </ul>
+          <p class="links" style="margin-top:8px">
+            📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
+            🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Influencer Page</a>
+          </p>
+        </div>
+        <div>
+          <h3 style="margin:6px 0 6px 0">Follow & Ask</h3>
+          <p>
+            Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re
+            having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and
+            buy the right parts.
+          </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vehicle Tips Auto Mechanics | Mobile Mechanic – We Come To You!</title>
+  <meta name="description" content="Trusted mobile mechanic serving Virginia Beach, Norfolk & Chesapeake. 20+ years experience. We install your parts, offer honest tips & quotes. Call (980) 292-3462." />
+  <style>
+    /* ===== VehiclesTips brand (orange/black/white) ===== */
+    :root{
+      --bg:#111111;          /* page background (dark) */
+      --card:#1a1a1a;        /* section cards */
+      --ink:#ffffff;         /* main text */
+      --muted:#cccccc;       /* secondary text */
+      --brand:#f04a1d;       /* VehiclesTips orange-red */
+      --brand-ink:#ffffff;   /* text on brand buttons */
+      --brand-soft:#f04a1d22;/* soft accent for pills */
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    header{background:var(--brand);color:var(--brand-ink);padding:36px 16px;text-align:center}
+    header img{max-width:220px;margin-bottom:10px}
+    header h1{margin:0 0 6px 0;font-size:2rem}
+    header p{margin:0 0 16px 0;font-size:1.05rem}
+    .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .btn{background:var(--brand-ink);color:#111;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+    .btn.secondary{background:transparent;color:#fff;border:1px solid #ffffff66}
+    nav{background:#0e0e0e;display:flex;gap:18px;justify-content:center;padding:10px 12px;font-size:.95rem;flex-wrap:wrap;border-top:1px solid #ffffff14;border-bottom:1px solid #ffffff14}
+    nav a{color:var(--brand);text-decoration:none;font-weight:700}
+    nav a:hover{color:#fff}
+    main{max-width:960px;margin:24px auto;padding:0 16px}
+    section{background:var(--card);border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.5);padding:18px;margin:16px 0}
+    h2{margin:6px 0 10px 0;font-size:1.35rem;color:var(--brand)}
+    ul{margin:0 0 0 18px}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    @media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+    .pill{display:inline-block;background:var(--brand-soft);color:var(--ink);padding:4px 10px;border-radius:999px;font-size:.85rem;margin:4px 6px 0 0}
+    .links a{display:inline-block;margin-right:14px;color:var(--brand)}
+    .links a:hover{color:#fff}
+    .highlight{font-weight:800}
+    footer{padding:18px;text-align:center;color:var(--muted)}
+    /* Optional hero image (replace src below or delete) */
+    .hero{max-width:960px;margin:12px auto 0;padding:0 16px}
+    .hero img{width:100%;border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,.5)}
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Vehiclestips logo.JPG" alt="VehiclesTips Logo">
+    <h1>Vehicle Tips Auto Mechanics</h1>
+    <p class="highlight">Mobile Mechanic – We Come To You!</p>
+    <div class="cta">
+      <a class="btn" href="tel:+19802923462">📞 Call Now: (980) 292-3462</a>
+      <a class="btn secondary" href="mailto:VehiclesTips@gmail.com">✉️ Email Us</a>
+    </div>
+  </header>
+
+  <!-- Optional free stock photo from Unsplash (safe to use).
+       Replace with your own upload like logo/banner later. -->
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1400&auto=format&fit=crop"
+         alt="Mobile mechanic at work">
+  </div>
+
+  <nav>
+    <a href="#about">About / Trust</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- Combined Trust + About + Your Message -->
+    <section id="about">
+      <h2>Trusted Mobile Mechanic Near You</h2>
+      <p>
+        Looking for a mobile mechanic you can trust in <strong>Virginia Beach, Norfolk, or Chesapeake</strong>?
+        Vehicle Tips Auto Mechanics has over <strong>20 years of experience</strong> working on cars of all makes and models.
+      </p>
+      <p>
+        Whether you need reliable service to save money, someone to <strong>install your parts</strong>, or just honest
+        <strong>tips and advice</strong>, I’m always happy to help. Your car deserves the right care — at the right price.
+      </p>
+      <p>
+        I studied at <strong>ATi School of Automotive Technology</strong> and hold a valid
+        <strong>MAC License for Air Conditioning systems</strong>.
+      </p>
+
+      <div class="grid">
+        <div>
+          <h3 style="margin:6px 0 6px 0">My Work & Knowledge</h3>
+          <ul>
+            <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
+            <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
+          </ul>
+          <p class="links" style="margin-top:8px">
+            📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
+            🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Influencer Page</a>
+          </p>
+        </div>
+        <div>
+          <h3 style="margin:6px 0 6px 0">Follow & Ask</h3>
+          <p>
+            Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re
+            having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and
+            buy the right parts.
+          </p>
+          <p>
+            Looking for a specific part or need a <strong>repair quote</strong>? You’re always welcome to ask. I may not reply
+            instantly, but I’ll respond as soon as I’m available. I’m also proud to be <strong>Filipino 🇵🇭</strong> and
+            communicate clearly to make sure you get honest, quality service. 💪😎
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:8px">
+        <span class="pill">We Come To You</span>
+        <span class="pill">Install Your Parts</span>
+        <span class="pill">Honest Quotes</span>
+        <span class="pill">Virginia Beach • Norfolk • Chesapeake</span>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2>Our Mobile Mechanic Services</h2>
+      <ul>
+        <li>Cabin and air filter replacement</li>
+        <li>Starting and charging diagnostic</li>
+        <li>Engine diagnostic</li>
+        <li>Check engine light diagnostic</li>
+        <li>Battery jump start</li>
+        <li>Steering and suspension repair</li>
+        <li>Fluid flush and fuel filter service</li>
+        <li>Heating and cooling service</li>
+        <li>Overheating diagnostic</li>
+        <li>Air conditioner diagnostic</li>
+        <li>Tune-up service</li>
+        <li>Small engine repair</li>
+        <li>Windshield wiper diagnostic</li>
+        <li>Much more — just ask!</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>📍 <strong>Service Area:</strong> Virginia Beach, Norfolk &amp; Chesapeake</p>
+      <p>⏰ <strong>Hours:</strong> Mon–Sat, 8 AM – 8 PM</p>
+      <p>📞 <strong>Phone:</strong> <a href="tel:+19802923462">(980) 292-3462</a></p>
+      <p>✉️ <strong>Email:</strong> <a href="mailto:VehiclesTips@gmail.com">VehiclesTips@gmail.com</a></p>
+      <div class="cta" style="margin-top:8px">
+        <a class="btn" href="tel:+19802923462">📞 Call Now</a>
+        <a class="btn" href="mailto:VehiclesTips@gmail.com?subject=Service%20Quote%20Request">✉️ Get a Quote</a>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    <p>© 2025 Vehicle Tips LLC | All Rights Reserved</p>
+    © 2025 Vehicle Tips Auto Mechanics — Hosted on GitHub Pages
   </footer>
+
 </body>
 </html>
