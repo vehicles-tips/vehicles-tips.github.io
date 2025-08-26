@@ -82,30 +82,41 @@
     </section>
     
 <style>
-  /* Animated clickable links */
-  .animated-links a {
+ <style>
+  /* Responsive YouTube Embed */
+  .video-container {
     position: relative;
-    color: var(--brand);
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.5);
+    margin-top: 12px;
   }
-  .animated-links a::after {
-    content: "";
+  .video-container iframe {
     position: absolute;
+    top: 0;
     left: 0;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Button style */
+  .btn-watch {
+    display: inline-block;
+    margin-top: 12px;
     background: var(--brand);
-    transition: width 0.3s ease;
+    color: var(--brand-ink);
+    padding: 10px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(0,0,0,.35);
+    transition: transform 0.2s ease, background 0.2s ease;
   }
-  .animated-links a:hover {
-    color: #fff;                /* hover text color */
-    transform: scale(1.05);     /* subtle grow pulse */
-  }
-  .animated-links a:hover::after {
-    width: 100%;                /* underline slides in */
+  .btn-watch:hover {
+    transform: scale(1.05);
+    background: #d63e18;
   }
 </style>
 
@@ -116,11 +127,30 @@
       <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
       <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
     </ul>
+
     <p class="animated-links" style="margin-top:8px">
       📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
       🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Influencer Page</a>
     </p>
+
+    <!-- Embedded YouTube video -->
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/w7hTRkhH5B8?si=J1rSMHP1HsFs0TxG" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Watch More Button -->
+    <div style="text-align:center;">
+      <a class="btn-watch" href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">▶️ Watch More on YouTube</a>
+    </div>
   </div>
+
   <div>
     <h3 style="margin:6px 0 6px 0">Follow & Ask</h3>
     <p>
@@ -135,6 +165,7 @@
     </p>
   </div>
 </div>
+
 
         
     <!-- Services -->
