@@ -53,15 +53,16 @@
 </head>
 <body>
 
-  <header>
-    <img src="vehiclestips-logo.png" alt="VehiclesTips Logo">
-    <h1>Vehicle Tips Auto Mechanics</h1>
-    <p class="highlight">Mobile Mechanic – We Come To You!</p>
-    <div class="cta">
-      <a class="btn" href="tel:+19802923462">📞 Call Now: (980) 292-3462</a>
-      <a class="btn secondary" href="mailto:VehiclesTips@gmail.com">✉️ Email Us</a>
-    </div>
-  </header>
+ <header>
+  <img id="site-logo" alt="VehiclesTips Logo"
+       style="max-width:260px;height:auto;margin-bottom:10px;display:none;">
+  <h1>Vehicle Tips Auto Mechanics</h1>
+  <p class="highlight">Mobile Mechanic – We Come To You!</p>
+  <div class="cta">
+    <a class="btn" href="tel:+19802923462">📞 Call Now: (980) 292-3462</a>
+    <a class="btn secondary" href="mailto:VehiclesTips@gmail.com">✉️ Email Us</a>
+  </div>
+</header>
 
   <nav>
     <a href="#about">About / Trust</a>
@@ -82,6 +83,8 @@
           <ul>
             <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
             <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
+            <li> As a <strong>content creator</strong> passionate about cars, I also collaborate with brands and welcome sponsorship opportunities. Feel free to reach out via <strong>email for more info.</strong>  </li>
+
           </ul>
           <p class="links" style="margin-top:8px">
             📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
@@ -137,5 +140,48 @@
   </main>
 
   <footer>© 2025 Vehicle Tips Auto Mechanics — Hosted on GitHub Pages</footer>
+    <footer>
+    © 2025 Vehicle Tips Auto Mechanics — Hosted on GitHub Pages
+  </footer>
+
+  <!-- Put the script here, before closing </body> -->
+  <script>
+  (function(){
+    const candidates = [
+      "vehiclestips-logo.png",
+      "vehiclestips-logo.jpg",
+      "vehiclestips-logo.JPG",
+      "images/vehiclestips-logo.png",
+      "images/vehiclestips-logo.jpg",
+      "images/vehiclestips-logo.JPG",
+      "logo-icon.jpg",
+      "images/logo-icon.jpg",
+      "sd.JPG",
+      "images/sd.JPG",
+      "xa.JPG",
+      "images/xa.JPG"
+    ];
+
+    const img = document.getElementById("site-logo");
+    let i = 0;
+
+    function tryNext() {
+      if (i >= candidates.length) return;
+      const src = candidates[i++];
+      const tester = new Image();
+      tester.onload = function(){
+        img.src = src + "?v=" + Date.now(); // prevent cache
+        img.style.display = "inline-block";
+      };
+      tester.onerror = tryNext;
+      tester.src = src + "?v=" + Date.now();
+    }
+
+    tryNext();
+  })();
+  </script>
+</body>
+</html>
+
 </body>
 </html>
