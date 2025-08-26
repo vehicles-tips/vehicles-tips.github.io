@@ -19,13 +19,10 @@
       background: url('https://images.unsplash.com/photo-1515923162061-6513b67f0f3a?w=1600') center/cover no-repeat;
       color:#fff; text-align:center; padding:60px 16px; position:relative;
     }
-    header::before{
-      content:""; position:absolute; inset:0;
-      background:rgba(0,0,0,0.55); /* dark overlay */
-    }
+    header::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55)}
     header *{position:relative; z-index:1}
-    header h1{margin:0 0 6px;font-size:2.2rem;color:#fff}
-    header p{margin:0 0 14px;font-size:1.1rem;color:#fff}
+    header h1{margin:0 0 6px;font-size:2rem;color:#fff}
+    header p{margin:0 0 14px;font-size:1.05rem;color:#fff}
     .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
     .btn{background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
     .btn.secondary{background:transparent;color:#fff;border:1px solid #fff}
@@ -48,23 +45,9 @@
     .highlight{font-weight:800}
     footer{padding:18px;text-align:center;background:#000;color:#fff}
 
-    /* Services with background tools image */
-    #services{
-      background: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1600') center/cover no-repeat;
-      color:#fff;
-      position:relative;
-    }
-    #services::before{
-      content:""; position:absolute; inset:0; border-radius:14px;
-      background:rgba(0,0,0,0.7);
-    }
-    #services *{position:relative; z-index:1}
-
-    /* Contact links */
+    .badge{display:inline-block; padding:3px 8px; border-radius:999px; background:#f04a1d; color:#fff; font-size:.75rem; margin-left:8px}
     #contact a{color:var(--ink);text-decoration:underline}
     #contact a:visited{color:var(--ink)}
-
-    .note{color:var(--muted); font-size:.95rem; margin-top:6px}
   </style>
 </head>
 <body>
@@ -81,7 +64,11 @@
   <nav>
     <a href="#about">About / Trust</a>
     <a href="#services">Services</a>
+    <a href="#analysis">Vehicle Analysis</a>
+    <a href="#brakes">Brake Pricing</a>
     <a href="#payments">Payments</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#appointment">Appointments</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -96,45 +83,179 @@
 
     <!-- Services -->
     <section id="services">
-      <h2>Our Mobile Mechanic Services & Pricing</h2>
+      <h2>Our Mobile Mechanic Services</h2>
       <ul>
-        <li>🔧 Brake pad replacement (no rotor): <strong>Starting $99</strong></li>
-        <li>🔧 Brake pad + electronic caliper (per axle): <strong>$129.99</strong></li>
-        <li>🔧 Brake shoes replacement: <strong>Starting $139.99</strong></li>
-        <li>🔧 Brake pad + rotor replacement: <strong>Price varies by vehicle</strong></li>
-        <li>📋 Complete Vehicle Analysis: <strong>$49.99</strong>  
-          <br><small>(Perfect if you’re buying a used car so you know what you’re getting — or selling yours so you know the condition. Includes full visual check inside, outside, underneath, fluids, test drive & code scan. Not an official inspection.)</small></li>
-        <li>💡 Other services: Engine diagnostics, A/C service, tune-ups, fluid flush, suspension repair, overheating issues, and more — just ask!</li>
+        <li>Cabin and air filter replacement</li>
+        <li>Starting and charging diagnostic</li>
+        <li>Engine diagnostic</li>
+        <li>Check engine light diagnostic</li>
+        <li>Battery jump start</li>
+        <li>Steering and suspension repair</li>
+        <li>Fluid flush and fuel filter service</li>
+        <li>Heating and cooling service</li>
+        <li>Overheating diagnostic</li>
+        <li>Air conditioner diagnostic</li>
+        <li>Tune-up service</li>
+        <li>Small engine repair</li>
+        <li>Windshield wiper diagnostic</li>
+        <li>Much more — just ask!</li>
       </ul>
-      <p class="note">Note: Prices are labor only. Parts not included. Rotor/part prices vary (compact, SUV, truck, etc.). Final quote provided before work begins. A fluid disposal/old parts fee starting at $10 may apply.</p>
-      <p class="note">⏰ Book ahead for parts + labor service so parts arrive on time and your repair is done without delay.</p>
-      <p class="note">🚗 No waiting in shop lines, no expensive tow trucks. Vehicle Tips Mobile Mechanic comes to you — saving time & money.</p>
-      <p class="note">🤝 Vehicle Tips: you help me, and I help you — we both win!</p>
+      <p style="margin-top:10px; color:#ccc;">
+        💡 <em>Note: Standard services are labor only. Parts not included. A <strong>fluid disposal / old parts fee</strong> starting at <strong>$10</strong> may apply.</em>
+      </p>
+    </section>
+
+    <!-- Vehicle Analysis -->
+    <section id="analysis">
+      <h2>🚗 Complete Vehicle Analysis — $49.99 <span class="badge">⭐ Popular</span></h2>
+      <p>A full <strong>health and condition check</strong> before repairs or a trip. We inspect your car from the
+      <strong>inside, outside, and underneath</strong> and provide a clear report.</p>
+      <ul>
+        <li>Brake evaluation: pad life, rotor condition/spec, fluid condition</li>
+        <li>Underbody, leaks, belts & hoses, visible wear</li>
+        <li>Test-drive assessment: noise, vibration, steering, braking feel</li>
+        <li>Interior & exterior visual check: lights, wipers, tires, bulbs</li>
+        <li>OBD-II scan for codes and pending issues</li>
+        <li>Notes on smells/sounds/feel to catch early problems</li>
+      </ul>
+      <p style="color:#ccc;"><em>Note: This is <strong>not a state inspection</strong>, but a <strong>vehicle analysis</strong> focused on overall health and condition.</em></p>
+
+      <!-- Highlight box -->
+      <div style="background:#222;padding:14px;border-radius:12px;margin:16px 0;border-left:4px solid var(--brand)">
+        <p style="margin:0;font-weight:600;color:#fff;">
+          ✅ Perfect if you’re <strong>buying a used car</strong> — know exactly what you’re getting.<br>
+          ✅ Planning to <strong>sell your car</strong>? Get a condition check first so you know where you stand.
+        </p>
+        <p style="margin:8px 0 0;color:#ccc;font-size:.95rem;">
+          <em>Not a state inspection — this is a detailed health & condition analysis to help you make smart decisions.</em>
+        </p>
+      </div>
+
+      <!-- What to Expect -->
+      <h3 style="margin-top:18px;color:#f04a1d;">What to Expect During the Analysis</h3>
+      <ul>
+        <li>⏰ Average time: 45–60 minutes depending on vehicle</li>
+        <li>🚗 Vehicle must be parked in a safe, accessible area</li>
+        <li>🔑 Please have your keys ready and enough fuel for a short road test</li>
+        <li>📋 You’ll receive a clear summary of findings — verbally and with photos (if needed)</li>
+      </ul>
+    </section>
+
+    <!-- Brake Services -->
+    <section id="brakes">
+      <h2>🔧 Brake Services & Pricing (Labor Only)</h2>
+      <ul>
+        <li>🛠️ <strong>Brake pad replacement (without rotor):</strong> Starting $99 (labor only)</li>
+        <li>🛠️ <strong>Brake pad replacement w/ rotor:</strong> Labor only, rotor price depends on vehicle type</li>
+        <li>⚡ <strong>Electronic caliper brake pads (per axle):</strong> $129.99 (labor only)</li>
+        <li>🔧 <strong>Brake shoes replacement (drum brakes):</strong> Starting $139.99 (labor only)</li>
+      </ul>
+      <p style="margin-top:10px; color:#ccc;">
+        💡 <em>Note: Prices are for labor only. Parts not included. Rotor prices Replacement it vary by vehicle (compact, SUV, truck, etc.). Final quote provided before work begins. A <strong>fluid disposal / old parts fee</strong> starting at <strong>$10</strong> may apply.</em>
+      </p>
+      <p style="margin-top:10px; color:#ccc;">
+        📅 <em>For accurate <strong>service quote (parts + labor)</strong>, please book an appointment in advance.  
+        This allows parts to arrive early (if available) so your service can be completed on time.</em>
+      </p>
+      <p style="margin-top:14px; font-weight:600; color:#fff;">
+        ✅ No need to wait long at the shop, waste money on tow trucks, or struggle with a busy schedule.  
+        On a budget? <strong>VehiclesTips Mobile Mechanic</strong> is the perfect choice for you.
+      </p>
+      <p style="margin-top:10px; color:#f04a1d; font-style:italic;">
+        🤝 Vehicles Tips —“You help me, I help you — we both win
+         <p style="margin-top:10px; color:#f04a1d; font-style:italic;">
+        “Looking for a personal mechanic who can maintain your vehicle? No more struggling, no more jumping shop to shop — you’ve found someone you can trust.”
+      </p>
     </section>
 
     <!-- Payments -->
     <section id="payments">
-      <h2>Payments & Fees</h2>
-      <p>💳 Payments accepted via <strong>PayPal</strong> (credit/debit cards or PayPal account). A link will be provided after booking.</p>
-      <p>🚐 A small <strong>Mobile Service Fee</strong> may apply for travel within Virginia Beach, Norfolk, and Chesapeake. This may be waived if service is completed.</p>
-      <p class="note">Online payment system will activate once business banking and PayPal Business setup is complete.</p>
+      <h2>💳 Payments</h2>
+      <p>Payment options will be provided <strong>after your booking is confirmed</strong>.  
+      Accepted options will include <strong>Cash</strong>, <strong>PayPal</strong>, and <strong>card</strong> (through PayPal).</p>
+      <p class="note" style="color:#ccc;">Online payment setup is in progress as banking and paperwork are finalized.</p>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews">
+      <h2>⭐ Reviews</h2>
+      <p>Happy with the service? Your feedback helps others find a trusted mechanic.</p>
+      <div class="cta" style="justify-content:center;">
+        <a class="btn" href="YOUR_GOOGLE_REVIEW_LINK_HERE" target="_blank" rel="noopener">✍️ Leave a Google Review</a>
+      </div>
+      <p style="margin-top:8px; color:#ccc;">
+        (We’ll add a review widget/map after Google finishes setting the profile as a <strong>service-area business</strong> with a hidden address.)
+      </p>
+    </section>
+
+    <!-- Appointment -->
+    <section id="appointment">
+      <h2>📅 Book an Appointment</h2>
+      <p>Skip the back-and-forth! Soon you’ll be able to book appointments directly online (via a scheduling tool like <strong>Calendly</strong> or <strong>Google Calendar</strong>).</p>
+      <p>For now, please <strong>call</strong> or <strong>email</strong> to reserve your slot:</p>
+      <div class="cta">
+        <a class="btn" href="tel:+19802923462">📞 Call to Book</a>
+        <a class="btn secondary" href="mailto:VehiclesTips@gmail.com?subject=Book%20Appointment&body=Hi,%20I%20would%20like%20to%20schedule%20a%20service.%20Please%20share%20available%20times.">✉️ Book via Email</a>
+      </div>
     </section>
 
     <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>📍 <strong>Service Area:</strong> Virginia Beach, Norfolk & Chesapeake</p>
+      <p>📍 <strong>Service Area:</strong> Virginia Beach, Norfolk &amp; Chesapeake</p>
       <p>⏰ <strong>Hours:</strong> Mon–Sat, 9 AM – 5 PM</p>
       <p>📞 <strong>Phone:</strong> <a href="tel:+19802923462">(980) 292-3462</a></p>
       <p>✉️ <strong>Email:</strong> <a href="mailto:VehiclesTips@gmail.com">VehiclesTips@gmail.com</a></p>
-      <div class="cta">
-        <a class="btn" href="tel:+19802923462">📞 Call Now</a>
-        <a class="btn" href="mailto:VehiclesTips@gmail.com?subject=Service%20Quote%20Request">✉️ Get a Quote</a>
-      </div>
     </section>
   </main>
 
   <footer>© 2025 Vehicle Tips Auto Mechanics — Hosted on GitHub Pages</footer>
 
+</body>
+</html>
+ <script>
+    // Build a mailto with all form fields and open the user's email app
+    function sendApptEmail(e){
+      e.preventDefault();
+      const g = id => document.getElementById(id).value.trim();
+      if(!document.getElementById('ack').checked){
+        alert('Please acknowledge the service terms.');
+        return false;
+      }
+
+      const name = g('name');
+      const phone = g('phone');
+      const email = g('email');
+      const service = g('service') || 'N/A';
+      const city = g('city');
+      const address = g('address') || 'N/A';
+      const date = g('date') || 'N/A';
+      const time = g('time') || 'N/A';
+      const notes = g('notes') || 'N/A';
+
+      const subject = `Appointment Request - ${name} - ${service}`;
+      const bodyLines = [
+        `Name: ${name}`,
+        `Phone: ${phone}`,
+        `Email: ${email}`,
+        `Service: ${service}`,
+        `City: ${city}`,
+        `Address: ${address}`,
+        `Preferred Date: ${date}`,
+        `Preferred Time Window: ${time}`,
+        ``,
+        `Vehicle & Notes:`,
+        `${notes}`,
+        ``,
+        `Acknowledged: prices are labor-only; parts extra; rotor/part prices vary;`,
+        `extra labor possible for rust/seized; disposal/old parts fee from $10;`,
+        `final quote before work.`
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n'));
+      const mailto = `mailto:VehiclesTips@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = mailto;
+      return false;
+    }
+  </script>
 </body>
 </html>
