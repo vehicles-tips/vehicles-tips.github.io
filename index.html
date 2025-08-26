@@ -5,33 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vehicle Tips Auto Mechanics | Mobile Mechanic – We Come To You!</title>
   <meta name="description" content="Trusted mobile mechanic serving Virginia Beach, Norfolk & Chesapeake. 20+ years experience. We install your parts, offer honest tips & quotes. Call (980) 292-3462." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
-    /* ===== VehiclesTips brand (orange/black/white) ===== */
     :root{
-      --bg:#111111;          /* page background (dark) */
-      --card:#1a1a1a;        /* section cards */
-      --ink:#ffffff;         /* main text */
-      --muted:#cccccc;       /* secondary text */
-      --brand:#f04a1d;       /* VehiclesTips orange-red */
-      --brand-ink:#ffffff;   /* text on brand buttons */
-      --brand-soft:#f04a1d22;/* soft accent for pills */
+      --bg:#111111;
+      --card:#1a1a1a;
+      --ink:#ffffff;
+      --muted:#cccccc;
+      --brand:#f04a1d;
+      --brand-ink:#ffffff;
+      --brand-soft:#f04a1d22;
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
 
-    /* Header with logo */
-    header{
-      background:#ffffff; /* white background for logo */
-      color:#000000;
-      padding:28px 16px 20px;
-      text-align:center;
-    }
-    header img{max-width:220px;height:auto;margin-bottom:12px}
-    header h1{margin:0 0 6px 0;font-size:2rem;color:#000000}
-    header p{margin:0 0 14px 0;font-size:1.05rem;color:#333}
+    /* Header */
+    header{background:#ffffff;color:#111;padding:28px 16px 20px;text-align:center}
+    header img{max-width:220px;height:auto;margin-bottom:10px}
+    header h1{margin:0 0 6px 0;font-size:2rem;color:#111}
+    header p{margin:0 0 14px 0;font-size:1.05rem;color:#444}
     .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
     .btn{background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
-    .btn.secondary{background:transparent;color:#000;border:1px solid #00000066}
+    .btn.secondary{background:transparent;color:#111;border:1px solid #111}
 
     /* Nav */
     nav{background:#0e0e0e;display:flex;gap:18px;justify-content:center;padding:10px 12px;font-size:.95rem;flex-wrap:wrap;border-top:1px solid #ffffff14;border-bottom:1px solid #ffffff14}
@@ -45,23 +43,21 @@
     ul{margin:0 0 0 18px}
     .grid{display:grid;grid-template-columns:1fr;gap:14px}
     @media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
-
     .pill{display:inline-block;background:var(--brand-soft);color:var(--ink);padding:4px 10px;border-radius:999px;font-size:.85rem;margin:4px 6px 0 0}
     .links a{display:inline-block;margin-right:14px;color:var(--brand);text-decoration:underline}
     .links a:hover{color:#fff}
     .highlight{font-weight:800}
+    footer{padding:18px;text-align:center;background:#000;color:#fff}
 
-    footer{padding:18px;text-align:center;background:#000000;color:#ffffff}
-
-    /* Make phone/email links white in Contact text only (not buttons) */
-    #contact p a{color:var(--ink);text-decoration:underline}
-    #contact p a:visited{color:var(--ink)}
+    /* Make phone/email links white in Contact section */
+    #contact a{color:var(--ink);text-decoration:underline}
+    #contact a:visited{color:var(--ink)}
   </style>
 </head>
 <body>
 
   <header>
-    <img src="images/vehiclestips-logo.jpg" alt="VehiclesTips Logo">
+    <img src="vehiclestips-logo.png" alt="VehiclesTips Logo">
     <h1>Vehicle Tips Auto Mechanics</h1>
     <p class="highlight">Mobile Mechanic – We Come To You!</p>
     <div class="cta">
@@ -77,8 +73,6 @@
   </nav>
 
   <main>
-
-    <!-- About / Trust -->
     <section id="about">
       <h2>Trusted Mobile Mechanic Near You</h2>
       <p>
@@ -96,18 +90,18 @@
 
       <div class="grid">
         <div>
-          <h3 style="margin:6px 0 6px 0">My Work & Knowledge</h3>
+          <h3>My Work & Knowledge</h3>
           <ul>
             <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
             <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
           </ul>
-          <p class="links" style="margin-top:8px">
+          <p class="links">
             📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
             🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Influencer Page</a>
           </p>
         </div>
         <div>
-          <h3 style="margin:6px 0 6px 0">Follow & Ask</h3>
+          <h3>Follow & Ask</h3>
           <p>
             Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re
             having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and
@@ -121,7 +115,7 @@
         </div>
       </div>
 
-      <div style="margin-top:8px">
+      <div>
         <span class="pill">We Come To You</span>
         <span class="pill">Install Your Parts</span>
         <span class="pill">Honest Quotes</span>
@@ -129,7 +123,6 @@
       </div>
     </section>
 
-    <!-- Services -->
     <section id="services">
       <h2>Our Mobile Mechanic Services</h2>
       <ul>
@@ -150,19 +143,17 @@
       </ul>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
       <p>📍 <strong>Service Area:</strong> Virginia Beach, Norfolk &amp; Chesapeake</p>
       <p>⏰ <strong>Hours:</strong> Mon–Sat, 8 AM – 8 PM</p>
       <p>📞 <strong>Phone:</strong> <a href="tel:+19802923462">(980) 292-3462</a></p>
       <p>✉️ <strong>Email:</strong> <a href="mailto:VehiclesTips@gmail.com">VehiclesTips@gmail.com</a></p>
-      <div class="cta" style="margin-top:8px">
+      <div class="cta">
         <a class="btn" href="tel:+19802923462">📞 Call Now</a>
         <a class="btn" href="mailto:VehiclesTips@gmail.com?subject=Service%20Quote%20Request">✉️ Get a Quote</a>
       </div>
     </section>
-
   </main>
 
   <footer>
