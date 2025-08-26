@@ -6,7 +6,7 @@
   <title>Vehicle Tips Auto Mechanics | Mobile Mechanic – We Come To You!</title>
   <meta name="description" content="Trusted mobile mechanic serving Virginia Beach, Norfolk & Chesapeake. 20+ years experience. We install your parts, offer honest tips & quotes. Call (980) 292-3462." />
 
-  <!-- Favicons (make sure these files are uploaded to the repo root) -->
+  <!-- Favicons (optional; keep if you uploaded these) -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -19,7 +19,7 @@
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
 
-    /* Header (white so your logo stands out) */
+    /* Header (white so your logo pops) */
     header{background:#ffffff;color:#111;text-align:center;padding:28px 16px 20px}
     header img{max-width:260px;height:auto;margin-bottom:10px}
     header h1{margin:0 0 6px;font-size:2rem;color:#111}
@@ -49,20 +49,27 @@
     /* Contact links = white for contrast on dark card */
     #contact a{color:var(--ink);text-decoration:underline}
     #contact a:visited{color:var(--ink)}
+
+    /* Debug panel */
+    details#debug { max-width:960px; margin:10px auto 0; padding:0 16px; }
+    details#debug summary { cursor:pointer; color:#bbb; }
+    #debug ul { background:#0a0a0a; border:1px solid #333; border-radius:8px; padding:8px 12px; list-style:disc; margin:8px 0 0 18px; }
+    #debug li.ok { color:#86efac; }      /* green */
+    #debug li.fail { color:#fca5a5; }    /* red */
   </style>
 </head>
 <body>
 
- <header>
-  <img id="site-logo" alt="VehiclesTips Logo"
-       style="max-width:260px;height:auto;margin-bottom:10px;display:none;">
-  <h1>Vehicle Tips Auto Mechanics</h1>
-  <p class="highlight">Mobile Mechanic – We Come To You!</p>
-  <div class="cta">
-    <a class="btn" href="tel:+19802923462">📞 Call Now: (980) 292-3462</a>
-    <a class="btn secondary" href="mailto:VehiclesTips@gmail.com">✉️ Email Us</a>
-  </div>
-</header>
+  <header>
+    <!-- No src: script sets this dynamically when a valid file is found -->
+    <img id="site-logo" alt="VehiclesTips Logo" style="display:none">
+    <h1>Vehicle Tips Auto Mechanics</h1>
+    <p class="highlight">Mobile Mechanic – We Come To You!</p>
+    <div class="cta">
+      <a class="btn" href="tel:+19802923462">📞 Call Now: (980) 292-3462</a>
+      <a class="btn secondary" href="mailto:VehiclesTips@gmail.com">✉️ Email Us</a>
+    </div>
+  </header>
 
   <nav>
     <a href="#about">About / Trust</a>
@@ -83,7 +90,7 @@
           <ul>
             <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
             <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
-            <li> As a <strong>content creator</strong> passionate about cars, I also collaborate with brands and welcome sponsorship opportunities. Feel free to reach out via <strong>email for more info.</strong>  </li>
+            <li> As a <strong>content creator</strong> passionate about cars, I also collaborate with brands and welcome sponsorship opportunities. Feel free to reach out via <strong>email for more info</strong>.</li>
 
           </ul>
           <p class="links" style="margin-top:8px">
@@ -140,8 +147,15 @@
   </main>
 
   <footer>© 2025 Vehicle Tips Auto Mechanics — Hosted on GitHub Pages</footer>
-    <footer>
-   <script>
+
+  <!-- Debug panel (click to see which paths work) -->
+  <details id="debug">
+    <summary>🔧 Logo debug (click to open)</summary>
+    <ul id="debug-list"></ul>
+  </details>
+
+  <!-- Smart logo loader: tries multiple filenames/paths, shows first that works -->
+  <script>
   (function(){
     const candidates = [
       "vehiclestips-logo.png",
@@ -157,24 +171,35 @@
       "xa.JPG",
       "images/xa.JPG"
     ];
-
     const img = document.getElementById("site-logo");
-    let i = 0;
+    const dbg = document.getElementById("debug-list");
 
-    function tryNext() {
-      if (i >= candidates.length) return;
+    function log(item, ok){
+      const li = document.createElement("li");
+      li.textContent = (ok ? "✅ " : "❌ ") + item;
+      li.className = ok ? "ok" : "fail";
+      dbg.appendChild(li);
+    }
+
+    let i = 0;
+    function tryNext(){
+      if(i >= candidates.length) return;
       const src = candidates[i++];
       const tester = new Image();
       tester.onload = function(){
-        img.src = src + "?v=" + Date.now(); // prevent cache
+        log(src, true);
+        img.src = src + "?v=" + Date.now();
         img.style.display = "inline-block";
       };
-      tester.onerror = tryNext;
+      tester.onerror = function(){
+        log(src, false);
+        tryNext();
+      };
       tester.src = src + "?v=" + Date.now();
     }
-
     tryNext();
   })();
   </script>
 </body>
 </html>
+
