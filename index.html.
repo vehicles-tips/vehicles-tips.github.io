@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vehicle-tips.com</title>
+</head>
+<body>
+  <!-- Navigation menu -->
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="policies.html">Warranty & Policies</a>
+  </nav>
+
+  <h1>Welcome to Vehicle-tips.com</h1>
+  <p>Your trusted resource for vehicle tips and repairs.</p>
+
+  <p>Click the link above to read our Warranty & Policies.</p>
+</body>
+</html>
