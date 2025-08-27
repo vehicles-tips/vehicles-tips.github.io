@@ -5,106 +5,191 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Warranty & Policies – Vehicle-tips.com</title>
   <style>
+    /* Base */
+    * { box-sizing: border-box; }
     body {
-      font-family: system-ui, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #0f172a url('https://images.unsplash.com/photo-1607706189992-eae57862623f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #f8fafc; /* light text */
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: #f8fafc;                /* light text */
       line-height: 1.6;
+      background-color: #0f172a;     /* fallback if image fails */
+      background-image: url('https://images.unsplash.com/photo-1607706189992-eae57862623f?auto=format&fit=crop&w=1600&q=80');
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
     }
+
+    /* Page overlay for readability */
+    .overlay {
+      background: rgba(2, 6, 23, 0.70); /* semi-transparent dark layer */
+      min-height: 100vh;
+    }
+
+    /* Top nav */
     nav {
-      background: rgba(15, 23, 42, 0.9); /* translucent dark bar */
-      padding: 12px;
+      background: rgba(15, 23, 42, 0.90);
       border-bottom: 1px solid #334155;
+      padding: 12px 16px;
     }
     nav a {
-      margin-right: 12px;
-      text-decoration: none;
       color: #f8fafc;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #f97316; /* orange hover */
-    }
-    h1, h2 {
-      color: #f97316; /* orange headings */
-      margin-top: 1em;
-    }
-    .toc {
-      background: rgba(30, 41, 59, 0.85); /* semi-transparent dark box */
-      border: 1px solid #334155;
-      border-radius: 8px;
-      padding: 15px;
-      margin: 20px;
-    }
-    .toc a {
-      color: #f97316; /* orange links */
       text-decoration: none;
-      margin-right: 10px;
+      font-weight: 600;
+      margin-right: 14px;
     }
-    .toc a:hover {
-      text-decoration: underline;
+    nav a:hover { color: #f97316; }   /* orange */
+
+    /* Layout container */
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    /* Headings + links */
+    h1, h2 { color: #f97316; }        /* orange headings */
+    a { color: #f97316; }
+    a:hover { text-decoration: underline; }
+
+    /* TOC + Sections */
+    .toc {
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 18px 0 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
     }
     .section {
-      margin: 20px;
-      background: rgba(15, 23, 42, 0.85); /* translucent background for readability */
-      border-radius: 6px;
-      padding: 15px;
-      border-bottom: 1px solid #334155;
+      margin-top: 18px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 16px;
     }
     .backtop {
       display: inline-block;
       margin-top: 8px;
-      font-size: 0.9rem;
-      color: #f97316; /* orange back-to-top link */
+      font-size: .92rem;
       text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="policies.html">Warranty & Policies</a>
-  </nav>
+  <div class="overlay">
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="policies.html">Warranty & Policies</a>
+    </nav>
 
-  <header style="padding:20px;">
-    <h1 id="top">Warranty & Policies</h1>
-    <p>Vehicle-tips.com Policies, Warranties, Requirements, & Disclaimers</p>
-  </header>
+    <header class="container">
+      <h1 id="top">Warranty & Policies</h1>
+      <p>Vehicle-tips.com Policies, Warranties, Requirements, & Disclaimers</p>
+    </header>
 
-  <!-- Table of contents -->
-  <div class="toc">
-    Jump to:
-    <a href="#safety">Safety</a>
-    <a href="#problems">Problems</a>
-    <a href="#thirdparty">Third-Party Repairs</a>
-    <a href="#workmanship">Workmanship</a>
-    <a href="#diagnostics">Diagnostics</a>
-    <a href="#fragile">Fragile Parts</a>
-    <a href="#payments">Payments</a>
-    <a href="#conduct">Conduct</a>
-    <a href="#deepdiag">In-Depth Diagnostics</a>
-    <a href="#pickup">Part Pickup</a>
-    <a href="#cancel">Cancellations</a>
-    <a href="#weather">Weather</a>
+    <main class="container">
+      <!-- Table of Contents -->
+      <div class="toc" aria-label="Jump links">
+        <strong>Jump to:</strong>
+        <a href="#safety">Safety</a>
+        <a href="#problems">Problems</a>
+        <a href="#thirdparty">Third-Party Repairs</a>
+        <a href="#workmanship">Workmanship</a>
+        <a href="#diagnostics">Diagnostics</a>
+        <a href="#fragile">Fragile Parts</a>
+        <a href="#payments">Payments</a>
+        <a href="#conduct">Conduct</a>
+        <a href="#deepdiag">In-Depth Diagnostics</a>
+        <a href="#pickup">Part Pickup</a>
+        <a href="#cancel">Cancellations</a>
+        <a href="#weather">Weather</a>
+      </div>
+
+      <!-- Sections -->
+      <section id="safety" class="section">
+        <h2>1. Safety & Customer Parts</h2>
+        <p>We may refuse installation of any part that could compromise safety or reliability. Please do not stand over the technician’s workspace.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="problems" class="section">
+        <h2>2. What to Do If a Problem Arises</h2>
+        <p>Contact us immediately if an issue occurs after our work. A diagnostic fee applies if it’s a new or unrelated problem, or if recommendations were ignored. If another shop works on the same issue before our inspection, the warranty is void.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="thirdparty" class="section">
+        <h2>3. Third-Party Repairs</h2>
+        <p>Taking your vehicle to another workshop for the same issue before contacting us voids your warranty.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="workmanship" class="section">
+        <h2>4. Parts & Workmanship</h2>
+        <ul>
+          <li>Workmanship warranty: 3 months or 3,000 miles (whichever comes first).</li>
+          <li>No warranty on customer-supplied parts. If a part fails, new labor charges apply.</li>
+          <li>A/C repairs: workmanship warranty applies. A/C recharges: no warranty or refunds.</li>
+          <li>We only discuss matters with the person on the original invoice.</li>
+        </ul>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="diagnostics" class="section">
+        <h2>5. Diagnostics</h2>
+        <p>Diagnostics may not resolve every issue in a single repair due to vehicle complexity. Incorrect customer self-diagnosis is not our responsibility. Pre-existing issues are excluded.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="fragile" class="section">
+        <h2>6. Fragile Parts</h2>
+        <p>We are not responsible for breakages of plastics, wires, spark plugs, rubber, or metal parts that are brittle, worn, or already damaged.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="payments" class="section">
+        <h2>7. Payments & Refunds</h2>
+        <ul>
+          <li>Payment is due in full upon completion. Stopping a job does not cancel labor charges.</li>
+          <li>Refunds require proof from a licensed mechanic and a printed receipt.</li>
+          <li>If repairs pause due to issues beyond our control, half the labor cost is due that day; the balance upon completion.</li>
+        </ul>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="conduct" class="section">
+        <h2>8. Conduct Policy</h2>
+        <p>Zero tolerance for yelling, cursing, ignoring advice, or threats. Such behavior may result in immediate termination of service without refunds.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="deepdiag" class="section">
+        <h2>9. In-Depth Diagnostics</h2>
+        <p>Cost: $95, applied toward same-day repairs (valid for 30 days if repairable). Excludes A/C diagnostics, non-fixable vehicles, and pre-purchase inspections. Non-refundable.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="pickup" class="section">
+        <h2>10. Part Pickup & Waiting Fees</h2>
+        <p>Technician part pickup: $10 (within 10 miles) or $30 (20+ miles). Customer delays over 30 minutes: $50 per additional 30 minutes unless communicated.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="cancel" class="section">
+        <h2>11. Cancellations</h2>
+        <p>Cancellations within 72 hours of appointment are non-refundable (including diagnostics, maintenance, inspections, A/C recharges, and virtual sessions). Refunds (when allowed) are returned to the original payment method within 5–7 business days.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="weather" class="section">
+        <h2>12. Inclement Weather</h2>
+        <p>During inclement weather, services pause and resume on the next business day.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+    </main>
   </div>
-
-  <!-- Sections (sample) -->
-  <section id="safety" class="section">
-    <h2>1. Safety & Customer Parts</h2>
-    <p>We may refuse installation of any part that could compromise safety or reliability. Please do not stand over technicians while they work.</p>
-    <a class="backtop" href="#top">↑ Back to top</a>
-  </section>
-
-  <section id="problems" class="section">
-    <h2>2. What to Do If a Problem Arises</h2>
-    <p>Contact us immediately if an issue occurs after our work. A diagnostic fee applies if it’s a new or unrelated problem, or if recommendations were ignored. If another shop touches the vehicle first, warranty is void.</p>
-    <a class="backtop" href="#top">↑ Back to top</a>
-  </section>
-
-  <!-- (continue the other sections like before, with class="section") -->
-
 </body>
 </html>
+
