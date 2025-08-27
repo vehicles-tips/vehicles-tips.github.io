@@ -298,6 +298,60 @@
     <a class="btn secondary" href="mailto:VehiclesTips@gmail.com?subject=Book%20Appointment&body=Hi,%20I%20would%20like%20to%20schedule%20a%20service.%20Please%20share%20available%20times.">✉️ Book via Email</a>
   </div>
 </section>
+ 
+    <style>
+    .slides {display:none;}
+    .fade {animation: fadeEffect 1.5s;}
+    @keyframes fadeEffect {from {opacity:.4} to {opacity:1}}
+  </style>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      slides[slideIndex-1].style.display = "block";  
+      setTimeout(showSlides, 3000); // Change every 3s
+    }
+  </script>
+
+    
+    <!-- Image Slideshow -->
+    <section id="slideshow">
+      <h2>🔧 Auto Parts Showcase</h2>
+      <div class="slideshow-container" style="max-width:100%; position:relative; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,.5);">
+
+        <div class="slides fade">
+          <img src="brake.jpg" alt="Brake Parts" style="width:100%">
+        </div>
+
+        <div class="slides fade">
+          <img src="suspension.jpg" alt="Suspension" style="width:100%">
+        </div>
+
+        <div class="slides fade">
+          <img src="radiator.jpg" alt="Radiator" style="width:100%">
+        </div>
+
+        <div class="slides fade">
+          <img src="tuneup.jpg" alt="Tune-Up Spark Plugs" style="width:100%">
+        </div>
+
+        <div class="slides fade">
+          <img src="wheelbearing.jpg" alt="Wheel Bearing" style="width:100%">
+        </div>
+      </div>
+
+      <p style="text-align:center; color:#ccc; font-size:.9em; margin-top:8px;">
+        Featuring: Brake • Suspension • Radiator • Tune-Up • Wheel Bearing
+      </p>
+    </section>
 
 
     <!-- Contact -->
