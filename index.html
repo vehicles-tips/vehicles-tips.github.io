@@ -40,7 +40,16 @@
     @media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
     .pill{display:inline-block;background:var(--brand-soft);color:var(--ink);padding:4px 10px;border-radius:999px;font-size:.85rem;margin:4px 6px 0 0}
     .highlight{font-weight:800}
-    footer{padding:18px;text-align:center;background:#000;color:#fff}
+    footer{
+      background: var(--panel);
+      border-top:1px solid var(--border);
+      text-align:center;
+      padding:20px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    footer a{ color:var(--accent); text-decoration:none; margin:0 8px; }
+    footer a:hover{ text-decoration:underline; }}
 
     .badge{display:inline-block; padding:3px 8px; border-radius:999px; background:#f04a1d; color:#fff; font-size:.75rem; margin-left:8px}
     #contact a{color:var(--ink);text-decoration:underline}
@@ -299,7 +308,224 @@
     </section>
   </main>
 
-  <footer>© 2025 Vehicle Tips LLC Mobile Mechanic</footer>
+  <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Warranty & Policies – Vehicle-tips.com</title>
+  <style>
+    /* ===== Theme Vars ===== */
+    :root{
+      --bg:#0f172a;         /* page background */
+      --panel:#1e293b;      /* cards/boxes */
+      --border:#334155;
+      --text:#f8fafc;
+      --muted:#cbd5e1;
+      --accent:#f97316;     /* ORANGE */
+      --accent-soft:#fb923c;
+    }
+    *{box-sizing:border-box}
+    html, body { height: 100%; }
+    body{
+      margin:0; padding:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+      display:flex; flex-direction:column; min-height:100vh;
+    }
+
+    /* ===== Top Bar (simple + stable) ===== */
+    .vt-header{
+      position: sticky; top: 0; z-index: 50;
+      background: #111827;            /* darker solid for stability */
+      border-bottom:1px solid var(--border);
+    }
+    .vt-header-inner{
+      max-width:1200px; margin:0 auto;
+      display:grid; grid-template-columns:1fr auto auto;
+      gap:14px; align-items:center;
+      padding:10px 16px;
+    }
+    .vt-brand{
+      color: var(--text); text-decoration:none; font-weight:800; letter-spacing:.2px;
+      font-size: clamp(1rem, .9rem + 1vw, 1.25rem);
+    }
+    .vt-nav a{
+      color: var(--text); text-decoration:none; margin:0 10px; font-weight:600;
+    }
+    .vt-nav a[aria-current="page"]{ color: var(--accent); }
+    .vt-nav a:hover{ color: var(--accent); }
+
+    .vt-actions{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+    .vt-btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:999px; text-decoration:none;
+      font-weight:800; letter-spacing:.2px; border:1px solid transparent;
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap; color: var(--text);
+    }
+    .vt-btn:hover{ transform: translateY(-1px); }
+    .vt-btn-call{ background: var(--accent); color:#0b1220; }
+    .vt-btn-call:hover{ background: var(--accent-soft); }
+    .vt-btn-mail{ background: transparent; border-color: var(--border); }
+    .vt-btn-mail:hover{ border-color: var(--accent); color: var(--accent); }
+
+    @media (max-width: 800px){
+      .vt-header-inner{ grid-template-columns:1fr; gap:8px; }
+      .vt-nav{ display:flex; flex-wrap:wrap; gap:8px; }
+      .vt-actions{ justify-content:flex-start; }
+    }
+
+    /* ===== HERO BANNER (safe background syntax) ===== */
+    .hero{
+      min-height:300px;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      background-image:
+        linear-gradient(rgba(15,23,42,.72), rgba(15,23,42,.72)),
+        url("https://images.unsplash.com/photo-1584208123923-cf2dfd4b91b8?auto=format&fit=crop&w=1600&q=80");
+      background-position:center;
+      background-size:cover;
+      background-repeat:no-repeat;
+      border-bottom:1px solid var(--border);
+      padding:32px 16px;
+    }
+    .hero h1{ margin:0 0 6px; font-size:2.2rem; color:var(--accent); }
+    .hero p{ margin:0; color:var(--muted); }
+
+    /* ===== Content ===== */
+    main.wrap{ flex:1 0 auto; }
+    .wrap{ max-width:1000px; margin:0 auto; padding:20px 16px 60px; }
+    .toc{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:14px;
+      margin:18px 0 10px;
+    }
+    .toc a{ color:var(--accent); text-decoration:none; margin:0 10px 6px 0; display:inline-block; }
+    .toc a:hover{ text-decoration:underline; }
+    .updated{ color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+
+    .section{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:16px;
+      margin:18px 0;
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+    h2{ color:var(--accent); margin:0 0 8px; }
+    .backtop{ color:var(--accent); text-decoration:none; font-size:.9rem; display:inline-block; margin-top:8px; }
+
+    /* ===== Footer (matches homepage vibe) ===== */
+    footer{
+      background: #111827;
+      border-top:1px solid var(--border);
+      text-align:center;
+      padding:22px 16px;
+      font-size:.92rem;
+      color:var(--muted);
+      margin-top:auto;
+    }
+    footer .fnav { margin-top:6px; }
+    footer a{ color:var(--accent); text-decoration:none; margin:0 8px; }
+    footer a:hover{ text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP ACTION BAR -->
+  <header class="vt-header">
+    <div class="vt-header-inner">
+      <a class="vt-brand" href="index.html">Vehicle Tips</a>
+
+      <nav class="vt-nav">
+        <a href="index.html">Home</a>
+        <a href="policies.html" aria-current="page">Warranty & Policies</a>
+      </nav>
+
+      <div class="vt-actions">
+        <a class="vt-btn vt-btn-call" href="tel:+17575733154">Call Now: (757) 573-3154</a>
+        <a class="vt-btn vt-btn-mail" href="mailto:vehicletips757@gmail.com?subject=Appointment%20Request">Email Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO (image banner) -->
+  <header class="hero">
+    <div>
+      <h1 id="top">Warranty & Policies</h1>
+      <p>Vehicle-tips.com Policies, Warranties, Requirements, & Disclaimers</p>
+      <p class="updated">Last updated: 2025-08-27</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- TOC -->
+    <div class="toc">
+      Jump to:
+      <a href="#safety">Safety</a>
+      <a href="#problems">Problems</a>
+      <a href="#thirdparty">Third-Party Repairs</a>
+      <a href="#workmanship">Workmanship</a>
+      <a href="#diagnostics">Diagnostics</a>
+      <a href="#fragile">Fragile Parts</a>
+      <a href="#payments">Payments</a>
+      <a href="#conduct">Conduct</a>
+      <a href="#deepdiag">In-Depth Diagnostics</a>
+      <a href="#pickup">Part Pickup</a>
+      <a href="#cancel">Cancellations</a>
+      <a href="#weather">Weather</a>
+    </div>
+
+    <!-- Sections (add all your sections as needed) -->
+    <section id="safety" class="section">
+      <h2>1. Safety & Customer-Supplied Parts</h2>
+      <p>We may refuse installation of any part that could compromise safe, reliable operation. Please do not stand over or interfere with the technician’s workspace during service.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="problems" class="section">
+      <h2>2. What to Do If a Problem Arises</h2>
+      <p>Contact us immediately if an issue occurs after recent work so we can schedule diagnostics. A diagnostic fee applies if the problem is new/unrelated or if recommendations were ignored. Any self-repair or third-party repair before our inspection voids applicable warranties.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="thirdparty" class="section">
+      <h2>3. Third-Party Repairs</h2>
+      <p>Do not take your vehicle to another shop for the same issue before contacting us. If another party works on the vehicle first, your warranty with us is void.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="workmanship" class="section">
+      <h2>4. Parts & Workmanship</h2>
+      <ul>
+        <li>Workmanship warranty: 3 months or 3,000 miles (whichever comes first).</li>
+        <li>We do not supply or warranty parts. If a customer-supplied part fails, new labor charges apply.</li>
+        <li>A/C repairs: workmanship warranty applies. A/C recharges: no warranty or refunds.</li>
+        <li>Service matters are discussed only with the person on the original invoice.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <!-- Continue with sections 5–12 in the same pattern -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Vehicle Tips LLC Mobile Mechanic — All Rights Reserved.
+    <div class="fnav">
+      <a href="index.html">Home</a> |
+      <a href="policies.html">Warranty & Policies</a> |
+      <a href="mailto:vehicletips757@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+
 
   <!-- Your original script preserved as-is -->
   <script>
