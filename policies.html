@@ -10,24 +10,14 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color: #f8fafc;                /* light text */
+      color: #f8fafc;
       line-height: 1.6;
-      background-color: #0f172a;     /* fallback if image fails */
-      background-image: url('https://images.unsplash.com/photo-1607706189992-eae57862623f?auto=format&fit=crop&w=1600&q=80');
-      background-position: center;
-      background-size: cover;
-      background-attachment: fixed;
-    }
-
-    /* Page overlay for readability */
-    .overlay {
-      background: rgba(2, 6, 23, 0.70); /* semi-transparent dark layer */
-      min-height: 100vh;
+      background-color: #0f172a; /* solid dark */
     }
 
     /* Top nav */
     nav {
-      background: rgba(15, 23, 42, 0.90);
+      background: rgba(15, 23, 42, 0.95);
       border-bottom: 1px solid #334155;
       padding: 12px 16px;
     }
@@ -39,6 +29,24 @@
     }
     nav a:hover { color: #f97316; }   /* orange */
 
+    /* Hero banner */
+    .hero {
+      height: 300px;
+      background:
+        linear-gradient(rgba(15,23,42,0.6), rgba(15,23,42,0.6)),
+        url('https://images.unsplash.com/photo-1584208123923-cf2dfd4b91b8?auto=format&fit=crop&w=1920&q=80')
+        center / cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+    .hero-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+    .hero h1 { margin: 0 0 6px; font-size: 2.25rem; color: #f97316; }
+    .hero p  { margin: 0; color: #f8fafc; opacity: .9; }
+
     /* Layout container */
     .container {
       max-width: 980px;
@@ -47,7 +55,7 @@
     }
 
     /* Headings + links */
-    h1, h2 { color: #f97316; }        /* orange headings */
+    h2 { color: #f97316; }        /* orange headings */
     a { color: #f97316; }
     a:hover { text-decoration: underline; }
 
@@ -64,7 +72,7 @@
     }
     .section {
       margin-top: 18px;
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(15, 23, 42, 0.9);
       border: 1px solid #334155;
       border-radius: 10px;
       padding: 16px;
@@ -78,118 +86,120 @@
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="policies.html">Warranty & Policies</a>
-    </nav>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="policies.html">Warranty & Policies</a>
+  </nav>
 
-    <header class="container">
+  <!-- Hero banner -->
+  <header class="hero">
+    <div class="hero-inner">
       <h1 id="top">Warranty & Policies</h1>
       <p>Vehicle-tips.com Policies, Warranties, Requirements, & Disclaimers</p>
-    </header>
+    </div>
+  </header>
 
-    <main class="container">
-      <!-- Table of Contents -->
-      <div class="toc" aria-label="Jump links">
-        <strong>Jump to:</strong>
-        <a href="#safety">Safety</a>
-        <a href="#problems">Problems</a>
-        <a href="#thirdparty">Third-Party Repairs</a>
-        <a href="#workmanship">Workmanship</a>
-        <a href="#diagnostics">Diagnostics</a>
-        <a href="#fragile">Fragile Parts</a>
-        <a href="#payments">Payments</a>
-        <a href="#conduct">Conduct</a>
-        <a href="#deepdiag">In-Depth Diagnostics</a>
-        <a href="#pickup">Part Pickup</a>
-        <a href="#cancel">Cancellations</a>
-        <a href="#weather">Weather</a>
-      </div>
+  <main class="container">
+    <!-- Table of Contents -->
+    <div class="toc" aria-label="Jump links">
+      <strong>Jump to:</strong>
+      <a href="#safety">Safety</a>
+      <a href="#problems">Problems</a>
+      <a href="#thirdparty">Third-Party Repairs</a>
+      <a href="#workmanship">Workmanship</a>
+      <a href="#diagnostics">Diagnostics</a>
+      <a href="#fragile">Fragile Parts</a>
+      <a href="#payments">Payments</a>
+      <a href="#conduct">Conduct</a>
+      <a href="#deepdiag">In-Depth Diagnostics</a>
+      <a href="#pickup">Part Pickup</a>
+      <a href="#cancel">Cancellations</a>
+      <a href="#weather">Weather</a>
+    </div>
 
-      <!-- Sections -->
-      <section id="safety" class="section">
-        <h2>1. Safety & Customer Parts</h2>
-        <p>We may refuse installation of any part that could compromise safety or reliability. Please do not stand over the technician’s workspace.</p>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <!-- Sections -->
+    <section id="safety" class="section">
+      <h2>1. Safety & Customer Parts</h2>
+      <p>We may refuse installation of any part that could compromise safety or reliability. Please do not stand over the technician’s workspace.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="problems" class="section">
-        <h2>2. What to Do If a Problem Arises</h2>
-        <p>Contact us immediately if an issue occurs after our work. A diagnostic fee applies if it’s a new or unrelated problem, or if recommendations were ignored. If another shop works on the same issue before our inspection, the warranty is void.</p>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <section id="problems" class="section">
+      <h2>2. What to Do If a Problem Arises</h2>
+      <p>Contact us immediately if an issue occurs after our work. A diagnostic fee applies if it’s a new or unrelated problem, or if recommendations were ignored. If another shop works on the same issue before our inspection, the warranty is void.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="thirdparty" class="section">
-        <h2>3. Third-Party Repairs</h2>
-        <p>Taking your vehicle to another workshop for the same issue before contacting us voids your warranty.</p>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <section id="thirdparty" class="section">
+      <h2>3. Third-Party Repairs</h2>
+      <p>Taking your vehicle to another workshop for the same issue before contacting us voids your warranty.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="workmanship" class="section">
-        <h2>4. Parts & Workmanship</h2>
-        <ul>
-          <li>Workmanship warranty: 3 months or 3,000 miles (whichever comes first).</li>
-          <li>No warranty on customer-supplied parts. If a part fails, new labor charges apply.</li>
-          <li>A/C repairs: workmanship warranty applies. A/C recharges: no warranty or refunds.</li>
-          <li>We only discuss matters with the person on the original invoice.</li>
-        </ul>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <section id="workmanship" class="section">
+      <h2>4. Parts & Workmanship</h2>
+      <ul>
+        <li>Workmanship warranty: 3 months or 3,000 miles (whichever comes first).</li>
+        <li>No warranty on customer-supplied parts. If a part fails, new labor charges apply.</li>
+        <li>A/C repairs: workmanship warranty applies. A/C recharges: no warranty or refunds.</li>
+        <li>We only discuss matters with the person on the original invoice.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="diagnostics" class="section">
-        <h2>5. Diagnostics</h2>
-        <p>Diagnostics may not resolve every issue in a single repair due to vehicle complexity. Incorrect customer self-diagnosis is not our responsibility. Pre-existing issues are excluded.</p>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <section id="diagnostics" class="section">
+      <h2>5. Diagnostics</h2>
+      <p>Diagnostics may not resolve every issue in a single repair due to vehicle complexity. Incorrect customer self-diagnosis is not our responsibility. Pre-existing issues are excluded.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="fragile" class="section">
-        <h2>6. Fragile Parts</h2>
-        <p>We are not responsible for breakages of plastics, wires, spark plugs, rubber, or metal parts that are brittle, worn, or already damaged.</p>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <section id="fragile" class="section">
+      <h2>6. Fragile Parts</h2>
+      <p>We are not responsible for breakages of plastics, wires, spark plugs, rubber, or metal parts that are brittle, worn, or already damaged.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="payments" class="section">
-        <h2>7. Payments & Refunds</h2>
-        <ul>
-          <li>Payment is due in full upon completion. Stopping a job does not cancel labor charges.</li>
-          <li>Refunds require proof from a licensed mechanic and a printed receipt.</li>
-          <li>If repairs pause due to issues beyond our control, half the labor cost is due that day; the balance upon completion.</li>
-        </ul>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <section id="payments" class="section">
+      <h2>7. Payments & Refunds</h2>
+      <ul>
+        <li>Payment is due in full upon completion. Stopping a job does not cancel labor charges.</li>
+        <li>Refunds require proof from a licensed mechanic and a printed receipt.</li>
+        <li>If repairs pause due to issues beyond our control, half the labor cost is due that day; the balance upon completion.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="conduct" class="section">
-        <h2>8. Conduct Policy</h2>
-        <p>Zero tolerance for yelling, cursing, ignoring advice, or threats. Such behavior may result in immediate termination of service without refunds.</p>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <section id="conduct" class="section">
+      <h2>8. Conduct Policy</h2>
+      <p>Zero tolerance for yelling, cursing, ignoring advice, or threats. Such behavior may result in immediate termination of service without refunds.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="deepdiag" class="section">
-        <h2>9. In-Depth Diagnostics</h2>
-        <p>Cost: $95, applied toward same-day repairs (valid for 30 days if repairable). Excludes A/C diagnostics, non-fixable vehicles, and pre-purchase inspections. Non-refundable.</p>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <section id="deepdiag" class="section">
+      <h2>9. In-Depth Diagnostics</h2>
+      <p>Cost: $95, applied toward same-day repairs (valid for 30 days if repairable). Excludes A/C diagnostics, non-fixable vehicles, and pre-purchase inspections. Non-refundable.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="pickup" class="section">
-        <h2>10. Part Pickup & Waiting Fees</h2>
-        <p>Technician part pickup: $10 (within 10 miles) or $30 (20+ miles). Customer delays over 30 minutes: $50 per additional 30 minutes unless communicated.</p>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <section id="pickup" class="section">
+      <h2>10. Part Pickup & Waiting Fees</h2>
+      <p>Technician part pickup: $10 (within 10 miles) or $30 (20+ miles). Customer delays over 30 minutes: $50 per additional 30 minutes unless communicated.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="cancel" class="section">
-        <h2>11. Cancellations</h2>
-        <p>Cancellations within 72 hours of appointment are non-refundable (including diagnostics, maintenance, inspections, A/C recharges, and virtual sessions). Refunds (when allowed) are returned to the original payment method within 5–7 business days.</p>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
+    <section id="cancel" class="section">
+      <h2>11. Cancellations</h2>
+      <p>Cancellations within 72 hours of appointment are non-refundable (including diagnostics, maintenance, inspections, A/C recharges, and virtual sessions). Refunds (when allowed) are returned to the original payment method within 5–7 business days.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
 
-      <section id="weather" class="section">
-        <h2>12. Inclement Weather</h2>
-        <p>During inclement weather, services pause and resume on the next business day.</p>
-        <a class="backtop" href="#top">↑ Back to top</a>
-      </section>
-    </main>
-  </div>
+    <section id="weather" class="section">
+      <h2>12. Inclement Weather</h2>
+      <p>During inclement weather, services pause and resume on the next business day.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+  </main>
 </body>
 </html>
+
 
