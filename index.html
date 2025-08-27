@@ -1,348 +1,437 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vehicles Tips Auto Mechanic | Mobile Mechanic – We Come To You!</title>
-  <meta name="description" content="Trusted mobile mechanic serving Virginia Beach, Norfolk & Chesapeake. 20+ years experience. We install your parts, offer honest tips & quotes. Call (980) 292-3462." />
-  <style>
-    :root{
-      --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cccccc;
-      --brand:#f04a1d; --brand-ink:#ffffff; --brand-soft:#f04a1d22;
+import React, { useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { Calculator, Printer, Copy, CheckCircle2, AlertTriangle, DollarSign, BadgePercent, Link as LinkIcon, Info } from "lucide-react";
+
+// --- Helper utils -----------------------------------------------------------
+const fmtMoney = (n: number) =>
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(
+    isFinite(n) ? n : 0
+  );
+
+const clamp = (n: number, min: number, max: number) => Math.min(Math.max(n, min), max);
+
+const genQuoteId = () => `PMQ-${Date.now().toString(36).toUpperCase()}`;
+
+const sevenDaysFromNow = () => {
+  const d = new Date();
+  d.setDate(d.getDate() + 7);
+  d.setHours(23, 59, 59, 0);
+  return d;
+};
+
+// --- Types ------------------------------------------------------------------
+interface Quote {
+  id: string;
+  company: string;
+  productName: string;
+  sku: string;
+  quantity: number;
+  ourPrice: number;
+  competitorPrice: number;
+  shippingAdj: number;
+  matchedPrice: number;
+  savings: number;
+  competitorName: string;
+  competitorUrl: string;
+  expiresAt: Date;
+  notes?: string;
+}
+
+// --- Main Component ---------------------------------------------------------
+export default function PriceMatchQuote() {
+  // Basic business settings (adjust to your policy)
+  const [company, setCompany] = useState("Acme Retail Co.");
+  const [maxDiscountPct, setMaxDiscountPct] = useState<number>(30); // cap relative to our price
+  const [floorPrice, setFloorPrice] = useState<number>(0); // absolute floor
+
+  // Form state
+  const [productName, setProductName] = useState("");
+  const [sku, setSku] = useState("");
+  const [quantity, setQuantity] = useState<number>(1);
+  const [ourPrice, setOurPrice] = useState<string>("");
+  const [competitorPrice, setCompetitorPrice] = useState<string>("");
+  const [shippingAdj, setShippingAdj] = useState<string>("0"); // +shipping if competitor charges shipping, negative if we do
+  const [competitorName, setCompetitorName] = useState("");
+  const [competitorUrl, setCompetitorUrl] = useState("");
+  const [taxRate, setTaxRate] = useState<string>("0"); // optional, local sales tax % for preview
+  const [notes, setNotes] = useState<string>("");
+
+  // Eligibility checklist (adjust to your policy)
+  const [identicalModel, setIdenticalModel] = useState(true);
+  const [inStock, setInStock] = useState(true);
+  const [authorizedSeller, setAuthorizedSeller] = useState(true);
+  const [notMarketplace, setNotMarketplace] = useState(true); // not auction/marketplace/membership-only
+  const [notClearance, setNotClearance] = useState(true); // no clearance/open-box/refurb
+
+  const parsed = useMemo(() => {
+    const our = parseFloat(ourPrice) || 0;
+    const comp = parseFloat(competitorPrice) || 0;
+    const ship = parseFloat(shippingAdj || "0") || 0;
+    const tax = (parseFloat(taxRate || "0") || 0) / 100;
+    return { our, comp, ship, tax };
+  }, [ourPrice, competitorPrice, shippingAdj, taxRate]);
+
+  const eligible = identicalModel && inStock && authorizedSeller && notMarketplace && notClearance;
+
+  // Core calculation — simple, transparent rules
+  const { matchedPriceEach, reason } = useMemo(() => {
+    const { our, comp, ship } = parsed;
+
+    if (!eligible) return { matchedPriceEach: our, reason: "Not eligible under current policy" };
+
+    // Effective competitor price includes shipping adj if desired
+    const effectiveComp = Math.max(0, comp + ship);
+    // Baseline match: lower of our price and effective competitor price
+    let candidate = Math.min(our, effectiveComp);
+
+    // Apply business guardrails
+    const minAllowedByPercent = our * (1 - clamp(maxDiscountPct, 0, 95) / 100);
+    candidate = Math.max(candidate, minAllowedByPercent);
+    candidate = Math.max(candidate, Math.max(0, floorPrice));
+
+    const why: string[] = [];
+    if (effectiveComp < our) why.push("Matched competitor's lower price");
+    if (candidate === minAllowedByPercent) why.push(`Capped by ${maxDiscountPct}% max discount`);
+    if (candidate === Math.max(0, floorPrice) && floorPrice > 0) why.push("Raised to floor price");
+    if (why.length === 0) why.push("Our price already beats competitor");
+
+    return { matchedPriceEach: candidate, reason: why.join(" · ") };
+  }, [parsed, eligible, maxDiscountPct, floorPrice]);
+
+  const quote: Quote | null = useMemo(() => {
+    const { our, comp, ship } = parsed;
+    if (!productName || our <= 0 || quantity <= 0) return null;
+
+    const each = matchedPriceEach;
+    const total = each * quantity;
+    const baseTotal = our * quantity;
+
+    return {
+      id: genQuoteId(),
+      company,
+      productName,
+      sku,
+      quantity,
+      ourPrice: our,
+      competitorPrice: comp,
+      shippingAdj: ship,
+      matchedPrice: each,
+      savings: Math.max(0, baseTotal - total),
+      competitorName,
+      competitorUrl,
+      expiresAt: sevenDaysFromNow(),
+      notes,
+    };
+  }, [company, productName, sku, quantity, parsed, matchedPriceEach, competitorName, competitorUrl, notes]);
+
+  const [lockedQuote, setLockedQuote] = useState<Quote | null>(null);
+
+  const lockQuote = () => {
+    if (!eligible) return;
+    if (quote) setLockedQuote(quote);
+  };
+
+  const copyQuote = async () => {
+    const q = lockedQuote ?? quote;
+    if (!q) return;
+    const lines = [
+      `${q.company} — Price Match Quote (${q.id})`,
+      `Product: ${q.productName}${q.sku ? ` (SKU: ${q.sku})` : ""}`,
+      `Qty: ${q.quantity}`,
+      `Our price each: ${fmtMoney(q.ourPrice)}`,
+      `Competitor price each: ${fmtMoney(q.competitorPrice)}${q.shippingAdj ? ` (shipping adj ${fmtMoney(q.shippingAdj)})` : ""}`,
+      `Matched price each: ${fmtMoney(q.matchedPrice)}`,
+      `Subtotal: ${fmtMoney(q.matchedPrice * q.quantity)}`,
+      `Estimated tax (${(parsed.tax * 100).toFixed(2)}%): ${fmtMoney(q.matchedPrice * q.quantity * parsed.tax)}`,
+      `Total est.: ${fmtMoney(q.matchedPrice * q.quantity * (1 + parsed.tax))}`,
+      `Savings vs. our base: ${fmtMoney(q.savings)}`,
+      `Competitor: ${q.competitorName || "—"}${q.competitorUrl ? ` — ${q.competitorUrl}` : ""}`,
+      `Expires: ${q.expiresAt.toLocaleString()}`,
+      q.notes ? `Notes: ${q.notes}` : "",
+    ].filter(Boolean);
+
+    try {
+      await navigator.clipboard.writeText(lines.join("\n"));
+    } catch {
+      // no-op
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  };
 
-    /* Header with background image */
-    header{
-      background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600') center/cover no-repeat;
-      color:#fff; text-align:center; padding:60px 16px; position:relative;
-    }
-    header::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55)}
-    header *{position:relative; z-index:1}
-    header h1{margin:0 0 6px;font-size:2rem;color:#fff}
-    header p{margin:0 0 14px;font-size:1.05rem;color:#fff}
-    .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-    .btn{background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
-    .btn.secondary{background:transparent;color:#fff;border:1px solid #fff}
+  const printAreaId = "pmq-print";
 
-    /* Nav */
-    nav{background:#0e0e0e;display:flex;gap:18px;justify-content:center;padding:10px 12px;font-size:.95rem;flex-wrap:wrap;border-top:1px solid #ffffff14;border-bottom:1px solid #ffffff14}
-    nav a{color:var(--brand);text-decoration:none;font-weight:700}
-    nav a:hover{color:#fff}
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 p-4 md:p-8">
+      <div className="mx-auto max-w-6xl space-y-6">
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+            <div>
+              <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">Price Match Quote</h1>
+              <p className="text-slate-600 mt-1">Generate a customer-ready quote under your Price Match Guarantee policy.</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <Input className="w-52" value={company} onChange={(e) => setCompany(e.target.value)} placeholder="Company name" />
+              <Badge variant="secondary">Live Preview</Badge>
+            </div>
+          </div>
+        </motion.div>
 
-    /* Layout */
-    main{max-width:960px;margin:20px auto;padding:0 16px}
-    section{background:var(--card);border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.5);padding:18px;margin:16px 0}
-    h2{margin:6px 0 10px;font-size:1.35rem;color:var(--brand)}
-    ul{margin:0 0 0 18px}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px}
-    @media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
-    .pill{display:inline-block;background:var(--brand-soft);color:var(--ink);padding:4px 10px;border-radius:999px;font-size:.85rem;margin:4px 6px 0 0}
-    .links a{display:inline-block;margin-right:14px;color:var(--brand);text-decoration:underline}
-    .links a:hover{color:#fff}
-    .highlight{font-weight:800}
-    footer{padding:18px;text-align:center;background:#000;color:#fff}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Left: Form */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Calculator className="h-5 w-5" /> Quote Inputs
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>Product name</Label>
+                  <Input value={productName} onChange={(e) => setProductName(e.target.value)} placeholder="e.g., UltraWidget 3000" />
+                </div>
+                <div className="space-y-2">
+                  <Label>SKU (optional)</Label>
+                  <Input value={sku} onChange={(e) => setSku(e.target.value)} placeholder="e.g., UW-3000-BLK" />
+                </div>
+                <div className="space-y-2">
+                  <Label>Quantity</Label>
+                  <Input type="number" min={1} value={quantity} onChange={(e) => setQuantity(Number(e.target.value) || 1)} />
+                </div>
+                <div className="space-y-2">
+                  <Label>Local tax % (optional)</Label>
+                  <Input type="number" min={0} step="0.01" value={taxRate} onChange={(e) => setTaxRate(e.target.value)} placeholder="0" />
+                </div>
+              </div>
 
-    .badge{display:inline-block; padding:3px 8px; border-radius:999px; background:#f04a1d; color:#fff; font-size:.75rem; margin-left:8px}
-    #contact a{color:var(--ink);text-decoration:underline}
-    #contact a:visited{color:var(--ink)}
-  </style>
-</head>
-<body>
+              <Separator />
 
-  <header>
-    <h1>Vehicle Tips Auto Mechanics</h1>
-    <p class="highlight">Mobile Mechanic – We Come To You!</p>
-    <div class="cta">
-      <a class="btn" href="tel:+19802923462">📞 Call Now: (980) 292-3462</a>
-      <a class="btn secondary" href="mailto:VehiclesTips@gmail.com">✉️ Email Us</a>
-    </div>
-  </header>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="space-y-2">
+                  <Label>Our price (each)</Label>
+                  <Input type="number" min={0} step="0.01" value={ourPrice} onChange={(e) => setOurPrice(e.target.value)} placeholder="0.00" />
+                </div>
+                <div className="space-y-2">
+                  <Label>Competitor price (each)</Label>
+                  <Input type="number" min={0} step="0.01" value={competitorPrice} onChange={(e) => setCompetitorPrice(e.target.value)} placeholder="0.00" />
+                </div>
+                <div className="space-y-2">
+                  <Label>Shipping adj. (each)</Label>
+                  <Input type="number" step="0.01" value={shippingAdj} onChange={(e) => setShippingAdj(e.target.value)} placeholder="0.00" />
+                  <p className="text-xs text-slate-500">Include competitor shipping (+) or remove ours (−).</p>
+                </div>
+              </div>
 
-  <nav>
-    <a href="#about">About / Trust</a>
-    <a href="#services">Services</a>
-    <a href="#analysis">Vehicle Analysis</a>
-    <a href="#brakes">Brake Pricing</a>
-    <a href="#payments">Payments</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#appointment">Appointments</a>
-    <a href="#contact">Contact</a>
-  </nav>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>Competitor name (optional)</Label>
+                  <Input value={competitorName} onChange={(e) => setCompetitorName(e.target.value)} placeholder="e.g., BestBuy" />
+                </div>
+                <div className="space-y-2">
+                  <Label>Competitor product URL (optional)</Label>
+                  <Input value={competitorUrl} onChange={(e) => setCompetitorUrl(e.target.value)} placeholder="https://…" />
+                </div>
+              </div>
 
-  <main>
-    <!-- About -->
-    <section id="about">
-      <h2>Trusted Mobile Mechanic Near You</h2>
-      <p>Looking for a mobile mechanic you can trust in <strong>Virginia Beach, Norfolk, or Chesapeake</strong>? Vehicle Tips Auto Mechanics has over <strong>20 years of experience</strong> working on cars of all makes and models.</p>
-      <p>Whether you need reliable service to save money, someone to <strong>install your parts</strong>, or just honest <strong>tips and advice</strong>, I’m always happy to help. Your car deserves the right care — at the right price.</p>
-      <p>I studied at <strong>ATi School of Automotive Technology</strong> and hold a valid <strong>MAC License for Air Conditioning systems</strong>.</p>
-    </section>
+              <Separator />
 
-    <!-- Only change: responsive YouTube embed CSS -->
-    <style>
-      /* Responsive YouTube Embed */
-      .video-container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 ratio */
-        height: 0;
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 4px 14px rgba(0,0,0,.5);
-        margin-top: 12px;
-      }
-      .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-center justify-between rounded-xl border p-3">
+                  <div>
+                    <p className="text-sm font-medium">Identical model / configuration</p>
+                    <p className="text-xs text-slate-500">Same brand, SKU, specs, and warranty.</p>
+                  </div>
+                  <Switch checked={identicalModel} onCheckedChange={setIdenticalModel} />
+                </div>
+                <div className="flex items-center justify-between rounded-xl border p-3">
+                  <div>
+                    <p className="text-sm font-medium">Competitor item in-stock</p>
+                    <p className="text-xs text-slate-500">Available for immediate purchase.</p>
+                  </div>
+                  <Switch checked={inStock} onCheckedChange={setInStock} />
+                </div>
+                <div className="flex items-center justify-between rounded-xl border p-3">
+                  <div>
+                    <p className="text-sm font-medium">Authorized seller</p>
+                    <p className="text-xs text-slate-500">Not gray market.</p>
+                  </div>
+                  <Switch checked={authorizedSeller} onCheckedChange={setAuthorizedSeller} />
+                </div>
+                <div className="flex items-center justify-between rounded-xl border p-3">
+                  <div>
+                    <p className="text-sm font-medium">Not marketplace/auction</p>
+                    <p className="text-xs text-slate-500">Excludes membership-only or peer listings.</p>
+                  </div>
+                  <Switch checked={notMarketplace} onCheckedChange={setNotMarketplace} />
+                </div>
+                <div className="flex items-center justify-between rounded-xl border p-3">
+                  <div>
+                    <p className="text-sm font-medium">Not clearance/open-box/refurb</p>
+                    <p className="text-xs text-slate-500">New, sealed items only.</p>
+                  </div>
+                  <Switch checked={notClearance} onCheckedChange={setNotClearance} />
+                </div>
+              </div>
 
-      /* Button style */
-      .btn-watch {
-        display: inline-block;
-        margin-top: 12px;
-        background: var(--brand);
-        color: var(--brand-ink);
-        padding: 10px 16px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 700;
-        box-shadow: 0 4px 14px rgba(0,0,0,.35);
-        transition: transform 0.2s ease, background 0.2s ease;
-      }
-      .btn-watch:hover { transform: scale(1.05); background:#d63e18; }
-    </style>
+              <Separator />
 
-    <div class="grid">
-      <div>
-        <h3 style="margin:6px 0 6px 0">My Work & Knowledge</h3>
-        <ul>
-          <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
-          <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
-        </ul>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="space-y-2">
+                  <Label>Max discount %</Label>
+                  <Input type="number" min={0} max={95} step={1} value={maxDiscountPct}
+                    onChange={(e) => setMaxDiscountPct(clamp(Number(e.target.value) || 0, 0, 95))} />
+                </div>
+                <div className="space-y-2">
+                  <Label>Absolute floor price (each)</Label>
+                  <Input type="number" min={0} step="0.01" value={floorPrice}
+                    onChange={(e) => setFloorPrice(Math.max(0, Number(e.target.value) || 0))} />
+                </div>
+                <div className="space-y-2">
+                  <Label>Internal notes (optional)</Label>
+                  <Textarea value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Context for your team…" />
+                </div>
+              </div>
+            </CardContent>
+            <CardFooter className="justify-between">
+              <div className="flex items-center gap-2 text-sm">
+                {eligible ? (
+                  <span className="inline-flex items-center gap-1 text-emerald-600"><CheckCircle2 className="h-4 w-4"/> Eligible</span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 text-amber-600"><AlertTriangle className="h-4 w-4"/> Not eligible</span>
+                )}
+                <span className="text-slate-500">· {reason}</span>
+              </div>
+              <div className="flex gap-2">
+                <Button variant="secondary" onClick={copyQuote} className="gap-2"><Copy className="h-4 w-4"/>Copy</Button>
+                <Button onClick={() => window.print()} className="gap-2"><Printer className="h-4 w-4"/>Print</Button>
+                <Button disabled={!eligible || !quote} onClick={lockQuote} className="gap-2">
+                  <BadgePercent className="h-4 w-4"/> Generate Quote
+                </Button>
+              </div>
+            </CardFooter>
+          </Card>
 
-        <p class="animated-links" style="margin-top:8px">
-          📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
-          🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Influencer Page</a>
-        </p>
+          {/* Right: Preview */}
+          <Card id={printAreaId} className="relative overflow-hidden">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <DollarSign className="h-5 w-5" /> Quote Preview
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {!quote ? (
+                <div className="text-slate-500 text-sm">Enter details on the left to preview a quote.</div>
+              ) : (
+                <motion.div initial={{ opacity: 0.5, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h2 className="text-xl font-semibold">{company}</h2>
+                      <p className="text-xs text-slate-500">Price Match Guarantee — Customer Quote</p>
+                    </div>
+                    <div className="text-right">
+                      <Badge variant="secondary">{lockedQuote ? lockedQuote.id : quote.id}</Badge>
+                      <p className="text-xs text-slate-500">Expires {(
+                        (lockedQuote?.expiresAt ?? quote.expiresAt).toLocaleString()
+                      )}</p>
+                    </div>
+                  </div>
 
-        <!-- Embedded YouTube video (wrapped responsively) -->
-        <div class="video-container">
-          <iframe
-            src="https://www.youtube.com/embed/w7hTRkhH5B8?si=J1rSMHP1HsFs0TxG"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
+                  <div className="rounded-2xl border p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-xs uppercase text-slate-500">Product</p>
+                      <p className="font-medium">
+                        {quote.productName} {quote.sku ? <span className="text-slate-500">(SKU {quote.sku})</span> : null}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase text-slate-500">Quantity</p>
+                      <p className="font-medium">{quote.quantity}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase text-slate-500">Our price (each)</p>
+                      <p className="font-medium">{fmtMoney(quote.ourPrice)}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase text-slate-500">Competitor (each)</p>
+                      <p className="font-medium">{fmtMoney(quote.competitorPrice)}{quote.shippingAdj ? <span className="text-slate-500"> (ship adj {fmtMoney(quote.shippingAdj)})</span> : null}</p>
+                      {(quote.competitorName || quote.competitorUrl) && (
+                        <div className="flex items-center gap-1 text-xs text-slate-500 mt-1">
+                          <LinkIcon className="h-3.5 w-3.5"/>
+                          <span>
+                            {quote.competitorName || "Competitor"}
+                            {quote.competitorUrl ? (
+                              <>
+                                {" "}·{" "}
+                                <a href={quote.competitorUrl} target="_blank" rel="noreferrer" className="underline">link</a>
+                              </>
+                            ) : null}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="rounded-2xl border p-4 bg-slate-50">
+                    <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+                      <div>
+                        <p className="text-xs uppercase text-slate-500">Matched price (each)</p>
+                        <p className="text-2xl font-semibold">{fmtMoney(lockedQuote?.matchedPrice ?? quote.matchedPrice)}</p>
+                        <p className="text-xs text-slate-500">{reason}</p>
+                      </div>
+                      <div className="text-right space-y-1">
+                        <p className="text-sm">Subtotal: <span className="font-medium">{fmtMoney((lockedQuote?.matchedPrice ?? quote.matchedPrice) * quote.quantity)}</span></p>
+                        <p className="text-sm">Est. tax ({(parsed.tax*100).toFixed(2)}%): <span className="font-medium">{fmtMoney((lockedQuote?.matchedPrice ?? quote.matchedPrice) * quote.quantity * parsed.tax)}</span></p>
+                        <Separator />
+                        <p className="text-base">Est. total: <span className="font-semibold">{fmtMoney((lockedQuote?.matchedPrice ?? quote.matchedPrice) * quote.quantity * (1 + parsed.tax))}</span></p>
+                        <p className="text-xs text-emerald-600">You save {fmtMoney(quote.savings)} vs. our base.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {(notes || lockedQuote) && (
+                    <div className="rounded-2xl border p-4">
+                      <p className="text-xs uppercase text-slate-500 mb-1">Notes</p>
+                      <p className="text-sm whitespace-pre-wrap">{notes || "—"}</p>
+                    </div>
+                  )}
+
+                  <div className="rounded-2xl border p-4 print:border-none print:p-0">
+                    <p className="text-xs uppercase text-slate-500 mb-2">Price Match Guarantee — Key Terms</p>
+                    <ul className="list-disc pl-5 text-xs text-slate-600 space-y-1">
+                      <li>Item must be identical (brand, model/SKU, specs) and in-stock at both {company} and the competitor.</li>
+                      <li>Competitor must be an authorized U.S. retailer; excludes auctions, marketplace/reseller listings, membership-only pricing, and pricing errors.</li>
+                      <li>Price comparison reflects required fees including shipping; taxes may vary by jurisdiction.</li>
+                      <li>Excludes clearance, open-box, refurbished, used, or limited-time doorbuster promotions.</li>
+                      <li>Limit one matched price per customer per item. Not combinable with other offers. Subject to verification.</li>
+                      <li>Quote valid until { (lockedQuote?.expiresAt ?? quote.expiresAt).toLocaleString() } unless withdrawn due to error or policy changes.</li>
+                    </ul>
+                    <div className="mt-3 flex items-start gap-2 text-[11px] text-slate-500">
+                      <Info className="h-3.5 w-3.5 mt-0.5"/>
+                      <p>This sample UI implements common industry rules. Customize to your official policy and consult your legal team before use.</p>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </CardContent>
+          </Card>
         </div>
-
-        <!-- Watch More Button -->
-        <div style="text-align:center;">
-          <a class="btn-watch" href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">▶️ Watch More on YouTube</a>
-        </div>
       </div>
 
-      <div>
-        <h3 style="margin:6px 0 6px 0">Follow & Ask</h3>
-        <p>
-          Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re
-          having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and
-          buy the right parts.
-        </p>
-        <p>
-          Looking for a specific part or need a <strong>repair quote</strong>? You’re always welcome to ask. I may not reply
-          instantly, but I’ll respond as soon as I’m available. I’m also proud to be <strong>Filipino 🇵🇭</strong> and
-          communicate clearly to make sure you get honest, quality service. 💪😎
-        </p>
-      </div>
+      <style>{`
+        @media print {
+          body { background: white; }
+          #${printAreaId} { box-shadow: none; border: none; }
+          button, input, textarea, .shrink-on-print { display: none !important; }
+        }
+      `}</style>
     </div>
+  );
+}
 
-    <!-- Services -->
-    <section id="services">
-      <h2>Our Mobile Mechanic Services</h2>
-      <ul>
-        <li>Cabin and air filter replacement</li>
-        <li>Starting and charging diagnostic</li>
-        <li>Engine diagnostic</li>
-        <li>Check engine light diagnostic</li>
-        <li>Battery jump start</li>
-        <li>Steering and suspension repair</li>
-        <li>Fluid flush and fuel filter service</li>
-        <li>Heating and cooling service</li>
-        <li>Overheating diagnostic</li>
-        <li>Air conditioner diagnostic</li>
-        <li>Tune-up service</li>
-        <li>Small engine repair</li>
-        <li>Windshield wiper diagnostic</li>
-        <li>Much more — just ask!</li>
-      </ul>
-      <p style="margin-top:10px; color:#ccc;">
-        💡 <em>Note: Standard services are labor only. Parts not included. A <strong>fluid disposal / old parts fee</strong> starting at <strong>$10</strong> may apply.</em>
-        <p style="margin-top:10px; color:#ccc;">
-  💡 <em>I don’t charge by the hour. All jobs are quoted at a 
-  <strong>flat-rate price</strong> before work begins — so you always know 
-  exactly what you’ll pay, with no surprises.</em>
-<p style="margin-top:10px; color:#ccc;">
-  ✅ <strong>Flat-rate pricing only</strong> — never hourly charges.
-</p>
-
-      </p>
-    </section>
-
-    <!-- Vehicle Analysis -->
-    <section id="analysis">
-      <h2>🚗 Complete Vehicle Analysis — $49.99 <span class="badge">⭐ Popular</span></h2>
-      <p>A full <strong>health and condition check</strong> before repairs or a trip. We inspect your car from the
-      <strong>inside, outside, and underneath</strong> and provide a clear report.</p>
-      <ul>
-        <li>Brake evaluation: pad life, rotor condition/spec, fluid condition</li>
-        <li>Underbody, leaks, belts & hoses, visible wear</li>
-        <li>Test-drive assessment: noise, vibration, steering, braking feel</li>
-        <li>Interior & exterior visual check: lights, wipers, tires, bulbs</li>
-        <li>OBD-II scan for codes and pending issues</li>
-        <li>Notes on smells/sounds/feel to catch early problems</li>
-      </ul>
-      <p style="color:#ccc;"><em>Note: This is <strong>not a state inspection</strong>, but a <strong>vehicle analysis</strong> focused on overall health and condition.</em></p>
-
-      <!-- Highlight box -->
-      <div style="background:#222;padding:14px;border-radius:12px;margin:16px 0;border-left:4px solid var(--brand)">
-        <p style="margin:0;font-weight:600;color:#fff;">
-          ✅ Perfect if you’re <strong>buying a used car</strong> — know exactly what you’re getting.<br>
-          ✅ Planning to <strong>sell your car</strong>? Get a condition check first so you know where you stand.
-        </p>
-        <p style="margin:8px 0 0;color:#ccc;font-size:.95rem;">
-          <em>Not a state inspection — this is a detailed health & condition analysis to help you make smart decisions.</em>
-        </p>
-      </div>
-
-      <!-- What to Expect -->
-      <h3 style="margin-top:18px;color:#f04a1d;">What to Expect During the Analysis</h3>
-      <ul>
-        <li>⏰ Average time: 45–60 minutes depending on vehicle</li>
-        <li>🚗 Vehicle must be parked in a safe, accessible area</li>
-        <li>🔑 Please have your keys ready and enough fuel for a short road test</li>
-        <li>📋 You’ll receive a clear summary of findings — verbally and with photos (if needed)</li>
-        <li>📋 You’ll receive a clear summary of findings — verbally and with photos (if needed)</li>
-      </ul>
-    </section>
-
-    <!-- Brake Services -->
-    <section id="brakes">
-      <h2>🔧 Brake Services & Pricing <span class="badge">⭐ Most Ask</span></h2>
-      <ul>
-        <li>🛠️ <strong>Brake pad replacement (without rotor):</strong> Starting $99 (labor only)</li>
-        <li>🛠️ <strong>Brake pad replacement w/ rotor:</strong> Labor only, rotor price depends on vehicle type</li>
-        <li>⚡ <strong>Electronic caliper brake pads (per axle):</strong> $129.99 (labor only)</li>
-        <li>🔧 <strong>Brake shoes replacement (drum brakes):</strong> Starting $139.99 (labor only)</li>
-      </ul>
-      <p style="margin-top:10px; color:#ccc;">
-        💡 <em>Note: Prices are for labor only. Parts not included. Rotor prices Replacement it vary by vehicle (compact, SUV, truck, etc.). Final quote provided before work begins. A <strong>fluid disposal / old parts fee</strong> starting at <strong>$10</strong> may apply.</em>
-      </p>
-      <p style="margin-top:10px; color:#ccc;">
-        📅 <em>For accurate <strong>service quote (parts + labor)</strong>, please book an appointment in advance.
-        This allows parts to arrive early (if available) so your service can be completed on time.</em>
-      </p>
-      <p style="margin-top:14px; font-weight:600; color:#fff;">
-        ✅ No need to wait long at the shop, waste money on tow trucks, or struggle with a busy schedule.
-        On a budget? <strong>VehiclesTips Mobile Mechanic</strong> is the perfect choice for you.
-      </p>
-      <p style="margin-top:10px; color:#f04a1d; font-style:italic;">
-        🤝 Vehicles Tips —“You help me, I help you — we both win
-        <p style="margin-top:10px; color:#f04a1d; font-style:italic;">
-        “Looking for a personal mechanic who can maintain your vehicle? No more struggling, no more jumping shop to shop — you’ve found someone you can trust.”
-      </p>
-    </section>
-
-    <!-- Payments -->
-    <section id="payments">
-      <h2>💳 Payments</h2>
-      <p>Payment options will be provided <strong>after your booking is confirmed</strong>.
-      Accepted options will include <strong>Cash</strong>, <strong>PayPal</strong>, and <strong>card</strong> (through PayPal).</p>
-      <p class="note" style="color:#ccc;">( Online payment setup is in progress as banking and paperwork are finalized Comming Soon.)</p>
-    </section>
-
-    <!-- Reviews -->
-    <section id="reviews">
-      <h2>⭐ Reviews</h2>
-      <p>Happy with the service? Your feedback helps others find a trusted mechanic.</p>
-      <div class="cta" style="justify-content:center;">
-        <a class="btn" href="YOUR_GOOGLE_REVIEW_LINK_HERE" target="_blank" rel="noopener">✍️ Leave a Google Review</a>
-      </div>
-      <p style="margin-top:8px; color:#ccc;">
-        (We’ll add a review after Google finishes setting the profile Comming Soon)
-      </p>
-    </section>
-
-    <!-- Appointment -->
-    <section id="appointment">
-      <h2>📅 Book an Appointment</h2>
-      <p>Skip the back-and-forth! Soon you’ll be able to book appointments directly online.</p>
-      <p>For now, please <strong>call</strong> or <strong>email</strong> to reserve your slot:</p>
-      <div class="cta">
-        <a class="btn" href="tel:+19802923462">📞 Call to Book</a>
-        <a class="btn secondary" href="mailto:VehiclesTips@gmail.com?subject=Book%20Appointment&body=Hi,%20I%20would%20like%20to%20schedule%20a%20service.%20Please%20share%20available%20times.">✉️ Book via Email</a>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>📍 <strong>Service Area:</strong> Virginia Beach, Norfolk &amp; Chesapeake</p>
-      <p>⏰ <strong>Hours:</strong> Mon–Sat, 9 AM – 5 PM</p>
-      <p>📞 <strong>Phone:</strong> <a href="tel:+19802923462">(980) 292-3462</a></p>
-      <p>✉️ <strong>Email:</strong> <a href="mailto:VehiclesTips@gmail.com">VehiclesTips@gmail.com</a></p>
-    </section>
-  </main>
-
-  <footer>© 2025 Vehicle Tips LLC Auto Mechanics — Hosted on GitHub Pages</footer>
-
-  <!-- Your original script preserved as-is -->
-  <script>
-    // Build a mailto with all form fields and open the user's email app
-    function sendApptEmail(e){
-      e.preventDefault();
-      const g = id => document.getElementById(id).value.trim();
-      if(!document.getElementById('ack').checked){
-        alert('Please acknowledge the service terms.');
-        return false;
-      }
-
-      const name = g('name');
-      const phone = g('phone');
-      const email = g('email');
-      const service = g('service') || 'N/A';
-      const city = g('city');
-      const address = g('address') || 'N/A';
-      const date = g('date') || 'N/A';
-      const time = g('time') || 'N/A';
-      const notes = g('notes') || 'N/A';
-
-      const subject = Appointment Request - ${name} - ${service};
-      const bodyLines = [
-        Name: ${name},
-        Phone: ${phone},
-        Email: ${email},
-        Service: ${service},
-        City: ${city},
-        Address: ${address},
-        Preferred Date: ${date},
-        Preferred Time Window: ${time},
-        , Vehicle & Notes:,
-        ${notes},
-        , Acknowledged: prices are labor-only; parts extra; rotor/part prices vary;,
-        extra labor possible for rust/seized; disposal/old parts fee from $10;,
-        final quote before work.
-      ];
-      const body = encodeURIComponent(bodyLines.join('\n'));
-      const mailto = mailto:VehiclesTips@gmail.com?subject=${encodeURIComponent(subject)}&body=${body};
-      window.location.href = mailto;
-      return false;
-    }
-  </script>
-</body>
-</html>
