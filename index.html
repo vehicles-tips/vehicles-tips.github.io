@@ -1,27 +1,34 @@
-<!DOCTYPE html>                  
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vehicles Tips Auto Mechanic | Mobile Mechanic – We Come To You!</title>
-  <meta name="description" content="Trusted mobile mechanic serving Virginia Beach, Norfolk & Chesapeake. 20+ years experience. We install your parts, offer honest tips & quotes. Call (980) 292-3462." />
+  <title>Vehicles Tips Auto Mechanic | Mobile Mechanic – We Come To You! Coming soon (Still Under Construction)</title>
+  <meta name="description" content="Trusted mobile mechanic serving Virginia Beach, Norfolk & Chesapeake. 20+ years experience. We install your parts, offer honest tips & quotes. Call (757) 573-3154." />
   <style>
     :root{
       --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cccccc;
-      --brand:#f04a1d; --brand-ink:#ffffff; --brand-soft:#f04a1d22;  #f1f5f9
+      --brand:#f04a1d; --brand-ink:#ffffff; --brand-soft:#f04a1d22;
+      --accent:#f97316; --accent-soft:#fb923c; /* for footer/link harmony */
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg); color:var(--ink); line-height:1.6;
+      display:flex; flex-direction:column; min-height:100vh;
+    }
 
     /* Header with background image */
-    header{
-      background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600') center/cover no-repeat;
+    header.hero{
+      background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600') center/cover no-repeat;
       color:#fff; text-align:center; padding:60px 16px; position:relative;
+      border-bottom:1px solid #ffffff14;
     }
-    header::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55)}
-    header *{position:relative; z-index:1}
-    header h1{margin:0 0 6px;font-size:2rem;color:#fff}
-    header p{margin:0 0 14px;font-size:1.05rem;color:#fff}
+    header.hero::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,.55)}
+    header.hero *{position:relative; z-index:1}
+    header.hero h1{margin:0 0 6px;font-size:2rem;color:#fff}
+    header.hero p{margin:0 0 14px;font-size:1.05rem;color:#fff}
     .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
     .btn{background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
     .btn.secondary{background:transparent;color:#fff;border:1px solid #fff}
@@ -32,30 +39,75 @@
     nav a:hover{color:#fff}
 
     /* Layout */
-    main{max-width:960px;margin:20px auto;padding:0 16px}
+    main{max-width:960px;margin:20px auto;padding:0 16px; flex:1 0 auto;}
     section{background:var(--card);border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.5);padding:18px;margin:16px 0}
     h2{margin:6px 0 10px;font-size:1.35rem;color:var(--brand)}
     ul{margin:0 0 0 18px}
     .grid{display:grid;grid-template-columns:1fr;gap:14px}
     @media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
     .pill{display:inline-block;background:var(--brand-soft);color:var(--ink);padding:4px 10px;border-radius:999px;font-size:.85rem;margin:4px 6px 0 0}
-    .links a{display:inline-block;margin-right:14px;color:var(--brand);text-decoration:underline}
-    .links a:hover{color:#fff}
     .highlight{font-weight:800}
-    footer{padding:18px;text-align:center;background:#000;color:#fff}
-
     .badge{display:inline-block; padding:3px 8px; border-radius:999px; background:#f04a1d; color:#fff; font-size:.75rem; margin-left:8px}
     #contact a{color:var(--ink);text-decoration:underline}
     #contact a:visited{color:var(--ink)}
+
+    /* Responsive YouTube Embed */
+    .video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);margin-top:12px}
+    .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+
+    /* Big action buttons */
+    .big-btn{display:inline-block;margin:8px;padding:14px 22px;font-size:1.05rem;font-weight:700;border-radius:12px;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease}
+    .youtube-btn{background:#ff0000;color:#fff;box-shadow:0 4px 12px rgba(255,0,0,.35)}
+    .youtube-btn:hover{ transform:scale(1.05) }
+    .amazon-btn{background:#232f3e;color:#ff9900;box-shadow:0 4px 12px rgba(0,0,0,.35)}
+    .amazon-btn:hover{ transform:scale(1.05) }
+
+    /* Warranty & Policies (single orange button) */
+    .info-buttons { margin-top: 14px; }
+    .info-buttons .btn {
+      display:inline-block;
+      background: var(--brand);
+      color: var(--brand-ink);
+      padding:10px 16px;
+      margin:5px 8px 0 0;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:bold;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      transition: transform .2s, filter .2s;
+    }
+    .info-buttons .btn:hover{ transform: translateY(-1px); filter:brightness(1.05); }
+
+    /* Creator policy buttons below Follow & Ask */
+    .creator-policies { margin-top: 14px; }
+    .creator-policies .btn{
+      display:inline-block;
+      padding:10px 16px;
+      margin:5px 8px 0 0;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:bold;
+      transition: transform .2s, filter .2s;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+    }
+    .creator-policies .btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+    .creator-policies .yt-policy { background:#ff0000; color:#fff; }   /* YouTube red */
+    .creator-policies .amz-policy{ background:#ff9900; color:#111; }   /* Amazon yellow/black */
+
+    /* Footer */
+    footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:22px 16px;font-size:.92rem;color:#cbd5e1}
+    footer .fnav{margin-top:6px}
+    footer a, footer a:visited, footer a:active{color:var(--accent); text-decoration:none; margin:0 8px}
+    footer a:hover{color:var(--accent-soft); text-decoration:underline}
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Vehicle Tips Auto Mechanics</h1>
-    <p class="highlight">Mobile Mechanic – We Come To You!</p>
+  <header class="hero">
+    <h1>Vehicles Tips Auto Mechanic</h1>
+    <p class="highlight">Mobile Mechanic – We Come To You! Coming soon (Still Under Construction)</p>
     <div class="cta">
-      <a class="btn" href="tel:+19802923462">📞 Call Now: (980) 292-3462</a>
+      <a class="btn" href="tel:7575733154">📞 Call Now: (757) 573-3154</a>
       <a class="btn secondary" href="mailto:VehiclesTips@gmail.com">✉️ Email Us</a>
     </div>
   </header>
@@ -69,6 +121,7 @@
     <a href="#reviews">Reviews</a>
     <a href="#appointment">Appointments</a>
     <a href="#contact">Contact</a>
+    <a href="policies.html">Warranty & Policies</a>
   </nav>
 
   <main>
@@ -80,42 +133,7 @@
       <p>I studied at <strong>ATi School of Automotive Technology</strong> and hold a valid <strong>MAC License for Air Conditioning systems</strong>.</p>
     </section>
 
-    <!-- Only change: responsive YouTube embed CSS -->
-    <style>
-      /* Responsive YouTube Embed */
-      .video-container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 ratio */
-        height: 0;
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 4px 14px rgba(0,0,0,.5);
-        margin-top: 12px;
-      }
-      .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      /* Button style */
-      .btn-watch {
-        display: inline-block;
-        margin-top: 12px;
-        background: var(--brand);
-        color: var(--brand-ink);
-        padding: 10px 16px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 700;
-        box-shadow: 0 4px 14px rgba(0,0,0,.35);
-        transition: transform 0.2s ease, background 0.2s ease;
-      }
-      .btn-watch:hover { transform: scale(1.05); background:#d63e18; }
-    </style>
-
+    <!-- Work & Knowledge -->
     <div class="grid">
       <div>
         <h3 style="margin:6px 0 6px 0">My Work & Knowledge</h3>
@@ -124,41 +142,34 @@
           <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
         </ul>
 
-        <p class="animated-links" style="margin-top:8px">
-          📺 <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube Channel</a><br/>
-          🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Influencer Page</a>
-        </p>
+        <!-- Buttons -->
+        <div style="text-align:center; margin-top:12px;">
+          <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener" class="big-btn youtube-btn">📺 Visit My YouTube Channel</a>
+          <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener" class="big-btn amazon-btn">🛒 Shop My Amazon Page</a>
+        </div>
 
-        <!-- Embedded YouTube video (wrapped responsively) -->
+        <!-- Embedded YouTube -->
         <div class="video-container">
           <iframe
             src="https://www.youtube.com/embed/w7hTRkhH5B8?si=J1rSMHP1HsFs0TxG"
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen>
           </iframe>
         </div>
-
-        <!-- Watch More Button -->
-        <div style="text-align:center;">
-          <a class="btn-watch" href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">▶️ Watch More on YouTube</a>
-        </div>
       </div>
 
       <div>
         <h3 style="margin:6px 0 6px 0">Follow & Ask</h3>
-        <p>
-          Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re
-          having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and
-          buy the right parts.
-        </p>
-        <p>
-          Looking for a specific part or need a <strong>repair quote</strong>? You’re always welcome to ask. I may not reply
-          instantly, but I’ll respond as soon as I’m available. I’m also proud to be <strong>Filipino 🇵🇭</strong> and
-          communicate clearly to make sure you get honest, quality service. 💪😎
-        </p>
+        <p>Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and buy the right parts.</p>
+        <p>Looking for a specific part or need a <strong>repair quote</strong>? You’re always welcome to ask. I may not reply instantly, but I’ll respond as soon as I’m available. I’m also proud to be <strong>Filipino 🇵🇭</strong> and communicate clearly to make sure you get honest, quality service. 💪😎</p>
+
+        <!-- Creator Policy Buttons -->
+        <div class="creator-policies">
+          <a href="digital-creator-policy.html#youtube" class="btn yt-policy">📺 YouTube Policy</a>
+          <a href="digital-creator-policy.html#amazon" class="btn amz-policy">🛒 Amazon Policy</a>
+        </div>
       </div>
     </div>
 
@@ -183,22 +194,22 @@
       </ul>
       <p style="margin-top:10px; color:#ccc;">
         💡 <em>Note: Standard services are labor only. Parts not included. A <strong>fluid disposal / old parts fee</strong> starting at <strong>$10</strong> may apply.</em>
-        <p style="margin-top:10px; color:#ccc;">
-  💡 <em>I don’t charge by the hour. All jobs are quoted at a 
-  <strong>flat-rate price</strong> before work begins — so you always know 
-  exactly what you’ll pay, with no surprises.</em>
-<p style="margin-top:10px; color:#ccc;">
-  ✅ <strong>Flat-rate pricing only</strong> — never hourly charges.
-</p>
-
       </p>
+      <p style="margin-top:10px; color:#ccc;">
+        💡 <em>I don’t charge by the hour. All jobs are quoted at a <strong>flat-rate price</strong> before work begins — so you always know exactly what you’ll pay.</em>
+      </p>
+      <p style="margin-top:10px; color:#ccc;">✅ <strong>Flat-rate pricing only</strong> — never hourly charges.</p>
+
+      <!-- Warranty & Policies (single orange button) -->
+      <div class="info-buttons">
+        <a href="policies.html" class="btn">Warranty &amp; Policies</a>
+      </div>
     </section>
 
     <!-- Vehicle Analysis -->
     <section id="analysis">
       <h2>🚗 Complete Vehicle Analysis — $49.99 <span class="badge">⭐ Popular</span></h2>
-      <p>A full <strong>health and condition check</strong> before repairs or a trip. We inspect your car from the
-      <strong>inside, outside, and underneath</strong> and provide a clear report.</p>
+      <p>A full <strong>health and condition check</strong> before repairs or a trip. We inspect your car from the <strong>inside, outside, and underneath</strong> and provide a clear report.</p>
       <ul>
         <li>Brake evaluation: pad life, rotor condition/spec, fluid condition</li>
         <li>Underbody, leaks, belts & hoses, visible wear</li>
@@ -207,28 +218,13 @@
         <li>OBD-II scan for codes and pending issues</li>
         <li>Notes on smells/sounds/feel to catch early problems</li>
       </ul>
-      <p style="color:#ccc;"><em>Note: This is <strong>not a state inspection</strong>, but a <strong>vehicle analysis</strong> focused on overall health and condition.</em></p>
-
-      <!-- Highlight box -->
       <div style="background:#222;padding:14px;border-radius:12px;margin:16px 0;border-left:4px solid var(--brand)">
         <p style="margin:0;font-weight:600;color:#fff;">
           ✅ Perfect if you’re <strong>buying a used car</strong> — know exactly what you’re getting.<br>
           ✅ Planning to <strong>sell your car</strong>? Get a condition check first so you know where you stand.
         </p>
-        <p style="margin:8px 0 0;color:#ccc;font-size:.95rem;">
-          <em>Not a state inspection — this is a detailed health & condition analysis to help you make smart decisions.</em>
-        </p>
+        <p style="margin:8px 0 0;color:#ccc;font-size:.95rem;"><em>Not a state inspection — this is a detailed health & condition analysis.</em></p>
       </div>
-
-      <!-- What to Expect -->
-      <h3 style="margin-top:18px;color:#f04a1d;">What to Expect During the Analysis</h3>
-      <ul>
-        <li>⏰ Average time: 45–60 minutes depending on vehicle</li>
-        <li>🚗 Vehicle must be parked in a safe, accessible area</li>
-        <li>🔑 Please have your keys ready and enough fuel for a short road test</li>
-        <li>📋 You’ll receive a clear summary of findings — verbally and with photos (if needed)</li>
-        <li>📋 You’ll receive a clear summary of findings — verbally and with photos (if needed)</li>
-      </ul>
     </section>
 
     <!-- Brake Services -->
@@ -240,51 +236,26 @@
         <li>⚡ <strong>Electronic caliper brake pads (per axle):</strong> $129.99 (labor only)</li>
         <li>🔧 <strong>Brake shoes replacement (drum brakes):</strong> Starting $139.99 (labor only)</li>
       </ul>
-      <p style="margin-top:10px; color:#ccc;">
-        💡 <em>Note: Prices are for labor only. Parts not included. Rotor prices Replacement it vary by vehicle (compact, SUV, truck, etc.). Final quote provided before work begins. A <strong>fluid disposal / old parts fee</strong> starting at <strong>$10</strong> may apply.</em>
-      </p>
-      <p style="margin-top:10px; color:#ccc;">
-        📅 <em>For accurate <strong>service quote (parts + labor)</strong>, please book an appointment in advance.
-        This allows parts to arrive early (if available) so your service can be completed on time.</em>
-      </p>
-      <p style="margin-top:14px; font-weight:600; color:#fff;">
-        ✅ No need to wait long at the shop, waste money on tow trucks, or struggle with a busy schedule.
-        On a budget? <strong>VehiclesTips Mobile Mechanic</strong> is the perfect choice for you.
-      </p>
-      <p style="margin-top:10px; color:#f04a1d; font-style:italic;">
-        🤝 Vehicles Tips —“You help me, I help you — we both win
-        <p style="margin-top:10px; color:#f04a1d; font-style:italic;">
-        “Looking for a personal mechanic who can maintain your vehicle? No more struggling, no more jumping shop to shop — you’ve found someone you can trust.”
-      </p>
+      <p style="margin-top:10px; color:#ccc;"><em>Note: Prices are for labor only. Parts not included. A disposal/old parts fee from $10 may apply.</em></p>
     </section>
 
     <!-- Payments -->
     <section id="payments">
       <h2>💳 Payments</h2>
-      <p>Payment options will be provided <strong>after your booking is confirmed</strong>.
-      Accepted options will include <strong>Cash</strong>, <strong>PayPal</strong>, and <strong>card</strong> (through PayPal).</p>
-      <p class="note" style="color:#ccc;">( Online payment setup is in progress as banking and paperwork are finalized Comming Soon.)</p>
-    </section>
-
-    <!-- Reviews -->
-    <section id="reviews">
-      <h2>⭐ Reviews</h2>
-      <p>Happy with the service? Your feedback helps others find a trusted mechanic.</p>
-      <div class="cta" style="justify-content:center;">
-        <a class="btn" href="YOUR_GOOGLE_REVIEW_LINK_HERE" target="_blank" rel="noopener">✍️ Leave a Google Review</a>
-      </div>
-      <p style="margin-top:8px; color:#ccc;">
-        (We’ll add a review after Google finishes setting the profile Comming Soon)
-      </p>
+      <p>Payment options are provided <strong>after your booking is confirmed</strong>. We accept <strong>Cash</strong>, <strong>PayPal</strong>, and <strong>card</strong> (via PayPal).</p>
+      <p class="note" style="color:#ccc;">(Online payment setup is in progress — coming soon.)</p>
     </section>
 
     <!-- Appointment -->
     <section id="appointment">
       <h2>📅 Book an Appointment</h2>
       <p>Skip the back-and-forth! Soon you’ll be able to book appointments directly online.</p>
+      <div style="background:#ffffff;color:#ff4500;font-weight:700;padding:16px;margin:15px 0;border-radius:8px;text-align:center;font-size:1.1em;box-shadow:0 2px 6px rgba(0,0,0,0.25);">
+        💡 Price Match Guarantee: We’ll match any valid quote from another shop.
+      </div>
       <p>For now, please <strong>call</strong> or <strong>email</strong> to reserve your slot:</p>
       <div class="cta">
-        <a class="btn" href="tel:+19802923462">📞 Call to Book</a>
+        <a class="btn" href="tel:7575733154">📞 Call to Book</a>
         <a class="btn secondary" href="mailto:VehiclesTips@gmail.com?subject=Book%20Appointment&body=Hi,%20I%20would%20like%20to%20schedule%20a%20service.%20Please%20share%20available%20times.">✉️ Book via Email</a>
       </div>
     </section>
@@ -293,56 +264,21 @@
     <section id="contact">
       <h2>Contact</h2>
       <p>📍 <strong>Service Area:</strong> Virginia Beach, Norfolk &amp; Chesapeake</p>
-      <p>⏰ <strong>Hours:</strong> Mon–Sat, 9 AM – 5 PM</p>
-      <p>📞 <strong>Phone:</strong> <a href="tel:+19802923462">(980) 292-3462</a></p>
+      <p>⏰ <strong>Hours:</strong> Mon–Sat, 09 AM – 05 PM</p>
+      <p>📞 <strong>Phone:</strong> <a href="tel:+17575733154">(757) 573-3154</a></p>
       <p>✉️ <strong>Email:</strong> <a href="mailto:VehiclesTips@gmail.com">VehiclesTips@gmail.com</a></p>
     </section>
   </main>
 
-  <footer>© 2025 Vehicle Tips LLC Auto Mechanics — Hosted on GitHub Pages</footer>
+  <!-- Footer (matches policies page style/colors) -->
+  <footer>
+    © 2025 Vehicle Tips LLC Mobile Mechanic — All Rights Reserved.
+    <div class="fnav">
+      <a href="index.html">Home</a> |
+      <a href="policies.html">Warranty & Policies</a> |
+      <a href="mailto:VehiclesTips@gmail.com">Contact</a>
+    </div>
+  </footer>
 
-  <!-- Your original script preserved as-is -->
-  <script>
-    // Build a mailto with all form fields and open the user's email app
-    function sendApptEmail(e){
-      e.preventDefault();
-      const g = id => document.getElementById(id).value.trim();
-      if(!document.getElementById('ack').checked){
-        alert('Please acknowledge the service terms.');
-        return false;
-      }
-
-      const name = g('name');
-      const phone = g('phone');
-      const email = g('email');
-      const service = g('service') || 'N/A';
-      const city = g('city');
-      const address = g('address') || 'N/A';
-      const date = g('date') || 'N/A';
-      const time = g('time') || 'N/A';
-      const notes = g('notes') || 'N/A';
-
-      const subject = Appointment Request - ${name} - ${service};
-      const bodyLines = [
-        Name: ${name},
-        Phone: ${phone},
-        Email: ${email},
-        Service: ${service},
-        City: ${city
-        Address: ${address},
-        Preferred Date: ${date},
-        Preferred Time Window: ${time},
-        , Vehicle & Notes:,
-        ${notes},
-        , Acknowledged: prices are labor-only; parts extra; rotor/part prices vary;,
-        extra labor possible for rust/seized; disposal/old parts fee from $10;,
-        final quote before work.
-      ];
-      const body = encodeURIComponent(bodyLines.join('\n'));
-      const mailto = mailto:VehiclesTips@gmail.com?subject=${encodeURIComponent(subject)}&body=${body};
-      window.location.href = mailto;
-      return false;
-    }
-  </script>
 </body>
 </html>
