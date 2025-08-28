@@ -3,211 +3,175 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vehicles Tips Auto Mechanic | Mobile Mechanic – We Come To You! Coming soon (Still Under Construction)</title>
-  <meta name="description" content="Trusted mobile mechanic serving Virginia Beach, Norfolk & Chesapeake. 20+ years experience. We install your parts, offer honest tips & quotes. Call (757) 573-3154." />
+  <title>Digital Creator Policies – Vehicle-tips.com</title>
   <style>
+    /* ===== Theme Vars ===== */
     :root{
-      --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cccccc;
-      --brand:#f04a1d; --brand-ink:#ffffff; --brand-soft:#f04a1d22;
-      --accent:#f97316; --accent-soft:#fb923c;
+      --bg:#0f172a;         /* page background */
+      --panel:#1e293b;      /* cards/boxes */
+      --border:#334155;
+      --text:#f8fafc;
+      --muted:#cbd5e1;
+      --accent:#f97316;     /* ORANGE */
+      --accent-soft:#fb923c;
     }
     *{box-sizing:border-box}
     body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg); color:var(--ink); line-height:1.6;
-      display:flex; flex-direction:column; min-height:100vh;
+      margin:0; padding:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
     }
 
-    /* Header */
-    header.hero{
-      background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600') center/cover no-repeat;
-      color:#fff; text-align:center; padding:60px 16px; position:relative;
-      border-bottom:1px solid #ffffff14;
+    /* ===== Sticky Top Nav ===== */
+    .vt-header{
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(15,23,42,0.92);
+      backdrop-filter: saturate(140%) blur(6px);
+      border-bottom:1px solid var(--border);
     }
-    header.hero::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,.55)}
-    header.hero *{position:relative; z-index:1}
-    header.hero h1{margin:0 0 6px;font-size:2rem;color:#fff}
-    header.hero p{margin:0 0 14px;font-size:1.05rem;color:#fff}
-    .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-    .btn{background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
-    .btn.secondary{background:transparent;color:#fff;border:1px solid #fff}
-
-    /* Nav */
-    nav{background:#0e0e0e;display:flex;gap:18px;justify-content:center;padding:10px 12px;font-size:.95rem;flex-wrap:wrap;border-top:1px solid #ffffff14;border-bottom:1px solid #ffffff14}
-    nav a{color:var(--brand);text-decoration:none;font-weight:700}
-    nav a:hover{color:#fff}
-
-    /* Layout */
-    main{max-width:960px;margin:20px auto;padding:0 16px; flex:1 0 auto;}
-    section{background:var(--card);border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.5);padding:18px;margin:16px 0}
-    h2{margin:6px 0 10px;font-size:1.35rem;color:var(--brand)}
-    ul{margin:0 0 0 18px}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px}
-    @media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
-    .highlight{font-weight:800}
-    .badge{display:inline-block; padding:3px 8px; border-radius:999px; background:#f04a1d; color:#fff; font-size:.75rem; margin-left:8px}
-    #contact a{color:var(--ink);text-decoration:underline}
-    #contact a:visited{color:var(--ink)}
-
-    /* YouTube Embed */
-    .video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);margin-top:12px}
-    .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}
-
-    /* Big action buttons */
-    .big-btn{display:inline-block;margin:8px;padding:14px 22px;font-size:1.05rem;font-weight:700;border-radius:12px;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease}
-    .youtube-btn{background:#ff0000;color:#fff;box-shadow:0 4px 12px rgba(255,0,0,.35)}
-    .youtube-btn:hover{ transform:scale(1.05) }
-    .amazon-btn{background:#232f3e;color:#ff9900;box-shadow:0 4px 12px rgba(0,0,0,.35)}
-    .amazon-btn:hover{ transform:scale(1.05) }
-
-    /* Warranty & Policies button */
-    .info-buttons { margin-top: 14px; }
-    .info-buttons .btn {
-      display:inline-block;
-      background: var(--brand);
-      color: var(--brand-ink);
-      padding:10px 16px;
-      border-radius:6px;
-      text-decoration:none;
-      font-weight:bold;
-      box-shadow:0 4px 12px rgba(0,0,0,.35);
-      transition: transform .2s, filter .2s;
+    .vt-header-inner{
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto auto;
+      gap: 14px; align-items: center;
+      padding: 10px 16px;
     }
-    .info-buttons .btn:hover{ transform: translateY(-1px); filter:brightness(1.05); }
-
-    /* Creator Policy Buttons */
-    .creator-policies { margin-top: 14px; }
-    .creator-policies .btn{
-      display:inline-block;
-      padding:10px 16px;
-      margin:5px 8px 0 0;
-      border-radius:6px;
-      text-decoration:none;
-      font-weight:bold;
-      box-shadow:0 4px 12px rgba(0,0,0,.35);
-      transition: transform .2s, filter .2s;
+    .vt-brand{
+      color: var(--text); text-decoration: none; font-weight: 800; letter-spacing:.2px;
+      font-size: clamp(1rem, .9rem + 1vw, 1.25rem);
     }
-    .creator-policies .btn:hover{ transform: translateY(-1px); filter:brightness(1.05); }
-    .creator-policies .yt-policy{ background:#ff0000; color:#fff; }
-    .creator-policies .amz-policy{ background:#ff9900; color:#111; }
+    .vt-nav a{
+      color: var(--text); text-decoration: none; margin: 0 10px; font-weight: 600;
+    }
+    .vt-nav a[aria-current="page"]{ color: var(--accent); }
+    .vt-nav a:hover{ color: var(--accent); }
+    .vt-actions{ display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .vt-btn{
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 14px; border-radius: 999px; text-decoration: none;
+      font-weight: 800; border: 1px solid transparent;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space: nowrap; color: var(--text);
+    }
+    .vt-btn:hover{ transform: translateY(-1px); }
+    .vt-btn-call{ background: var(--accent); color:#0b1220; }
+    .vt-btn-call:hover{ background: var(--accent-soft); }
+    .vt-btn-mail{ background: transparent; border-color: var(--border); }
+    .vt-btn-mail:hover{ border-color: var(--accent); color: var(--accent); }
 
-    /* Footer */
-    footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:22px 16px;font-size:.92rem;color:#cbd5e1}
-    footer .fnav{margin-top:6px}
-    footer a, footer a:visited, footer a:active{color:var(--accent); text-decoration:none; margin:0 8px}
-    footer a:hover{color:var(--accent-soft); text-decoration:underline}
+    @media (max-width: 800px){
+      .vt-header-inner{ grid-template-columns: 1fr; gap: 8px; }
+      .vt-nav{ display:flex; flex-wrap:wrap; gap:8px; }
+      .vt-actions{ justify-content:flex-start; }
+    }
+
+    /* ===== HERO ===== */
+    .hero{
+      height:250px;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      background:
+        linear-gradient(rgba(15,23,42,.7), rgba(15,23,42,.7)),
+        url("https://images.unsplash.com/photo-1584208123923-cf2dfd4b91b8?auto=format&fit=crop&w=1920&q=80")
+        center / cover no-repeat;
+      border-bottom:1px solid var(--border);
+    }
+    .hero h1{ margin:0 0 6px; font-size:2.2rem; color:var(--accent); }
+    .hero p{ margin:0; color:var(--muted); }
+
+    /* ===== Content ===== */
+    .wrap{ max-width:1000px; margin:0 auto; padding:20px 16px 60px; }
+    .section{
+      background: rgba(30,41,59,.9);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:16px;
+      margin:18px 0;
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+    h2{ color:var(--accent); margin:0 0 8px; }
+    .backtop{ color:var(--accent); text-decoration:none; font-size:.9rem; display:inline-block; margin-top:8px; }
+
+    /* ===== Footer ===== */
+    footer{
+      background: var(--panel);
+      border-top:1px solid var(--border);
+      text-align:center;
+      padding:20px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    footer a{ color:var(--accent); text-decoration:none; margin:0 8px; }
+    footer a:hover{ text-decoration:underline; }
   </style>
 </head>
 <body>
 
-  <header class="hero">
-    <h1>Vehicles Tips Auto Mechanic</h1>
-    <p class="highlight">Mobile Mechanic – We Come To You! Coming soon (Still Under Construction)</p>
-    <div class="cta">
-      <a class="btn" href="tel:7575733154">📞 Call Now: (757) 573-3154</a>
-      <a class="btn secondary" href="mailto:VehiclesTips@gmail.com">✉️ Email Us</a>
+  <!-- TOP ACTION BAR -->
+  <header class="vt-header">
+    <div class="vt-header-inner">
+      <a class="vt-brand" href="index.html">Vehicle Tips</a>
+
+      <nav class="vt-nav">
+        <a href="index.html">Home</a>
+        <a href="digital-creator-policy.html" aria-current="page">Creator Policies</a>
+        <a href="policies.html">Warranty & Policies</a>
+      </nav>
+
+      <div class="vt-actions">
+        <a class="vt-btn vt-btn-call" href="tel:+17575733154">Call Now: (757) 573-3154</a>
+        <a class="vt-btn vt-btn-mail" href="mailto:vehicletips757@gmail.com?subject=Creator%20Policy%20Inquiry">Email Us</a>
+      </div>
     </div>
   </header>
 
-  <nav>
-    <a href="#about">About / Trust</a>
-    <a href="#services">Services</a>
-    <a href="#analysis">Vehicle Analysis</a>
-    <a href="#brakes">Brake Pricing</a>
-    <a href="#payments">Payments</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#appointment">Appointments</a>
-    <a href="#contact">Contact</a>
-    <a href="policies.html">Warranty & Policies</a>
-  </nav>
-
-  <main>
-    <!-- About -->
-    <section id="about">
-      <h2>Trusted Mobile Mechanic Near You</h2>
-      <p>Looking for a mobile mechanic you can trust in <strong>Virginia Beach, Norfolk, or Chesapeake</strong>? Vehicle Tips Auto Mechanics has over <strong>20 years of experience</strong> working on cars of all makes and models.</p>
-      <p>Whether you need reliable service to save money, someone to <strong>install your parts</strong>, or just honest <strong>tips and advice</strong>, I’m always happy to help. Your car deserves the right care — at the right price.</p>
-      <p>I studied at <strong>ATi School of Automotive Technology</strong> and hold a valid <strong>MAC License for Air Conditioning systems</strong>.</p>
-    </section>
-
-    <!-- Work & Knowledge -->
-    <div class="grid">
-      <div>
-        <h3>My Work & Knowledge</h3>
-        <ul>
-          <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
-          <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
-        </ul>
-
-        <!-- Buttons -->
-        <div style="text-align:center; margin-top:12px;">
-          <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener" class="big-btn youtube-btn">📺 Visit My YouTube Channel</a>
-          <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener" class="big-btn amazon-btn">🛒 Shop My Amazon Page</a>
-        </div>
-
-        <!-- Embedded YouTube -->
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/w7hTRkhH5B8?si=J1rSMHP1HsFs0TxG" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <div>
-        <h3>Follow & Ask</h3>
-        <p>Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and buy the right parts.</p>
-        <p>Looking for a specific part or need a <strong>repair quote</strong>? You’re always welcome to ask. I may not reply instantly, but I’ll respond as soon as I’m available. I’m also proud to be <strong>Filipino 🇵🇭</strong> and communicate clearly to make sure you get honest, quality service. 💪😎</p>
-        
-        <!-- Creator Policy Buttons -->
-        <div class="creator-policies">
-          <a href="digital-creator-policy.html#youtube" class="btn yt-policy">📺 YouTube Policy</a>
-          <a href="digital-creator-policy.html#amazon" class="btn amz-policy">🛒 Amazon Policy</a>
-        </div>
-      </div>
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <h1 id="top">Digital Creator Policies</h1>
+      <p>YouTube & Amazon Content Guidelines and Talent Fee Information</p>
     </div>
+  </header>
 
-    <!-- Services -->
-    <section id="services">
-      <h2>Our Mobile Mechanic Services</h2>
+  <main class="wrap">
+
+    <section id="youtube" class="section">
+      <h2>📺 YouTube Policy</h2>
+      <p>As a YouTube content creator, I produce videos to educate, inform, and entertain. All collaborations, sponsorships, or product placements must include:</p>
       <ul>
-        <li>Cabin and air filter replacement</li>
-        <li>Starting and charging diagnostic</li>
-        <li>Engine diagnostic</li>
-        <li>Check engine light diagnostic</li>
-        <li>Battery jump start</li>
-        <li>Steering and suspension repair</li>
-        <li>Fluid flush and fuel filter service</li>
-        <li>Heating and cooling service</li>
-        <li>Overheating diagnostic</li>
-        <li>Air conditioner diagnostic</li>
-        <li>Tune-up service</li>
-        <li>Small engine repair</li>
-        <li>Windshield wiper diagnostic</li>
-        <li>Much more — just ask!</li>
+        <li>Clear disclosure of sponsorships or partnerships.</li>
+        <li>Creative freedom retained by the creator (me).</li>
+        <li>No guarantee of positive reviews — all content is honest and unbiased.</li>
+        <li>Video production timelines will be agreed upon before content creation.</li>
       </ul>
-      <p style="margin-top:10px; color:#ccc;">
-        💡 <em>Note: Standard services are labor only. Parts not included. A <strong>fluid disposal / old parts fee</strong> starting at <strong>$10</strong> may apply.</em>
-      </p>
-      <p style="margin-top:10px; color:#ccc;">
-        💡 <em>I don’t charge by the hour. All jobs are quoted at a <strong>flat-rate price</strong> before work begins — so you always know exactly what you’ll pay.</em>
-      </p>
-      <p style="margin-top:10px; color:#ccc;">✅ <strong>Flat-rate pricing only</strong> — never hourly charges.</p>
-
-      <!-- Warranty & Policies button -->
-      <div class="info-buttons">
-        <a href="policies.html" class="btn">Warranty &amp; Policies</a>
-      </div>
+      <p><strong>Talent Fee:</strong> A content creator fee applies for sponsored videos or brand collaborations. This covers time, editing, equipment, and distribution.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
     </section>
+
+    <section id="amazon" class="section">
+      <h2>🛒 Amazon Influencer Policy</h2>
+      <p>As part of the Amazon Influencer Program, I create product review videos and livestreams. To maintain trust and transparency:</p>
+      <ul>
+        <li>All reviews are based on genuine use and testing.</li>
+        <li>Sponsored placements require full disclosure in both the video and description.</li>
+        <li>Products provided for review will not be returned unless agreed beforehand.</li>
+        <li>Amazon’s guidelines and FTC compliance are strictly followed.</li>
+      </ul>
+      <p><strong>Talent Fee:</strong> A content creation fee may apply for dedicated Amazon product videos, especially for promotional or sponsored campaigns.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    © 2025 Vehicle Tips LLC Mobile Mechanic — All Rights Reserved.
+    © 2025 Vehicle Tips LLC — Creator Policies. All Rights Reserved.
     <div class="fnav">
       <a href="index.html">Home</a> |
-      <a href="policies.html">Warranty & Policies</a> |
-      <a href="mailto:VehiclesTips@gmail.com">Contact</a>
+      <a href="digital-creator-policy.html">Creator Policies</a> |
+      <a href="policies.html">Warranty & Policies</a>
     </div>
   </footer>
 
 </body>
 </html>
-
