@@ -3,22 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Warranty & Policies – Vehicle-tips.com</title>
+  <title>Warranty & Service Policies – Vehicle-tips.com</title>
   <style>
     /* ===== Theme Vars ===== */
     :root{
-      --bg:#0f172a;         /* page background */
-      --panel:#1e293b;      /* cards/boxes */
+      --bg:#0f172a;
+      --panel:#1e293b;
       --border:#334155;
       --text:#f8fafc;
       --muted:#cbd5e1;
-      --accent:#f97316;     /* ORANGE */
+      --accent:#f97316;     
       --accent-soft:#fb923c;
-      --link:#38bdf8;       /* link color for readability */
+      --link:#38bdf8;
       --link-hover:#0ea5e9;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;}
     body{
       margin:0; padding:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -27,10 +26,7 @@
       line-height:1.6;
     }
 
-    /* Make in-page anchors stop below sticky header */
-    section{ scroll-margin-top: 90px; }
-
-    /* ===== Sticky Top Action Bar ===== */
+    /* ===== Header ===== */
     .vt-header{
       position: sticky; top: 0; z-index: 50;
       background: rgba(15,23,42,0.92);
@@ -44,7 +40,7 @@
       padding: 10px 16px;
     }
     .vt-brand{
-      color: var(--text); text-decoration: none; font-weight: 800; letter-spacing:.2px;
+      color: var(--text); text-decoration: none; font-weight: 800;
       font-size: clamp(1rem, .9rem + 1vw, 1.25rem);
     }
     .vt-nav a{
@@ -56,7 +52,7 @@
     .vt-btn{
       display: inline-flex; align-items: center; justify-content: center;
       padding: 10px 14px; border-radius: 999px; text-decoration: none;
-      font-weight: 800; letter-spacing:.2px; border: 1px solid transparent;
+      font-weight: 800; border: 1px solid transparent;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
       white-space: nowrap; color: var(--text);
     }
@@ -72,19 +68,27 @@
       .vt-actions{ justify-content:flex-start; }
     }
 
-    /* ===== HERO BANNER ===== */
+    /* ===== Hero ===== */
     .hero{
-      height:300px;
+      height:280px;
       display:flex; align-items:center; justify-content:center; text-align:center;
       background:
         linear-gradient(rgba(15,23,42,.7), rgba(15,23,42,.7)),
-        url("https://images.unsplash.com/photo-1584208123923-cf2dfd4b91b8?auto=format&fit=crop&w=1920&q=80")
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600")
         center / cover no-repeat;
       border-bottom:1px solid var(--border);
+      flex-direction: column;
+      padding: 0 12px;
     }
-    .hero h1{ margin:0 0 6px; font-size:2.4rem; color:var(--accent); }
-    .hero p{ margin:0; color:var(--muted); }
+    .hero h1{ margin:0 0 6px; font-size:2.3rem; color:var(--accent); }
+    .hero p{ margin:4px 0; color:var(--muted); }
     .updated{ color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+    .construction-note{
+      margin-top:8px;
+      font-size:.95rem;
+      color:var(--accent-soft);
+      font-weight:600;
+    }
 
     /* ===== Content ===== */
     .wrap{ max-width:1000px; margin:0 auto; padding:20px 16px 60px; }
@@ -111,24 +115,15 @@
     a{ color:var(--link); }
     a:hover{ color:var(--link-hover); }
 
-    /* ===== Support Buttons (subtle, on-brand) ===== */
+    /* ===== Support Buttons ===== */
     .support-buttons a{
       display:inline-block; margin:8px 8px 0 0; padding:10px 14px;
       border-radius:8px; text-decoration:none; font-weight:700;
     }
-    .btn-youtube{ background:#ff0000; color:#fff; }
+    .btn-paypal{ background:#0070ba; color:#fff; }
     .btn-amazon{ background:#232f3e; color:#ff9900; }
-    .btn-pay{ background:#f97316; color:#0b1220; }
-
-    /* ===== Floating Back-to-Top Button ===== */
-    .backtotop{
-      position:fixed; right:16px; bottom:16px; z-index:60;
-      background:var(--accent); color:#0b1220; font-weight:800;
-      border:none; border-radius:999px; padding:10px 14px;
-      box-shadow:0 6px 16px rgba(0,0,0,.35);
-      cursor:pointer; display:none;
-    }
-    .backtotop:hover{ background:var(--accent-soft); }
+    .btn-youtube{ background:#ff0000; color:#fff; }
+    .btn-sponsor{ background:#f97316; color:#0b1220; }
 
     /* ===== Footer ===== */
     footer{
@@ -145,233 +140,117 @@
 </head>
 <body>
 
-  <!-- TOP ACTION BAR -->
+  <!-- HEADER -->
   <header class="vt-header">
     <div class="vt-header-inner">
       <a class="vt-brand" href="index.html">Vehicle Tips</a>
-
       <nav class="vt-nav">
         <a href="index.html">Home</a>
         <a href="policies.html" aria-current="page">Warranty & Policies</a>
-        <a href="digital-creator-policy.html">Creator Policies</a>
-        <a href="index.html#payments">Payments</a>
+        <a href="creator-policies.html">Creator Policies</a>
       </nav>
-
       <div class="vt-actions">
         <a class="vt-btn vt-btn-call" href="tel:+17575733154">Call Now: (757) 573-3154</a>
-        <a class="vt-btn vt-btn-mail" href="mailto:vehicletips757@gmail.com?subject=Policy%20Question">Email Us</a>
+        <a class="vt-btn vt-btn-mail" href="mailto:vehicletips757@gmail.com?subject=Policy%20Inquiry">Email Us</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO (image banner) -->
+  <!-- HERO -->
   <header class="hero">
-    <div>
-      <h1 id="top">Warranty & Policies</h1>
-      <p>Vehicle-tips.com Policies, Warranties, Requirements, & Disclaimers</p>
-      <p class="updated">Last updated: 2025-08-28</p>
-    </div>
+    <h1 id="top">Warranty & Service Policies</h1>
+    <p>Your trusted guide for mobile mechanic services</p>
+    <p class="updated">Last updated: 2025-08-28</p>
+    <p class="construction-note">🚧 Still Under Construction – Some sections may be updated soon.</p>
   </header>
 
+  <!-- CONTENT -->
   <main class="wrap">
-    <!-- TOC -->
     <div class="toc">
       Jump to:
-      <a href="#safety">Safety</a>
-      <a href="#prework">Pre-Work Documentation</a>
-      <a href="#workzone">On-Site Safety Perimeter</a>
-      <a href="#problems">Problems</a>
-      <a href="#thirdparty">Third-Party Repairs</a>
-      <a href="#workmanship">Workmanship</a>
-      <a href="#diagnostics">Diagnostics</a>
-      <a href="#fragile">Fragile Parts</a>
+      <a href="#warranty">Warranty Coverage</a>
+      <a href="#safety">Safety Policy</a>
+      <a href="#bathroom">Bathroom Breaks</a>
+      <a href="#documentation">Pre-Work Documentation</a>
       <a href="#payments">Payments</a>
-      <a href="#conduct">Conduct</a>
-      <a href="#deepdiag">In-Depth Diagnostics</a>
-      <a href="#pickup">Part Pickup</a>
-      <a href="#cancel">Cancellations</a>
-      <a href="#weather">Weather</a>
-      <a href="#restroom">Restroom & Brief Leave</a>
       <a href="#support">Support the Creator</a>
+      <a href="#contact">Contact</a>
     </div>
 
-    <!-- 1 -->
+    <section id="warranty" class="section">
+      <h2>Warranty Coverage</h2>
+      <p>
+        All labor performed by Vehicle Tips LLC is backed by our workmanship warranty. Warranty terms cover 
+        installation quality, not the parts themselves. Part warranties depend on the manufacturer or supplier.
+      </p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
     <section id="safety" class="section">
-      <h2>1. Safety & Customer-Supplied Parts</h2>
-      <p>We may refuse installation of any part that could compromise safe, reliable operation. Please do not stand over or interfere with the technician’s workspace during service.</p>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 1B: NEW Pre-Work Documentation -->
-    <section id="prework" class="section">
-      <h2>1B. Pre-Work Documentation & Inspection</h2>
+      <h2>Safety Policy</h2>
       <p>
-        Before starting any work, we complete a quick documentation process for transparency and safety:
-      </p>
-      <ul>
-        <li><strong>Vehicle Condition:</strong> Photos are taken of the vehicle to record its state prior to repairs.</li>
-        <li><strong>Inspection Form:</strong> A multi-point inspection form, following guidelines from the Federal Motor Carrier Safety Administration (FMCSA) – U.S. Department of Transportation, is used to note key safety items.</li>
-        <li><strong>Ground & Floor:</strong> We also check and document the service area surface (any debris, oil stains, or hazards) before beginning work.</li>
-      </ul>
-      <p>
-        This process helps protect both the customer and the technician by creating a clear record before repairs begin.
+        When working at a client’s home or location, we establish a <strong>safety perimeter</strong> using hazard cones and plastic chain. 
+        This ensures children, pets, and bystanders remain safely outside the work zone. Please respect this boundary until work is complete.
       </p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
-    <!-- 1A: On-Site Safety Perimeter -->
-    <section id="workzone" class="section">
-      <h2>1A. On-Site Safety Perimeter</h2>
+    <section id="bathroom" class="section">
+      <h2>Bathroom Breaks</h2>
       <p>
-        For everyone’s safety, we establish a temporary work zone at client locations using hazard cones and a plastic chain or similar barrier. 
-        This perimeter marks an <strong>authorized personnel only</strong> area while work is in progress.
+        As mobile mechanics, we may need to briefly leave your property to use a nearby restroom. We do not ask 
+        to use a customer’s home restroom. Sometimes we carry a portable toilet, but often we use facilities at 
+        nearby restaurants, hotels, or public areas. If we step away, we will notify you by text, call, or email 
+        and secure the unfinished job site before leaving.
       </p>
-      <ul>
-        <li><strong>No entry inside the perimeter</strong> — this includes children, pets/animals, and customers.</li>
-        <li>Please keep a safe distance from jacks, lifts, tools, and moving parts.</li>
-        <li>If you need to approach the vehicle, <strong>call or wave the technician first</strong> so we can pause and guide you safely.</li>
-      </ul>
-      <p>Thank you for helping us maintain a safe and efficient job site.</p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
-    <!-- 2 -->
-    <section id="problems" class="section">
-      <h2>2. What to Do If a Problem Arises</h2>
-      <p>Contact us immediately if an issue occurs after recent work so we can schedule diagnostics. A diagnostic fee applies if the problem is new/unrelated or if recommendations were ignored. Any self-repair or third-party repair before our inspection voids applicable warranties.</p>
+    <section id="documentation" class="section">
+      <h2>Pre-Work Documentation</h2>
+      <p>
+        Before beginning work, we take photos and complete a <strong>multi-point inspection form</strong> as prescribed by the 
+        Federal Motor Carrier Safety Administration (FMCSA – U.S. Department of Transportation). We also document 
+        the ground/floor condition (any debris or oil stains) to ensure clarity before and after service.
+      </p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
-    <!-- 3 -->
-    <section id="thirdparty" class="section">
-      <h2>3. Third-Party Repairs</h2>
-      <p>Do not take your vehicle to another shop for the same issue before contacting us. If another party works on the vehicle first, your warranty with us is void.</p>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 4 -->
-    <section id="workmanship" class="section">
-      <h2>4. Parts & Workmanship</h2>
-      <ul>
-        <li>Workmanship warranty: 3 months or 3,000 miles (whichever comes first).</li>
-        <li>We do not supply or warranty parts. If a customer-supplied part fails, new labor charges apply.</li>
-        <li>A/C repairs: workmanship warranty applies. A/C recharges: no warranty or refunds.</li>
-        <li>Service matters are discussed only with the person on the original invoice.</li>
-      </ul>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 5 -->
-    <section id="diagnostics" class="section">
-      <h2>5. Diagnostics</h2>
-      <p>Vehicles are complex; a single diagnosis may not resolve every issue. Full cost is owed even if an initial diagnostic does not fix all concerns. We are not responsible for pre-existing issues or incorrect customer self-diagnostics.</p>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 6 -->
-    <section id="fragile" class="section">
-      <h2>6. Fragile Components</h2>
-      <p>We are not responsible for breakage of plastics, wires, spark plugs, metal, or rubber parts that are brittle, worn, or previously damaged by heat, fluids, or normal wear and tear.</p>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 7 -->
     <section id="payments" class="section">
-      <h2>7. Payments & Refunds</h2>
-      <ul>
-        <li>Payment in full is due upon completion. Stopping a job does not cancel labor charges.</li>
-        <li>Refunds require proof from a licensed mechanic and a verifiable printed receipt.</li>
-        <li>If service must pause due to parts/external issues, half the labor is due that day; the balance is due upon completion.</li>
-      </ul>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 8 -->
-    <section id="conduct" class="section">
-      <h2>8. Conduct Policy</h2>
-      <p>Zero tolerance for yelling, hostile behavior, profanity, or threats toward staff. Such behavior may result in immediate termination of service without refund and, if needed, involvement of authorities.</p>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 9 -->
-    <section id="deepdiag" class="section">
-      <h2>9. In-Depth Diagnostics</h2>
-      <p>Cost: $95, applied toward same-day diagnostic repairs. Credit valid for 30 days if the vehicle is repairable. Excludes A/C diagnostics, non-fixable vehicles, vehicles advised for sale/trade, and pre-purchase inspections. Non-refundable. Additional diagnostics may be discounted.</p>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 10 -->
-    <section id="pickup" class="section">
-      <h2>10. Customer Part Pickup & Waiting Fees</h2>
-      <p>Technician pickup fee: $10 (within 10 miles) or $30 (20+ miles). Customer delays beyond 30 minutes: $50 per additional 30 minutes unless communicated.</p>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 11 -->
-    <section id="cancel" class="section">
-      <h2>11. Cancellations & Refunds</h2>
-      <p>Reschedule or cancel at least 72 hours before the appointment. Cancellations within 72 hours are non-refundable (including diagnostics, maintenance, inspections, A/C recharges, and virtual sessions). Refunds (when applicable) return to the original payment method within 5–7 business days, excluding weekends and holidays.</p>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 12 -->
-    <section id="weather" class="section">
-      <h2>12. Inclement Weather</h2>
-      <p>During inclement weather, operations pause and resume on the next business day.</p>
-      <a class="backtop" href="#top">↑ Back to top</a>
-    </section>
-
-    <!-- 13 -->
-    <section id="restroom" class="section">
-      <h2>13. Restroom & Brief Leave Policy</h2>
+      <h2>Payments</h2>
       <p>
-        As a mobile mechanic, we sometimes need to briefly leave the work area to use a nearby public restroom 
-        (e.g., restaurant, hotel, or other public facility). We do not ask to use customer bathrooms. 
-        When a short leave is needed:
+        Payments are quoted upfront at a flat rate. We accept Cash, PayPal, and cards (via PayPal). Parts are 
+        typically supplied by the customer unless otherwise agreed.
       </p>
-      <ul>
-        <li>We will notify you by text, email, or call before stepping away.</li>
-        <li>Work areas are left safe and secured; tools and parts are not abandoned.</li>
-        <li>Time away is kept to a minimum and we return promptly to continue service.</li>
-      </ul>
-      <p>Thank you for your patience and understanding — this helps us keep the job site respectful and professional.</p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
-    <!-- 14 -->
     <section id="support" class="section">
-      <h2>14. Support the Creator</h2>
+      <h2>Support the Creator</h2>
       <p>
-        If our videos or this mobile mechanic service helped you, your support keeps tutorials and honest reviews coming. 
-        I use these tools every day — any support helps maintain, upgrade, and share more knowledge.
-        For content-specific policies, see <a href="digital-creator-policy.html">Creator Policies</a>.
+        Beyond being a mechanic, I’m also a content creator. If my videos or services have helped you, your support 
+        helps keep tutorials and honest reviews coming. I use these tools daily — any support goes right back into 
+        serving the community.
       </p>
       <div class="support-buttons">
-        <a class="btn-youtube" href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">📺 Follow on YouTube</a>
+        <a class="btn-paypal" href="index.html#payments">💳 Donate / Pay</a>
         <a class="btn-amazon" href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">🛠️ Amazon Shop</a>
-        <a class="btn-pay" href="index.html#payments">💳 Donate / Pay</a>
+        <a class="btn-youtube" href="https://youtube.com/@vehicles-tips" target="_blank" rel="noopener">📺 Follow on YouTube</a>
+        <a class="btn-sponsor" href="mailto:vehicletips757@gmail.com?subject=Sponsor%20a%20Video">📣 Sponsor a Video</a>
       </div>
-      <p style="margin-top:12px;color:var(--muted);font-style:italic;">
-        There are millions of creators out there — everyone has a unique style and energy. 
-        I hope my approach as a mechanic and creator fits your vibe. 
-        Thank you for supporting a small business — your kindness means a lot. 🙏
+      <p style="margin-top:14px; color:var(--muted); font-style:italic;">
+        Thank you for supporting a small business like mine. Your kindness will never be forgotten — you’re part of this journey.
       </p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:vehicletips757@gmail.com">vehicletips757@gmail.com</a></p>
+      <p>Phone: <a href="tel:+17575733154">(757) 573-3154</a></p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
   </main>
-
-  <!-- Floating Back-to-Top Button -->
-  <button class="backtotop" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Top</button>
-
-  <script>
-    // Show the back-to-top button after scrolling a bit
-    const btt = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) { btt.style.display = 'inline-flex'; }
-      else { btt.style.display = 'none'; }
-    });
-  </script>
 
   <!-- FOOTER -->
   <footer>
@@ -379,14 +258,10 @@
     <div class="fnav">
       <a href="index.html">Home</a> |
       <a href="policies.html">Warranty & Policies</a> |
-      <a href="digital-creator-policy.html">Creator Policies</a> |
-      <a href="index.html#payments">Payments</a> |
+      <a href="creator-policies.html">Creator Policies</a> |
       <a href="mailto:vehicletips757@gmail.com">Contact</a>
     </div>
   </footer>
 
 </body>
 </html>
-
-
-
