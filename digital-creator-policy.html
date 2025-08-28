@@ -24,7 +24,7 @@
       line-height:1.6;
     }
 
-    /* ===== Sticky Top Action Bar (same classes) ===== */
+    /* ===== Sticky Top Action Bar ===== */
     .vt-header{
       position: sticky; top: 0; z-index: 50;
       background: rgba(15,23,42,0.92);
@@ -66,7 +66,7 @@
       .vt-actions{ justify-content:flex-start; }
     }
 
-    /* ===== HERO BANNER (same look) ===== */
+    /* ===== HERO ===== */
     .hero{
       height:300px;
       display:flex; align-items:center; justify-content:center; text-align:center;
@@ -102,6 +102,18 @@
     }
     h2{ color:var(--accent); margin:0 0 8px; }
     .backtop{ color:var(--accent); text-decoration:none; font-size:.9rem; display:inline-block; margin-top:8px; }
+
+    /* ===== In-section links (fix visited purple issue) ===== */
+    .section a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .section a:visited {
+      color: var(--accent);
+    }
+    .section a:hover {
+      color: var(--accent-soft);
+    }
 
     /* ===== Footer ===== */
     footer{
@@ -152,6 +164,8 @@
       <a href="#overview">Overview</a>
       <a href="#youtube">YouTube Policy</a>
       <a href="#amazon">Amazon Policy</a>
+      <a href="#exposure">Selling & Exposure</a>
+      <a href="#support">Support the Creator</a>
       <a href="#booking">Content Booking</a>
       <a href="#fees">Talent Fees</a>
       <a href="#deliverables">Deliverables</a>
@@ -179,7 +193,7 @@
       <h2>2. YouTube Policy</h2>
       <ul>
         <li><strong>Educational Focus:</strong> Content prioritizes repair tips, diagnostics, and product/tool education.</li>
-        <li><strong Editorial Control:</strong> Publishing decisions, titles, edits, and thumbnails are at our sole discretion.</li>
+        <li><strong>Editorial Control:</strong> Publishing decisions, titles, edits, and thumbnails are at our sole discretion.</li>
         <li><strong>Scheduling:</strong> Filming during service is optional and only with consent (see Privacy & Filming Consent).</li>
         <li><strong>Brand Features:</strong> Sponsored segments or product features must be pre-approved when applicable.</li>
       </ul>
@@ -196,8 +210,31 @@
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
+    <section id="exposure" class="section">
+      <h2>4. Selling & Exposure</h2>
+      <p>
+        Clients may request help promoting <strong>vehicles or products for sale</strong> through my audience of followers across YouTube, Amazon, and social media. 
+        This exposure can help reach interested buyers faster. 
+        While Vehicle Tips LLC does not provide direct warranties on third-party products or vehicles, 
+        I bring credibility as both a <strong>mobile mechanic</strong> and <strong>trusted creator</strong> to ensure honest representation. 
+        I am hired solely to provide <strong>social media exposure</strong> and audience reach.
+      </p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="support" class="section">
+      <h2>5. Support the Creator</h2>
+      <p>
+        Beyond being a mechanic, I am also a content creator. I rely on a wide range of <strong>tools and equipment</strong> daily to complete jobs. 
+        Supporting my content creation helps me continue sharing knowledge while improving services. 
+        If you’d like to support my journey as both a <strong>mobile mechanic</strong> and <strong>digital creator</strong>, 
+        I truly appreciate your encouragement.
+      </p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
     <section id="booking" class="section">
-      <h2>4. Content Booking</h2>
+      <h2>6. Content Booking</h2>
       <ul>
         <li><strong>Separate from Service:</strong> Content creation is booked separately from mechanic work to avoid impacting service quality or timing.</li>
         <li><strong>Lead Time:</strong> Please request content bookings in advance with target dates and goals.</li>
@@ -207,7 +244,7 @@
     </section>
 
     <section id="fees" class="section">
-      <h2>5. Talent Fees</h2>
+      <h2>7. Talent Fees</h2>
       <p>
         Talent/creator fees apply for on-camera work, narration, brand integrations, live features, and editorial content produced on request. 
         Rates vary by scope and usage. <strong>For a custom quote, please email</strong> 
@@ -221,7 +258,7 @@
     </section>
 
     <section id="deliverables" class="section">
-      <h2>6. Deliverables</h2>
+      <h2>8. Deliverables</h2>
       <ul>
         <li><strong>Define in Writing:</strong> We confirm deliverables before filming (e.g., 1× YouTube video, 1× short, 3× photos).</li>
         <li><strong>Edits:</strong> Up to 1–2 minor edit rounds may be included unless otherwise agreed.</li>
@@ -231,7 +268,7 @@
     </section>
 
     <section id="usage" class="section">
-      <h2>7. Usage & Licensing</h2>
+      <h2>9. Usage & Licensing</h2>
       <ul>
         <li><strong>Channels:</strong> By default, content is published on Vehicle Tips LLC channels.</li>
         <li><strong>Client Usage:</strong> If a client/brand wants to use finished content on their channels, website, or ads, a separate usage license is required.</li>
@@ -242,7 +279,7 @@
     </section>
 
     <section id="disclosure" class="section">
-      <h2>8. Sponsorship & Disclosures</h2>
+      <h2>10. Sponsorship & Disclosures</h2>
       <ul>
         <li><strong>FTC Compliance:</strong> Sponsored content and affiliate links will be clearly disclosed.</li>
         <li><strong>Opinions:</strong> Reviews and opinions are our own unless otherwise stated.</li>
@@ -251,7 +288,7 @@
     </section>
 
     <section id="privacy" class="section">
-      <h2>9. Privacy & Filming Consent</h2>
+      <h2>11. Privacy & Filming Consent</h2>
       <ul>
         <li><strong>Consent Required:</strong> We do not record identifying features (faces, addresses, license plates) without clear permission.</li>
         <li><strong>Anonymized Shots:</strong> We may capture close-ups of parts, tools, or general steps that don’t reveal personal information.</li>
@@ -262,7 +299,7 @@
     </section>
 
     <section id="cancellation" class="section">
-      <h2>10. Cancellations & Rescheduling</h2>
+      <h2>12. Cancellations & Rescheduling</h2>
       <ul>
         <li><strong>Notice:</strong> Please provide notice as early as possible if you need to change dates.</li>
         <li><strong>Within 72 Hours:</strong> Late cancellations for content bookings may be non-refundable due to reserved time and prep.</li>
@@ -272,7 +309,7 @@
     </section>
 
     <section id="payments" class="section">
-      <h2>11. Payments</h2>
+      <h2>13. Payments</h2>
       <ul>
         <li><strong>Invoices:</strong> Payment method and schedule are provided with your booking confirmation.</li>
         <li><strong>Deposits:</strong> Deposits may be required to secure dates and begin pre-production.</li>
@@ -282,7 +319,7 @@
     </section>
 
     <section id="contact" class="section">
-      <h2>12. Contact</h2>
+      <h2>14. Contact</h2>
       <p>
         For talent fees, content packages, availability, and usage licensing, please email 
         <a href="mailto:vehicletips757@gmail.com">vehicletips757@gmail.com</a>.
@@ -304,3 +341,4 @@
 
 </body>
 </html>
+
