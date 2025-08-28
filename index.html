@@ -94,44 +94,26 @@
     .creator-policies .yt-policy { background:#ff0000; color:#fff; }   /* YouTube red */
     .creator-policies .amz-policy{ background:#ff9900; color:#111; }   /* Amazon yellow/black */
 
-    /* --- Creator Support + Buttons (match theme) --- */
-    .support-card{
-      background:var(--card);
-      border-radius:14px;
-      box-shadow:0 6px 16px rgba(0,0,0,.5);
-      padding:14px;
-      margin:16px 0;
-      border-left:4px solid var(--brand);
-    }
-    .support-buttons a{
-      display:inline-block; margin:8px 8px 0 0; padding:10px 14px;
-      border-radius:8px; text-decoration:none; font-weight:700;
+    /* NEW: small orange button for Recommended Gear */
+    .mini-cta { margin-top:12px; }
+    .mini-cta a{
+      display:inline-block;
+      background:var(--brand);
+      color:var(--brand-ink);
+      padding:8px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:800;
       box-shadow:0 4px 12px rgba(0,0,0,.35);
-      transition:transform .2s ease, filter .2s ease;
+      transition: transform .2s, filter .2s;
     }
-    .support-buttons a:hover{ transform:translateY(-1px); filter:brightness(1.05); }
-    .btn-youtube{ background:#ff0000; color:#fff; }
-    .btn-amazon{ background:#232f3e; color:#ff9900; }
-    .btn-sponsor{ background:var(--accent); color:#0b1220; }
-
-    /* --- Recommended Gear (Affiliate) teaser --- */
-    .rec-gear .cta-wrap{ margin-top:10px; }
-    .rec-gear .cta{
-      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-start;
-    }
-    .btn-orange{
-      background:var(--brand); color:var(--brand-ink);
-      padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:800;
-      box-shadow:0 4px 12px rgba(0,0,0,.35);
-      transition:transform .2s ease, filter .2s ease;
-    }
-    .btn-orange:hover{ transform:translateY(-1px); filter:brightness(1.05); }
+    .mini-cta a:hover{ transform:translateY(-1px); filter:brightness(1.05); }
 
     /* Footer */
     footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:22px 16px;font-size:.92rem;color:#cbd5e1}
     footer .fnav{margin-top:6px}
     footer a, footer a:visited, footer a:active{color:var(--accent); text-decoration:none; margin:0 8px}
-    footer a:hover{color:#fb923c; text-decoration:underline}
+    footer a:hover{color:var(--accent-soft); text-decoration:underline}
   </style>
 </head>
 <body>
@@ -154,6 +136,7 @@
     <a href="#reviews">Reviews</a>
     <a href="#appointment">Appointments</a>
     <a href="#contact">Contact</a>
+    <a href="affiliate.html">Recommended Gear</a>
     <a href="policies.html">Warranty & Policies</a>
   </nav>
 
@@ -204,23 +187,9 @@
           <a href="digital-creator-policy.html#amazon" class="btn amz-policy">🛒 Amazon Policy</a>
         </div>
 
-        <!-- Creator Support & Thank-You -->
-        <div class="support-card">
-          <p style="margin:0 0 8px;">
-            <strong>Support the Creator:</strong> If my videos or mobile mechanic work have helped you,
-            your support keeps tutorials and honest reviews coming.
-          </p>
-          <p style="margin:0 0 8px; color:#ccc;">
-            Note: There are millions of content creators in this world, and none of us are perfect — everyone has their own unique style,
-            energy, and personality. I hope my approach as a mechanic and creator fits your vibe.
-            Thank you so much for supporting a small business like mine. It’s a blessing to have you as part of this journey —
-            your help and kindness will never be forgotten. 🙏
-          </p>
-          <div class="support-buttons">
-            <a class="btn-youtube" href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">📺 Follow on YouTube</a>
-            <a class="btn-amazon" href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">🛠️ Amazon Shop</a>
-            <a class="btn-sponsor" href="mailto:VehiclesTips@gmail.com?subject=Sponsor%20a%20Video">📣 Sponsor a Video</a>
-          </div>
+        <!-- NEW: Recommended Gear mini button -->
+        <div class="mini-cta">
+          <a href="affiliate.html">⭐ Recommended Gear</a>
         </div>
       </div>
     </div>
@@ -291,22 +260,6 @@
       <p style="margin-top:10px; color:#ccc;"><em>Note: Prices are for labor only. Parts not included. A disposal/old parts fee from $10 may apply.</em></p>
     </section>
 
-    <!-- Recommended Gear (Affiliate Teaser) -->
-    <section id="recommended" class="rec-gear">
-      <h2>✅ Vehicle Tips Recommended Gear</h2>
-      <p>
-        From new owners to veteran drivers, these are the essentials I recommend for safety, reliability, and comfort —
-        fluids, emergency tools, tire care, cleaning, and more. I use many of these daily as a mobile mechanic and creator.
-      </p>
-      <div class="cta-wrap">
-        <div class="cta">
-          <!-- This will work once we create affiliate.html. For now it can be a Coming Soon link. -->
-          <a class="btn-orange" href="affiliate.html">See Full Recommendations →</a>
-          <span style="color:#ccc; align-self:center;">(Coming soon)</span>
-        </div>
-      </div>
-    </section>
-
     <!-- Payments -->
     <section id="payments">
       <h2>💳 Payments</h2>
@@ -344,9 +297,11 @@
     <div class="fnav">
       <a href="index.html">Home</a> |
       <a href="policies.html">Warranty & Policies</a> |
+      <a href="affiliate.html">Recommended Gear</a> |
       <a href="mailto:VehiclesTips@gmail.com">Contact</a>
     </div>
   </footer>
 
 </body>
 </html>
+
