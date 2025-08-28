@@ -78,6 +78,7 @@
     }
     .hero h1{ margin:0 0 6px; font-size:2.4rem; color:var(--accent); }
     .hero p{ margin:0; color:var(--muted); }
+    .updated{ color:var(--muted); font-size:.9rem; margin:8px 0 0; }
 
     /* ===== Content ===== */
     .wrap{ max-width:1000px; margin:0 auto; padding:20px 16px 60px; }
@@ -90,7 +91,6 @@
     }
     .toc a{ color:var(--accent); text-decoration:none; margin:0 10px 6px 0; display:inline-block; }
     .toc a:hover{ text-decoration:underline; }
-    .updated{ color:var(--muted); font-size:.9rem; margin:8px 0 0; }
 
     .section{
       background: rgba(30,41,59,.9);
@@ -103,15 +103,18 @@
     h2{ color:var(--accent); margin:0 0 8px; }
     .backtop{ color:var(--accent); text-decoration:none; font-size:.9rem; display:inline-block; margin-top:8px; }
 
-    /* Make regular links readable (no purple/blue) */
+    /* Make inline links use brand orange (readable, not purple/blue) */
     a{ color: var(--accent); }
     a:hover{ color: var(--accent-soft); }
 
-    /* Support buttons (for section 16) */
+    /* Support buttons (section 16) */
     .support-buttons a{
       display:inline-block; margin:8px 8px 0 0; padding:10px 14px;
       border-radius:8px; text-decoration:none; font-weight:700;
+      box-shadow: 0 6px 16px rgba(0,0,0,.25);
+      transition: transform .15s ease, filter .15s ease;
     }
+    .support-buttons a:hover{ transform: translateY(-1px); filter: brightness(1.05); }
     .btn-youtube{ background:#ff0000; color:#fff; }
     .btn-amazon{ background:#232f3e; color:#ff9900; }
     .btn-sponsor{ background:#f97316; color:#0b1220; }
@@ -140,7 +143,6 @@
       <nav class="vt-nav">
         <a href="index.html">Home</a>
         <a href="policies.html" aria-current="page">Warranty & Policies</a>
-        <!-- filename matches your repo: digital-creator-policy.html -->
         <a href="digital-creator-policy.html">Creator Policies</a>
       </nav>
 
@@ -155,7 +157,7 @@
   <header class="hero">
     <div>
       <h1 id="top">Warranty & Policies</h1>
-      <p>Vehicle-tips.com Policies, Warranties, Requirements, & Disclaimers</p>
+      <p>Vehicle-tips.com Policies, Warranties, Requirements, &amp; Disclaimers</p>
       <p class="updated">Last updated: 2025-08-28</p>
     </div>
   </header>
@@ -179,12 +181,12 @@
       <a href="#bathroom">Bathroom Breaks</a>
       <a href="#perimeter">Safety Perimeter</a>
       <a href="#documentation">Pre-Work Documentation</a>
-      <a href="#support">Support & Educational Content</a>
+      <a href="#support">Support &amp; Educational Content</a>
     </div>
 
     <!-- Original Sections -->
     <section id="safety" class="section">
-      <h2>1. Safety & Customer-Supplied Parts</h2>
+      <h2>1. Safety &amp; Customer-Supplied Parts</h2>
       <p>We may refuse installation of any part that could compromise safe, reliable operation. Please do not stand over or interfere with the technician’s workspace during service.</p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
@@ -202,7 +204,7 @@
     </section>
 
     <section id="workmanship" class="section">
-      <h2>4. Parts & Workmanship</h2>
+      <h2>4. Parts &amp; Workmanship</h2>
       <ul>
         <li>Workmanship warranty: 3 months or 3,000 miles (whichever comes first).</li>
         <li>We do not supply or warranty parts. If a customer-supplied part fails, new labor charges apply.</li>
@@ -225,7 +227,7 @@
     </section>
 
     <section id="payments" class="section">
-      <h2>7. Payments & Refunds</h2>
+      <h2>7. Payments &amp; Refunds</h2>
       <ul>
         <li>Payment in full is due upon completion. Stopping a job does not cancel labor charges.</li>
         <li>Refunds require proof from a licensed mechanic and a verifiable printed receipt.</li>
@@ -247,13 +249,13 @@
     </section>
 
     <section id="pickup" class="section">
-      <h2>10. Customer Part Pickup & Waiting Fees</h2>
+      <h2>10. Customer Part Pickup &amp; Waiting Fees</h2>
       <p>Technician pickup fee: $10 (within 10 miles) or $30 (20+ miles). Customer delays beyond 30 minutes: $50 per additional 30 minutes unless communicated.</p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
     <section id="cancel" class="section">
-      <h2>11. Cancellations & Refunds</h2>
+      <h2>11. Cancellations &amp; Refunds</h2>
       <p>Reschedule or cancel at least 72 hours before the appointment. Cancellations within 72 hours are non-refundable (including diagnostics, maintenance, inspections, A/C recharges, and virtual sessions). Refunds (when applicable) return to the original payment method within 5–7 business days, excluding weekends and holidays.</p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
@@ -285,16 +287,16 @@
     </section>
 
     <section id="documentation" class="section">
-      <h2>15. Pre-Work Photo Documentation & Inspection</h2>
+      <h2>15. Pre-Work Photo Documentation &amp; Inspection</h2>
       <p>
-        Before starting work, we take photos and complete a <strong>multi-point inspection form</strong> consistent with FMCSA (U.S. DOT) practice,
-        and document site conditions (e.g., existing debris or oil stains). This protects both the customer and the technician by keeping a clear record of the vehicle and the workspace.
+        Before starting work, we take photos and complete a <strong>multi-point inspection form</strong>, and we also document site conditions
+        (e.g., existing debris or oil stains). This protects both the customer and the technician by keeping a clear record of the vehicle and the workspace.
       </p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
     <section id="support" class="section">
-      <h2>16. Support & Educational Content</h2>
+      <h2>16. Support &amp; Educational Content</h2>
       <p>
         Vehicle Tips LLC also creates free educational content. If our service or videos helped you and you’d like to support future tutorials:
       </p>
@@ -313,8 +315,7 @@
     © 2025 Vehicle Tips LLC Mobile Mechanic — All Rights Reserved.
     <div class="fnav">
       <a href="index.html">Home</a> |
-      <a href="policies.html">Warranty & Policies</a> |
-      <!-- match the actual filename in your repo -->
+      <a href="policies.html">Warranty &amp; Policies</a> |
       <a href="digital-creator-policy.html">Creator Policies</a> |
       <a href="mailto:vehicletips757@gmail.com">Contact</a>
     </div>
@@ -322,3 +323,4 @@
 
 </body>
 </html>
+
