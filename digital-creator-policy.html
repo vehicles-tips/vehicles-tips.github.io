@@ -18,6 +18,7 @@
       --link-hover:#0ea5e9; /* brighter blue on hover */
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth;}
     body{
       margin:0; padding:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -25,6 +26,9 @@
       color: var(--text);
       line-height:1.6;
     }
+
+    /* Make in-page anchors stop below the sticky header */
+    section{ scroll-margin-top: 90px; }
 
     /* ===== Sticky Header ===== */
     .vt-header{
@@ -138,7 +142,8 @@
       <nav class="vt-nav">
         <a href="index.html">Home</a>
         <a href="policies.html">Warranty & Policies</a>
-        <a href="creator-policies.html" aria-current="page">Creator Policies</a>
+        <a href="digital-creator-policy.html" aria-current="page">Creator Policies</a>
+        <a href="index.html#payments">Payments</a>
       </nav>
       <div class="vt-actions">
         <a class="vt-btn vt-btn-call" href="tel:+17575733154">Call Now: (757) 573-3154</a>
@@ -284,7 +289,8 @@
       <h2>11. Prohibited Content</h2>
       <p>
         Vehicle Tips LLC will not create or promote content involving: 
-        children in unsafe contexts, gambling, sexual content, drugs, alcohol abuse, gang activity, violence, crypto/investment schemes, animal cruelty or ambush, or any illegal/unsafe activity.
+        children in unsafe contexts, gambling, sexual content, drugs, alcohol abuse, gang activity, violence,
+        crypto/investment schemes, animal cruelty or ambush, or any illegal/unsafe activity.
       </p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
@@ -332,12 +338,14 @@
     <div class="fnav">
       <a href="index.html">Home</a> |
       <a href="policies.html">Warranty & Policies</a> |
-      <a href="creator-policies.html">Creator Policies</a> |
+      <a href="digital-creator-policy.html">Creator Policies</a> |
+      <a href="index.html#payments">Payments</a> |
       <a href="mailto:vehicletips757@gmail.com">Contact</a>
     </div>
   </footer>
 
 </body>
 </html>
+
 
 
