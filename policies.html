@@ -10,31 +10,34 @@
       --text:#f8fafc; --muted:#cbd5e1;
       --accent:#f97316; --accent-soft:#fb923c;
     }
-    body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);color:var(--text);line-height:1.6;}
-    .vt-header{position:sticky;top:0;background:rgba(15,23,42,.92);
-      border-bottom:1px solid var(--border);backdrop-filter:saturate(140%) blur(6px);}
-    .vt-header-inner{max-width:1200px;margin:0 auto;display:grid;
-      grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:10px 16px;}
-    .vt-brand{color:var(--text);font-weight:800;text-decoration:none;font-size:1.25rem;}
-    .vt-nav a{color:var(--text);margin:0 10px;text-decoration:none;font-weight:600;}
-    .vt-nav a[aria-current="page"], .vt-nav a:hover{color:var(--accent);}
-    .vt-btn{padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:800;}
-    .vt-btn-call{background:var(--accent);color:#0b1220;}
+    body{margin:0;font-family:system-ui,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+    .vt-header{position:sticky;top:0;background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);z-index:50}
+    .vt-header-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:10px 16px}
+    .vt-brand{color:var(--text);text-decoration:none;font-weight:800;font-size:clamp(1rem,.9rem+1vw,1.25rem)}
+    .vt-nav a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
+    .vt-nav a[aria-current="page"],.vt-nav a:hover{color:var(--accent)}
+    .vt-btn{padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:800;transition:.12s;white-space:nowrap}
+    .vt-btn-call{background:var(--accent);color:#0b1220}
+    .vt-btn-call:hover{background:var(--accent-soft)}
+    .vt-btn-mail{border:1px solid var(--border);color:var(--text)}
+    .vt-btn-mail:hover{border-color:var(--accent);color:var(--accent)}
     .hero{height:300px;display:flex;align-items:center;justify-content:center;text-align:center;
-      background:linear-gradient(rgba(15,23,42,.7),rgba(15,23,42,.7)),
-      url("https://images.unsplash.com/photo-1584208123923-cf2dfd4b91b8?auto=format&fit=crop&w=1920&q=80")center/cover;
-      border-bottom:1px solid var(--border);}
-    .hero h1{color:var(--accent);font-size:2.4rem;margin:0 0 6px;}
-    .wrap{max-width:1000px;margin:0 auto;padding:20px 16px 60px;}
-    .toc{background:rgba(30,41,59,.9);border:1px solid var(--border);border-radius:10px;padding:14px;margin:18px 0;}
-    .toc a{color:var(--accent);margin:0 10px 6px 0;display:inline-block;text-decoration:none;}
-    .section{background:rgba(30,41,59,.9);border:1px solid var(--border);border-radius:12px;padding:16px;margin:18px 0;}
-    h2{color:var(--accent);margin:0 0 8px;}
-    a{color:var(--accent);text-decoration:none;}
-    a:hover{color:var(--accent-soft);}
-    footer{background:var(--panel);border-top:1px solid var(--border);text-align:center;padding:20px;color:var(--muted);}
-    footer a{color:var(--accent);margin:0 8px;text-decoration:none;}
+      background:linear-gradient(rgba(15,23,42,.7),rgba(15,23,42,.7)),url("https://images.unsplash.com/photo-1584208123923-cf2dfd4b91b8?auto=format&fit=crop&w=1920&q=80")center/cover no-repeat;
+      border-bottom:1px solid var(--border)}
+    .hero h1{margin:0 0 6px;font-size:2.4rem;color:var(--accent)}
+    .hero p{margin:0;color:var(--muted)}
+    .wrap{max-width:1000px;margin:0 auto;padding:20px 16px 60px}
+    .toc{background:rgba(30,41,59,.9);border:1px solid var(--border);border-radius:10px;padding:14px;margin:18px 0}
+    .toc a{color:var(--accent);text-decoration:none;margin:0 10px 6px 0;display:inline-block}
+    .section{background:rgba(30,41,59,.9);border:1px solid var(--border);border-radius:12px;padding:16px;margin:18px 0}
+    h2{color:var(--accent);margin:0 0 8px}
+    .backtop{color:var(--accent);font-size:.9rem;text-decoration:none;display:inline-block;margin-top:8px}
+    a{color:var(--accent)} a:hover{color:var(--accent-soft)}
+    .support-buttons a{display:inline-block;margin:8px 8px 0 0;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+    .btn-youtube{background:#ff0000;color:#fff} .btn-amazon{background:#232f3e;color:#ff9900}
+    .btn-sponsor{background:#f97316;color:#0b1220} .btn-pay{background:#0f766e;color:#ecfeff}
+    footer{background:var(--panel);border-top:1px solid var(--border);text-align:center;padding:20px;font-size:.9rem;color:var(--muted)}
+    footer a{color:var(--accent);text-decoration:none;margin:0 8px}
   </style>
 </head>
 <body>
@@ -47,8 +50,9 @@
       <a href="policies.html" aria-current="page">Warranty & Policies</a>
       <a href="digital-creator-policy.html">Creator Policies</a>
     </nav>
-    <div>
+    <div class="vt-actions">
       <a class="vt-btn vt-btn-call" href="tel:+17575733154">Call Now: (757) 573-3154</a>
+      <a class="vt-btn vt-btn-mail" href="mailto:vehicletips757@gmail.com">Email Us</a>
     </div>
   </div>
 </header>
@@ -65,63 +69,95 @@
   <div class="toc">
     Jump to:
     <a href="#safety">Safety</a>
-    <a href="#workmanship">Workmanship</a>
     <a href="#payments">Payments</a>
-    <a href="#pickup">Service Call / Parts</a>
+    <a href="#pickup">Parts & Fees</a>
+    <a href="#servicecall">Service Call</a>
     <a href="#cancel">Cancellations</a>
+    <a href="#bathroom">Bathroom</a>
+    <a href="#perimeter">Safety Zone</a>
+    <a href="#documentation">Documentation</a>
     <a href="#support">Support</a>
   </div>
 
   <section id="safety" class="section">
     <h2>1. Safety & Customer-Supplied Parts</h2>
-    <p>We may refuse installation of any unsafe part. Please do not stand over or interfere with the technician’s workspace.</p>
-  </section>
-
-  <section id="workmanship" class="section">
-    <h2>2. Parts & Workmanship</h2>
-    <ul>
-      <li>Workmanship warranty: 3 months or 3,000 miles (whichever comes first).</li>
-      <li>No warranty on customer-supplied parts. New labor applies if they fail.</li>
-      <li>If we purchase parts, a market-based markup applies to cover sourcing & warranty handling.</li>
-    </ul>
+    <p>We may refuse installation of any part that compromises safe operation. Do not interfere with the workspace during service.</p>
+    <a class="backtop" href="#top">↑ Back to top</a>
   </section>
 
   <section id="payments" class="section">
-    <h2>3. Payments</h2>
+    <h2>2. Payments & Refunds</h2>
     <ul>
-      <li>Payment is due in full upon completion.</li>
-      <li>We accept: <strong>Cash, PayPal, and Credit Card</strong> (via PayPal/reader).</li>
-      <li>Note: Card/PayPal payments include processing fees.</li>
+      <li>Payment in full is due upon completion. Stopping a job does not cancel labor charges.</li>
+      <li>PayPal/Credit Card: Transaction fees (≈3%) are added to cover processing costs.</li>
+      <li>Refunds require proof from a licensed mechanic and receipt.</li>
+      <li>If service pauses due to parts/external issues, half the labor is due that day; balance due on completion.</li>
     </ul>
+    <a class="backtop" href="#top">↑ Back to top</a>
   </section>
 
   <section id="pickup" class="section">
-    <h2>4. Service Call / Trip Fee & Parts Markup</h2>
-    <p><strong>Service Call / Trip Fee:</strong></p>
-    <ul>
-      <li>Within 10 miles: <strong>Free</strong></li>
-      <li>10–50 miles: <strong>$25</strong></li>
-      <li>Maximum 50 miles: <strong>$40 cap</strong></li>
-      <li><em>Waiver:</em> If approved repairs are <strong>$200+</strong>, this fee may be waived.</li>
-    </ul>
-    <p>If asked to buy parts, a <strong>parts markup</strong> applies. If customers supply their own, there’s <strong>no warranty</strong>.</p>
+    <h2>3. Parts, Pickup & Markup</h2>
+    <p>Technician pickup fee: $10 (within 10 miles) or $30 (20+ miles). Customer delays beyond 30 min: $50 per half-hour unless communicated.</p>
+    <p>If we <strong>purchase parts</strong>, a market-based <strong>markup</strong> applies for sourcing, transport, and warranty handling.</p>
+    <p>If <strong>customers supply parts</strong>, Vehicle Tips LLC does <strong>not warranty</strong> them. Labor fees reapply if those parts fail.</p>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <section id="servicecall" class="section">
+    <h2>4. Service Call / Trip-No Show Fee</h2>
+    <p>A <strong>Service Call Fee</strong> covers the cost of driving to your location. This starts at <strong>$25</strong> (local) and may reach up to <strong>$40</strong> depending on distance.</p>
+    <p>Before dispatch, customers must confirm by text/email that they’ve read and agree to policies by replying <strong>“I AGREE”</strong>. If no confirmation is received, the appointment will not proceed.</p>
+    <p>If the technician arrives and the customer is unavailable (no-show), the Service Call Fee is still charged.</p>
+    <a class="backtop" href="#top">↑ Back to top</a>
   </section>
 
   <section id="cancel" class="section">
     <h2>5. Cancellations & Refunds</h2>
-    <p>Please reschedule or cancel 72+ hours before your appointment. Cancellations inside 72h are non-refundable. Refunds (if applicable) return to the original payment method in 5–7 business days.</p>
+    <p>Cancel/reschedule at least <strong>72 hours</strong> in advance. Late cancellations are non-refundable.</p>
+    <p>If parts were ordered through Vehicle Tips LLC and you cancel, you are responsible for the parts cost + markup + Service Call Fee (if already dispatched).</p>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <section id="bathroom" class="section">
+    <h2>6. Bathroom Breaks</h2>
+    <p>We may step away to use public restrooms. You’ll be notified, and the job site will be secured before leaving.</p>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <section id="perimeter" class="section">
+    <h2>7. Safety Perimeter</h2>
+    <p>Work areas are blocked off with cones/chains. Children, pets, and bystanders must remain outside until cleared.</p>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <section id="documentation" class="section">
+    <h2>8. Pre-Work Documentation</h2>
+    <p>Before starting work, photos and a multi-point inspection form are completed, along with site condition notes.</p>
+    <a class="backtop" href="#top">↑ Back to top</a>
   </section>
 
   <section id="support" class="section">
-    <h2>6. Support & Content</h2>
-    <p>If my free content or services help you, you can support future tutorials:</p>
-    <p>📺 <a href="https://youtube.com/@vehicles-tips" target="_blank">Follow on YouTube</a> | 🛒 <a href="https://www.amazon.com/shop/vehiclestips" target="_blank">Shop Amazon Page</a></p>
+    <h2>9. Support & Educational Content</h2>
+    <p>If our service or videos helped you, you can support us here:</p>
+    <div class="support-buttons">
+      <a class="btn-youtube" href="https://youtube.com/@vehicles-tips" target="_blank">📺 YouTube</a>
+      <a class="btn-amazon" href="https://www.amazon.com/shop/vehiclestips" target="_blank">🛠️ Amazon</a>
+      <a class="btn-sponsor" href="mailto:vehicletips757@gmail.com">📣 Sponsor</a>
+      <a class="btn-pay" href="index.html#payments">💳 Donate / Pay</a>
+    </div>
+    <a class="backtop" href="#top">↑ Back to top</a>
   </section>
 </main>
 
 <footer>
-  © 2025 Vehicle Tips LLC — All Rights Reserved. 
-  <div><a href="index.html">Home</a> | <a href="policies.html">Warranty & Policies</a></div>
+  © 2025 Vehicle Tips LLC Mobile Mechanic — All Rights Reserved.
+  <div class="fnav">
+    <a href="index.html">Home</a> |
+    <a href="policies.html">Warranty & Policies</a> |
+    <a href="digital-creator-policy.html">Creator Policies</a> |
+    <a href="mailto:vehicletips757@gmail.com">Contact</a>
+  </div>
 </footer>
 
 </body>
