@@ -102,7 +102,21 @@
     }
     h2{ color:var(--accent); margin:0 0 8px; }
     .backtop{ color:var(--accent); text-decoration:none; font-size:.9rem; display:inline-block; margin-top:8px; }
-    
+
+    /* Make regular links readable (no purple/blue) */
+    a{ color: var(--accent); }
+    a:hover{ color: var(--accent-soft); }
+
+    /* Support buttons (for section 16) */
+    .support-buttons a{
+      display:inline-block; margin:8px 8px 0 0; padding:10px 14px;
+      border-radius:8px; text-decoration:none; font-weight:700;
+    }
+    .btn-youtube{ background:#ff0000; color:#fff; }
+    .btn-amazon{ background:#232f3e; color:#ff9900; }
+    .btn-sponsor{ background:#f97316; color:#0b1220; }
+    .btn-pay{ background:#0f766e; color:#ecfeff; }
+
     /* ===== Footer ===== */
     footer{
       background: var(--panel);
@@ -126,7 +140,8 @@
       <nav class="vt-nav">
         <a href="index.html">Home</a>
         <a href="policies.html" aria-current="page">Warranty & Policies</a>
-        <a href="creator-policies.html">Creator Policies</a>
+        <!-- filename matches your repo: digital-creator-policy.html -->
+        <a href="digital-creator-policy.html">Creator Policies</a>
       </nav>
 
       <div class="vt-actions">
@@ -253,8 +268,8 @@
     <section id="bathroom" class="section">
       <h2>13. Bathroom Breaks</h2>
       <p>
-        As mobile mechanics, we may need to briefly leave your property to use a nearby restroom. We do not ask to use a customer’s home restroom. 
-        Sometimes we carry a portable toilet, but often we use facilities at nearby restaurants, hotels, or public areas. 
+        As mobile mechanics, we may need to briefly leave your property to use a nearby restroom. We do not ask to use a customer’s home restroom.
+        Sometimes we carry a portable toilet, but often we use facilities at nearby restaurants, hotels, or public areas.
         If we step away, we will notify you by text, call, or email and secure the unfinished job site before leaving.
       </p>
       <a class="backtop" href="#top">↑ Back to top</a>
@@ -263,7 +278,7 @@
     <section id="perimeter" class="section">
       <h2>14. Safety Perimeter at Job Sites</h2>
       <p>
-        For everyone’s safety, we create a clearly marked work zone using hazard cones and plastic chain. Please ensure 
+        For everyone’s safety, we create a clearly marked work zone using hazard cones and plastic chain. Please ensure
         <strong>children, pets, and bystanders</strong> stay outside this perimeter until work is complete and the area is cleared.
       </p>
       <a class="backtop" href="#top">↑ Back to top</a>
@@ -272,7 +287,7 @@
     <section id="documentation" class="section">
       <h2>15. Pre-Work Photo Documentation & Inspection</h2>
       <p>
-        Before starting work, we take photos and complete a <strong>multi-point inspection form</strong> consistent with FMCSA (U.S. DOT) practice, 
+        Before starting work, we take photos and complete a <strong>multi-point inspection form</strong> consistent with FMCSA (U.S. DOT) practice,
         and document site conditions (e.g., existing debris or oil stains). This protects both the customer and the technician by keeping a clear record of the vehicle and the workspace.
       </p>
       <a class="backtop" href="#top">↑ Back to top</a>
@@ -282,10 +297,13 @@
       <h2>16. Support & Educational Content</h2>
       <p>
         Vehicle Tips LLC also creates free educational content. If our service or videos helped you and you’d like to support future tutorials:
-        <a href="https://youtube.com/@vehicles-tips" target="_blank" rel="noopener">Follow on YouTube</a>,
-        <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">visit our Amazon page</a>, or
-        <a href="mailto:vehicletips757@gmail.com?subject=Sponsor%20a%20Video">email to sponsor a video</a>.
       </p>
+      <div class="support-buttons">
+        <a class="btn-youtube" href="https://youtube.com/@vehicles-tips" target="_blank" rel="noopener">📺 Follow on YouTube</a>
+        <a class="btn-amazon" href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">🛠️ Amazon Page</a>
+        <a class="btn-sponsor" href="mailto:vehicletips757@gmail.com?subject=Sponsor%20a%20Video">📣 Sponsor a Video</a>
+        <a class="btn-pay" href="index.html#payments">💳 Donate / Pay</a>
+      </div>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
   </main>
@@ -296,7 +314,8 @@
     <div class="fnav">
       <a href="index.html">Home</a> |
       <a href="policies.html">Warranty & Policies</a> |
-      <a href="creator-policies.html">Creator Policies</a> |
+      <!-- match the actual filename in your repo -->
+      <a href="digital-creator-policy.html">Creator Policies</a> |
       <a href="mailto:vehicletips757@gmail.com">Contact</a>
     </div>
   </footer>
