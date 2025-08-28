@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creator Policies & Talent Info – Vehicle-tips.com</title>
+  <style>
+    /* ===== Theme Vars (match Warranty & Policies page) ===== */
+    :root{
+      --bg:#0f172a;         /* page background */
+      --panel:#1e293b;      /* cards/boxes */
+      --border:#334155;
+      --text:#f8fafc;
+      --muted:#cbd5e1;
+      --accent:#f97316;     /* ORANGE */
+      --accent-soft:#fb923c;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; padding:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+
+    /* ===== Sticky Top Action Bar (same classes) ===== */
+    .vt-header{
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(15,23,42,0.92);
+      backdrop-filter: saturate(140%) blur(6px);
+      border-bottom:1px solid var(--border);
+    }
+    .vt-header-inner{
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto auto;
+      gap: 14px; align-items: center;
+      padding: 10px 16px;
+    }
+    .vt-brand{
+      color: var(--text); text-decoration: none; font-weight: 800; letter-spacing:.2px;
+      font-size: clamp(1rem, .9rem + 1vw, 1.25rem);
+    }
+    .vt-nav a{
+      color: var(--text); text-decoration: none; margin: 0 10px; font-weight: 600;
+    }
+    .vt-nav a[aria-current="page"]{ color: var(--accent); }
+    .vt-nav a:hover{ color: var(--accent); }
+    .vt-actions{ display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .vt-btn{
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 14px; border-radius: 999px; text-decoration: none;
+      font-weight: 800; letter-spacing:.2px; border: 1px solid transparent;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space: nowrap; color: var(--text);
+    }
+    .vt-btn:hover{ transform: translateY(-1px); }
+    .vt-btn-call{ background: var(--accent); color:#0b1220; }
+    .vt-btn-call:hover{ background: var(--accent-soft); }
+    .vt-btn-mail{ background: transparent; border-color: var(--border); }
+    .vt-btn-mail:hover{ border-color: var(--accent); color: var(--accent); }
+
+    @media (max-width: 800px){
+      .vt-header-inner{ grid-template-columns: 1fr; gap: 8px; }
+      .vt-nav{ display:flex; flex-wrap:wrap; gap:8px; }
+      .vt-actions{ justify-content:flex-start; }
+    }
+
+    /* ===== HERO BANNER (same look) ===== */
+    .hero{
+      height:300px;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      background:
+        linear-gradient(rgba(15,23,42,.7), rgba(15,23,42,.7)),
+        url("https://images.unsplash.com/photo-1584208123923-cf2dfd4b91b8?auto=format&fit=crop&w=1920&q=80")
+        center / cover no-repeat;
+      border-bottom:1px solid var(--border);
+    }
+    .hero h1{ margin:0 0 6px; font-size:2.4rem; color:var(--accent); }
+    .hero p{ margin:0; color:var(--muted); }
+    .updated{ color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+
+    /* ===== Content Wrapping & Cards ===== */
+    .wrap{ max-width:1000px; margin:0 auto; padding:20px 16px 60px; }
+    .toc{
+      background: rgba(30,41,59,.9);
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:14px;
+      margin:18px 0 10px;
+    }
+    .toc a{ color:var(--accent); text-decoration:none; margin:0 10px 6px 0; display:inline-block; }
+    .toc a:hover{ text-decoration:underline; }
+
+    .section{
+      background: rgba(30,41,59,.9);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:16px;
+      margin:18px 0;
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+    h2{ color:var(--accent); margin:0 0 8px; }
+    .backtop{ color:var(--accent); text-decoration:none; font-size:.9rem; display:inline-block; margin-top:8px; }
+
+    /* ===== Footer ===== */
+    footer{
+      background: var(--panel);
+      border-top:1px solid var(--border);
+      text-align:center;
+      padding:20px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    footer a{ color:var(--accent); text-decoration:none; margin:0 8px; }
+    footer a:hover{ text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP ACTION BAR -->
+  <header class="vt-header">
+    <div class="vt-header-inner">
+      <a class="vt-brand" href="index.html">Vehicle Tips</a>
+
+      <nav class="vt-nav">
+        <a href="index.html">Home</a>
+        <a href="policies.html">Warranty & Policies</a>
+        <a href="creator-policies.html" aria-current="page">Creator Policies</a>
+      </nav>
+
+      <div class="vt-actions">
+        <a class="vt-btn vt-btn-call" href="tel:+17575733154">Call Now: (757) 573-3154</a>
+        <a class="vt-btn vt-btn-mail" href="mailto:vehicletips757@gmail.com?subject=Creator%20Inquiry">Email Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <h1 id="top">Creator Policies & Talent Info</h1>
+      <p>YouTube & Amazon Influencer Guidelines, Bookings, and Usage</p>
+      <p class="updated">Last updated: 2025-08-28</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- TOC -->
+    <div class="toc">
+      Jump to:
+      <a href="#overview">Overview</a>
+      <a href="#youtube">YouTube Policy</a>
+      <a href="#amazon">Amazon Policy</a>
+      <a href="#booking">Content Booking</a>
+      <a href="#fees">Talent Fees</a>
+      <a href="#deliverables">Deliverables</a>
+      <a href="#usage">Usage & Licensing</a>
+      <a href="#disclosure">Sponsorship & Disclosures</a>
+      <a href="#privacy">Privacy & Filming Consent</a>
+      <a href="#cancellation">Cancellations</a>
+      <a href="#payments">Payments</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Sections -->
+    <section id="overview" class="section">
+      <h2>1. Overview</h2>
+      <p>
+        Vehicle Tips LLC creates educational and promotional automotive content across platforms including 
+        <strong>YouTube</strong> and <strong>Amazon Influencer</strong>. These policies explain how we handle filming, bookings, usage rights, 
+        and talent fees related to digital content. Service policies for mechanical work remain on the 
+        <a href="policies.html">Warranty & Policies</a> page.
+      </p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="youtube" class="section">
+      <h2>2. YouTube Policy</h2>
+      <ul>
+        <li><strong>Educational Focus:</strong> Content prioritizes repair tips, diagnostics, and product/tool education.</li>
+        <li><strong Editorial Control:</strong> Publishing decisions, titles, edits, and thumbnails are at our sole discretion.</li>
+        <li><strong>Scheduling:</strong> Filming during service is optional and only with consent (see Privacy & Filming Consent).</li>
+        <li><strong>Brand Features:</strong> Sponsored segments or product features must be pre-approved when applicable.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="amazon" class="section">
+      <h2>3. Amazon Influencer Policy</h2>
+      <ul>
+        <li><strong>Product Coverage:</strong> Tools, parts, and accessories may be reviewed or demonstrated.</li>
+        <li><strong>Affiliate Links:</strong> When links are used, appropriate disclosures are included (see Sponsorship & Disclosures).</li>
+        <li><strong>Brand Coordination:</strong> For vendor requests, please provide product info, sample availability, and timelines.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="booking" class="section">
+      <h2>4. Content Booking</h2>
+      <ul>
+        <li><strong>Separate from Service:</strong> Content creation is booked separately from mechanic work to avoid impacting service quality or timing.</li>
+        <li><strong>Lead Time:</strong> Please request content bookings in advance with target dates and goals.</li>
+        <li><strong>Scope Agreement:</strong> We’ll confirm the format (e.g., long-form video, short, photos, livestream) and approximate runtime.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="fees" class="section">
+      <h2>5. Talent Fees</h2>
+      <p>
+        Talent/creator fees apply for on-camera work, narration, brand integrations, live features, and editorial content produced on request. 
+        Rates vary by scope and usage. <strong>For a custom quote, please email</strong> 
+        <a href="mailto:vehicletips757@gmail.com">vehicletips757@gmail.com</a>.
+      </p>
+      <ul>
+        <li><strong>Factors:</strong> complexity, shooting time, travel, editing, deadlines, and usage rights.</li>
+        <li><strong>Deposits:</strong> Content bookings typically require a deposit to hold the date.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="deliverables" class="section">
+      <h2>6. Deliverables</h2>
+      <ul>
+        <li><strong>Define in Writing:</strong> We confirm deliverables before filming (e.g., 1× YouTube video, 1× short, 3× photos).</li>
+        <li><strong>Edits:</strong> Up to 1–2 minor edit rounds may be included unless otherwise agreed.</li>
+        <li><strong>Reshoots:</strong> Substantial changes or reshoots may be billed separately.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="usage" class="section">
+      <h2>7. Usage & Licensing</h2>
+      <ul>
+        <li><strong>Channels:</strong> By default, content is published on Vehicle Tips LLC channels.</li>
+        <li><strong>Client Usage:</strong> If a client/brand wants to use finished content on their channels, website, or ads, a separate usage license is required.</li>
+        <li><strong>License Terms:</strong> License scope (duration, platforms, regions, ad vs. organic) will be specified in the quote.</li>
+        <li><strong>Rights Granted to Us:</strong> With consent to film, you grant Vehicle Tips LLC a worldwide, non-exclusive, perpetual, royalty-free license to use the footage for educational, promotional, and commercial purposes.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="disclosure" class="section">
+      <h2>8. Sponsorship & Disclosures</h2>
+      <ul>
+        <li><strong>FTC Compliance:</strong> Sponsored content and affiliate links will be clearly disclosed.</li>
+        <li><strong>Opinions:</strong> Reviews and opinions are our own unless otherwise stated.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="privacy" class="section">
+      <h2>9. Privacy & Filming Consent</h2>
+      <ul>
+        <li><strong>Consent Required:</strong> We do not record identifying features (faces, addresses, license plates) without clear permission.</li>
+        <li><strong>Anonymized Shots:</strong> We may capture close-ups of parts, tools, or general steps that don’t reveal personal information.</li>
+        <li><strong>No Impact on Service:</strong> If extra time is needed specifically for filming, a content booking will be scheduled separately.</li>
+        <li><strong>No Obligation:</strong> You may opt out of any recording before work begins.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="cancellation" class="section">
+      <h2>10. Cancellations & Rescheduling</h2>
+      <ul>
+        <li><strong>Notice:</strong> Please provide notice as early as possible if you need to change dates.</li>
+        <li><strong>Within 72 Hours:</strong> Late cancellations for content bookings may be non-refundable due to reserved time and prep.</li>
+        <li><strong>Weather/Safety:</strong> Weather or safety concerns may require rescheduling at no penalty.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="payments" class="section">
+      <h2>11. Payments</h2>
+      <ul>
+        <li><strong>Invoices:</strong> Payment method and schedule are provided with your booking confirmation.</li>
+        <li><strong>Deposits:</strong> Deposits may be required to secure dates and begin pre-production.</li>
+        <li><strong>Separate from Service:</strong> Content fees are separate from mechanic labor rates and invoices.</li>
+      </ul>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>12. Contact</h2>
+      <p>
+        For talent fees, content packages, availability, and usage licensing, please email 
+        <a href="mailto:vehicletips757@gmail.com">vehicletips757@gmail.com</a>.
+      </p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Vehicle Tips LLC Mobile Mechanic — All Rights Reserved.
+    <div class="fnav">
+      <a href="index.html">Home</a> |
+      <a href="policies.html">Warranty & Policies</a> |
+      <a href="creator-policies.html">Creator Policies</a> |
+      <a href="mailto:vehicletips757@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
