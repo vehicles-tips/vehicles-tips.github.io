@@ -19,6 +19,8 @@
       background:var(--bg); color:var(--ink); line-height:1.6;
       display:flex; flex-direction:column; min-height:100vh;
     }
+
+    /* Header with background image */
     header.hero{
       background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600') center/cover no-repeat;
       color:#fff; text-align:center; padding:60px 16px; position:relative;
@@ -31,9 +33,13 @@
     .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
     .btn{background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
     .btn.secondary{background:transparent;color:#fff;border:1px solid #fff}
+
+    /* Nav */
     nav{background:#0e0e0e;display:flex;gap:18px;justify-content:center;padding:10px 12px;font-size:.95rem;flex-wrap:wrap;border-top:1px solid #ffffff14;border-bottom:1px solid #ffffff14}
     nav a{color:var(--brand);text-decoration:none;font-weight:700}
     nav a:hover{color:#fff}
+
+    /* Layout */
     main{max-width:960px;margin:20px auto;padding:0 16px; flex:1 0 auto;}
     section{background:var(--card);border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.5);padding:18px;margin:16px 0}
     h2{margin:6px 0 10px;font-size:1.35rem;color:var(--brand)}
@@ -45,34 +51,72 @@
     .badge{display:inline-block; padding:3px 8px; border-radius:999px; background:#f04a1d; color:#fff; font-size:.75rem; margin-left:8px}
     #contact a{color:var(--ink);text-decoration:underline}
     #contact a:visited{color:var(--ink)}
+
+    /* Responsive YouTube Embed */
     .video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);margin-top:12px}
     .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+
+    /* Big action buttons */
     .big-btn{display:inline-block;margin:8px;padding:14px 22px;font-size:1.05rem;font-weight:700;border-radius:12px;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease}
     .youtube-btn{background:#ff0000;color:#fff;box-shadow:0 4px 12px rgba(255,0,0,.35)}
     .youtube-btn:hover{ transform:scale(1.05) }
     .amazon-btn{background:#232f3e;color:#ff9900;box-shadow:0 4px 12px rgba(0,0,0,.35)}
     .amazon-btn:hover{ transform:scale(1.05) }
+
+    /* Warranty & Policies (single orange button) */
     .info-buttons { margin-top: 14px; }
     .info-buttons .btn {
-      display:inline-block;background: var(--brand);color: var(--brand-ink);padding:10px 16px;margin:5px 8px 0 0;border-radius:6px;text-decoration:none;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,.35);transition: transform .2s, filter .2s;
+      display:inline-block;
+      background: var(--brand);
+      color: var(--brand-ink);
+      padding:10px 16px;
+      margin:5px 8px 0 0;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:bold;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      transition: transform .2s, filter .2s;
     }
     .info-buttons .btn:hover{ transform: translateY(-1px); filter:brightness(1.05); }
+
+    /* Creator policy buttons */
     .creator-policies { margin-top: 14px; }
     .creator-policies .btn{
-      display:inline-block;padding:10px 16px;margin:5px 8px 0 0;border-radius:6px;text-decoration:none;font-weight:bold;transition: transform .2s, filter .2s;box-shadow:0 4px 12px rgba(0,0,0,.35);
+      display:inline-block;
+      padding:10px 16px;
+      margin:5px 8px 0 0;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:bold;
+      transition: transform .2s, filter .2s;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
     }
     .creator-policies .btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
     .creator-policies .yt-policy { background:#ff0000; color:#fff; }
     .creator-policies .amz-policy{ background:#ff9900; color:#111; }
+
+    /* NEW: small orange button for Recommended Gear */
     .mini-cta { margin-top:12px; }
     .mini-cta a{
-      display:inline-block;background:var(--brand);color:var(--brand-ink);padding:8px 14px;border-radius:8px;text-decoration:none;font-weight:800;box-shadow:0 4px 12px rgba(0,0,0,.35);transition: transform .2s, filter .2s;
+      display:inline-block;
+      background:var(--brand);
+      color:var(--brand-ink);
+      padding:8px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      transition: transform .2s, filter .2s;
     }
     .mini-cta a:hover{ transform:translateY(-1px); filter:brightness(1.05); }
+
+    /* Footer */
     footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:22px 16px;font-size:.92rem;color:#cbd5e1}
     footer .fnav{margin-top:6px}
     footer a, footer a:visited, footer a:active{color:var(--accent); text-decoration:none; margin:0 8px}
     footer a:hover{color:var(--accent-soft); text-decoration:underline}
+
+    /* Diagnostics grid helpers */
     .price-grid{display:grid;grid-template-columns:1fr;gap:12px}
     @media (min-width:680px){.price-grid{grid-template-columns:1fr 1fr 1fr}}
     .card{background:#151515;border:1px solid #ffffff12;border-radius:12px;padding:14px}
@@ -87,9 +131,9 @@
     <h1>Vehicles Tips Auto Mechanic</h1>
     <p class="highlight">Mobile Mechanic – We Come To You!</p>
     <div class="cta">
-      <!-- CHANGED: Call/Text -->
-      <a class="btn" href="tel:7575733154">📞 Call/Text Now: (757) 573-3154</a>
-      <a class="btn secondary" href="sms:+17575733154?&body=Hi%20Vehicles%20Tips%2C%20I%27d%20like%20to%20ask%20about%20a%20repair%20or%20diagnostic.">💬 Text Us</a>
+      <!-- Consistent Call/Text + E.164 number -->
+      <a class="btn" href="tel:+17575733154">📞 Call/Text Now: (757) 573-3154</a>
+      <a class="btn secondary" href="sms:+17575733154?body=Hi%20Vehicles%20Tips%2C%20I%27d%20like%20to%20ask%20about%20a%20repair%20or%20diagnostic.">💬 Text Us</a>
       <a class="btn secondary" href="mailto:VehiclesTips@gmail.com">✉️ Email Us</a>
     </div>
   </header>
@@ -98,10 +142,8 @@
     <a href="#about">About / Trust</a>
     <a href="#services">Services</a>
     <a href="#diagnostics">Diagnostics & Fees</a>
-    <a href="#analysis">Vehicle Analysis</a>
-    <a href="#brakes">Brake Pricing</a>
+    <a href="#complete-vehicle-analysis">Vehicle Analysis</a>
     <a href="#payments">Payments</a>
-    <a href="#reviews">Reviews</a>
     <a href="#appointment">Appointments</a>
     <a href="#contact">Contact</a>
     <a href="affiliate.html">Recommended Gear</a>
@@ -126,11 +168,13 @@
           <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
         </ul>
 
+        <!-- Buttons -->
         <div style="text-align:center; margin-top:12px;">
           <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener" class="big-btn youtube-btn">📺 Visit My YouTube Channel</a>
           <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener" class="big-btn amazon-btn">🛒 Shop My Amazon Page</a>
         </div>
 
+        <!-- Embedded YouTube -->
         <div class="video-container">
           <iframe
             src="https://www.youtube.com/embed/w7hTRkhH5B8?si=J1rSMHP1HsFs0TxG"
@@ -147,11 +191,13 @@
         <p>Don’t forget to <strong>subscribe and follow</strong> for more tips — you might even bump into me if you’re having a similar car problem. I share <strong>vehicle maintenance advice</strong> to help people save money and buy the right parts.</p>
         <p>Looking for a specific part or need a <strong>repair quote</strong>? You’re always welcome to ask. I may not reply instantly, but I’ll respond as soon as I’m available. I’m also proud to be <strong>Filipino 🇵🇭</strong> and communicate clearly to make sure you get honest, quality service. 💪😎</p>
 
+        <!-- Creator Policy Buttons -->
         <div class="creator-policies">
           <a href="digital-creator-policy.html#youtube" class="btn yt-policy">📺 YouTube Policy</a>
           <a href="digital-creator-policy.html#amazon" class="btn amz-policy">🛒 Amazon Policy</a>
         </div>
 
+        <!-- NEW: Recommended Gear mini button -->
         <div class="mini-cta">
           <a href="affiliate.html">⭐ Recommended Gear</a>
         </div>
@@ -262,17 +308,17 @@
         <div class="card" role="listitem" aria-label="Virginia Beach diagnostic fee">
           <h3 style="margin:0 0 6px 0;">Virginia Beach</h3>
           <p style="font-size:1.6rem;margin:.25rem 0;"><strong>$49.99</strong></p>
-          <p class="fine">Covers on-site arrival and initial diagnostic for the concerns listed above.</p>
+          
         </div>
         <div class="card" role="listitem" aria-label="Norfolk diagnostic fee">
           <h3 style="margin:0 0 6px 0;">Norfolk</h3>
           <p style="font-size:1.6rem;margin:.25rem 0;"><strong>$59.99</strong></p>
-          <p class="fine">Includes code scan and basic testing to identify likely causes.</p>
+          
         </div>
         <div class="card" role="listitem" aria-label="Chesapeake diagnostic fee">
           <h3 style="margin:0 0 6px 0;">Chesapeake</h3>
           <p style="font-size:1.6rem;margin:.25rem 0;"><strong>$79.99</strong></p>
-          <p class="fine">Great for noises, A/C, and safety light checks at your location.</p>
+         
         </div>
       </div>
 
@@ -288,10 +334,10 @@
         <strong>Good to know:</strong> Prices shown are for labor/diagnostics only. Parts are not included. Disposal/old parts fee from $10 and a $15 mobile supply fee may apply (see details below).
       </div>
 
-      <!-- NEW: Book a Diagnostic CTA (Call/Text/Email) -->
+      <!-- Book a Diagnostic CTA (Call/Text/Email) -->
       <div class="cta" style="margin-top:12px;">
-        <a class="btn" href="tel:7575733154">📞 Call/Text: (757) 573-3154</a>
-        <a class="btn secondary" href="sms:+17575733154?&body=Hi%20Vehicles%20Tips%2C%20I%27d%20like%20to%20book%20a%20diagnostic%20for%20my%20%5Byear%20make%20model%5D%20in%20%5BVirginia%20Beach%7CNorfolk%7CChesapeake%5D.%20Concern%3A%20%5Bnoise%2Fcheck%20engine%2FABS%2Felectrical%2FA%2FC%5D.%20Preferred%20time%3A%20%5B%5D.">💬 Text to Book</a>
+        <a class="btn" href="tel:+17575733154">📞 Call/Text: (757) 573-3154</a>
+        <a class="btn secondary" href="sms:+17575733154?body=Hi%20Vehicles%20Tips%2C%20I%27d%20like%20to%20book%20a%20diagnostic%20for%20my%20%5Byear%20make%20model%5D%20in%20%5BVirginia%20Beach%7CNorfolk%7CChesapeake%5D.%20Concern%3A%20%5Bnoise%2Fcheck%20engine%2FABS%2Felectrical%2FA%2FC%5D.%20Preferred%20time%3A%20%5B%5D.">💬 Text to Book</a>
         <a class="btn" href="mailto:VehiclesTips@gmail.com?subject=Book%20Diagnostic&body=Hi%20Vehicles%20Tips%2C%0A%0AI%27d%20like%20to%20book%20a%20diagnostic.%0A%0ACity%3A%20%5BVirginia%20Beach%7CNorfolk%7CChesapeake%5D%0AConcern%3A%20%5Bcar%20problem%7Cnoise%7Cbasic%20electric%7CA%2FC%7Ccheck%20engine%7CABS%7CAir%20bag%5D%0AVehicle%3A%20%5Byear%2C%20make%2C%20model%5D%0APreferred%20time%2Fdate%3A%20%5B%5D%0A%0AThanks!">✉️ Book by Email</a>
       </div>
     </section>
@@ -316,6 +362,7 @@
       Warranties for customer-supplied parts must be handled with the supplier.</em></p>
     </div>
 
+    <!-- Warranty & Policies -->
     <div class="info-buttons" style="margin-top:15px;">
       <a href="policies.html" class="btn">Warranty &amp; Policies</a>
     </div>
@@ -330,6 +377,7 @@
         <strong>inside, outside, and underneath</strong> and provide a clear report.
       </p>
 
+      <!-- YouTube Video Embed -->
       <div style="margin-top:20px;text-align:center;">
         <h3 style="color:#f97316;margin-bottom:10px;">🎥 Watch: What to Look Out for Before Buying a Car</h3>
         <iframe width="560" height="315" 
@@ -371,6 +419,7 @@
         🚐 <em>On-site service within Virginia Beach, Norfolk &amp; Chesapeake. Areas outside may incur a travel fee.</em>
       </div>
 
+      <!-- ✅ Clear inspection disclaimer -->
       <aside style="background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;border-radius:10px;padding:10px 12px;margin-top:12px;">
         ⚠️ <em>
           This is <strong>not an official Virginia State Inspection</strong>. No stickers are issued.  
@@ -380,7 +429,7 @@
       </aside>
     </section>
 
-    <section id="pre-inspection-readiness" style="border:1px solid #e5e7eb;border-radius:12px;padding:18px;margin:18px 0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.45%;">
+    <section id="pre-inspection-readiness" style="border:1px solid #e5e7eb;border-radius:12px;padding:18px;margin:18px 0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.45;">
       <h3 style="margin:0 0 6px 0;font-size:1.1rem;">Pre-Inspection Readiness Check</h3>
       <p>
         Get your car ready <strong>before</strong> the official state inspection. I identify likely fail points and repair what I can on-site, saving you a return trip.
@@ -393,7 +442,7 @@
       <p style="margin-top:10px;"><em>Not an official inspection; no stickers issued.</em></p>
     </section>
 
-    <section id="certified-ac-service" style="border:1px solid #e5e7eb;border-radius:12px;padding:18px;margin:18px 0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.45%;">
+    <section id="certified-ac-service" style="border:1px solid #e5e7eb;border-radius:12px;padding:18px;margin:18px 0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.45;">
       <h3 style="margin:0 0 6px 0;font-size:1.1rem;">Certified A/C Service (Mobile)</h3>
       <p>EPA-licensed A/C diagnostics, repair, and recharge for personal and fleet vehicles — done at your location.</p>
     </section>
@@ -423,9 +472,8 @@
       </div>
       <p>For now, please <strong>call/text</strong> or <strong>email</strong> to reserve your slot:</p>
       <div class="cta">
-        <!-- CHANGED: Call/Text wording and added SMS link -->
-        <a class="btn" href="tel:7575733154">📞 Call/Text to Book</a>
-        <a class="btn secondary" href="sms:+17575733154?&body=Hi%20Vehicles%20Tips%2C%20I%27d%20like%20to%20book%20an%20appointment.%20My%20vehicle%3A%20%5Byear%20make%20model%5D.%20Issue%3A%20%5B%5D.%20Preferred%20time%3A%20%5B%5D.">💬 Text to Book</a>
+        <a class="btn" href="tel:+17575733154">📞 Call/Text to Book</a>
+        <a class="btn secondary" href="sms:+17575733154?body=Hi%20Vehicles%20Tips%2C%20I%27d%20like%20to%20book%20an%20appointment.%20My%20vehicle%3A%20%5Byear%20make%20model%5D.%20Issue%3A%20%5B%5D.%20Preferred%20time%3A%20%5B%5D.">💬 Text to Book</a>
         <a class="btn secondary" href="mailto:VehiclesTips@gmail.com?subject=Book%20Appointment&body=Hi%2C%0A%0AI%27d%20like%20to%20schedule%20a%20service.%0A%0AVehicle%3A%20%5Byear%20make%20model%5D%0AIssue%3A%20%5B%5D%0ACity%3A%20%5BVB%7CNorfolk%7CChesapeake%5D%0APreferred%20times%3A%20%5B%5D%0A%0AThanks!">✉️ Book via Email</a>
       </div>
 
@@ -450,10 +498,10 @@
       <h2>Contact</h2>
       <p>📍 <strong>Service Area:</strong> Virginia Beach, Norfolk &amp; Chesapeake</p>
       <p>⏰ <strong>Hours:</strong> Mon–Sat, 09 AM – 05 PM</p>
-      <!-- CHANGED: Call/Text label and added quick SMS link -->
       <p>📞 <strong>Phone (Call/Text):</strong> <a href="tel:+17575733154">(757) 573-3154</a> • <a href="sms:+17575733154">Send a Text</a></p>
       <p>✉️ <strong>Email:</strong> <a href="mailto:VehiclesTips@gmail.com">VehiclesTips@gmail.com</a></p>
 
+      <!-- Business License Trust Line -->
       <p style="margin-top:10px;font-size:0.9rem;color:#ccc;">
         ✅ Fully Licensed, &amp; Registered & Insured Mobile Mechanic — Virginia Beach Business License
       </p>
@@ -461,6 +509,7 @@
 
   </main>
 
+  <!-- Footer -->
   <footer>
     © 2025 Vehicles Tips LLC Mobile Mechanic — All Rights Reserved.
     <div class="fnav">
@@ -473,5 +522,3 @@
 
 </body>
 </html>
-
-
