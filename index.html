@@ -14,7 +14,7 @@
   <link rel="canonical" href="https://vehicles-tips.com/" />
   <meta name="robots" content="index,follow" />
 
-  <!-- ✅ OPEN GRAPH (OG) COMPLETE -->
+  <!-- ✅ OPEN GRAPH -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Vehicles Tips" />
@@ -31,10 +31,16 @@
   <meta name="twitter:description" content="Only servicing Virginia Beach (23462). Mobile auto repair, mobile brake repair, and diagnostics with flat-rate pricing. We come to you—call for same-day service." />
   <meta name="twitter:image" content="https://vehicles-tips.com/assets/og/homepage.jpg" />
 
+  <!-- Optional identity links -->
+  <link rel="me" href="https://www.facebook.com/VehiclesTips">
+  <link rel="me" href="https://www.instagram.com/vehiclestips">
+
   <link rel="icon" type="image/jpeg" href="/Logo.jpg" />
 
   <!-- Performance hints -->
-  <link rel="preload" as="image" href="/assets/hero/hero-1600.webp" imagesrcset="/assets/hero/hero-800.webp 800w, /assets/hero/hero-1200.webp 1200w, /assets/hero/hero-1600.webp 1600w" imagesizes="100vw" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/hero/hero-1600.webp"
+        imagesrcset="/assets/hero/hero-800.webp 800w, /assets/hero/hero-1200.webp 1200w, /assets/hero/hero-1600.webp 1600w"
+        imagesizes="100vw" fetchpriority="high" />
   <link rel="preconnect" href="https://www.youtube.com" crossorigin />
 
   <style>
@@ -42,15 +48,20 @@
       --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cccccc;
       --brand:#f04a1d; --brand-ink:#ffffff; --brand-soft:#f04a1d22;
       --accent:#f97316; --accent-soft:#fb923c;
-      --youtube-red:#b00000; /* accessible contrast */
+      --youtube-red:#b00000;
       --notice-orange:#b93815;
+      --link:#38bdf8;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
     @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 
-    header.hero{background-image:url('/assets/hero/hero-1600.webp');background-position:center;background-size:cover;background-repeat:no-repeat;color:#fff;text-align:center;padding:60px 16px;position:relative;border-bottom:1px solid #ffffff14;contain:paint}
+    header.hero{
+      background-image:url('/assets/hero/hero-1600.webp');
+      background-position:center;background-size:cover;background-repeat:no-repeat;
+      color:#fff;text-align:center;padding:60px 16px;position:relative;border-bottom:1px solid #ffffff14;contain:paint
+    }
     header.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
     header.hero *{position:relative;z-index:1}
     header.hero h1{margin:0 0 6px;font-size:2rem;color:#fff}
@@ -58,6 +69,12 @@
     .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
     .btn{background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
     .btn.secondary{background:transparent;color:#fff;border:1px solid #fff}
+
+    /* Social strip (top-right) */
+    .social-strip{position:absolute;right:12px;top:12px;display:flex;gap:10px;z-index:2}
+    .social-strip a{display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,.45);border:1px solid #ffffff22;padding:6px 10px;border-radius:999px;color:#fff;text-decoration:none;font-weight:700}
+    .social-strip a:hover{background:rgba(0,0,0,.6)}
+    .social-strip svg{width:16px;height:16px;fill:#fff}
 
     nav{background:#0e0e0e;display:flex;gap:18px;justify-content:center;padding:10px 12px;font-size:.95rem;flex-wrap:wrap;border-top:1px solid #ffffff14;border-bottom:1px solid #ffffff14}
     nav a{color:var(--brand);text-decoration:none;font-weight:700}
@@ -75,6 +92,7 @@
     .badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#f04a1d;color:#fff;font-size:.75rem;margin-left:8px}
     #contact a{color:var(--ink);text-decoration:underline}
     #contact a:visited{color:var(--ink)}
+    .contact-social{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
 
     .video-container{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);margin-top:12px;background:#000}
     .yt-facade{position:absolute;inset:0;display:block;border:0;background-size:cover;background-position:center;cursor:pointer}
@@ -105,6 +123,7 @@
     footer .fnav{margin-top:6px}
     footer a,footer a:visited,footer a:active{color:var(--accent);text-decoration:none;margin:0 8px}
     footer a:hover{color:var(--accent-soft);text-decoration:underline}
+    .footer-social{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
 
     .price-grid{display:grid;grid-template-columns:1fr;gap:12px}
     @media (min-width:680px){.price-grid{grid-template-columns:1fr 1fr 1fr}}
@@ -114,7 +133,7 @@
     .note-box{background:#fff7ed;color:#7c2d12;border:1px solid #fed7aa;border-radius:10px;padding:10px 12px}
   </style>
 
-  <!-- ✅ LocalBusiness Schema -->
+  <!-- ✅ LocalBusiness Schema with social profiles -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -127,11 +146,30 @@
     "areaServed": {"@type":"City","name":"Virginia Beach"},
     "address": {"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23462","addressCountry":"US"},
     "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"17:00"}],
-    "sameAs":["https://youtube.com/@vehicles-tips","https://www.amazon.com/shop/vehiclestips"]
+    "sameAs": [
+      "https://youtube.com/@vehicles-tips",
+      "https://www.amazon.com/shop/vehiclestips",
+      "https://www.facebook.com/VehiclesTips",
+      "https://www.instagram.com/vehiclestips"
+    ]
   }
   </script>
 </head>
 <body>
+
+  <!-- Social quick links -->
+  <div class="social-strip" aria-label="Social links">
+    <a href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener" aria-label="Facebook">
+      <!-- FB icon -->
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06C2 17.08 5.66 21.2 10.44 22v-7.02H7.9v-2.92h2.54V9.41c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.62.77-1.62 1.56v1.87h2.76l-.44 2.92h-2.32V22C18.34 21.2 22 17.08 22 12.06z"/></svg>
+      Facebook
+    </a>
+    <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener" aria-label="Instagram">
+      <!-- IG icon -->
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18.5 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+      Instagram
+    </a>
+  </div>
 
   <header class="hero">
     <h1>Mobile Mechanic in Virginia Beach (23462)</h1>
@@ -180,7 +218,9 @@
           <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener" class="big-btn amazon-btn">🛒 Shop My Amazon Page</a>
         </div>
         <div class="video-container" aria-label="Featured video">
-          <button class="yt-facade" aria-label="Play video" style="background-image:url('https://i.ytimg.com/vi/w7hTRkhH5B8/hqdefault.jpg');" data-yt="https://www.youtube.com/embed/w7hTRkhH5B8?si=J1rSMHP1HsFs0TxG&amp;autoplay=1"></button>
+          <button class="yt-facade" aria-label="Play video"
+                  style="background-image:url('https://i.ytimg.com/vi/w7hTRkhH5B8/hqdefault.jpg');"
+                  data-yt="https://www.youtube.com/embed/w7hTRkhH5B8?si=J1rSMHP1HsFs0TxG&amp;autoplay=1"></button>
         </div>
       </div>
 
@@ -395,6 +435,10 @@
       <p>⏰ <strong>Hours:</strong> Mon–Sat, 09 AM – 05 PM</p>
       <p>📞 <strong>Phone (Call/Text):</strong> <a href="tel:+17575733154">(757) 573-3154</a> • <a href="sms:+17575733154">Send a Text</a></p>
       <p>✉️ <strong>Email:</strong> <a href="mailto:VehiclesTips@gmail.com">VehiclesTips@gmail.com</a></p>
+      <div class="contact-social" aria-label="Follow Vehicles Tips on social">
+        <a href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener">👍 Follow on Facebook</a>
+        <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener">📸 Follow on Instagram</a>
+      </div>
       <p style="margin-top:10px;font-size:.9rem;color:#ccc;">✅ Fully Licensed, Registered & Insured Mobile Mechanic — Virginia Beach Business License</p>
     </section>
 
@@ -428,6 +472,12 @@
       <a href="/affiliate.html">Recommended Gear</a> |
       <a href="mailto:VehiclesTips@gmail.com">Contact</a>
     </div>
+    <div class="footer-social" aria-label="Social links">
+      <a href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@vehicles-tips" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon</a>
+    </div>
   </footer>
 
   <!-- ✅ Minimal JS at end: Lazy YouTube + on-demand PayPal -->
@@ -447,7 +497,7 @@
       }
     }, {passive:true});
 
-    // On-demand PayPal (avoid blocking ~1MB SDK at load)
+    // On-demand PayPal (avoid loading SDK on initial paint)
     var paypalLoaded = false;
     var loadBtn = document.getElementById('load-paypal');
     if(loadBtn){
@@ -467,3 +517,4 @@
   </script>
 </body>
 </html>
+
