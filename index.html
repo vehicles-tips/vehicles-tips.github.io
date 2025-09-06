@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mobile Mechanic in Virginia Beach 23462 | Affordable Mobile Auto & Brake Repair Near Me</title>
-  <meta name="description" content="Only servicing Virginia Beach. Affordable mobile mechanic in 23462 area. Expert on-site auto repair, mobile brake repair, and diagnostics — we come to you with flat-rate pricing. Call today!">
+  <meta name="description" content="Only servicing Virginia Beach. Affordable mobile mechanic in 23462 area. Expert on-site auto repair, mobile brake repair, and diagnostics — we come to you with flat-rate pricing. Call today!" />
   <link rel="canonical" href="https://www.example.com/" />
   <meta name="robots" content="index,follow" />
   <meta property="og:title" content="Mobile Mechanic in Virginia Beach 23462 | Affordable Mobile Auto & Brake Repair Near Me" />
@@ -12,11 +12,20 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <link rel="icon" type="image/jpeg" href="Logo.jpg" />
+
+  <!-- PERFORMANCE HINTS -->
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&auto=format&fit=crop&q=80" imagesrcset="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&auto=format&fit=crop&q=70 800w, https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&auto=format&fit=crop&q=75 1200w, https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&auto=format&fit=crop&q=80 1600w" imagesizes="100vw" fetchpriority="high" />
+  <link rel="preconnect" href="https://www.youtube.com" crossorigin />
+  <link rel="preconnect" href="https://www.google.com" crossorigin />
+
   <style>
     :root{
       --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cccccc;
       --brand:#f04a1d; --brand-ink:#ffffff; --brand-soft:#f04a1d22;
       --accent:#f97316; --accent-soft:#fb923c;
+      /* Accessible brand variants */
+      --youtube-red:#b00000; /* higher contrast than #ff0000 */
+      --notice-orange:#b93815; /* higher contrast on white */
     }
     *{box-sizing:border-box}
     body{
@@ -25,12 +34,18 @@
       background:var(--bg); color:var(--ink); line-height:1.6;
       display:flex; flex-direction:column; min-height:100vh;
     }
+    /* Reduce motion preference */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none!important;transition:none!important}
+    }
 
     /* Header with background image */
     header.hero{
-      background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&auto=format&fit=crop&q=80') center/cover no-repeat;
+      background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&auto=format&fit=crop&q=80');
+      background-position:center; background-size:cover; background-repeat:no-repeat;
       color:#fff; text-align:center; padding:60px 16px; position:relative;
       border-bottom:1px solid #ffffff14;
+      contain:paint;
     }
     header.hero::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,.55)}
     header.hero *{position:relative; z-index:1}
@@ -59,63 +74,35 @@
     #contact a{color:var(--ink);text-decoration:underline}
     #contact a:visited{color:var(--ink)}
 
-    /* Responsive YouTube Embed */
-    .video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);margin-top:12px}
-    .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+    /* Lazy YouTube facade */
+    .video-container{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);margin-top:12px;background:#000}
+    .yt-facade{position:absolute;inset:0;display:block;border:0;background-size:cover;background-position:center;cursor:pointer}
+    .yt-facade::after{content:"▶";position:absolute;inset:auto 0 0 0;margin:auto;top:0;bottom:0;width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.85);color:#000;font-weight:900;font-size:32px;display:flex;align-items:center;justify-content:center}
+    .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 
     /* Big action buttons */
     .big-btn{display:inline-block;margin:8px;padding:14px 22px;font-size:1.05rem;font-weight:700;border-radius:12px;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease}
-    .youtube-btn{background:#ff0000;color:#fff;box-shadow:0 4px 12px rgba(255,0,0,.35)}
+    .youtube-btn{background:var(--youtube-red);color:#fff;box-shadow:0 4px 12px rgba(176,0,0,.35)}
     .youtube-btn:hover{ transform:scale(1.05) }
     .amazon-btn{background:#232f3e;color:#ff9900;box-shadow:0 4px 12px rgba(0,0,0,.35)}
     .amazon-btn:hover{ transform:scale(1.05) }
 
     /* Warranty & Policies (single orange button) */
     .info-buttons { margin-top: 14px; }
-    .info-buttons .btn {
-      display:inline-block;
-      background: var(--brand);
-      color: var(--brand-ink);
-      padding:10px 16px;
-      margin:5px 8px 0 0;
-      border-radius:6px;
-      text-decoration:none;
-      font-weight:bold;
-      box-shadow:0 4px 12px rgba(0,0,0,.35);
-      transition: transform .2s, filter .2s;
-    }
-    .info-buttons .btn:hover{ transform: translateY(-1px); filter:brightness(1.05); }
+    .info-buttons .btn {display:inline-block;background: var(--brand);color: var(--brand-ink);padding:10px 16px;margin:5px 8px 0 0;border-radius:6px;text-decoration:none;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,.35);transition: transform .2s, filter .2s}
+    .info-buttons .btn:hover{ transform: translateY(-1px); filter:brightness(1.05) }
 
     /* Creator policy buttons */
-    .creator-policies { margin-top: 14px; }
-    .creator-policies .btn{
-      display:inline-block;
-      padding:10px 16px;
-      margin:5px 8px 0 0;
-      border-radius:6px;
-      text-decoration:none;
-      font-weight:bold;
-      transition: transform .2s, filter .2s;
-      box-shadow:0 4px 12px rgba(0,0,0,.35);
-    }
-    .creator-policies .btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
-    .creator-policies .yt-policy { background:#ff0000; color:#fff; }
-    .creator-policies .amz-policy{ background:#ff9900; color:#111; }
+    .creator-policies { margin-top: 14px }
+    .creator-policies .btn{display:inline-block;padding:10px 16px;margin:5px 8px 0 0;border-radius:6px;text-decoration:none;font-weight:bold;transition: transform .2s, filter .2s;box-shadow:0 4px 12px rgba(0,0,0,.35)}
+    .creator-policies .btn:hover{ transform: translateY(-1px); filter: brightness(1.05) }
+    .creator-policies .yt-policy { background:var(--youtube-red); color:#fff }
+    .creator-policies .amz-policy{ background:#ff9900; color:#111 }
 
     /* NEW: small orange button for Recommended Gear */
-    .mini-cta { margin-top:12px; }
-    .mini-cta a{
-      display:inline-block;
-      background:var(--brand);
-      color:var(--brand-ink);
-      padding:8px 14px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:800;
-      box-shadow:0 4px 12px rgba(0,0,0,.35);
-      transition: transform .2s, filter .2s;
-    }
-    .mini-cta a:hover{ transform:translateY(-1px); filter:brightness(1.05); }
+    .mini-cta { margin-top:12px }
+    .mini-cta a{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:8px 14px;border-radius:8px;text-decoration:none;font-weight:800;box-shadow:0 4px 12px rgba(0,0,0,.35);transition: transform .2s, filter .2s}
+    .mini-cta a:hover{ transform:translateY(-1px); filter:brightness(1.05) }
 
     /* Footer */
     footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:22px 16px;font-size:.92rem;color:#cbd5e1}
@@ -142,27 +129,10 @@
     "url": "https://www.example.com/",
     "telephone": "+1-757-573-3154",
     "priceRange": "$$",
-    "areaServed": {
-      "@type": "City",
-      "name": "Virginia Beach"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Virginia Beach",
-      "addressRegion": "VA",
-      "postalCode": "23462",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-      "opens": "09:00",
-      "closes": "17:00"
-    }],
-    "sameAs": [
-      "https://youtube.com/@vehicles-tips",
-      "https://www.amazon.com/shop/vehiclestips"
-    ]
+    "areaServed": {"@type":"City","name":"Virginia Beach"},
+    "address": {"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23462","addressCountry":"US"},
+    "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"17:00"}],
+    "sameAs": ["https://youtube.com/@vehicles-tips","https://www.amazon.com/shop/vehiclestips"]
   }
   </script>
 </head>
@@ -216,14 +186,9 @@
           <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener" class="big-btn youtube-btn">📺 Visit My YouTube Channel</a>
           <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener" class="big-btn amazon-btn">🛒 Shop My Amazon Page</a>
         </div>
+        <!-- Lazy YouTube Facade: loads iframe on click to save ~1MB JS -->
         <div class="video-container" aria-label="Featured video">
-          <iframe
-            src="https://www.youtube.com/embed/w7hTRkhH5B8?si=J1rSMHP1HsFs0TxG"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
+          <button class="yt-facade" aria-label="Play video" style="background-image:url('https://i.ytimg.com/vi/w7hTRkhH5B8/hqdefault.jpg');" data-yt="https://www.youtube.com/embed/w7hTRkhH5B8?si=J1rSMHP1HsFs0TxG&amp;autoplay=1"></button>
         </div>
       </div>
 
@@ -367,7 +332,8 @@
       <p style="margin-top:10px;">A full <strong>health and condition check</strong> before repairs or a trip. I come to you and inspect the car from the <strong>inside, outside, and underneath</strong> and provide a clear report.</p>
       <div style="margin-top:20px;text-align:center;">
         <h3 style="color:#f97316;margin-bottom:10px;">🎥 Watch: What to Look Out for Before Buying a Car</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/7g6vNrv4VdM?si=8xVc_G5m3y8UnTgS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.3);"></iframe>
+        <!-- Lazy secondary YouTube embed using loading=lazy -->
+        <iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/7g6vNrv4VdM?si=8xVc_G5m3y8UnTgS" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.3);"></iframe>
       </div>
       <ul style="margin:12px 0 0 18px;">
         <li><strong>Brake system:</strong> rotor thickness/spec, pad/shoe life, brake fluid condition</li>
@@ -415,18 +381,18 @@
     <section id="payments">
       <h2>💳 Payments</h2>
       <p>Payment options are provided <strong>after your booking is confirmed</strong>. We accept <strong>Cash</strong>, <strong>PayPal</strong>, and <strong>card</strong> (via PayPal) or Cash App - $vehiclestips</p>
-      <script src="https://www.paypal.com/sdk/js?client-id=BAA_k1qhPClfKagkU5oYAK7mcgaZVrcII-p3qYgEfIqxtU_X-aPrYgkPMdDsO85JE5NSo2e2F375FOZTIg&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
-      <div id="paypal-container-BNWADTT6PNUQQ"></div>
-      <script>
-        paypal.HostedButtons({ hostedButtonId: "BNWADTT6PNUQQ" }).render("#paypal-container-BNWADTT6PNUQQ")
-      </script>
+      <!-- On-demand load: inject PayPal only when user clicks -->
+      <div class="cta" style="gap:10px;flex-wrap:wrap">
+        <button id="load-paypal" class="btn" type="button">💳 Show PayPal Button</button>
+        <div id="paypal-container-BNWADTT6PNUQQ" aria-live="polite"></div>
+      </div>
     </section>
 
     <!-- Appointment -->
     <section id="appointment">
       <h2>📅 Book an Appointment</h2>
       <p>Online booking is coming soon. For now, please <strong>call/text</strong> or <strong>email</strong> to reserve your slot.</p>
-      <div style="background:#ffffff;color:#ff4500;font-weight:700;padding:16px;margin:15px 0;border-radius:8px;text-align:center;font-size:1.1em;box-shadow:0 2px 6px rgba(0,0,0,0.25);">💡 Lower Price Guarantee: We’ll beat any valid quote from another shop.</div>
+      <div style="background:#ffffff;color:var(--notice-orange);font-weight:700;padding:16px;margin:15px 0;border-radius:8px;text-align:center;font-size:1.1em;box-shadow:0 2px 6px rgba(0,0,0,0.25);">💡 Lower Price Guarantee: We’ll beat any valid quote from another shop.</div>
       <div class="cta">
         <a class="btn" href="tel:+17575733154">📞 Call/Text to Book</a>
         <a class="btn secondary" href="sms:+17575733154?body=Hi%20Vehicles%20Tips%2C%20I%27d%20like%20to%20book%20an%20appointment%20in%20Virginia%20Beach%20(23462).%20My%20vehicle%3A%20%5Byear%20make%20model%5D.%20Issue%3A%20%5B%5D.%20Preferred%20time%3A%20%5B%5D.">💬 Text to Book</a>
@@ -469,36 +435,7 @@
 
     <!-- FAQ Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do you service Norfolk or Chesapeake?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No — we only service Virginia Beach to keep travel costs low and response times fast."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you offer mobile brake repair near me in 23462?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. We provide on-site brake pads/rotors and diagnostics throughout Virginia Beach, including 23462."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are estimates flat-rate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. We give flat-rate quotes before work begins — no hourly surprises."
-          }
-        }
-      ]
-    }
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you service Norfolk or Chesapeake?","acceptedAnswer":{"@type":"Answer","text":"No — we only service Virginia Beach to keep travel costs low and response times fast."}},{"@type":"Question","name":"Do you offer mobile brake repair near me in 23462?","acceptedAnswer":{"@type":"Answer","text":"Yes. We provide on-site brake pads/rotors and diagnostics throughout Virginia Beach, including 23462."}},{"@type":"Question","name":"Are estimates flat-rate?","acceptedAnswer":{"@type":"Answer","text":"Yes. We give flat-rate quotes before work begins — no hourly surprises."}}]}
     </script>
 
   </main>
@@ -514,5 +451,38 @@
     </div>
   </footer>
 
+  <!-- JS at end: lazy YouTube + on-demand PayPal. Mark listeners passive where appropriate. -->
+  <script>
+    // Lazy YouTube facade: swap to iframe on click
+    document.addEventListener('click', function(e){
+      var t = e.target;
+      if(t && t.classList && t.classList.contains('yt-facade')){
+        var src = t.getAttribute('data-yt');
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('title','YouTube video player');
+        iframe.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+        iframe.setAttribute('allowfullscreen','');
+        iframe.src = src;
+        t.replaceWith(iframe);
+      }
+    }, {passive:true});
+
+    // Load PayPal script on demand to avoid ~1MB blocking JS
+    var paypalLoaded = false;
+    document.getElementById('load-paypal').addEventListener('click', function(){
+      if(paypalLoaded) return;
+      paypalLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://www.paypal.com/sdk/js?client-id=BAA_k1qhPClfKagkU5oYAK7mcgaZVrcII-p3qYgEfIqxtU_X-aPrYgkPMdDsO85JE5NSo2e2F375FOZTIg&components=hosted-buttons&enable-funding=venmo&currency=USD';
+      s.async = true;
+      s.onload = function(){
+        if(window.paypal && paypal.HostedButtons){
+          paypal.HostedButtons({ hostedButtonId: 'BNWADTT6PNUQQ' }).render('#paypal-container-BNWADTT6PNUQQ');
+        }
+      };
+      document.body.appendChild(s);
+    }, {passive:true});
+  </script>
 </body>
 </html>
