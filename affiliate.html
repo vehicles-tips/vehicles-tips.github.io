@@ -3,179 +3,560 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Recommended Gear & Amazon Picks | Vehicle Tips</title>
-  <meta name="description" content="Vehicle Tips Amazon affiliate recommendations: top-rated tools, fluids, emergency kits, and car care essentials I use daily as a mechanic." />
 
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Recommended Gear & Amazon Picks | Vehicle Tips" />
-  <meta property="og:description" content="Mechanic-approved tools, fluids, safety kits, and car care gear. Shop my recommended Amazon picks here." />
-  <meta property="og:url" content="https://vehicles-tips.com/affiliate.html" />
-  <meta property="og:site_name" content="Vehicle Tips" />
+  <!-- ✅ TITLE (≈60 chars) -->
+  <title>Mobile Mechanic Virginia Beach 23462 | Brake Repair Near You</title>
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Recommended Gear & Amazon Picks | Vehicle Tips" />
-  <meta name="twitter:description" content="Trusted mechanic’s Amazon picks: tools, fluids, safety gear, and more." />
+  <!-- ✅ META DESCRIPTION (≤160 chars) -->
+  <meta name="description" content="Only servicing Virginia Beach (23462). Mobile auto & brake repair with flat-rate pricing and on-site diagnostics. We come to you—call for same-day service.">
 
-  <link rel="canonical" href="https://vehicles-tips.com/affiliate.html" />
+  <!-- ✅ CANONICAL -->
+  <link rel="canonical" href="https://vehicles-tips.com/">
+  <meta name="robots" content="index,follow">
+
+  <!-- ✅ HREFLANG (single language site) -->
+  <link rel="alternate" hreflang="en-US" href="https://vehicles-tips.com/">
+
+  <!-- ✅ OPEN GRAPH -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Vehicles Tips">
+  <meta property="og:url" content="https://vehicles-tips.com/">
+  <meta property="og:title" content="Mobile Mechanic Virginia Beach 23462 | Brake Repair Near You">
+  <meta property="og:description" content="Only servicing Virginia Beach (23462). Mobile auto & brake repair with flat-rate pricing and on-site diagnostics. We come to you—call for same-day service.">
+  <meta property="og:image" content="https://vehicles-tips.com/assets/og/homepage.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- ✅ TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mobile Mechanic Virginia Beach 23462 | Brake Repair Near You">
+  <meta name="twitter:description" content="Only servicing Virginia Beach (23462). Mobile auto & brake repair with flat-rate pricing and on-site diagnostics. We come to you—call for same-day service.">
+  <meta name="twitter:image" content="https://vehicles-tips.com/assets/og/homepage.jpg">
+
+  <link rel="icon" type="image/jpeg" href="/Logo.jpg">
+
+  <!-- Performance hints -->
+  <link rel="preload" as="image" href="/assets/hero/hero-1600.webp"
+        imagesrcset="/assets/hero/hero-800.webp 800w, /assets/hero/hero-1200.webp 1200w, /assets/hero/hero-1600.webp 1600w"
+        imagesizes="100vw" fetchpriority="high">
+  <link rel="preconnect" href="https://www.youtube.com" crossorigin>
 
   <style>
     :root{
-      --bg:#0f172a; --panel:#1e293b; --border:#334155;
-      --text:#f8fafc; --muted:#cbd5e1;
+      --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cccccc;
+      --brand:#c2410c; --brand-ink:#ffffff; --brand-soft:#c2410c22; /* darker for contrast */
       --accent:#f97316; --accent-soft:#fb923c;
+      --youtube-red:#b00000;  /* accessible contrast for white text */
+      --notice-orange:#b93815;
+      --link:#60a5fa; --link-hover:#93c5fd;
+      --border:#ffffff1f;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-
-    /* Hero */
-    header.hero{
-      background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600') center/cover no-repeat;
-      color:#fff;text-align:center;padding:60px 16px;position:relative;
-      border-bottom:1px solid var(--border);
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg); color:var(--ink); line-height:1.6;
+      display:flex; flex-direction:column; min-height:100vh;
     }
-    header.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
-    header.hero *{position:relative;z-index:1}
-    header.hero h1{margin:0 0 6px;font-size:2rem;color:var(--accent)}
-    header.hero p{margin:0;color:var(--muted)}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+    /* Utilities */
+    .container{max-width:960px;margin:20px auto;padding:0 16px}
+    .center{text-align:center}
+    .mt-6{margin-top:1.5rem}
+    .mt-3{margin-top:.75rem}
+    .mb-0{margin-bottom:0}
+    .badge{display:inline-block;padding:3px 8px;border-radius:999px;background:var(--brand);color:#fff;font-size:.75rem;margin-left:8px}
+    .pill{display:inline-block;background:var(--brand-soft);color:var(--ink);padding:4px 10px;border-radius:999px;font-size:.85rem;margin:4px 6px 0 0}
+    .muted{color:var(--muted)}
+    .fine{color:var(--muted);font-size:.92rem}
+    .list-reset{margin:0 0 0 18px}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    @media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+    .price-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media (min-width:680px){.price-grid{grid-template-columns:1fr 1fr 1fr}}
+    .card{background:#151515;border:1px solid var(--border);border-radius:12px;padding:14px}
+    .notice{
+      background:#ffffff;color:var(--notice-orange);font-weight:700;padding:16px;margin:15px 0;border-radius:8px;
+      text-align:center;font-size:1.1em;box-shadow:0 2px 6px rgba(0,0,0,0.25)
+    }
+
+    /* Header / Hero */
+    header.hero{
+      background-image:url('/assets/hero/hero-1600.webp'); background-position:center; background-size:cover; background-repeat:no-repeat;
+      color:#fff; text-align:center; padding:60px 16px; position:relative; border-bottom:1px solid var(--border); contain:paint
+    }
+    header.hero::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,.55)}
+    header.hero *{position:relative; z-index:1}
+    header.hero h1{margin:0 0 6px; font-size:2rem; color:#fff}
+    header.hero p{margin:0 0 14px; font-size:1.05rem; color:#fff}
+
+    /* CTA Buttons */
+    .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .btn{background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+    .btn.secondary{background:transparent;color:#fff;border:1px solid #fff}
+    .big-btn{display:inline-block;margin:8px;padding:14px 22px;font-size:1.05rem;font-weight:700;border-radius:12px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+    .youtube-btn{background:var(--youtube-red);color:#fff;box-shadow:0 4px 12px rgba(176,0,0,.35)}
+    .youtube-btn:hover{transform:scale(1.05)}
+    .amazon-btn{background:#232f3e;color:#ff9900;box-shadow:0 4px 12px rgba(0,0,0,.35)}
+    .amazon-btn:hover{transform:scale(1.05)}
 
     /* Nav */
-    nav{background:#1a1f2e;display:flex;gap:18px;justify-content:center;
-        padding:10px 12px;font-size:.95rem;flex-wrap:wrap;
-        border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    nav a{color:var(--accent);text-decoration:none;font-weight:700}
-    nav a[aria-current="page"], nav a:hover{color:var(--accent-soft)}
+    nav{background:#0e0e0e;display:flex;gap:18px;justify-content:center;padding:10px 12px;font-size:.95rem;flex-wrap:wrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    nav a{color:var(--brand);text-decoration:none;font-weight:700}
+    nav a:hover{color:#fff}
 
-    /* Main */
-    main{max-width:1000px;margin:20px auto;padding:0 16px}
-    section{background:var(--panel);border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.5);padding:18px;margin:16px 0}
-    h2{margin:6px 0 14px;font-size:1.4rem;color:var(--accent)}
-    .grid{display:grid;gap:16px}
-    @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+    /* Sections */
+    main{flex:1 0 auto}
+    section{background:var(--card);border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.5);padding:18px;margin:16px 0}
+    h2{margin:6px 0 10px;font-size:1.35rem;color:var(--brand)}
+    h3{margin:6px 0 6px 0;color:#fff}
 
-    /* Items */
-    .item{background:#0f172a;border:1px solid var(--border);border-radius:12px;padding:14px;box-shadow:0 4px 12px rgba(0,0,0,.35)}
-    .item h3{margin:0 0 6px;color:#fff}
-    .item p{margin:0 0 10px;color:var(--muted);font-size:.95rem}
-    .btn-link{display:inline-block;background:var(--accent);color:#0f172a;padding:8px 14px;border-radius:6px;text-decoration:none;font-weight:700;transition:.2s}
-    .btn-link:hover{background:var(--accent-soft)}
-    .tag{display:inline-block;background:var(--accent-soft);color:#0f172a;font-size:.75rem;font-weight:700;padding:3px 8px;border-radius:999px;margin-bottom:8px}
+    /* Video (YouTube facade) */
+    .video-container{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);margin-top:12px;background:#000}
+    .yt-facade{position:absolute;inset:0;display:block;border:0;background-size:cover;background-position:center;cursor:pointer}
+    .yt-facade::after{
+      content:"▶"; position:absolute; inset:auto 0 0 0; margin:auto; top:0; bottom:0; width:68px; height:68px; border-radius:50%;
+      background:rgba(255,255,255,.88); color:#000; font-weight:900; font-size:32px; display:flex; align-items:center; justify-content:center
+    }
+
+    /* Links */
+    a{color:var(--link)} a:hover{color:var(--link-hover)}
+    .socials{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+    .socials a{font-weight:700}
 
     /* Footer */
     footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:22px 16px;font-size:.92rem;color:#cbd5e1}
-    footer a{color:var(--accent);text-decoration:none;margin:0 8px}
+    footer .fnav{margin-top:6px}
+    footer a,footer a:visited,footer a:active{color:var(--accent);text-decoration:none;margin:0 8px}
     footer a:hover{color:var(--accent-soft);text-decoration:underline}
   </style>
+
+  <!-- ✅ LocalBusiness Schema (with FB & IG) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": "Vehicles Tips LLC – Mobile Mechanic",
+    "image": "https://vehicles-tips.com/Logo.jpg",
+    "url": "https://vehicles-tips.com/",
+    "telephone": "+1-757-573-3154",
+    "priceRange": "$$",
+    "areaServed": {"@type":"City","name":"Virginia Beach"},
+    "address": {"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23462","addressCountry":"US"},
+    "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"17:00"}],
+    "sameAs": [
+      "https://youtube.com/@vehicles-tips",
+      "https://www.amazon.com/shop/vehiclestips",
+      "https://www.facebook.com/VehiclesTips",
+      "https://www.instagram.com/vehiclestips"
+    ]
+  }
+  </script>
+
+  <!-- ✅ Google Analytics 4 (replace G-XXXXXXXXXX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config','G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
   <!-- HERO -->
   <header class="hero">
-    <h1>Recommended Gear</h1>
-    <p>Mechanic-tested Amazon Picks — tools, fluids, and safety essentials</p>
+    <h1>Mobile Mechanic in Virginia Beach (23462)</h1>
+    <p class="highlight">Affordable Mobile Auto Repair & Mobile Brake Repair — We Come To You</p>
+    <div class="cta">
+      <a class="btn" href="tel:+17575733154">📞 Call/Text Now: (757) 573-3154</a>
+      <a class="btn secondary" href="sms:+17575733154">💬 Text Us</a>
+      <a class="btn secondary" id="email-top" href="#">✉️ Email Us</a>
+    </div>
+    <p class="fine mt-3">✅ Only servicing <strong>Virginia Beach</strong> (zip codes incl. <strong>23462</strong>, 23451, 23452, 23453, 23454)</p>
+
+    <!-- Social proof / links -->
+    <div class="socials">
+      <a href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon Shop</a>
+    </div>
   </header>
 
   <!-- NAV -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="policies.html">Warranty & Policies</a>
-    <a href="digital-creator-policy.html">Creator Policies</a>
-    <a href="affiliate.html" aria-current="page">Recommended Gear</a>
+  <nav aria-label="Primary">
+    <a href="#about">About / Trust</a>
+    <a href="#services">Services</a>
+    <a href="#diagnostics">Diagnostics & Fees</a>
+    <a href="#complete-vehicle-analysis">Vehicle Analysis</a>
+    <a href="#payments">Payments</a>
+    <a href="#appointment">Appointments</a>
+    <a href="#contact">Contact</a>
+    <a href="/affiliate.html">Recommended Gear</a>
+    <a href="/policies.html">Warranty & Policies</a>
   </nav>
 
-  <!-- CONTENT -->
-  <main>
-    <section>
-      <h2>🧼 Cleaning & Care</h2>
-      <div class="grid">
-        <div class="item">
-          <span class="tag">Bundle</span>
-          <h3>Complete Car Wash Kit</h3>
-          <p>All-in-one wash kit for a spotless shine and protection.</p>
-          <a class="btn-link" href="https://amzn.to/47WtXui" target="_blank" rel="noopener sponsored">🛒 View on Amazon</a>
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- About -->
+    <section id="about">
+      <h2>Trusted Mobile Mechanic Near You in Virginia Beach</h2>
+      <p>Looking for an <strong>affordable mobile mechanic in Virginia Beach</strong>? Vehicles Tips Auto Mechanics brings the shop to you — at home, work, or roadside — with transparent <strong>flat-rate pricing</strong>.</p>
+      <p>Whether you need <strong>mobile brake repair</strong>, <strong>mobile auto repair</strong>, or quick diagnostics in <strong>23462</strong> and nearby Virginia Beach zip codes, you’ll get honest guidance and reliable workmanship.</p>
+      <p>I studied at <strong>ATi School of Automotive Technology</strong>, hold a valid <strong>MAC License for A/C systems</strong>, and have <strong>20+ years of experience</strong>.</p>
+      <div class="pill">Kempsville</div>
+      <div class="pill">Town Center</div>
+      <div class="pill">Pembroke</div>
+      <div class="pill">Bayside</div>
+    </section>
+
+    <!-- Work & Knowledge + Social -->
+    <div class="grid" aria-label="Creator and social proof">
+      <div>
+        <h3>My Work & Knowledge</h3>
+        <ul class="list-reset">
+          <li>📺 Over <strong>1,000 YouTube videos</strong> on car repair and maintenance</li>
+          <li>🛒 Nearly <strong>300 Amazon Influencer videos</strong> reviewing tools and auto parts</li>
+        </ul>
+        <div class="center mt-3">
+          <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener" class="big-btn youtube-btn">📺 Visit My YouTube Channel</a>
+          <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener" class="big-btn amazon-btn">🛒 Shop My Amazon Page</a>
         </div>
+        <!-- YouTube Facade (no iframe at load) -->
+        <div class="video-container mt-3" aria-label="Featured video">
+          <button class="yt-facade" aria-label="Play video"
+                  style="background-image:url('https://i.ytimg.com/vi/w7hTRkhH5B8/hqdefault.jpg');"
+                  data-yt="https://www.youtube.com/embed/w7hTRkhH5B8?autoplay=1"></button>
+        </div>
+      </div>
+
+      <div>
+        <h3>Follow & Ask</h3>
+        <p>Subscribe for <strong>vehicle maintenance tips</strong> and money-saving advice. Need a <strong>repair quote</strong>? Send a text with your <em>year/make/model</em> and a brief description.</p>
+        <p>I’m proud to be <strong>Filipino 🇵🇭</strong> and committed to clear communication and fair pricing for our Virginia Beach community.</p>
+        <div class="cta">
+          <a href="/digital-creator-policy.html#youtube" class="btn">📺 YouTube Policy</a>
+          <a href="/digital-creator-policy.html#amazon" class="btn">🛒 Amazon Policy</a>
+        </div>
+        <div class="center mt-3">
+          <a class="btn" href="/affiliate.html">⭐ Recommended Gear</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section id="services">
+      <h2>Mobile Auto Repair & Maintenance Services (Virginia Beach Only)</h2>
+      <ul class="list-reset">
+        <li><strong>🛢️ Filters & Fluids</strong>
+          <ul class="list-reset">
+            <li>Oil change</li>
+            <li>Air & cabin filter replacement</li>
+            <li>Coolant / brake fluid / power steering flush</li>
+            <li>Fuel filter replacement</li>
+            <li>+ More services available</li>
+          </ul>
+        </li>
+        <li><strong>🛑 Mobile Brake Repair</strong>
+          <ul class="list-reset">
+            <li>Brake pads & rotors</li>
+            <li>Caliper service & brake hose replacement</li>
+            <li>Master cylinder, shoes & cables</li>
+            <li>Full brake diagnostic</li>
+            <li>+ More services available</li>
+          </ul>
+        </li>
+        <li><strong>🔋 Starting & Charging</strong>
+          <ul class="list-reset">
+            <li>Battery replacement & jump start</li>
+            <li>Alternator testing & replacement</li>
+            <li>Starter replacement</li>
+            <li>Starting/charging diagnostics</li>
+          </ul>
+        </li>
+        <li><strong>🔥 Engine & Cooling</strong>
+          <ul class="list-reset">
+            <li>Check-engine light & general diagnostics</li>
+            <li>Water pump & thermostat</li>
+            <li>Fuel pump replacement</li>
+            <li>Overheating / no-heat troubleshooting</li>
+            <li>Tune-up service</li>
+          </ul>
+        </li>
+        <li><strong>🛞 Steering & Suspension</strong>
+          <ul class="list-reset">
+            <li>Tie rods, ball joints, control arms</li>
+            <li>Struts & shocks</li>
+            <li>Bushing & trailing arm service</li>
+            <li>Power steering pump service</li>
+          </ul>
+        </li>
+        <li><strong>❄️ A/C & Heating (EPA Licensed)</strong>
+          <ul class="list-reset">
+            <li>A/C diagnostics, repair & recharge</li>
+            <li>Heating system service</li>
+          </ul>
+        </li>
+        <li><strong>⚡ Electrical & Safety Systems</strong>
+          <ul class="list-reset">
+            <li>ABS & air bag diagnostics</li>
+            <li>Electrical troubleshooting</li>
+            <li>Ignition key (limited vehicles)</li>
+          </ul>
+        </li>
+        <li><strong>🛠️ Other</strong>
+          <ul class="list-reset">
+            <li>Wiper/washer repair</li>
+            <li>Small engine repair</li>
+            <li>Basic diagnostics</li>
+            <li><strong>Much more — ask for a flat-rate quote</strong></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="cta mt-3">
+        <a class="btn" href="tel:+17575733154">📞 Call/Text: (757) 573-3154</a>
       </div>
     </section>
 
-    <section>
-      <h2>⚙️ Tools & Mobility</h2>
-      <div class="grid">
-        <div class="item">
-          <span class="tag">Cordless</span>
-          <h3>Mobility Essential Cordless Tool</h3>
-          <p>Portable cordless tool perfect for on-the-go jobs.</p>
-          <a class="btn-link" href="https://amzn.to/4lIid1P" target="_blank" rel="noopener sponsored">🛒 View on Amazon</a>
+    <!-- Diagnostics & Fees -->
+    <section id="diagnostics">
+      <h2>Diagnostics & Service Fees</h2>
+      <p class="muted">Fast, on-site troubleshooting for <strong>car problems, noises, basic electrical issues, A/C problems, basic check-engine codes, ABS, and airbag warnings</strong>. Flat-rate visit fee shown below.</p>
+
+      <div class="price-grid" role="list">
+        <div class="card" role="listitem" aria-label="Virginia Beach diagnostic fee">
+          <h3 class="mb-0">Virginia Beach</h3>
+          <p style="font-size:1.6rem;margin:.25rem 0;"><strong>$49.99</strong></p>
+          <p class="fine">Kempsville • Town Center • Pembroke • Bayside • 23462 & nearby zips</p>
         </div>
+      </div>
+
+      <ul class="list-reset mt-3">
+        <li>🔎 <strong>What’s included:</strong> OBD-II scan for basic check-engine codes, visual/functional checks, and simple electrical tests.</li>
+        <li>🧰 <strong>Advanced diagnostics:</strong> If we need panel removal, pin-out tests, or extended tracing, we’ll confirm any additional fee before proceeding.</li>
+        <li>💵 <strong>Fee waived on larger repairs:</strong> If your repair total is <strong>$300 or more</strong>, the diagnostic/service fee is <strong>waived</strong>.</li>
+        <li>📍 <strong>Service area:</strong> <strong>Virginia Beach only</strong>.</li>
+        <li>✅ <strong>Flat-rate pricing only</strong> — no hourly surprises.</li>
+      </ul>
+
+      <div class="card mt-3" role="note" aria-label="Good to know">
+        <strong>Good to know:</strong> Prices shown are for labor/diagnostics only. Parts are not included. Disposal/old parts fee from $10 and a $15 mobile supply fee may apply.
+      </div>
+
+      <div class="cta mt-3">
+        <a class="btn" href="tel:+17575733154">📞 Call/Text: (757) 573-3154</a>
+        <a class="btn secondary" href="sms:+17575733154">💬 Text to Book</a>
+        <a class="btn" id="email-dx" href="#">✉️ Book by Email</a>
       </div>
     </section>
 
-    <section>
-      <h2>🛢 Fluids & Additives</h2>
-      <div class="grid">
-        <div class="item">
-          <h3>Popular Oil Type</h3>
-          <p>Trusted engine oil for most vehicles.</p>
-          <a class="btn-link" href="https://amzn.to/4oWma63" target="_blank" rel="noopener sponsored">🛒 View on Amazon</a>
-        </div>
-        <div class="item">
-          <h3>Washer Fluid</h3>
-          <p>Clear, spotless washer fluid for better visibility.</p>
-          <a class="btn-link" href="https://amzn.to/4mzoSN5" target="_blank" rel="noopener sponsored">🛒 View on Amazon</a>
-        </div>
-        <div class="item">
-          <h3>Fuel Additive</h3>
-          <p>Improves performance and cleans gasoline engines.</p>
-          <a class="btn-link" href="https://amzn.to/4oWYDlp" target="_blank" rel="noopener sponsored">🛒 View on Amazon</a>
-        </div>
+    <!-- Vehicle Analysis -->
+    <section id="complete-vehicle-analysis">
+      <header class="center">
+        <h2 class="mb-0">Complete Vehicle Analysis — <span style="white-space:nowrap;">$99.99</span> <span class="badge" title="Popular">⭐ Popular</span></h2>
+      </header>
+      <p class="mt-3">A full <strong>health and condition check</strong> before repairs or a trip. I come to you and inspect the car from the <strong>inside, outside, and underneath</strong> and provide a clear report.</p>
+
+      <!-- Second YouTube Facade (no iframe at load) -->
+      <div class="center mt-3">
+        <h3 class="mb-0" style="color:var(--accent);">🎥 Watch: What to Look Out for Before Buying a Car</h3>
+      </div>
+      <div class="video-container mt-3" aria-label="Pre-purchase tips video">
+        <button class="yt-facade" aria-label="Play video"
+                style="background-image:url('https://i.ytimg.com/vi/7g6vNrv4VdM/hqdefault.jpg');"
+                data-yt="https://www.youtube.com/embed/7g6vNrv4VdM?autoplay=1"></button>
+      </div>
+
+      <ul class="list-reset mt-3">
+        <li><strong>Brake system:</strong> rotor thickness/spec, pad/shoe life, brake fluid condition</li>
+        <li><strong>Suspension & steering:</strong> ball joints, tie rods, bushings, shocks/struts, play/noise checks</li>
+        <li><strong>Leaks & underbody:</strong> engine, trans, coolant, power steering, oil pan, lines & hoses, rust/corrosion</li>
+        <li><strong>Electronics:</strong> windows/locks, lights, wipers/washer, horn, dash warnings, charging/starting</li>
+        <li><strong>HVAC:</strong> A/C cooling performance & heater output (visual/functional checks)</li>
+        <li><strong>Tires:</strong> tread depth/wear pattern, inflation/TPMS, spare & tools</li>
+        <li><strong>Alignment symptoms:</strong> pull, off-center wheel, abnormal tire wear, vibration (road-test based)</li>
+        <li><strong>Fluids:</strong> level & condition (engine oil, coolant, brake, PS/ATF when applicable)</li>
+        <li><strong>OBD-II scan:</strong> stored & pending codes with notes</li>
+        <li><strong>Sensory notes:</strong> smells, sounds, feel to catch early problems</li>
+      </ul>
+      <p class="fine">Note: Prices are for labor only. Parts not included. A disposal/old parts fee from $10 may apply.</p>
+
+      <div class="fine">🚐 On-site service within <strong>Virginia Beach</strong> only.</div>
+      <aside class="card mt-3" style="color:#7c2d12;background:#fff7ed;border-color:#fed7aa;">
+        ⚠️ <em>This is <strong>not an official Virginia State Inspection</strong>. No stickers are issued. I am a <strong>Virginia State Inspection–licensed mechanic with 17 years of experience</strong> and provide mobile <strong>pre-inspection checks and repairs</strong> to help your vehicle pass at a certified inspection station.</em>
+      </aside>
+    </section>
+
+    <!-- Pre-Inspection -->
+    <section id="pre-inspection-readiness">
+      <h3>Pre-Inspection Readiness Check</h3>
+      <p>Get your car ready <strong>before</strong> the official state inspection. I identify likely fail points and repair what I can on-site, saving you a return trip.</p>
+      <ul class="list-reset">
+        <li>Brakes, suspension, tires, lights, emissions-related codes</li>
+        <li>Leaks & underbody issues; fluids and safety items</li>
+        <li>Repairs performed on-site where possible</li>
+      </ul>
+      <p class="fine">Not an official inspection; no stickers issued.</p>
+    </section>
+
+    <!-- A/C Service -->
+    <section id="certified-ac-service">
+      <h3>Certified A/C Service (Mobile)</h3>
+      <p>EPA-licensed A/C diagnostics, repair, and recharge for personal and fleet vehicles — done at your location.</p>
+    </section>
+
+    <!-- Payments -->
+    <section id="payments">
+      <h2>💳 Payments</h2>
+      <p>Payment options are provided <strong>after your booking is confirmed</strong>. We accept <strong>Cash</strong>, <strong>PayPal</strong>, and <strong>card</strong> (via PayPal) or Cash App - $vehiclestips</p>
+      <div class="cta" style="gap:10px;flex-wrap:wrap">
+        <button id="load-paypal" class="btn" type="button">💳 Show PayPal Button</button>
+        <div id="paypal-container-BNWADTT6PNUQQ" aria-live="polite"></div>
       </div>
     </section>
 
-    <section>
-      <h2>🚨 Emergency & Tire Care</h2>
-      <div class="grid">
-        <div class="item">
-          <h3>Tire Pressure + Jumper Tool</h3>
-          <p>Combo tool for checking pressure and jump-starting.</p>
-          <a class="btn-link" href="https://amzn.to/4fYI7xg" target="_blank" rel="noopener sponsored">🛒 View on Amazon</a>
-        </div>
-        <div class="item">
-          <h3>Tire Repair Kit</h3>
-          <p>Quick repair kit for flats and punctures.</p>
-          <a class="btn-link" href="https://amzn.to/4n8GY8M" target="_blank" rel="noopener sponsored">🛒 View on Amazon</a>
-        </div>
+    <!-- Appointment -->
+    <section id="appointment">
+      <h2>📅 Book an Appointment</h2>
+      <p>Online booking is coming soon. For now, please <strong>call/text</strong> or <strong>email</strong> to reserve your slot.</p>
+      <div class="notice">💡 Lower Price Guarantee: We’ll beat any valid quote from another shop.</div>
+      <div class="cta">
+        <a class="btn" href="tel:+17575733154">📞 Call/Text to Book</a>
+        <a class="btn secondary" href="sms:+17575733154">💬 Text to Book</a>
+        <a class="btn secondary" id="email-appt" href="#">✉️ Book via Email</a>
       </div>
+
+      <section id="google-review" class="center mt-6" style="padding:2rem; background:#0f1624; border-radius:12px; border:1px solid var(--border);">
+        <h2 class="mb-0">Your Feedback Helps Vehicles Tips LLC 🚗</h2>
+        <p class="mt-3">Whether you’ve learned from our <strong>YouTube car tips</strong> or received <strong>mobile mechanic service</strong>, we’d love to hear from you. Please take a moment to share your experience — it helps others discover us!</p>
+        <p class="mt-3">
+          <a href="https://g.page/r/CXIZcZsfIg_NEBM/review" target="_blank" rel="noopener" class="btn">⭐ Leave a Review on Google</a>
+        </p>
+      </section>
     </section>
 
-    <section>
-      <h2>🔒 Safety & Add-ons</h2>
-      <div class="grid">
-        <div class="item">
-          <h3>Backup Camera Kit</h3>
-          <p>Universal backup camera for better parking safety.</p>
-          <a class="btn-link" href="https://amzn.to/47dNBSr" target="_blank" rel="noopener sponsored">🛒 View on Amazon</a>
-        </div>
-      </div>
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>📍 <strong>Service Area:</strong> Virginia Beach (including 23462)</p>
+      <p>⏰ <strong>Hours:</strong> Mon–Sat, 09 AM – 05 PM</p>
+      <p>📞 <strong>Phone (Call/Text):</strong> <a href="tel:+17575733154">(757) 573-3154</a> • <a href="sms:+17575733154">Send a Text</a></p>
+      <p>✉️ <strong>Email:</strong> <a href="#" id="email-contact" rel="nofollow">[show email]</a></p>
+      <p class="fine mt-3">✅ Fully Licensed, Registered & Insured Mobile Mechanic — Virginia Beach Business License</p>
     </section>
+
+    <!-- FAQ + Schema -->
+    <section id="faq">
+      <h2>FAQ: Mobile Mechanic in Virginia Beach</h2>
+      <details>
+        <summary>Do you service Norfolk or Chesapeake?</summary>
+        <p>No — we <strong>only service Virginia Beach</strong> to keep travel costs low and response times fast.</p>
+      </details>
+      <details>
+        <summary>Do you offer mobile brake repair near me in 23462?</summary>
+        <p>Yes. We provide <strong>on-site brake pads/rotors and diagnostics</strong> throughout Virginia Beach, including 23462.</p>
+      </details>
+      <details>
+        <summary>Are estimates flat-rate?</summary>
+        <p>Yes. We give <strong>flat-rate quotes</strong> before work begins — no hourly surprises.</p>
+      </details>
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"Do you service Norfolk or Chesapeake?","acceptedAnswer":{"@type":"Answer","text":"No — we only service Virginia Beach to keep travel costs low and response times fast."}},
+        {"@type":"Question","name":"Do you offer mobile brake repair near me in 23462?","acceptedAnswer":{"@type":"Answer","text":"Yes. We provide on-site brake pads/rotors and diagnostics throughout Virginia Beach, including 23462."}},
+        {"@type":"Question","name":"Are estimates flat-rate?","acceptedAnswer":{"@type":"Answer","text":"Yes. We give flat-rate quotes before work begins — no hourly surprises."}}
+      ]}
+      </script>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
-<footer>
-  © 2025 Vehicles Tips LLC Mobile Mechanic — All Rights Reserved.
-  <div class="fnav">
-    <a href="index.html">Home</a> |
-    <a href="policies.html">Warranty &amp; Policies</a> |
-    <a href="affiliate.html">Recommended Gear</a> |
-    <a href="mailto:VehiclesTips@gmail.com">Contact</a>
-  </div>
+  <footer>
+    © 2025 Vehicles Tips LLC Mobile Mechanic — All Rights Reserved.
+    <div class="fnav">
+      <a href="/index.html">Home</a> |
+      <a href="/policies.html">Warranty & Policies</a> |
+      <a href="/affiliate.html">Recommended Gear</a> |
+      <a href="#" id="email-footer" rel="nofollow">Contact</a>
+    </div>
+    <div class="socials center" style="margin-top:10px">
+      <a href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@vehicles-tips?feature=shared" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </footer>
 
-  <!-- Business License Trust Line -->
-  <p style="margin-top:10px;font-size:0.9rem;color:#ccc;">
-    ✅ Licensed &amp; Registered Mobile Mechanic — Virginia Beach Business License
-  </p>
-</footer>
+  <!-- ✅ Minimal JS at end: Lazy YouTube, on-demand PayPal, email obfuscation, passive listeners -->
+  <script>
+    // Email obfuscation (no clear-text in HTML)
+    (function(){
+      var user="VehiclesTips", dom="gmail.com";
+      var addr = user+"@"+dom;
+      function setMail(el, subject){
+        if(!el) return;
+        var href = "mailto:"+addr+(subject?("?subject="+encodeURIComponent(subject)):"");
+        el.href = href;
+        el.textContent = el.textContent === "[show email]" ? addr : el.textContent;
+      }
+      setMail(document.getElementById('email-top'), "Service Inquiry");
+      setMail(document.getElementById('email-dx'), "Book Diagnostic");
+      setMail(document.getElementById('email-appt'), "Book Appointment");
+      setMail(document.getElementById('email-contact'), "Service Inquiry");
+      setMail(document.getElementById('email-footer'), "Contact Vehicles Tips");
+    })();
 
+    // Lazy YouTube (no iframe until click)
+    document.addEventListener('click', function(e){
+      var t = e.target;
+      if(t && t.classList && t.classList.contains('yt-facade')){
+        var src = t.getAttribute('data-yt');
+        var iframe = document.createElement('iframe');
+        iframe.title = 'YouTube video player';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        iframe.src = src;
+        iframe.style.position='absolute'; iframe.style.top=0; iframe.style.left=0; iframe.style.width='100%'; iframe.style.height='100%'; iframe.style.border='0';
+        t.replaceWith(iframe);
+      }
+    }, {passive:true});
 
+    // On-demand PayPal (avoid blocking SDK at load)
+    (function(){
+      var loaded=false, btn=document.getElementById('load-paypal');
+      if(!btn) return;
+      btn.addEventListener('click', function(){
+        if(loaded) return; loaded=true;
+        var s = document.createElement('script');
+        s.src = 'https://www.paypal.com/sdk/js?client-id=BAA_k1qhPClfKagkU5oYAK7mcgaZVrcII-p3qYgEfIqxtU_X-aPrYgkPMdDsO85JE5NSo2e2F375FOZTIg&components=hosted-buttons&enable-funding=venmo&currency=USD';
+        s.async = true;
+        s.onload = function(){
+          if(window.paypal && paypal.HostedButtons){
+            paypal.HostedButtons({ hostedButtonId:'BNWADTT6PNUQQ' }).render('#paypal-container-BNWADTT6PNUQQ');
+          }
+        };
+        document.body.appendChild(s);
+      }, {passive:true});
+    })();
+
+    // Meta (Facebook) Pixel (replace YOUR_PIXEL_ID)
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','YOUR_PIXEL_ID');
+    fbq('track','PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" alt=""
+         src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
 </body>
 </html>
 
