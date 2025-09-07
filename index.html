@@ -434,14 +434,11 @@
     <div class="fnav">
       <a href="/index.html">Home</a> |
       <a href="/policies.html">Warranty & Policies</a> |
-      <a href="/affiliate.html">Recommended Gear</a> |
       <a id="email-footer" href="#" data-user="VehiclesTips" data-domain="gmail.com">Contact</a>
     </div>
     <div class="footer-social" aria-label="Social links">
       <a href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://youtube.com/@vehicles-tips" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.amazon.com/shop/vehiclestips" target="_blank" rel="noopener">Amazon</a>
     </div>
   </footer>
 
@@ -453,22 +450,6 @@
       a.setAttribute('href','mailto:' + addr);
       if(!a.textContent.trim()) a.textContent = 'Email Us';
     });
-
-    // Lazy YouTube (no iframes in HTML)
-    document.addEventListener('click', function(e){
-      var t = e.target;
-      if(t && t.classList && t.classList.contains('yt-facade')){
-        var src = t.getAttribute('data-yt');
-        var iframe = document.createElement('iframe');
-        iframe.title = 'YouTube video player';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-        iframe.allowFullscreen = true;
-        iframe.src = src;
-        iframe.style.position='absolute';iframe.style.top=0;iframe.style.left=0;iframe.style.width='100%';iframe.style.height='100%';iframe.style.border=0;
-        t.replaceWith(iframe);
-      }
-    }, {passive:true});
 
     // On-demand PayPal (avoid loading SDK on initial paint)
     (function(){
