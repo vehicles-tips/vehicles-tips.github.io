@@ -7,15 +7,17 @@
   <!-- SEO -->
   <title>Mobile Brake Repair Virginia Beach 23462 | We Come To You</title>
   <meta name="description" content="On-site brake pads & rotors in Virginia Beach 23462. Same-day mobile brake repair with flat-rate pricing. Call (757) 573-3154 for a quote." />
-  <link rel="canonical" href="https://vehicles-tips.com/brake-repair-virginia-beach/" />
-  <link rel="alternate" hreflang="en" href="https://vehicles-tips.com/brake-repair-virginia-beach/" />
+
+  <!-- Canonical (THIS PAGE) -->
+  <link rel="canonical" href="https://vehicles-tips.com/brake-repair-virginia-beach-23462/" />
+  <link rel="alternate" hreflang="en" href="https://vehicles-tips.com/brake-repair-virginia-beach-23462/" />
   <meta name="robots" content="index,follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Vehicles Tips" />
-  <meta property="og:url" content="https://vehicles-tips.com/brake-repair-virginia-beach/" />
+  <meta property="og:url" content="https://vehicles-tips.com/brake-repair-virginia-beach-23462/" />
   <meta property="og:title" content="Mobile Brake Repair Virginia Beach 23462 | We Come To You" />
   <meta property="og:description" content="Same-day mobile brake pads & rotors in Virginia Beach 23462. Flat-rate pricing. Call (757) 573-3154." />
   <meta property="og:image" content="https://vehicles-tips.com/assets/og/brake-repair.jpg" />
@@ -33,7 +35,7 @@
   <link rel="me" href="https://www.instagram.com/vehiclestips">
   <link rel="icon" type="image/jpeg" href="/Logo.jpg" />
 
-  <!-- Performance -->
+  <!-- Performance: preload hero image (swap path to your brake hero) -->
   <link rel="preload" as="image" href="/assets/hero/brakes-1600.webp"
         imagesrcset="/assets/hero/brakes-800.webp 800w, /assets/hero/brakes-1200.webp 1200w, /assets/hero/brakes-1600.webp 1600w"
         imagesizes="100vw" fetchpriority="high" />
@@ -44,13 +46,16 @@
       --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cbd5e1;
       --brand:#f04a1d; --brand-ink:#ffffff; --brand-soft:#f04a1d1f;
       --accent:#f97316; --accent-soft:#fb923c;
-      --good:#22c55e; --warn:#f59e0b;
+      --youtube-red:#b00000;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
     img{max-width:100%;height:auto;display:block;border-radius:12px}
     a{color:var(--accent)}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+    /* Header / hero */
     header.hero{background-image:url('/assets/hero/brakes-1600.webp');background-position:center;background-size:cover;background-repeat:no-repeat;color:#fff;text-align:center;padding:68px 16px;position:relative;border-bottom:1px solid #ffffff22}
     header.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
     header.hero *{position:relative;z-index:1}
@@ -59,27 +64,66 @@
     .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
     .btn{background:var(--brand);color:var(--brand-ink);padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.35)}
     .btn.secondary{background:transparent;color:#fff;border:1px solid #fff}
+
+    /* Social strip (top-right) */
+    .social-strip{position:absolute;right:12px;top:12px;display:flex;gap:10px;z-index:2}
+    .social-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,.45);border:1px solid #ffffff22;padding:6px 10px;border-radius:999px;color:#fff;text-decoration:none;font-weight:700}
+    .social-chip:hover{background:rgba(0,0,0,.6)}
+    .icon{width:16px;height:16px;fill:#fff}
+
+    /* Nav */
     nav{background:#0e0e0e;display:flex;gap:18px;justify-content:center;padding:10px 12px;font-size:.95rem;flex-wrap:wrap;border-top:1px solid #ffffff14;border-bottom:1px solid #ffffff14}
     nav a{color:var(--brand);text-decoration:none;font-weight:700}
     nav a:hover{color:#fff}
+
+    /* Layout */
     main{max-width:980px;margin:22px auto;padding:0 16px;flex:1 0 auto}
     section{background:var(--card);border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.4);padding:18px;margin:16px 0}
     h2{margin:6px 0 10px;font-size:1.35rem;color:var(--brand)}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px}
-    @media (min-width:760px){.grid.two{grid-template-columns:1fr 1fr} .grid.three{grid-template-columns:1fr 1fr 1fr}}
-    .pill{display:inline-block;background:var(--brand-soft);padding:4px 10px;border-radius:999px;font-size:.85rem;margin:4px 6px 0 0}
-    .kicker{font-size:.85rem;color:var(--muted)}
-    .price{font-size:1.8rem;font-weight:900}
-    .badge{display:inline-block;padding:3px 8px;border-radius:999px;background:var(--good);color:#0f172a;font-size:.75rem;margin-left:8px}
     ul{margin:0 0 0 18px}
-    footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:22px 16px;font-size:.92rem;color:#cbd5e1}
-    footer a{color:var(--accent);text-decoration:none;margin:0 8px}
-    footer a:hover{color:var(--accent-soft);text-decoration:underline}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    @media (min-width:760px){
+      .grid.two{grid-template-columns:1fr 1fr}
+      .grid.three{grid-template-columns:1fr 1fr 1fr}
+    }
+    .pill{display:inline-block;background:var(--brand-soft);padding:4px 10px;border-radius:999px;font-size:.85rem;margin:4px 6px 0 0}
     .fine{color:var(--muted);font-size:.92rem}
+    .price{font-size:1.8rem;font-weight:900}
+    .badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#22c55e;color:#0f172a;font-size:.75rem;margin-left:8px}
     .note{background:#fff7ed;color:#7c2d12;border:1px solid #fed7aa;border-radius:10px;padding:10px 12px}
     .gallery{display:grid;grid-template-columns:1fr;gap:12px}
     @media (min-width:700px){.gallery{grid-template-columns:1fr 1fr}}
+    footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:22px 16px;font-size:.92rem;color:#cbd5e1}
+    footer a{color:var(--accent);text-decoration:none;margin:0 8px}
+    footer a:hover{color:var(--accent-soft);text-decoration:underline}
+
+    /* Video facade (no iframes in HTML) */
+    .video-container{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);margin-top:12px;background:#000}
+    .yt-facade{position:absolute;inset:0;display:block;border:0;background-size:cover;background-position:center;cursor:pointer}
+    .yt-facade::after{content:"▶";position:absolute;inset:auto 0 0 0;margin:auto;top:0;bottom:0;width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.88);color:#000;font-weight:900;font-size:32px;display:flex;align-items:center;justify-content:center}
   </style>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": "Vehicles Tips LLC – Mobile Mechanic",
+    "image": "https://vehicles-tips.com/Logo.jpg",
+    "url": "https://vehicles-tips.com/",
+    "telephone": "+1-757-573-3154",
+    "priceRange": "$$",
+    "areaServed": {"@type":"City","name":"Virginia Beach"},
+    "address": {"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23462","addressCountry":"US"},
+    "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"17:00"}],
+    "sameAs": [
+      "https://youtube.com/@vehicles-tips",
+      "https://www.amazon.com/shop/vehiclestips",
+      "https://www.facebook.com/VehiclesTips",
+      "https://www.instagram.com/vehiclestips"
+    ]
+  }
+  </script>
 
   <!-- Service Schema (Brake Repair) -->
   <script type="application/ld+json">
@@ -96,25 +140,32 @@
       "telephone":"+1-757-573-3154",
       "logo":"https://vehicles-tips.com/Logo.jpg"
     },
-    "offers":{
-      "@type":"Offer",
-      "priceCurrency":"USD",
-      "availability":"https://schema.org/InStock",
-      "url":"https://vehicles-tips.com/brake-repair-virginia-beach/"
-    }
+    "url":"https://vehicles-tips.com/brake-repair-virginia-beach-23462/"
   }
   </script>
 
-  <!-- (Optional) GA4 / Pixel – replace IDs if you want tracking here too -->
+  <!-- Optional: GA4 (replace ID if you want tracking on this page too) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 </head>
 <body>
+
+  <!-- Social quick links -->
+  <div class="social-strip" aria-label="Social links">
+    <a class="social-chip" href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06C2 17.08 5.66 21.2 10.44 22v-7.02H7.9v-2.92h2.54V9.41c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.62.77-1.62 1.56v1.87h2.76l-.44 2.92h-2.32V22C18.34 21.2 22 17.08 22 12.06z"/></svg>
+      Facebook
+    </a>
+    <a class="social-chip" href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18.5 6a1 1 0 1 1-1 1 1 0 0 1 1-1z"/></svg>
+      Instagram
+    </a>
+  </div>
 
   <header class="hero">
     <h1 class="hero-title">Mobile Brake Repair in Virginia Beach (23462)</h1>
@@ -122,7 +173,7 @@
     <div class="cta">
       <a class="btn" href="tel:+17575733154">📞 Call Now: (757) 573-3154</a>
       <a class="btn secondary" href="sms:+17575733154">💬 Text for a Quote</a>
-      <a class="btn secondary" id="email-top" href="#" data-user="VehiclesTips" data-domain="gmail.com">✉️ Email Us</a>
+      <a class="btn secondary" id="email-top" href="#" data-user="VehiclesTips" data-domain="gmail.com" aria-label="Email Vehicles Tips">✉️ Email Us</a>
     </div>
     <p class="fine" style="margin-top:12px">Serving Virginia Beach only — zip codes 23462, 23451, 23452, 23453, 23454, 23455, 23456</p>
   </header>
@@ -138,11 +189,11 @@
   </nav>
 
   <main>
-    <section id="intro">
-      <h2>On-Site Brake Pads & Rotors — We Come To You</h2>
-      <p>Grinding, squealing, or a soft brake pedal? Vehicles Tips LLC provides <strong>mobile brake repair in Virginia Beach</strong>. We replace <strong>pads, rotors, calipers, hoses, and master cylinders</strong> on-site, and perform full brake diagnostics. Quotes are <strong>flat-rate</strong> — no hourly surprises.</p>
+    <section id="brake-intro">
+      <h2>Brake Pads, Rotors & Calipers — We Come To You</h2>
+      <p>Squealing or grinding? Steering wheel vibration when braking? We provide <strong>mobile brake repair in Virginia Beach 23462</strong> — pads, rotors, calipers, hoses, master cylinders, and full diagnostics — with <strong>flat-rate pricing</strong> and <strong>same-day appointments</strong>.</p>
       <div class="cta" style="margin-top:10px">
-        <a class="btn" href="tel:+17575733154">Get Brake Quote by Phone</a>
+        <a class="btn" href="tel:+17575733154">📞 Get a Brake Quote</a>
         <a class="btn secondary" href="#pricing">See Pricing</a>
       </div>
     </section>
@@ -151,17 +202,17 @@
       <h2>Transparent Brake Pricing</h2>
       <div class="grid three">
         <div style="background:#151515;border-radius:12px;padding:14px">
-          <div class="kicker">Most Cars</div>
+          <div class="fine">Most Cars</div>
           <div class="price">$149–$229</div>
           <div class="fine">Per axle labor for pads & rotors (parts not included)</div>
         </div>
         <div style="background:#151515;border-radius:12px;padding:14px">
-          <div class="kicker">Premium / Large SUV</div>
+          <div class="fine">Premium / Large SUV</div>
           <div class="price">$199–$289</div>
           <div class="fine">Per axle labor for pads & rotors (parts not included)</div>
         </div>
         <div style="background:#151515;border-radius:12px;padding:14px">
-          <div class="kicker">Brake Diagnostic</div>
+          <div class="fine">Brake Diagnostic</div>
           <div class="price">$49.99 <span class="badge">Applied to jobs ≥ $300</span></div>
           <div class="fine">OBD scan, inspection, and written notes</div>
         </div>
@@ -206,11 +257,11 @@
       <h2>Before / After</h2>
       <div class="gallery">
         <figure>
-          <img src="/assets/brakes/grooved-rotor.jpg" alt="Severely grooved brake rotor before replacement">
+          <img src="/assets/brakes/grooved-rotor.jpg" alt="Grooved brake rotor before replacement during mobile service">
           <figcaption class="fine">Before: deeply grooved rotor causing vibration.</figcaption>
         </figure>
         <figure>
-          <img src="/assets/brakes/new-rotor.jpg" alt="New drilled and slotted rotor installed during mobile brake service">
+          <img src="/assets/brakes/new-rotor.jpg" alt="New brake rotor and pads installed on-site in Virginia Beach">
           <figcaption class="fine">After: new rotor & pads installed on-site.</figcaption>
         </figure>
       </div>
@@ -247,7 +298,7 @@
       <p class="fine" style="margin-top:10px">Licensed, registered & insured. <a href="/policies.html">Warranty & Policies</a>.</p>
     </section>
 
-    <!-- FAQ schema for rich results -->
+    <!-- FAQ Schema (rich results) -->
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
       {"@type":"Question","name":"Do you service my zip code?","acceptedAnswer":{"@type":"Answer","text":"Yes — Virginia Beach only: 23462, 23451, 23452, 23453, 23454, 23455, 23456."}},
@@ -267,13 +318,31 @@
     </div>
   </footer>
 
-  <!-- Minimal JS: email obfuscation -->
+  <!-- Minimal JS: email obfuscation + lazy YouTube (ready if you add a video) -->
   <script>
+    // Obfuscate and set mailto on all email links with data-user/domain
     document.querySelectorAll('[data-user][data-domain]').forEach(function(a){
       var addr = a.getAttribute('data-user') + '@' + a.getAttribute('data-domain');
       a.setAttribute('href','mailto:' + addr);
-      if(!a.textContent.trim()) a.textContent = addr;
+      if(!a.textContent.trim()) a.textContent = 'Email Us';
     });
+
+    // Lazy YouTube (no iframes in HTML)
+    document.addEventListener('click', function(e){
+      var t = e.target;
+      if(t && t.classList && t.classList.contains('yt-facade')){
+        var src = t.getAttribute('data-yt');
+        var iframe = document.createElement('iframe');
+        iframe.title = 'YouTube video player';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        iframe.src = src;
+        iframe.style.position='absolute';iframe.style.top=0;iframe.style.left=0;iframe.style.width='100%';iframe.style.height='100%';iframe.style.border=0;
+        t.replaceWith(iframe);
+      }
+    }, {passive:true});
   </script>
 </body>
 </html>
+
