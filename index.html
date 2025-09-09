@@ -88,7 +88,7 @@
     .badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#f04a1d;color:#fff;font-size:.75rem;margin-left:8px}
     #contact a{text-decoration:underline}
 
-    /* Video facade (no iframes in HTML) */
+    /* Video facade (no iframes until click) */
     .video-container{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);margin-top:12px;background:#000}
     .yt-facade{position:absolute;inset:0;display:block;border:0;background-size:cover;background-position:center;cursor:pointer}
     .yt-facade::after{content:"▶";position:absolute;inset:auto 0 0 0;margin:auto;top:0;bottom:0;width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.88);color:#000;font-weight:900;font-size:32px;display:flex;align-items:center;justify-content:center}
@@ -119,9 +119,40 @@
     .stack-sm{display:flex;flex-wrap:wrap;gap:10px}
     .mt-6{margin-top:12px}
     .mt-10{margin-top:20px}
+
+    /* 🔧 Perf/CLS helpers */
+    .banner-wrap{max-width:1060px;margin:8px auto}
+    .banner-wrap img{width:100%;height:auto;aspect-ratio:1060/375;display:block;border-radius:12px}
+
+    /* Rating badge */
+    .rating-badge{
+      display:inline-flex; align-items:center; gap:10px;
+      background:rgba(255,255,255,.06); border:1px solid #ffffff1a;
+      padding:8px 12px; border-radius:999px; margin-top:10px;
+    }
+    .rating-link{display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:#fff; font-weight:700}
+    .rating-badge .brand{opacity:.9}
+    .stars{display:inline-flex; gap:2px}
+    .star{width:18px; height:18px; fill:#fbbf24}
+    .score{font-weight:800}
+    .count{color:#cccccc; font-weight:600}
+
+    /* Reviews grid */
+    .reviews{display:grid;gap:12px;grid-template-columns:1fr}
+    @media(min-width:760px){.reviews{grid-template-columns:1fr 1fr}}
+    .review{background:#151515;border:1px solid #ffffff12;border-radius:12px;padding:14px}
+    .review .hdr{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .review .name{font-weight:800}
+    .review .meta{color:var(--muted);font-size:.9rem}
+    .review .body{margin-top:8px}
+    .chip-new{background:#22c55e1a;border:1px solid #22c55e44;color:#86efac;padding:2px 8px;border-radius:999px;font-size:.75rem}
+    .r-stars svg{width:16px;height:16px;fill:#fbbf24}
+
+    /* Defer below-the-fold rendering for speed */
+    main > section { content-visibility: auto; contain-intrinsic-size: 800px; }
   </style>
 
-  <!-- ✅ LocalBusiness Schema (with FB/IG in sameAs) -->
+  <!-- ✅ LocalBusiness Schema (+ aggregateRating) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -139,7 +170,13 @@
       "https://www.amazon.com/shop/vehiclestips",
       "https://www.facebook.com/VehiclesTips",
       "https://www.instagram.com/vehiclestips"
-    ]
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "ratingCount": 7,
+      "reviewCount": 7
+    }
   }
   </script>
 
@@ -167,20 +204,19 @@
 </head>
 <body>
 
-  <!-- Banner (moved out of <head>) -->
-  <a class="site-banner"
-     href="https://www.youtube.com/@Vehicles-Tips"
-     target="_blank"
-     rel="noopener"
-     aria-label="Go to Vehicles Tips on YouTube"
-     style="display:block;text-align:center;">
-    <img
-      src="https://yt3.googleusercontent.com/ONPsWV2uEDtZAaiP3YTyfKyjg3SIN7lnbrOIyQjTWW0b-P91lkw_pdnC5m2bgjhNtYwEZs-k-g=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
-      alt="Vehicles Tips - YouTube banner"
-      width="1060" height="375"
-      loading="lazy"
-      style="display:inline-block;max-width:100%;height:auto;border-radius:12px">
-  </a>
+  <!-- Banner (reserved space to avoid CLS, low priority load) -->
+  <div class="banner-wrap">
+    <a class="site-banner"
+       href="https://www.youtube.com/@Vehicles-Tips"
+       target="_blank" rel="noopener"
+       aria-label="Go to Vehicles Tips on YouTube">
+      <img
+        src="https://yt3.googleusercontent.com/ONPsWV2uEDtZAaiP3YTyfKyjg3SIN7lnbrOIyQjTWW0b-P91lkw_pdnC5m2bgjhNtYwEZs-k-g=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
+        alt="Vehicles Tips - YouTube banner"
+        width="1060" height="375"
+        loading="lazy" decoding="async" fetchpriority="low">
+    </a>
+  </div>
 
   <header class="hero">
     <h1 class="hero-title">Mobile Mechanic in Virginia Beach (23462)</h1>
@@ -190,6 +226,23 @@
       <a class="btn secondary" href="sms:+17575733154">💬 Text Us</a>
       <a class="btn secondary" id="email-top" href="#" data-user="VehiclesTips" data-domain="gmail.com" aria-label="Email Vehicles Tips">✉️ Email Us</a>
     </div>
+
+    <!-- ⭐ Rating badge under hero -->
+    <div class="rating-badge" aria-label="Vehicles Tips LLC rating: 5.0 out of 5 based on 7 Google reviews">
+      <a class="rating-link" href="https://g.page/r/CXIZcZsfIg_NEBM" target="_blank" rel="noopener">
+        <span class="brand">Vehicles Tips LLC</span>
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </span>
+        <span class="score">5.0</span>
+        <span class="count">· 7 Google reviews</span>
+      </a>
+    </div>
+
     <p class="fine mt-6">✅ Only servicing <strong>Virginia Beach</strong> (zip codes incl. <strong>23462</strong>, 23451, 23452, 23453, 23454)</p>
   </header>
 
@@ -338,16 +391,16 @@
       <h2 class="mt-6">Complete Vehicle Analysis — <span class="badge"> $99.99</span> ⭐ Popular</h2>
       <p class="mt-6">A full <strong>health and condition check</strong> before repairs or a trip. I come to you and inspect the car from the <strong>inside, outside, and underneath</strong> and provide a clear report.</p>
 
-      <!-- YouTube Video Embed (privacy-enhanced) -->
+      <!-- 🎬 Lite YouTube facade (loads player only on click) -->
       <div style="margin-top:20px;text-align:center;">
         <h3 style="color:#f97316;margin-bottom:10px;">🎥 Watch: What to Look Out for Before Buying a Car</h3>
-        <iframe width="560" height="315"
-          src="https://www.youtube-nocookie.com/embed/7g6vNrv4VdM?si=8xVc_G5m3y8UnTgS"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-          style="max-width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.3);">
-        </iframe>
+        <div class="video-container">
+          <a class="yt-facade"
+             style="background-image:url('https://i.ytimg.com/vi/7g6vNrv4VdM/hqdefault.jpg');"
+             data-ytid="7g6vNrv4VdM"
+             aria-label="Play video: What to Look Out for Before Buying a Car">
+          </a>
+        </div>
       </div>
 
       <ul class="mt-6">
@@ -371,6 +424,125 @@
       </div>
       <div class="mt-6">🚐 <em>On-site service within <strong>Virginia Beach</strong> only.</em></div>
       <aside class="note-box mt-6">⚠️ <em>This is <strong>not an official Virginia State Inspection</strong>. No stickers are issued. I am a <strong>Virginia State Inspection–licensed mechanic with 17 years of experience</strong> and provide mobile <strong>pre-inspection checks and repairs</strong> to help your vehicle pass at a certified inspection station.</em></aside>
+    </section>
+
+    <!-- ⭐ Customer Reviews -->
+    <section id="reviews">
+      <h2>Recent Customer Reviews (5.0 ★★★★★)</h2>
+      <div class="reviews" role="list">
+        <article class="review" role="listitem">
+          <div class="hdr">
+            <div>
+              <div class="name">lacy hill</div>
+              <div class="meta">8 reviews • 1 photo · 11 hours ago</div>
+            </div>
+            <span class="chip-new">New</span>
+          </div>
+          <div class="r-stars" aria-label="5 out of 5 stars" title="5 out of 5">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="body">A happy outcome dealing with Romel A professional Mechanic at Tire Choice on independent Blvd Virginia Beach. I been... <em>View full review</em></p>
+        </article>
+
+        <article class="review" role="listitem">
+          <div class="hdr">
+            <div>
+              <div class="name">Bien Covita</div>
+              <div class="meta">2 reviews • 0 photos · 3 days ago</div>
+            </div>
+            <span class="chip-new">New</span>
+          </div>
+          <div class="r-stars" aria-label="5 out of 5 stars" title="5 out of 5">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="body">I only send my car to this guy. High quality work and very fast. Takes the time to explain all things wrong and what his recommendations are. He will get it done right the first time.</p>
+          <p class="body" style="opacity:.85"><strong>Vehicles Tips LLC · Owner · 2 days ago:</strong> Thank you so much for trusting me and for your support. Looking forward to serving you again.</p>
+        </article>
+
+        <article class="review" role="listitem">
+          <div class="hdr">
+            <div>
+              <div class="name">shiroamadea</div>
+              <div class="meta">0 reviews • 0 photos · 4 days ago</div>
+            </div>
+            <span class="chip-new">New</span>
+          </div>
+          <div class="r-stars" aria-label="5 out of 5 stars" title="5 out of 5">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="body">Best mechanic I know that I can get it done fast.</p>
+          <p class="body" style="opacity:.85"><strong>Vehicles Tips LLC · Owner · 2 days ago:</strong> Thank you so much for trusting me and for your support. Looking forward to serving you again.</p>
+        </article>
+
+        <article class="review" role="listitem">
+          <div class="hdr">
+            <div>
+              <div class="name">Maria Flores Apape</div>
+              <div class="meta">5 reviews • 1 photo · 4 days ago</div>
+            </div>
+            <span class="chip-new">New</span>
+          </div>
+          <div class="r-stars" aria-label="5 out of 5 stars" title="5 out of 5">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="body">Dependable and reliable service. Greatly appreciated the professionalism shown while servicing our van… highly recommended!</p>
+          <p class="body" style="opacity:.85"><strong>Vehicles Tips LLC · Owner · 2 days ago:</strong> Thank you so much for trusting me and for your support. Looking forward to serving you again.</p>
+        </article>
+
+        <article class="review" role="listitem">
+          <div class="hdr">
+            <div>
+              <div class="name">Dumb Hackers</div>
+              <div class="meta">0 reviews • 0 photos · 5 days ago</div>
+            </div>
+            <span class="chip-new">New</span>
+          </div>
+          <div class="r-stars" aria-label="5 out of 5 stars" title="5 out of 5">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="body">W Mechanic — hard and honest worker, loves doing his job, his knowledge on cars 10/10... <em>View full review</em></p>
+          <p class="body" style="opacity:.85"><strong>Vehicles Tips LLC · Owner · 2 days ago:</strong> Thank you so much for trusting me and for your support. Looking forward to serving you again.</p>
+        </article>
+
+        <article class="review" role="listitem">
+          <div class="hdr">
+            <div>
+              <div class="name">Myla S Paulmino</div>
+              <div class="meta">0 reviews • 0 photos · 5 days ago</div>
+            </div>
+            <span class="chip-new">New</span>
+          </div>
+          <div class="r-stars" aria-label="5 out of 5 stars" title="5 out of 5">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="body">Great customer service!! These guys have the knowledge in their services and products!</p>
+          <p class="body" style="opacity:.85"><strong>Vehicles Tips LLC · Owner · 2 days ago:</strong> Thank you so much for trusting me and for your support. Looking forward to serving you again.</p>
+        </article>
+
+        <article class="review" role="listitem">
+          <div class="hdr">
+            <div>
+              <div class="name">Myra Angeles</div>
+              <div class="meta">4 reviews • 0 photos · 5 days ago</div>
+            </div>
+            <span class="chip-new">New</span>
+          </div>
+          <div class="r-stars" aria-label="5 out of 5 stars" title="5 out of 5">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="body">He is your-one-of-the-best mechanic in the neighborhood, town, and state. He is very knowledgeable and share this... <em>View full review</em></p>
+          <p class="body" style="opacity:.85"><strong>Vehicles Tips LLC · Owner · 2 days ago:</strong> Thank you so much for trusting me and for your support. Looking forward to serving you again.</p>
+        </article>
+      </div>
+
+      <div class="cta mt-6" style="justify-content:center">
+        <a href="https://g.page/r/CXIZcZsfIg_NEBM/review" class="btn" style="background:#4285F4" target="_blank" rel="noopener">⭐ Leave a Review on Google</a>
+        <a href="https://g.page/r/CXIZcZsfIg_NEBM" class="btn secondary" target="_blank" rel="noopener">📖 See Our Google Profile</a>
+      </div>
     </section>
 
     <section id="pre-inspection-readiness">
@@ -407,23 +579,6 @@
         <a class="btn secondary" href="sms:+17575733154">💬 Text to Book</a>
         <a class="btn secondary" id="email-appt" href="#" data-user="VehiclesTips" data-domain="gmail.com">✉️ Book by Email</a>
       </div>
-
-      <!-- 🔹 REPLACED: Review buttons only (no API needed) -->
-      <section id="google-review" style="padding:2rem;text-align:center;margin:2rem 0;">
-        <h2>⭐ Reviews & Trust</h2>
-        <p>We’re proud to help neighbors in <strong>Virginia Beach</strong>. Your feedback helps other drivers know they can trust us.</p>
-        <div class="cta" style="justify-content:center;gap:12px;margin-top:12px;flex-wrap:wrap;">
-          <a href="https://g.page/r/CXIZcZsfIg_NEBM/review"
-             class="btn" style="background:#4285F4" target="_blank" rel="noopener">
-            ⭐ Leave a Review on Google
-          </a>
-          <a href="https://g.page/r/CXIZcZsfIg_NEBM"
-             class="btn secondary" target="_blank" rel="noopener">
-            📖 See Our Google Profile
-          </a>
-        </div>
-        <p class="fine" style="margin-top:10px;color:#ccc;">Thank you for supporting a local, licensed mobile mechanic.</p>
-      </section>
     </section>
 
     <section id="contact">
@@ -440,7 +595,7 @@
       <p class="fine mt-6">✅ Fully Licensed, Registered & Insured Mobile Mechanic — Virginia Beach Business License</p>
     </section>
 
-    <!-- ✅ FAQ Schema (unchanged Q/A; still helpful for rich results) -->
+    <!-- ✅ FAQ Schema -->
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
       {"@type":"Question","name":"Do you service Norfolk or Chesapeake?","acceptedAnswer":{"@type":"Answer","text":"No — we only service Virginia Beach to keep travel costs low and response times fast."}},
@@ -464,7 +619,7 @@
     </div>
   </footer>
 
-  <!-- ✅ Minimal JS at end: Lazy YouTube + on-demand PayPal + email obfuscation -->
+  <!-- ✅ Minimal JS at end: Email obfuscation + on-demand PayPal + click-to-play YouTube -->
   <script>
     // Obfuscate and set mailto on all email links with data-user/domain
     document.querySelectorAll('[data-user][data-domain]').forEach(function(a){
@@ -491,6 +646,21 @@
         document.body.appendChild(s);
       }, {passive:true});
     })();
+
+    // Click-to-load the YouTube iframe (privacy-enhanced)
+    document.querySelectorAll('.yt-facade').forEach(function(el){
+      el.addEventListener('click', function(){
+        var id = el.getAttribute('data-ytid');
+        var ifr = document.createElement('iframe');
+        ifr.width = '560'; ifr.height = '315';
+        ifr.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        ifr.title = 'YouTube video player';
+        ifr.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        ifr.allowFullscreen = true;
+        ifr.style = 'position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:12px;';
+        el.replaceWith(ifr);
+      }, {passive:true});
+    });
   </script>
 </body>
 </html>
