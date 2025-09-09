@@ -9,21 +9,7 @@
 
   <!-- ✅ META DESCRIPTION (≤160) -->
   <meta name="description" content="Affordable mobile mechanic in Virginia Beach 23462. On-site brake repair, diagnostics & car service at your home. Call (757) 573-3154 today!" />
-<!-- Banner -->
-<a class="site-banner"
-   href="https://www.youtube.com/@Vehicles-Tips"
-   target="_blank"
-   rel="noopener"
-   aria-label="Go to Vehicles Tips on YouTube"
-   style="display:block;text-align:center;">
-  <img
-    src="https://yt3.googleusercontent.com/ONPsWV2uEDtZAaiP3YTyfKyjg3SIN7lnbrOIyQjTWW0b-P91lkw_pdnC5m2bgjhNtYwEZs-k-g=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
-    alt="Vehicles Tips - YouTube banner"
-    width="1060" height="375"
-    loading="lazy"
-    style="display:inline-block;max-width:100%;height:auto;border-radius:12px"
-  >
-</a>
+
   <!-- ✅ CANONICAL + HREFLANG -->
   <link rel="canonical" href="https://vehicles-tips.com/" />
   <link rel="alternate" hreflang="en" href="https://vehicles-tips.com/" />
@@ -46,13 +32,14 @@
   <meta name="twitter:description" content="Affordable mobile mechanic in Virginia Beach 23462. On-site brake repair, diagnostics & car service at your home. Call (757) 573-3154 today!" />
   <meta name="twitter:image" content="https://vehicles-tips.com/assets/og/homepage.jpg" />
 
-<link rel="icon" type="image/png" 
-      href="https://yt3.googleusercontent.com/EmdLjO48zvpdTQR4rmCDWqYWjpbOIhrGkzgCdUHqEJT0X3BwNKtoo3U0X6oQJW1nB_bGercm=s160-c-k-c0x00ffffff-no-rj">
+  <!-- ✅ Local favicon (avoid 3rd-party request) -->
+  <link rel="icon" type="image/jpeg" href="/Logo.jpg">
+
   <!-- Performance hints -->
   <link rel="preload" as="image" href="/assets/hero/hero-1600.webp"
         imagesrcset="/assets/hero/hero-800.webp 800w, /assets/hero/hero-1200.webp 1200w, /assets/hero/hero-1600.webp 1600w"
         imagesizes="100vw" fetchpriority="high" />
-  <link rel="preconnect" href="https://www.youtube.com" crossorigin />
+  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin />
 
   <style>
     :root{
@@ -179,6 +166,21 @@
     src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
+
+  <!-- Banner (moved out of <head>) -->
+  <a class="site-banner"
+     href="https://www.youtube.com/@Vehicles-Tips"
+     target="_blank"
+     rel="noopener"
+     aria-label="Go to Vehicles Tips on YouTube"
+     style="display:block;text-align:center;">
+    <img
+      src="https://yt3.googleusercontent.com/ONPsWV2uEDtZAaiP3YTyfKyjg3SIN7lnbrOIyQjTWW0b-P91lkw_pdnC5m2bgjhNtYwEZs-k-g=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
+      alt="Vehicles Tips - YouTube banner"
+      width="1060" height="375"
+      loading="lazy"
+      style="display:inline-block;max-width:100%;height:auto;border-radius:12px">
+  </a>
 
   <header class="hero">
     <h1 class="hero-title">Mobile Mechanic in Virginia Beach (23462)</h1>
@@ -335,18 +337,19 @@
     <section id="complete-vehicle-analysis">
       <h2 class="mt-6">Complete Vehicle Analysis — <span class="badge"> $99.99</span> ⭐ Popular</h2>
       <p class="mt-6">A full <strong>health and condition check</strong> before repairs or a trip. I come to you and inspect the car from the <strong>inside, outside, and underneath</strong> and provide a clear report.</p>
-    </div>
-      <!-- YouTube Video Embed -->
-<div style="margin-top:20px;text-align:center;">
-  <h3 style="color:#f97316;margin-bottom:10px;">🎥 Watch: What to Look Out for Before Buying a Car</h3>
-  <iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/7g6vNrv4VdM?si=8xVc_G5m3y8UnTgS" 
-    title="YouTube video player" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-    style="max-width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.3);">
-  </iframe>
-</div>
+
+      <!-- YouTube Video Embed (privacy-enhanced) -->
+      <div style="margin-top:20px;text-align:center;">
+        <h3 style="color:#f97316;margin-bottom:10px;">🎥 Watch: What to Look Out for Before Buying a Car</h3>
+        <iframe width="560" height="315"
+          src="https://www.youtube-nocookie.com/embed/7g6vNrv4VdM?si=8xVc_G5m3y8UnTgS"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+          style="max-width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.3);">
+        </iframe>
+      </div>
+
       <ul class="mt-6">
         <li><strong>Brake system:</strong> rotor thickness/spec, pad/shoe life, brake fluid condition</li>
         <li><strong>Suspension &amp; steering:</strong> ball joints, tie rods, bushings, shocks/struts, play/noise checks</li>
@@ -454,13 +457,11 @@
       <a href="/policies.html">Warranty & Policies</a> |
       <a id="email-footer" href="#" data-user="VehiclesTips" data-domain="gmail.com">Contact</a>
     </div>
-  <div class="footer-social" aria-label="Social links">
-  <a href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener">Facebook</a>
-  <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener">Instagram</a>
-  <a href="https://www.youtube.com/@Vehicles-Tips" target="_blank" rel="noopener">YouTube</a>
-   
-  </a>
-</div>
+    <div class="footer-social" aria-label="Social links">
+      <a href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@Vehicles-Tips" target="_blank" rel="noopener">YouTube</a>
+    </div>
   </footer>
 
   <!-- ✅ Minimal JS at end: Lazy YouTube + on-demand PayPal + email obfuscation -->
