@@ -24,7 +24,7 @@
   <link rel="icon" href="/Logo.jpg" type="image/jpeg" />
 
   <style>
-    :root{ --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cbd5e1; --brand:#f04a1d; --brand-ink:#ffffff; }
+    :root{ --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cbd5e1; --brand:#f04a1d; --brand-ink:#ffffff; --accent:#f97316; }
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
     header{padding:28px 16px;text-align:center;border-bottom:1px solid #ffffff17}
@@ -33,37 +33,42 @@
     .cta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:12px}
     .btn{background:var(--brand);color:var(--brand-ink);padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:800}
     .btn.secondary{background:transparent;border:1px solid #fff}
+
+    /* ✅ Centered nav */
+    nav{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:14px;
+      padding:10px 12px;
+      background:#0f0f0f;
+      border-top:1px solid #ffffff1a;
+      border-bottom:1px solid #ffffff1a;
+    }
+    nav a{
+      color:var(--brand);
+      font-weight:800;
+      white-space:nowrap;
+    }
+    nav a:hover{text-decoration:underline;color:#fff}
+
+    @media (max-width:680px){
+      nav{overflow-x:auto;scroll-snap-type:x proximity;justify-content:center}
+      nav::-webkit-scrollbar{display:none}
+    }
+
     main{max-width:900px;margin:18px auto;padding:0 14px}
     section{background:var(--card);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 6px 16px rgba(0,0,0,.45)}
-    h2{margin:0 0 10px;color:#f97316;font-size:1.25rem}
+    h2{margin:0 0 10px;color:var(--accent);font-size:1.25rem}
     ul{margin:0 0 0 18px}
     .grid{display:grid;grid-template-columns:1fr;gap:14px}
     @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
     .card{background:#151515;border:1px solid #ffffff12;border-radius:12px;padding:14px}
     footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:20px 12px;color:#cbd5e1}
-    footer a{color:#f97316;text-decoration:none;margin:0 8px}
+    footer a{color:var(--accent);text-decoration:none;margin:0 8px}
     footer a:hover{text-decoration:underline}
-    .note{color:#cbd5e1}
   </style>
-
-  <!-- Schema: service-specific -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "name":"Mobile Brake Repair",
-    "serviceType":"Brake pad, rotor, caliper, hose replacement & diagnostics",
-    "provider":{
-      "@type":"AutoRepair",
-      "name":"Vehicles Tips LLC",
-      "telephone":"+1-757-573-3154",
-      "areaServed":"Virginia Beach, VA",
-      "url":"https://vehicles-tips.com/"
-    },
-    "areaServed":"Virginia Beach, VA",
-    "offers":{"@type":"Offer","priceCurrency":"USD","availability":"https://schema.org/InStock"}
-  }
-  </script>
 </head>
 <body>
   <header>
@@ -74,6 +79,19 @@
       <a class="btn secondary" href="mailto:VehiclesTips@gmail.com?subject=Brake%20Repair%20Request">✉️ Email</a>
     </div>
   </header>
+
+  <!-- ✅ New centered nav -->
+  <nav aria-label="Primary">
+    <a href="/index.html">Home</a>
+    <a href="/mobile-mechanic-virginia-beach.html">Mobile Mechanic</a>
+    <a href="/fluid-flush-virginia-beach.html">Fluid Flush</a>
+    <a href="/engine-repair-virginia-beach.html">Engine Repair</a>
+    <a href="/suspension-steering-repair-virginia-beach.html">Suspension</a>
+    <a href="/ac-heating-repair-virginia-beach.html">A/C & Heating</a>
+    <a href="/diagnostics-electrical-virginia-beach.html">Diagnostics</a>
+    <a href="/pre-purchase-inspection-virginia-beach.html">Pre-Purchase</a>
+    <a href="/policies.html">Warranty & Policies</a>
+  </nav>
 
   <main>
     <section>
@@ -136,7 +154,7 @@
     <div style="margin-top:6px">
       <a href="/index.html">Home</a> |
       <a href="/mobile-mechanic-virginia-beach.html">Mobile Mechanic</a> |
-      <a href="/policies.html">Warranty & Policies</a>|
+      <a href="/policies.html">Warranty & Policies</a> |
       <a href="mailto:VehiclesTips@gmail.com">Contact</a>
     </div>
   </footer>
