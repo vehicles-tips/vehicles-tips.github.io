@@ -69,6 +69,12 @@
   .btn{background:var(--brand);color:var(--brand-ink);padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35);text-align:center}
   .btn.secondary{background:transparent;color:#fff;border:1px solid #fff}
 
+  /* Social strip */
+  .social-strip{position:absolute;right:12px;top:12px;display:flex;gap:10px;z-index:2}
+  .social-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,.45);border:1px solid #ffffff22;padding:6px 10px;border-radius:999px;color:#fff;text-decoration:none;font-weight:700}
+  .social-chip:hover{background:rgba(0,0,0,.6)}
+  .icon{width:16px;height:16px;fill:#fff}
+
   /* Nav */
   nav{
     background:#0e0e0e;display:flex;gap:14px;justify-content:flex-start;
@@ -120,14 +126,45 @@
     font-size:.92rem;
     color:#cbd5e1;
   }
-  footer a, footer a:visited {color: var(--brand);text-decoration: none;font-weight: 700;}
-  footer a:hover {color:#fff;text-decoration: underline;}
 
-  /* Contact buttons */
-  #contact a, #contact a:visited {color: var(--brand);font-weight: 700;text-decoration: none;}
-  #contact a:hover {color:#fff;text-decoration: underline;}
-  #contact .btn.secondary {background: var(--brand);color:#fff;border:none;}
-  #contact .btn.secondary:hover {background:#fff;color:var(--brand);text-decoration:none;}
+  /* Footer links 🍊 */
+  footer a,
+  footer a:visited {
+    color: var(--brand);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  /* Contact section links 🍊 */
+  #contact a,
+  #contact a:visited {
+    color: var(--brand);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  #contact a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  /* Contact section social buttons 🍊 */
+  #contact .btn.secondary {
+    background: var(--brand);
+    color: #fff;
+    border: none;
+  }
+
+  #contact .btn.secondary:hover {
+    background: #fff;
+    color: var(--brand);
+    text-decoration: none;
+  }
 
   /* Utility */
   .stack-sm{display:flex;flex-wrap:wrap;gap:10px}
@@ -171,14 +208,12 @@
   details.more-reviews > summary::-webkit-details-marker{display:none}
   details.more-reviews[open] > summary{opacity:.85}
 
-  /* Map container */
-  #vb-map{width:100%;height:380px;border-radius:12px;border:1px solid #ffffff22;overflow:hidden;background:#0b0b0b}
-
   /* Defer */
   main > section { content-visibility: auto; contain-intrinsic-size: 800px; }
-  </style>
+</style>
 
-  <!-- LocalBusiness Schema (+ aggregateRating + ZIP service area) -->
+
+  <!-- LocalBusiness Schema (+ aggregateRating) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -188,13 +223,7 @@
     "url":"https://vehicles-tips.com/",
     "telephone":"+1-757-573-3154",
     "priceRange":"$$",
-    "areaServed":[
-      {"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23462","addressCountry":"US"},
-      {"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23451","addressCountry":"US"},
-      {"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23452","addressCountry":"US"},
-      {"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23453","addressCountry":"US"},
-      {"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23454","addressCountry":"US"}
-    ],
+    "areaServed":{"@type":"City","name":"Virginia Beach"},
     "address":{"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23462","addressCountry":"US"},
     "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"17:00"}],
     "sameAs":[
@@ -224,14 +253,10 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" alt=""
     src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-
-  <!-- Leaflet (no API key) -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhI0hH6k9S+1jKQ+5rBeywHf8vHf9g2f0Xpw=" crossorigin="">
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
 
-  <!-- Banner -->
+  <!-- Banner (reserved space; slim for mobile) -->
   <div class="banner-wrap">
     <a class="site-banner" href="https://www.youtube.com/@Vehicles-Tips" target="_blank" rel="noopener" aria-label="Go to Vehicles Tips on YouTube">
       <img
@@ -250,7 +275,7 @@
       <a class="btn secondary" id="email-top" href="#" data-user="VehiclesTips" data-domain="gmail.com" aria-label="Email Vehicles Tips">✉️ Email Us</a>
     </div>
 
-    <!-- Rating badge -->
+    <!-- ⭐ Rating badge -->
     <div class="rating-badge" aria-label="Vehicles Tips LLC rating: 5.0 out of 5 based on 7 Google reviews">
       <a class="rating-link" href="https://g.page/r/CXIZcZsfIg_NEBM" target="_blank" rel="noopener">
         <span class="brand">Vehicles Tips LLC</span>
@@ -272,26 +297,26 @@
   <nav aria-label="Primary">
     <a href="#about">About / Trust</a>
     <a href="#services">Services</a>
-    <a href="/mobile-mechanic-virginia-beach.html">Mobile Mechanic</a>
     <a href="/brake-repair-virginia-beach.html">Brake Repair</a>
     <a href="#diagnostics">Diagnostics & Fees</a>
     <a href="#complete-vehicle-analysis">Vehicle Analysis</a>
-    <a href="#service-area">Service Area</a>
     <a href="#payments">Payments</a>
     <a href="#appointment">Appointments</a>
     <a href="#contact">Contact</a>
     <a href="/policies.html">Warranty & Policies</a>
-    <a href="/affiliate.html">Shop Tools</a>
-    <a href="/digital-creator-policy.html">Creator Policy</a>
+    <a href="/mobile-mechanic-virginia-beach.html">Mobile Mechanic</a>
   </nav>
 
   <main>
     <section id="about"> 
       <h2>Trusted Mobile Mechanic Near You in Virginia Beach</h2>
       <p>Looking for an <strong>affordable mobile mechanic in Virginia Beach</strong>? Vehicles Tips Auto Mechanics brings the shop to you — at home, work, or roadside — with transparent <strong>flat-rate pricing</strong>.</p>
-      <p>Whether you need <a href="/brake-repair-virginia-beach.html"><strong>mobile brake repair</strong></a>, <a href="/mobile-mechanic-virginia-beach.html"><strong>mobile auto repair</strong></a>, or quick diagnostics in <strong>23462</strong> and nearby Virginia Beach zip codes, you’ll get honest guidance and reliable workmanship.</p>
+      <p>Whether you need <strong>mobile brake repair</strong>, <strong>mobile auto repair</strong>, or quick diagnostics in <strong>23462</strong> and nearby Virginia Beach zip codes, you’ll get honest guidance and reliable workmanship.</p>
       <p>I studied at <strong>ATi School of Automotive Technology</strong>, hold a valid <strong>MAC License for A/C systems</strong>, and have <strong>20+ years of experience</strong>.</p>
-      <div class="pill">Kempsville</div><div class="pill">Town Center</div><div class="pill">Pembroke</div><div class="pill">Bayside</div>
+      <div class="pill">Kempsville</div>
+      <div class="pill">Town Center</div>
+      <div class="pill">Pembroke</div>
+      <div class="pill">Bayside</div>
     </section>
 
     <section id="services">
@@ -301,12 +326,12 @@
           <ul>
             <li>Oil change</li>
             <li>Air & cabin filter replacement</li>
-            <li><a href="/flushes-virginia-beach.html">Coolant / brake fluid / power steering flush</a></li>
+            <li>Coolant / brake fluid / power steering flush</li>
             <li>Fuel filter replacement</li>
             <li>+ More services available</li>
           </ul>
         </li>
-        <li><strong>🛑 <a href="/brake-repair-virginia-beach.html">Mobile Brake Repair</a></strong>
+        <li><strong>🛑 Mobile Brake Repair</strong>
           <ul>
             <li>Brake pads & rotors</li>
             <li>Caliper service & brake hose replacement</li>
@@ -315,7 +340,7 @@
             <li>+ More services available</li>
           </ul>
         </li>
-        <li><strong>🔋 <a href="/starting-charging-virginia-beach.html">Starting & Charging</a></strong>
+        <li><strong>🔋 Starting & Charging</strong>
           <ul>
             <li>Battery replacement & jump start</li>
             <li>Alternator testing & replacement</li>
@@ -323,7 +348,7 @@
             <li>Starting/charging diagnostics</li>
           </ul>
         </li>
-        <li><strong>🔥 <a href="/engine-repair-virginia-beach.html">Engine & Cooling</a></strong>
+        <li><strong>🔥 Engine & Cooling</strong>
           <ul>
             <li>Check-engine light & general diagnostics</li>
             <li>Water pump & thermostat</li>
@@ -332,7 +357,7 @@
             <li>Tune-up service</li>
           </ul>
         </li>
-        <li><strong>🛞 <a href="/suspension-steering-virginia-beach.html">Steering & Suspension</a></strong>
+        <li><strong>🛞 Steering & Suspension</strong>
           <ul>
             <li>Tie rods, ball joints, control arms</li>
             <li>Struts & shocks</li>
@@ -340,13 +365,13 @@
             <li>Power steering pump service</li>
           </ul>
         </li>
-        <li><strong>❄️ <a href="/ac-heating-virginia-beach.html">A/C & Heating (EPA Licensed)</a></strong>
+        <li><strong>❄️ A/C & Heating (EPA Licensed)</strong>
           <ul>
             <li>A/C diagnostics, repair & recharge</li>
             <li>Heating system service</li>
           </ul>
         </li>
-        <li><strong>⚡ <a href="/diagnostics-electrical-virginia-beach.html">Electrical & Safety Systems</a></strong>
+        <li><strong>⚡ Electrical & Safety Systems</strong>
           <ul>
             <li>ABS & air bag diagnostics</li>
             <li>Electrical troubleshooting</li>
@@ -364,7 +389,6 @@
       </ul>
       <div class="cta mt-6">
         <a class="btn" href="tel:+17575733154">📞 Call/Text: (757) 573-3154</a>
-        <a class="btn secondary" href="/affiliate.html" aria-label="Shop my recommended tools">🛒 Shop My Tools</a>
       </div>
     </section>
 
@@ -451,10 +475,11 @@
       <aside class="note-box mt-6">⚠️ <em>This is <strong>not an official Virginia State Inspection</strong>. No stickers are issued. I am a <strong>Virginia State Inspection–licensed mechanic with 17 years of experience</strong> and provide mobile <strong>pre-inspection checks and repairs</strong> to help your vehicle pass at a certified inspection station.</em></aside>
     </section>
 
-    <!-- Reviews -->
+    <!-- ⭐ Customer Reviews -->
     <section id="reviews">
       <h2>Recent Customer Reviews (5.0 ★★★★★)</h2>
 
+      <!-- Show 3 by default -->
       <div class="reviews" role="list">
         <article class="review" role="listitem">
           <div class="hdr">
@@ -505,6 +530,7 @@
         </article>
       </div>
 
+      <!-- Rest inside a dropdown -->
       <details class="more-reviews">
         <summary>Show 4 more reviews</summary>
         <div class="reviews mt-6" role="list">
@@ -550,20 +576,6 @@
         <a href="https://g.page/r/CXIZcZsfIg_NEBM/review" class="btn" style="background:#4285F4" target="_blank" rel="noopener">⭐ Leave a Review on Google</a>
         <a href="https://g.page/r/CXIZcZsfIg_NEBM" class="btn secondary" target="_blank" rel="noopener">📖 See Our Google Profile</a>
       </div>
-    </section>
-
-    <!-- Service Area Map -->
-    <section id="service-area">
-      <h2>Service Area — Virginia Beach Only</h2>
-      <p class="fine">✅ Only servicing <strong>Virginia Beach</strong> (zip codes: <strong>23462</strong>, 23451, 23452, 23453, 23454)</p>
-      <div id="vb-map"></div>
-      <div class="mt-6">
-        <span class="pill">Kempsville</span><span class="pill">Town Center</span><span class="pill">Pembroke</span>
-        <span class="pill">Bayside</span><span class="pill">Lynnhaven</span><span class="pill">Great Neck</span>
-        <span class="pill">Oceanfront</span><span class="pill">Green Run</span><span class="pill">Salem</span>
-        <span class="pill">Princess Anne</span><span class="pill">Pungo</span><span class="pill">Sandbridge</span>
-      </div>
-      <noscript><p class="fine">Map disabled without JavaScript. <a href="https://www.google.com/maps/place/Virginia+Beach,+VA" target="_blank" rel="noopener">Open Virginia Beach on Google Maps</a>.</p></noscript>
     </section>
 
     <section id="pre-inspection-readiness">
@@ -630,12 +642,7 @@
     © 2025 Vehicles Tips LLC Mobile Mechanic — All Rights Reserved.
     <div class="fnav">
       <a href="/index.html">Home</a> |
-      <a href="/mobile-mechanic-virginia-beach.html">Mobile Mechanic</a> |
-      <a href="/brake-repair-virginia-beach.html">Brake Repair</a> |
-      <a href="/flushes-virginia-beach.html">Fluid Flushes</a> |
-      <a href="/affiliate.html">Shop Tools</a> |
       <a href="/policies.html">Warranty & Policies</a> |
-      <a href="/digital-creator-policy.html">Creator Policy</a> |
       <a id="email-footer" href="#" data-user="VehiclesTips" data-domain="gmail.com">Contact</a>
     </div>
     <div class="footer-social" aria-label="Social links">
@@ -687,32 +694,6 @@
         el.replaceWith(ifr);
       }, {passive:true});
     });
-
-    // Leaflet map init (Virginia Beach polygon)
-    (function(){
-      var coords = [
-        [36.918,-76.115],[36.900,-76.157],[36.858,-76.147],[36.820,-76.120],
-        [36.770,-76.065],[36.720,-76.020],[36.675,-75.980],[36.685,-75.900],
-        [36.735,-75.860],[36.800,-75.835],[36.860,-75.830],[36.915,-75.885],
-        [36.930,-75.955]
-      ];
-      function initLeaflet(){
-        var map = L.map('vb-map',{zoomControl:false, scrollWheelZoom:true});
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-          attribution: '&copy; OpenStreetMap &copy; CARTO'
-        }).addTo(map);
-        var polygon = L.polygon(coords, {
-          color:'#f97316', weight:2, fillColor:'#f97316', fillOpacity:0.12
-        }).addTo(map);
-        map.fitBounds(polygon.getBounds(), {padding:[10,10]});
-        L.marker([36.8529,-75.9780]).addTo(map)
-          .bindPopup('<strong>Vehicles Tips LLC</strong><br>Mobile Mechanic — Virginia Beach');
-      }
-      if(document.getElementById('vb-map')){
-        if(document.readyState !== 'loading') initLeaflet();
-        else document.addEventListener('DOMContentLoaded', initLeaflet, {passive:true});
-      }
-    })();
   </script>
 </body>
 </html>
