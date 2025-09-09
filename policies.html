@@ -65,6 +65,19 @@
     footer{background:var(--panel);border-top:1px solid var(--border);text-align:center;padding:20px;font-size:.9rem;color:var(--muted)}
     footer a{color:var(--accent);text-decoration:none;margin:0 8px}
     footer a:hover{text-decoration:underline}
+
+    /* --- Right to Refuse: high-visibility callout --- */
+    .policy-alert{
+      background:#fff1f2;               /* light red */
+      border:2px solid #f43f5e;          /* red border */
+      color:#7f1d1d;                     /* dark red text */
+      border-radius:12px;
+      padding:12px 14px;
+      font-weight:900;
+      text-align:center;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
+    .policy-alert small{display:block;color:#7f1d1d;opacity:.95;font-weight:700}
   </style>
 </head>
 <body>
@@ -94,15 +107,24 @@
     </div>
   </header>
 
+  <!-- High-visibility banner -->
+  <div class="wrap" style="padding-top:16px;">
+    <div class="policy-alert" role="note" aria-label="Right to refuse service">
+      🚫 <strong>Right to Refuse Service:</strong> Vehicles Tips LLC reserves the right to refuse service to anyone.
+      <small>For safety, policy, or suitability reasons (e.g., unsafe work area, harassment, intoxication, suspected fraud, or illegal requests).</small>
+    </div>
+  </div>
+
   <!-- CONTENT -->
   <main class="wrap">
     <div class="toc">
       Jump to:
       <a href="#diagnostics-fee">Diagnostics &amp; Service Fee</a>
+      <a href="#right-to-refuse">Right to Refuse Service</a>
       <a href="#safety">Safety</a>
       <a href="#payments">Payments</a>
       <a href="#pickup">Parts &amp; Pickup</a>
-      <a href="#confirmation-noshow">Confirmation &amp; No‑Show</a>
+      <a href="#confirmation-noshow">Confirmation &amp; No-Show</a>
       <a href="#specialized-tools-shop-repairs">Specialized Repairs</a>
       <a href="#cancel">Cancellations</a>
       <a href="#bathroom">Bathroom</a>
@@ -115,30 +137,43 @@
     <!-- Diagnostics & Service Fee -->
     <section id="diagnostics-fee" class="section">
       <h2>1. Diagnostics &amp; Service Fee Policy</h2>
-      <p>On-site troubleshooting for car problems, noises, basic electrical issues, A/C problems, basic check‑engine light codes, ABS, and airbag warnings.</p>
+      <p>On-site troubleshooting for car problems, noises, basic electrical issues, A/C problems, basic check-engine light codes, ABS, and airbag warnings.</p>
       <ul>
         <li><strong>Virginia Beach (all VB ZIP codes incl. 23462):</strong> <strong>$49.99</strong></li>
       </ul>
       <ul>
-        <li><strong>What’s included:</strong> OBD‑II scan for basic check‑engine codes, visual/functional checks, and simple electrical tests.</li>
-        <li><strong>Deeper electrical / part removal:</strong> If advanced diagnostics require panel/part removal, pin‑out tests, or extended tracing, the diagnostic fee may increase depending on what’s required. <em>You’ll approve any change before we proceed.</em></li>
+        <li><strong>What’s included:</strong> OBD-II scan for basic check-engine codes, visual/functional checks, and simple electrical tests.</li>
+        <li><strong>Deeper electrical / part removal:</strong> If advanced diagnostics require panel/part removal, pin-out tests, or extended tracing, the diagnostic fee may increase depending on what’s required. <em>You’ll approve any change before we proceed.</em></li>
         <li><strong>Fee waived with repair:</strong> If your repair total is <strong>$300 or more (per visit)</strong>, the diagnostic/service fee is <strong>waived</strong>.</li>
         <li><strong>Service area:</strong> <strong>Virginia Beach only.</strong></li>
-        <li><strong>Flat‑rate pricing only:</strong> We do not charge hourly. You’ll get a clear quote before work begins.</li>
+        <li><strong>Flat-rate pricing only:</strong> We do not charge hourly. You’ll get a clear quote before work begins.</li>
       </ul>
       <p><em>Standard notes:</em> Prices are for labor/diagnostics only — parts not included. A <strong>disposal/old parts fee</strong> from <strong>$10</strong> and a <strong>$15 mobile supply fee</strong> (cleaners, rags, lubricants, etc.) may apply.</p>
-      <p class="updated">Questions? <a href="tel:+17575733154">Call/Text (757) 573‑3154</a> or <a href="mailto:vehiclestips@gmail.com">email</a>.</p>
+      <p class="updated">Questions? <a href="tel:+17575733154">Call/Text (757) 573-3154</a> or <a href="mailto:vehiclestips@gmail.com">email</a>.</p>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <!-- Right to Refuse Service (full section) -->
+    <section id="right-to-refuse" class="section" aria-label="Right to Refuse Service">
+      <h2>2. Right to Refuse Service</h2>
+      <div class="policy-alert" role="note">
+        🚫 <strong>Vehicles Tips LLC reserves the right to refuse service to anyone</strong>—at any time—for safety, policy, or suitability reasons.
+        <small>Examples: unsafe/unsuitable work area, harassment or abusive behavior, intoxication, suspected fraud, requests that violate law or company policy.</small>
+      </div>
+      <p style="margin-top:10px">
+        If service is declined on-site for these reasons, the standard diagnostic/service fee may still apply.
+      </p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
     <section id="safety" class="section">
-      <h2>2. Safety &amp; Customer‑Supplied Parts</h2>
+      <h2>3. Safety &amp; Customer-Supplied Parts</h2>
       <p>We may refuse installation of any part that could compromise safe, reliable operation. Please do not stand over or interfere with the workspace during service.</p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
     <section id="payments" class="section">
-      <h2>3. Payments &amp; Refunds</h2>
+      <h2>4. Payments &amp; Refunds</h2>
       <ul>
         <li>Payment in full is due upon completion. Stopping a job does not cancel labor charges.</li>
         <li><strong>Accepted:</strong> Cash, PayPal, credit/debit cards. <em>Electronic payments may include a ~3% processing fee.</em></li>
@@ -149,19 +184,19 @@
     </section>
     
     <section id="pickup" class="section">
-      <h2>4. Parts, Pickup &amp; Markup (Virginia Beach)</h2>
+      <h2>5. Parts, Pickup &amp; Markup (Virginia Beach)</h2>
       <p>
         Technician parts pickup within Virginia Beach: <strong>$10</strong> (typical local trip). 
-        Please be available for delivery/installation at the agreed time; customer delays beyond 30 minutes may incur <strong>$50 per half‑hour</strong> unless communicated.
+        Please be available for delivery/installation at the agreed time; customer delays beyond 30 minutes may incur <strong>$50 per half-hour</strong> unless communicated.
       </p>
       <p>
-        If we <strong>purchase parts</strong>, a market‑based <strong>markup</strong> applies for sourcing, transport, 
+        If we <strong>purchase parts</strong>, a market-based <strong>markup</strong> applies for sourcing, transport, 
         and warranty handling.
       </p>
       <p>
         <strong>Parts Deposit Policy:</strong> If Vehicles Tips LLC purchases parts on your behalf, 
         a <strong>50% deposit of the total parts and labor</strong> is required before parts are ordered. 
-        The balance is due upon job completion. Deposits are non‑refundable if the customer cancels after 
+        The balance is due upon job completion. Deposits are non-refundable if the customer cancels after 
         parts have been purchased.
       </p>
       <p>
@@ -172,16 +207,16 @@
     </section>
 
     <section id="confirmation-noshow" class="section">
-      <h2>5. Appointment Confirmation &amp; No‑Show</h2>
-      <p><strong>Pre‑dispatch confirmation:</strong> You’ll receive a text/email with a link to these policies. Please reply <strong>“I AGREE”</strong> to confirm you’ve read and accept them. <em>If no confirmation is received, the appointment will not proceed.</em></p>
-      <p><strong>No‑show:</strong> If the technician arrives and the customer is unavailable or the vehicle is not present, the <strong>diagnostic/service fee</strong> may still be charged.</p>
+      <h2>6. Appointment Confirmation &amp; No-Show</h2>
+      <p><strong>Pre-dispatch confirmation:</strong> You’ll receive a text/email with a link to these policies. Please reply <strong>“I AGREE”</strong> to confirm you’ve read and accept them. <em>If no confirmation is received, the appointment will not proceed.</em></p>
+      <p><strong>No-show:</strong> If the technician arrives and the customer is unavailable or the vehicle is not present, the <strong>diagnostic/service fee</strong> may still be charged.</p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
     <section id="specialized-tools-shop-repairs" class="section">
-      <h2>6. Specialized Tools &amp; Shop‑Based Repairs</h2>
+      <h2>7. Specialized Tools &amp; Shop-Based Repairs</h2>
       <p>
-        Some services require equipment or diagnostics that aren’t feasible in a mobile setting—such as a vehicle lift, heavy‑duty tools, or dealer/manufacturer‑specific scan tools.
+        Some services require equipment or diagnostics that aren’t feasible in a mobile setting—such as a vehicle lift, heavy-duty tools, or dealer/manufacturer-specific scan tools.
       </p>
       <p>
         Common examples include: exhaust/muffler work, transmission rebuilds, major engine repairs, brake system calibration/ABS module programming, Advanced Driver Assistance Systems (ADAS) calibration, wheel alignment or alignment adjustments, tire mounting and balancing, and other heavy or precision jobs.
@@ -193,34 +228,34 @@
     </section>
 
     <section id="cancel" class="section">
-      <h2>7. Cancellations &amp; Refunds</h2>
-      <p>Reschedule or cancel at least <strong>24 hours</strong> before the appointment. Cancellations within 24 hours are non‑refundable (including diagnostics, maintenance, inspections, A/C recharges, and virtual sessions).</p>
+      <h2>8. Cancellations &amp; Refunds</h2>
+      <p>Reschedule or cancel at least <strong>24 hours</strong> before the appointment. Cancellations within 24 hours are non-refundable (including diagnostics, maintenance, inspections, A/C recharges, and virtual sessions).</p>
       <p>If parts were ordered through Vehicles Tips LLC and you cancel, you are responsible for the <strong>parts cost + applicable markup</strong>.</p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
     <section id="bathroom" class="section">
-      <h2>8. Bathroom Breaks</h2>
+      <h2>9. Bathroom Breaks</h2>
       <p>As mobile mechanics, we may briefly leave to use a nearby public restroom. We do not ask to use a customer’s home restroom. If we step away, we’ll notify you by text/call/email and secure the unfinished job site before leaving.</p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
     <section id="perimeter" class="section">
-      <h2>9. Safety Perimeter at Job Sites</h2>
+      <h2>10. Safety Perimeter at Job Sites</h2>
       <p>For everyone’s safety, we create a marked work zone using hazard cones and plastic chain. Please ensure <strong>children, pets, and bystanders</strong> remain outside this perimeter until the area is cleared.</p>
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
 
     <section id="documentation" class="section">
-      <h2>10. Pre‑Work Photo Documentation &amp; Inspection</h2>
+      <h2>11. Pre-Work Photo Documentation &amp; Inspection</h2>
       <p>
         Before starting work, we take photos and perform a <strong>basic visual inspection</strong> of the vehicle and surrounding work area. 
         This courtesy check is <strong>always free</strong> and helps identify obvious concerns such as visible damage, leaks, debris, limited space, or poor lighting. 
         It protects both the customer and the technician by keeping a clear record of the vehicle and workspace.
       </p>
       <p>
-        For customers who would like a more detailed assessment, we also offer a <strong>Comprehensive Vehicle Analysis Check‑Up</strong> for <strong>$99</strong>. 
-        This in‑depth inspection is designed as a preventive “health and condition” review and is recommended every 6 months.
+        For customers who would like a more detailed assessment, we also offer a <strong>Comprehensive Vehicle Analysis Check-Up</strong> for <strong>$99</strong>. 
+        This in-depth inspection is designed as a preventive “health and condition” review and is recommended every 6 months.
       </p>
       <p>
         <em>If the work area is unsafe or unsuitable for service, the technician may refuse service and the appointment will be rescheduled once conditions are made safe and appropriate.</em>
@@ -230,25 +265,25 @@
 
     <!-- Inspection License, Warranty & Liability -->
     <section id="inspection-disclaimer" class="section">
-      <h2>11. Inspection License, Warranty &amp; Liability Disclaimer</h2>
+      <h2>12. Inspection License, Warranty &amp; Liability Disclaimer</h2>
 
-      <p><strong>Inspection License (Readiness Services Only):</strong> I am a <strong>Virginia State Inspection–licensed mechanic with 17 years of experience</strong>. I <strong>do not operate a certified inspection station</strong> and <strong>do not issue inspection stickers</strong>. Services are limited to <em>pre‑inspection readiness checks</em>, mobile diagnostics, and repairs to help your vehicle pass at a certified Virginia State Inspection facility.</p>
+      <p><strong>Inspection License (Readiness Services Only):</strong> I am a <strong>Virginia State Inspection–licensed mechanic with 17 years of experience</strong>. I <strong>do not operate a certified inspection station</strong> and <strong>do not issue inspection stickers</strong>. Services are limited to <em>pre-inspection readiness checks</em>, mobile diagnostics, and repairs to help your vehicle pass at a certified Virginia State Inspection facility.</p>
 
       <p><strong>Limited Warranty on Labor:</strong> Mobile labor is warrantied for <strong>30 days</strong> from the date of service and covers workmanship only. This warranty excludes normal wear items, parts supplied by the customer, and failures caused by misuse, accidents, neglect, or unrelated mechanical issues.</p>
 
       <p><strong>Parts Policy:</strong> When parts are supplied by Vehicles Tips LLC, the manufacturer or vendor warranty applies. When parts are supplied by the customer, <strong>no warranty</strong> is provided by Vehicles Tips LLC.</p>
 
-      <p><strong>Liability Limitation:</strong> Vehicles Tips LLC is not liable for unsafe vehicle conditions identified during service, delays due to parts availability or scheduling, or costs associated with government inspections, re‑inspections, or penalties resulting from failed or late inspections.</p>
+      <p><strong>Liability Limitation:</strong> Vehicles Tips LLC is not liable for unsafe vehicle conditions identified during service, delays due to parts availability or scheduling, or costs associated with government inspections, re-inspections, or penalties resulting from failed or late inspections.</p>
 
       <aside style="background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;border-radius:10px;padding:10px 12px;margin-top:12px;">
-        ⚠️ <em>Disclaimer: Vehicles Tips LLC is a mobile mechanic service in Virginia Beach. Not an official Virginia State Inspection station. No inspection stickers are issued. Services provided include diagnostics, repairs, and pre‑inspection readiness only.</em>
+        ⚠️ <em>Disclaimer: Vehicles Tips LLC is a mobile mechanic service in Virginia Beach. Not an official Virginia State Inspection station. No inspection stickers are issued. Services provided include diagnostics, repairs, and pre-inspection readiness only.</em>
       </aside>
 
       <a class="backtop" href="#top">↑ Back to top</a>
     </section>
     
     <section id="support" class="section">
-      <h2>12. Support &amp; Educational Content</h2>
+      <h2>13. Support &amp; Educational Content</h2>
       <p>If our service or videos helped you and you’d like to support future tutorials:</p>
       <div class="support-buttons">
         <a class="btn-youtube" href="https://youtube.com/@vehicles-tips" target="_blank" rel="noopener">📺 Follow on YouTube</a>
@@ -275,4 +310,3 @@
 
 </body>
 </html>
-
