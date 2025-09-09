@@ -217,10 +217,27 @@ fbq('track','PageView');
     <h1 class="hero-title">Mobile Mechanic in Virginia Beach (23462)</h1>
     <p class="hero-sub">Affordable Mobile Auto Repair & Mobile Brake Repair — We Come To You</p>
     <div class="cta">
-      <a class="btn" href="tel:+17575733154">📞 Call/Text Now: (757) 573-3154</a>
-      <a class="btn secondary" href="sms:+17575733154">💬 Text Us</a>
-      <a class="btn secondary" id="email-top" href="#" data-user="VehiclesTips" data-domain="gmail.com" aria-label="Email Vehicles Tips">✉️ Email Us</a>
-    </div>
+  <!-- Phone call click -->
+  <a class="btn" href="tel:+17575733154"
+     onclick="gtag('event', 'call_click', { 'event_category': 'engagement', 'event_label': 'Call Button Top' });">
+     📞 Call/Text Now: (757) 573-3154
+  </a>
+
+  <!-- SMS click -->
+  <a class="btn secondary" href="sms:+17575733154"
+     onclick="gtag('event', 'sms_click', { 'event_category': 'engagement', 'event_label': 'SMS Button Top' });">
+     💬 Text Us
+  </a>
+
+  <!-- Email click -->
+  <a class="btn secondary" id="email-top" href="#"
+     data-user="VehiclesTips" data-domain="gmail.com"
+     aria-label="Email Vehicles Tips"
+     onclick="gtag('event', 'email_click', { 'event_category': 'engagement', 'event_label': 'Email Button Top' });">
+     ✉️ Email Us
+  </a>
+</div>
+
 
     <!-- Rating badge -->
     <div class="rating-badge" style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid #ffffff1a;padding:8px 12px;border-radius:999px;margin-top:10px">
