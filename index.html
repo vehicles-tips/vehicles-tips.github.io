@@ -118,12 +118,32 @@
     .note-box{background:#fff7ed;color:#7c2d12;border:1px solid #fed7aa;border-radius:10px;padding:10px 12px}
 
     /* Footer */
-    footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:20px 12px;font-size:.92rem;color:#cbd5e1}
+footer {
+  background:#111827;
+  border-top:1px solid #2a2f3a;
+  text-align:center;
+  padding:20px 12px;
+  font-size:.92rem;
+  color:#cbd5e1;
+}
 
-    /* Utility */
-    .stack-sm{display:flex;flex-wrap:wrap;gap:10px}
-    .mt-6{margin-top:12px}
-    .mt-10{margin-top:20px}
+/* Footer links 🍊 */
+footer a,
+footer a:visited {
+  color: var(--brand);   /* uses the orange from :root */
+  text-decoration: none;
+  font-weight: 700;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Utility */
+.stack-sm{display:flex;flex-wrap:wrap;gap:10px}
+.mt-6{margin-top:12px}
+.mt-10{margin-top:20px}
 
     /* Banner (reserved space; slimmer on phones) */
     .banner-wrap{max-width:1060px;margin:8px auto}
