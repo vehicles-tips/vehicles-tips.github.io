@@ -32,18 +32,45 @@
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
     a{color:var(--brand);text-decoration:none;font-weight:700}
     a:hover{text-decoration:underline;color:#fff}
+
     header{padding:32px 16px;text-align:center;border-bottom:1px solid var(--border);background:#111}
     header h1{margin:0;font-size:clamp(1.6rem,2vw+1rem,2.2rem);color:var(--accent)}
     header p{margin:10px 0;color:var(--muted)}
     .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
     .btn{background:var(--brand);color:#fff;padding:12px 16px;border-radius:12px;font-weight:800;box-shadow:0 6px 16px rgba(0,0,0,.45)}
     .btn.secondary{background:transparent;border:1px solid #fff}
+
+    /* ✅ Centered nav (desktop & mobile) */
+    nav{
+      display:flex;
+      justify-content:center;       /* center items horizontally */
+      align-items:center;
+      flex-wrap:wrap;               /* wrap to next line if needed */
+      gap:14px;
+      padding:10px 12px;
+      background:#0f0f0f;
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+    }
+    nav a{
+      color:var(--brand);
+      font-weight:800;
+      white-space:nowrap;
+      scroll-snap-align:center;
+    }
+    /* smooth horizontal scroll on very small screens while staying centered */
+    @media (max-width:680px){
+      nav{overflow-x:auto;scroll-snap-type:x proximity;justify-content:center}
+      nav::-webkit-scrollbar{display:none}
+    }
+
     main{max-width:900px;margin:20px auto;padding:0 12px}
     section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 6px 16px rgba(0,0,0,.45)}
     h2{color:var(--accent);margin:0 0 12px}
     h3{margin:8px 0}
     ul{margin:0 0 0 20px}
     .note{background:#fff7ed;color:#7c2d12;border:1px solid #fed7aa;padding:12px;border-radius:10px;margin-top:12px}
+
     footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:20px 12px;color:#cbd5e1}
     footer a{color:var(--accent);margin:0 8px}
     footer a:hover{text-decoration:underline}
@@ -149,4 +176,3 @@
   </footer>
 </body>
 </html>
-ChatGPT can make mistakes. Check important info.
