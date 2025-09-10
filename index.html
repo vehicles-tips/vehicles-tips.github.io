@@ -39,7 +39,6 @@
   <link rel="dns-prefetch" href="//i.ytimg.com" />
 
   <style>
-    
   :root{
     --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cbd5e1;
     --brand:#f04a1d; --brand-ink:#ffffff; --brand-soft:#f04a1d22;
@@ -147,6 +146,25 @@
 
   @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
   main>section{content-visibility:auto;contain-intrinsic-size:800px}
+
+  /* ----- Services: clickable "bubble" headings ----- */
+  #services > ul { list-style:none; margin:0; padding:0; }
+  #services > ul > li { margin:12px 0 18px; }
+  /* make the <strong><a>...</a></strong> look like a tappable chip */
+  #services > ul > li > strong > a {
+    display:inline-block; padding:10px 16px; border-radius:999px; background:#1a1a1a;
+    color:#ff6b2d; text-decoration:none; font-weight:800; line-height:1.2; border:1px solid #2a2a2a;
+    box-shadow:0 2px 6px rgba(0,0,0,.25) inset;
+    transition:transform .06s ease, background-color .15s ease, color .15s ease, box-shadow .15s ease;
+  }
+  #services > ul > li > strong > a:hover,
+  #services > ul > li > strong > a:active {
+    background:#ff6b2d; color:#101010; box-shadow:0 0 0 3px rgba(255,107,45,.25); transform:translateY(-1px); cursor:pointer;
+  }
+  #services > ul > li > strong > a:focus-visible { outline:3px solid rgba(255,107,45,.6); outline-offset:3px; border-color:transparent; }
+  /* tidy the nested lists beneath each bubble */
+  #services > ul > li > ul { margin:10px 0 0 28px; padding-left:0; }
+  #services > ul > li > ul > li { margin:6px 0; color:#e6e6e6; }
   </style>
 
   <!-- LocalBusiness Schema -->
@@ -173,33 +191,33 @@
   }
   </script>
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWKJTPWZC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config','G-1QWKJTPWZC');
-</script>
-<!-- End Google Analytics 4 -->
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWKJTPWZC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config','G-1QWKJTPWZC');
+  </script>
+  <!-- End Google Analytics 4 -->
 
-<!-- Facebook Pixel: JR Nunez -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','356703602087010');
-fbq('track','PageView');
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none" alt=""
-       src="https://www.facebook.com/tr?id=356703602087010&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Facebook Pixel -->
+  <!-- Facebook Pixel: JR Nunez -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','356703602087010');
+  fbq('track','PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" alt=""
+         src="https://www.facebook.com/tr?id=356703602087010&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel -->
 
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
@@ -218,27 +236,21 @@ fbq('track','PageView');
     <h1 class="hero-title">Mobile Mechanic in Virginia Beach (23462)</h1>
     <p class="hero-sub">Affordable Mobile Auto Repair & Mobile Brake Repair — We Come To You</p>
     <div class="cta">
-  <!-- Phone call click -->
-  <a class="btn" href="tel:+17575733154"
-     onclick="gtag('event', 'call_click', { 'event_category': 'engagement', 'event_label': 'Call Button Top' });">
-     📞 Call/Text Now: (757) 573-3154
-  </a>
-
-  <!-- SMS click -->
-  <a class="btn secondary" href="sms:+17575733154"
-     onclick="gtag('event', 'sms_click', { 'event_category': 'engagement', 'event_label': 'SMS Button Top' });">
-     💬 Text Us
-  </a>
-
-  <!-- Email click -->
-  <a class="btn secondary" id="email-top" href="#"
-     data-user="VehiclesTips" data-domain="gmail.com"
-     aria-label="Email Vehicles Tips"
-     onclick="gtag('event', 'email_click', { 'event_category': 'engagement', 'event_label': 'Email Button Top' });">
-     ✉️ Email Us
-  </a>
-</div>
-
+      <a class="btn" href="tel:+17575733154"
+         onclick="gtag('event', 'call_click', { 'event_category': 'engagement', 'event_label': 'Call Button Top' });">
+         📞 Call/Text Now: (757) 573-3154
+      </a>
+      <a class="btn secondary" href="sms:+17575733154"
+         onclick="gtag('event', 'sms_click', { 'event_category': 'engagement', 'event_label': 'SMS Button Top' });">
+         💬 Text Us
+      </a>
+      <a class="btn secondary" id="email-top" href="#"
+         data-user="VehiclesTips" data-domain="gmail.com"
+         aria-label="Email Vehicles Tips"
+         onclick="gtag('event', 'email_click', { 'event_category': 'engagement', 'event_label': 'Email Button Top' });">
+         ✉️ Email Us
+      </a>
+    </div>
 
     <!-- Rating badge -->
     <div class="rating-badge" style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid #ffffff1a;padding:8px 12px;border-radius:999px;margin-top:10px">
@@ -283,12 +295,11 @@ fbq('track','PageView');
       <p>I studied at <strong>ATi School of Automotive Technology</strong>, hold a valid <strong>MAC License for A/C systems</strong>, and have <strong>20+ years of experience</strong>.</p>
       <div class="pill">Kempsville</div><div class="pill">Town Center</div><div class="pill">Pembroke</div><div class="pill">Bayside</div><div class="pill">Lynnhaven</div><div class="pill">Great Neck</div><div class="pill">Oceanfront</div><div class="pill">Green Run</div><div class="pill">Salem</div><div class="pill">Princess Anne</div><div class="pill">Sandbridge</div>
     </section>
-    </section>
 
     <section id="services">
       <h2>Mobile Auto Repair & Maintenance Services (Virginia Beach Only)</h2>
       <ul>
-        <li><strong>🛢️ <a href="/fluid-flush-virginia-beach.html">Coolant Flush/ Brake Flush/ Power Steering flush</a></strong>
+        <li><strong>🛢️ <a href="/fluid-flush-virginia-beach.html">Coolant / Brake / Power Steering Flush</a></strong>
          <ul>
             <li>Oil change</li>
             <li>Air & cabin filter replacement</li>
@@ -346,7 +357,7 @@ fbq('track','PageView');
         </li>
         <li><strong>🛠️  <a href="/pre-purchase-inspection-virginia-beach.html">Other</a></strong>
           <ul>
-            <li>Pre-Purchase-Inspection</li>
+            <li>Pre-Purchase Inspection</li>
             <li>Wiper/washer repair</li>
             <li>Small engine repair</li>
             <li>Basic diagnostics</li>
@@ -442,13 +453,12 @@ fbq('track','PageView');
     <section id="reviews">
       <h2>Recent Customer Reviews (5.0 ★★★★★)</h2>
       <div class="reviews" role="list">
-        <!-- Keep your review items exactly as before -->
-        <!-- … (omitted for brevity; paste your existing <article> blocks here) … -->
+        <!-- Place your review <article> blocks here -->
       </div>
 
       <details class="more-reviews"><summary>Show 4 more reviews</summary>
         <div class="reviews mt-6" role="list">
-          <!-- … your additional review <article> blocks … -->
+          <!-- Additional review <article> blocks -->
         </div>
       </details>
 
@@ -466,8 +476,8 @@ fbq('track','PageView');
       <div class="mt-6">
         <span class="pill">Kempsville</span><span class="pill">Town Center</span><span class="pill">Pembroke</span>
         <span class="pill">Bayside</span><span class="pill">Lynnhaven</span><span class="pill">Great Neck</span>
-        <span class="pill">Oceanfront</span><span class="pill">Green Run</span><span class="pill">Salem</span>
-        <span class="pill">Princess Anne</span><span class="pill">Sandbridge</span>
+        <span class="pill">Oceanfront</span><span class="pill">Green Run</span>
+        <span class="pill">Salem</span><span class="pill">Princess Anne</span><span class="pill">Sandbridge</span>
       </div>
       <noscript><p class="fine">Map disabled without JavaScript. <a href="https://www.google.com/maps/place/Virginia+Beach,+VA" target="_blank" rel="noopener">Open Virginia Beach on Google Maps</a>.</p></noscript>
     </section>
