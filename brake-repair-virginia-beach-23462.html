@@ -170,9 +170,26 @@ fbq('track','PageView');
       <h2>Book Your Brake Service</h2>
       <p>Same-day and next-day appointments often available. Call, text, or email now to schedule.</p>
       <div class="cta">
-        <a class="btn" href="tel:+17575733154">📞 Get a Brake Quote</a>
-        <a class="btn secondary" href="mailto:VehiclesTips@gmail.com?subject=Book%20Brake%20Repair">✉️ Book by Email</a>
-      </div>
+        <a class="btn" 
+   href="#appointment"
+   onclick="gtag('event', 'booknow_click', { 'event_category': 'engagement', 'event_label': 'Book Now Button Top' });">
+   📅 Book Now
+      <a class="btn secondary" 
+        href="tel:+17575733154"
+         onclick="gtag('event', 'call_click', { 'event_category': 'engagement', 'event_label': 'Call Button Top' });">
+         📞 Call/Text Now: (757) 573-3154
+      </a>
+      
+</a>
+
+      </a>
+      <a class="btn secondary" id="email-top" href="#"
+         data-user="VehiclesTips" data-domain="gmail.com"
+         aria-label="Email Vehicles Tips"
+         onclick="gtag('event', 'email_click', { 'event_category': 'engagement', 'event_label': 'Email Button Top' });">
+         ✉️ Email Us
+      </a>
+    </div>
     </section>
   </main>
 
