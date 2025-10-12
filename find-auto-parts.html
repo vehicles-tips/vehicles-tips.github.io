@@ -3,153 +3,322 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Find Auto Parts Near You | Vehicles Tips</title>
-  <meta name="description" content="Helping you find local auto parts fast and book mobile mechanic service." />
-  <meta name="keywords" content="auto parts, mobile mechanic, vehicle repair, local auto parts, vehicles tips" />
-  <meta name="author" content="Vehicles Tips" />
+
+  <!-- Updated Title and Meta Tags -->
+  <title>Mobile Mechanic 23462 Virginia Beach | Vehicles Tips LLC</title>
+  <meta name="description" content="Affordable mobile mechanic in Virginia Beach 23462. On-site brake repair, diagnostics & car service at your home. Call (757) 573-3154 today!" />
+
+  <link rel="canonical" href="https://vehicles-tips.com/" />
+  <link rel="alternate" hreflang="en" href="https://vehicles-tips.com/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Social Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Vehicles Tips" />
+  <meta property="og:url" content="https://vehicles-tips.com/" />
+  <meta property="og:title" content="Mobile Mechanic 23462 Virginia Beach | Vehicles Tips LLC" />
+  <meta property="og:description" content="Affordable mobile mechanic in Virginia Beach 23462. On-site brake repair, diagnostics & car service at your home. Call (757) 573-3154 today!" />
+  <meta property="og:image" content="https://vehicles-tips.com/Vtips.png.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mobile Mechanic 23462 Virginia Beach | Vehicles Tips LLC" />
+  <meta name="twitter:description" content="Affordable mobile mechanic in Virginia Beach 23462. On-site brake repair, diagnostics & car service at your home. Call (757) 573-3154 today!" />
+  <meta name="twitter:image" content="https://vehicles-tips.com/assets/og/homepage.jpg" />
+
+  <link rel="icon" type="image/jpeg" href="/favicon (2).png" />
+
+  <!-- Performance: responsive hero -->
+  <link rel="preload" as="image" href="/assets/hero/hero-800.webp" imagesrcset="/assets/hero/hero-800.webp 800w, /assets/hero/hero-1200.webp 1200w, /assets/hero/hero-1600.webp 1600w" imagesizes="100vw" fetchpriority="high" />
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin />
+  <link rel="preconnect" href="https://yt3.googleusercontent.com" crossorigin />
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
+  <link rel="dns-prefetch" href="//yt3.googleusercontent.com" />
+  <link rel="dns-prefetch" href="//i.ytimg.com" />
+
+  <!-- Styles -->
   <style>
+    :root {
+      --bg: #111111;
+      --card: #1a1a1a;
+      --ink: #ffffff;
+      --muted: #cbd5e1;
+      --brand: #f04a1d;
+      --brand-ink: #ffffff;
+      --brand-soft: #f04a1d22;
+      --accent: #f97316;
+      --border: #ffffff1a;
+      --elev: 0 6px 16px rgba(0, 0, 0, 0.45);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: Arial, sans-serif;
-      margin: 2rem;
-      background-color: #f4f4f4;
-      color: #333;
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      -webkit-tap-highlight-color: transparent;
     }
-
-    header {
-      margin-bottom: 2rem;
-    }
-
-    header a {
-      text-decoration: none;
-      color: #2c3e50;
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-
-    h2 {
-      color: #2c3e50;
-    }
-
-    ul {
-      padding-left: 1.2em;
-    }
-
     a {
-      color: #007bff;
+      color: var(--brand);
       text-decoration: none;
     }
-
     a:hover {
-      text-decoration: underline;
-    }
-
-    .back-home {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: 8px 12px;
-      background: #007bff;
       color: #fff;
-      border-radius: 4px;
-    }
-
-    .back-home:hover {
-      background: #0056b3;
-    }
-
-    form {
-      background: #fff;
-      padding: 1rem;
-      margin-top: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      max-width: 400px;
-    }
-
-    label {
-      font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="email"] {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    button {
-      background-color: #28a745;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #218838;
-    }
-
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    footer a {
-      color: #007bff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
       text-decoration: underline;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* HERO (mobile-first) */
+    header.hero {
+      background: #0e0e0e url('/assets/hero/hero-800.webp') center/cover no-repeat;
+      position: relative;
+      color: #fff;
+      text-align: center;
+      padding: 28px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    @media (min-width: 720px) {
+      header.hero {
+        padding: 52px 16px;
+        background-image: url('/assets/hero/hero-1600.webp');
+      }
+    }
+    header.hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+    header.hero * {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-title {
+      margin: 0 0 6px;
+      font-size: clamp(1.25rem, 2.5vw + 0.9rem, 2rem);
+    }
+    .hero-sub {
+      margin: 0 0 12px;
+      font-size: clamp(0.98rem, 1.4vw + 0.7rem, 1.08rem);
+      font-weight: 800;
+    }
+    .fine {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .cta {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      background: var(--brand);
+      color: var(--brand-ink);
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      box-shadow: var(--elev);
+      text-align: center;
+    }
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid #fff;
+    }
+    /* Full-width tap targets on phones */
+    .cta .btn {
+      flex: 1 1 240px;
+      max-width: 520px;
+    }
+
+    /* BANNER */
+    .banner-wrap {
+      max-width: 1060px;
+      margin: 8px auto;
+      padding: 0 10px;
+    }
+    .banner-wrap img {
+      width: 100%;
+      aspect-ratio: 1060 / 240;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* NAV — swipe on mobile, centered on desktop */
+    nav {
+      background: #0e0e0e;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 10px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    nav::-webkit-scrollbar {
+      display: none;
+    }
+    nav a {
+      color: var(--brand);
+      font-weight: 800;
+      white-space: nowrap;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    nav a:hover {
+      color: #fff;
+      border-color: #ffffff26;
+    }
+    @media (min-width: 720px) {
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow: visible;
+      }
+    }
+
+    /* LAYOUT */
+    main {
+      max-width: 920px;
+      margin: 14px auto;
+      padding: 0 12px;
+      flex: 1 0 auto;
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--elev);
+      padding: 14px;
+      margin: 12px 0;
+    }
+    @media (min-width: 720px) {
+      section {
+        padding: 18px;
+        margin: 16px 0;
+      }
+    }
+    h2 {
+      margin: 6px 0 10px;
+      color: var(--accent);
+      font-size: clamp(1.08rem, 1.2vw + 0.9rem, 1.35rem);
+    }
+    h3 {
+      margin: 6px 0;
+    }
+    ul {
+      margin: 0 0 0 18px;
+    }
+    .pill {
+      display: inline-block;
+      background: var(--brand-soft);
+      color: var(--ink);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #f04a1d;
+      color: #fff;
+      font-size: 0.75rem;
+      margin-left: 8px;
+    }
+    .card {
+      background: #151515;
+      border: 1px solid #ffffff12;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .note-box {
+      background: #fff7ed;
+      color: #7c2d12;
+      border: 1px solid #fed7aa;
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+  </style>
+
+  <!-- Your original styles start here -->
+  <style>
+    /* Additional styles from original page */
+    /* ... (You can keep your original styles here if needed) */
   </style>
 </head>
 <body>
-
   <header>
-    <a href="https://vehicles-tips.com/" target="_blank" rel="noopener noreferrer">Vehicles Tips</a>
+    <a href="https://vehicles-tips.com/" class="logo" target="_blank" rel="noopener noreferrer">Vehicles Tips</a>
   </header>
 
-  <a href="https://vehicles-tips.com/" class="back-home" target="_blank" rel="noopener noreferrer">← Back to Home</a>
+  <main>
+    <a href="https://vehicles-tips.com/" class="back-home" target="_blank" rel="noopener noreferrer">← Back to Home</a>
 
-  <h2>Need a Part? Find It Fast</h2>
-  <p>Click below to find parts near you:</p>
-  <ul>
-    <li><a href="https://www.autozone.com/" target="_blank" rel="noopener noreferrer">AutoZone</a></li>
-    <li><a href="https://www.oreillyauto.com/" target="_blank" rel="noopener noreferrer">O'Reilly Auto Parts</a></li>
-    <li><a href="https://www.napaonline.com/" target="_blank" rel="noopener noreferrer">NAPA Auto Parts</a></li>
-  </ul>
+    <section class="card">
+      <h2>Need a Part? Find It Fast</h2>
+      <p>Click below to find parts near you:</p>
+      <ul>
+        <li><a href="https://www.autozone.com/" target="_blank" rel="noopener noreferrer">AutoZone</a></li>
+        <li><a href="https://www.oreillyauto.com/" target="_blank" rel="noopener noreferrer">O'Reilly Auto Parts</a></li>
+        <li><a href="https://www.napaonline.com/" target="_blank" rel="noopener noreferrer">NAPA Auto Parts</a></li>
+      </ul>
+      <p><a href="https://www.google.com/maps/search/auto+parts+store+near+me" target="_blank" rel="noopener noreferrer">🔍 Find Local Auto Parts Stores on Google Maps</a></p>
+    </section>
 
-  <p>
-    <a href="https://www.google.com/maps/search/auto+parts+store+near+me" target="_blank" rel="noopener noreferrer">
-      🔍 Find Local Auto Parts Stores on Google Maps
-    </a>
-  </p>
+    <section class="card">
+      <form action="https://formspree.io/f/xkgqqlzp" method="POST" autocomplete="off">
+        <h3>Need Help Finding a Part?</h3>
 
-  <form action="https://formspree.io/f/xkgqqlzp" method="POST">
-    <h3>Need Help Finding a Part?</h3>
+        <label for="vehicle">Vehicle Year/Make/Model:</label>
+        <input type="text" name="vehicle" id="vehicle" required />
 
-    <label for="vehicle">Vehicle Year/Make/Model:</label><br>
-    <input type="text" name="vehicle" id="vehicle" required><br>
+        <label for="part">Part Needed:</label>
+        <input type="text" name="part" id="part" required />
 
-    <label for="part">Part Needed:</label><br>
-    <input type="text" name="part" id="part" required><br>
+        <label for="location">ZIP Code / City:</label>
+        <input type="text" name="location" id="location" required />
 
-    <label for="location">ZIP Code / City:</label><br>
-    <input type="text" name="location" id="location" required><br>
+        <label for="email">Your Contact Info:</label>
+        <input type="email" name="email" id="email" required />
 
-    <label for="email">Your Contact Info:</label><br>
-    <input type="email" name="email" id="email" required><br>
-
-    <button type="submit">Send Request</button>
-  </form>
+        <button type="submit">Send Request</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Vehicles Tips | <a href="mailto:vehiclestips@gmail.com">vehiclestips@gmail.com</a></p>
+    <p>© 2025 Vehicles Tips LLC — Mobile Mechanic</p>
+    <p>
+      <a href="mailto:vehiclestips@gmail.com">vehiclestips@gmail.com</a>
+    </p>
   </footer>
-
 </body>
 </html>
