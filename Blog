@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Car care tips and advice from a trusted mobile mechanic in Virginia Beach.">
+  <title>Blog | Vehicles Tips</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #2c3e50; color: #fff; padding: 25px 0; text-align: center; }
+    header h1 { margin: 0; font-size: 28px; }
+    header p { margin: 5px 0 0; font-size: 16px; }
+    .container { max-width: 900px; margin: 20px auto; padding: 0 20px; }
+    article { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    article h2 { margin-top: 0; color: #2c3e50; font-size: 22px; }
+    article p { margin-bottom: 10px; }
+    article a { color: #e67e22; text-decoration: none; font-weight: bold; }
+    article a:hover { text-decoration: underline; }
+    footer { background: #2c3e50; color: #fff; text-align: center; padding: 25px 0; margin-top: 40px; font-size: 14px; }
+    .cta { background: #e67e22; color: #fff; padding: 15px 25px; text-align: center; border-radius: 5px; display: inline-block; margin-top: 15px; text-decoration: none; font-weight: bold; }
+    .cta:hover { background: #cf711c; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Car Care Tips & Mobile Mechanic Advice</h1>
+    <p>Expert tips to keep your car running smoothly in Virginia Beach</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Blog Post 1 -->
+    <article>
+      <h2>Top 5 Car Problems That Can Stop You in Your Tracks</h2>
+      <p>Discover the most common car issues that can leave you stranded and how to prevent them before it’s too late.</p>
+      <a href="blog/post1.html">Read More →</a>
+    </article>
+
+    <!-- Blog Post 2 -->
+    <article>
+      <h2>How to Know When Your Car Needs Immediate Repair</h2>
+      <p>Learn the warning signs that indicate your car needs urgent attention from a professional mobile mechanic.</p>
+      <a href="blog/post2.html">Read More →</a>
+    </article>
+
+    <!-- Blog Post 3 -->
+    <article>
+      <h2>Car Maintenance Checklist for Busy People</h2>
+      <p>A simple monthly checklist to keep your vehicle in top shape, even with a busy schedule.</p>
+      <a href="blog/post3.html">Read More →</a>
+    </article>
+
+    <div style="
