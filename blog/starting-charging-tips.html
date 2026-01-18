@@ -7,6 +7,130 @@
   <meta name="description" content="Learn essential starting and charging system tips to prevent battery failure, alternator issues, and no-start problems. Trusted mobile mechanic in Virginia Beach.">
 
   <link rel="icon" type="image/png" href="/favicon (2).png">
+
+  <style>
+    :root{
+      --bg:#111111;
+      --card:#1a1a1a;
+      --ink:#ffffff;
+      --muted:#cbd5e1;
+      --brand:#f04a1d;
+      --accent:#f97316;
+      --border:#ffffff1a;
+      --elev:0 6px 16px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    a{color:var(--brand);text-decoration:none}
+    a:hover{color:#fff;text-decoration:underline}
+
+    /* HERO */
+    .hero{
+      text-align:center;
+      padding:48px 16px 28px;
+      border-bottom:1px solid var(--border);
+      max-width:920px;
+      margin:0 auto;
+    }
+
+    .hero-title{
+      margin:0 0 10px;
+      font-size:clamp(1.7rem,2.8vw,2.2rem);
+      color:var(--accent);
+    }
+
+    .hero-sub{
+      margin:0;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    /* NAV */
+    nav{
+      background:#0e0e0e;
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      padding:10px;
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
+
+    nav a{
+      font-weight:700;
+      white-space:nowrap;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+
+    nav a:hover{
+      border-color:#ffffff26;
+    }
+
+    @media(min-width:720px){
+      nav{justify-content:center;flex-wrap:wrap}
+    }
+
+    /* MAIN */
+    main{
+      max-width:920px;
+      margin:20px auto;
+      padding:0 16px;
+      flex:1;
+    }
+
+    section{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:20px;
+      box-shadow:var(--elev);
+    }
+
+    h2{
+      color:var(--brand);
+      margin-top:0;
+    }
+
+    h3{
+      margin-top:22px;
+      color:var(--accent);
+    }
+
+    .muted{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#111827;
+      border-top:1px solid #2a2f3a;
+      text-align:center;
+      padding:20px 12px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    footer a{color:var(--brand)}
+    footer a:hover{color:#fff}
+  </style>
 </head>
 
 <body>
