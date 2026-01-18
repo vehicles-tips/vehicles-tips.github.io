@@ -1,27 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Blog | Vehicles Tips LLC</title>
   <meta name="description" content="Read the latest automotive tips, maintenance guides, and mobile mechanic advice from Vehicles Tips LLC." />
-  <link rel="canonical" href="https://vehicles-tips.com/blog/" />
-  <meta name="robots" content="index,follow" />
 
-  <link rel="icon" type="image/png" href="/favicon (2).png" />
-  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/favicon (2).png">
 
+  <style>
+  :root{
+    --bg:#111111; --card:#1a1a1a; --ink:#ffffff; --muted:#cbd5e1;
+    --brand:#f04a1d; --brand-ink:#ffffff; --brand-soft:#f04a1d22;
+    --accent:#f97316; --border:#ffffff1a; --elev:0 6px 16px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.6;display:flex;flex-direction:column;min-height:100vh;
+  }
+  a{color:var(--brand);text-decoration:none}
+  a:hover{color:#fff;text-decoration:underline}
+  img{max-width:100%;height:auto}
+
+  header.hero{
+    background:#0e0e0e url('/assets/hero/hero-800.webp') center/cover no-repeat;
+    position:relative;color:#fff;text-align:center;padding:28px 12px;border-bottom:1px solid var(--border);
+  }
+  @media(min-width:720px){header.hero{padding:52px 16px;background-image:url('/assets/hero/hero-1600.webp')}}
+  header.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
+  header.hero *{position:relative;z-index:1}
+  .hero-title{margin:0 0 6px;font-size:clamp(1.25rem, 2.5vw + .9rem, 2rem)}
+  .hero-sub{margin:0 0 12px;font-size:clamp(.98rem,1.4vw + .7rem,1.08rem);font-weight:800}
+  .fine{color:var(--muted);font-size:.93rem}
+
+  nav{
+    background:#0e0e0e;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:8px 10px;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+    position:sticky;top:0;z-index:20;
+  }
+  nav::-webkit-scrollbar{display:none}
+  nav a{
+    color:var(--brand);font-weight:800;white-space:nowrap;flex:0 0 auto;scroll-snap-align:start;
+    padding:8px 10px;border-radius:999px;border:1px solid transparent;
+  }
+  nav a:hover{color:#fff;border-color:#ffffff26}
+  @media(min-width:720px){nav{justify-content:center;flex-wrap:wrap;overflow:visible}}
+
+  main{max-width:920px;margin:14px auto;padding:0 12px;flex:1 0 auto}
+  section{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--elev);padding:14px;margin:12px 0}
+  @media(min-width:720px){section{padding:18px;margin:16px 0}}
+  h2{margin:6px 0 10px;color:var(--accent);font-size:clamp(1.08rem,1.2vw + .9rem,1.35rem)}
+  h3{margin:6px 0}
+  ul{margin:0 0 0 18px}
+  .grid{display:grid;gap:12px}
+  @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+  .card{background:#151515;border:1px solid #ffffff12;border-radius:12px;padding:14px}
+  .muted{color:var(--muted)}
+  .btn{background:var(--brand);color:var(--brand-ink);padding:8px 12px;border-radius:12px;font-weight:800;display:inline-block;margin-top:6px;text-align:center}
+  .btn.secondary{background:transparent;border:1px solid #fff}
+  footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:20px 12px;color:#cbd5e1;font-size:.95rem}
+  footer a{color:var(--brand);font-weight:800}
+  footer a:hover{color:#fff;text-decoration:underline}
+  </style>
 </head>
 <body>
 
-  <!-- Header / Hero -->
   <header class="hero">
     <h1 class="hero-title">Vehicles Tips Blog</h1>
     <p class="hero-sub">Maintenance guides, auto repair tips, and smart vehicle advice — all in one place!</p>
   </header>
 
-  <!-- Navigation -->
   <nav aria-label="Primary">
     <a href="/">Home</a>
     <a href="/mobile-mechanic-virginia-beach.html">Mobile Mechanic</a>
@@ -31,39 +82,32 @@
     <a href="/affiliate.html">Shop Tools</a>
   </nav>
 
-  <!-- Main Blog Content -->
   <main>
     <section>
       <h2>Latest Articles</h2>
       <div class="grid">
-        <!-- Blog Card 1 -->
         <div class="card">
           <h3><a href="/blog/maintain-brakes.html">5 Tips to Maintain Your Brakes</a></h3>
-          <p class="muted">January 10, 2026 | By Vehicles Tips LLC</p>
-          <p>Keep your brakes in top condition with these simple tips. Learn when to replace pads and how to avoid costly repairs.</p>
+          <p class="muted">January 10, 2026 | Vehicles Tips LLC</p>
+          <p>Keep your brakes in top condition with simple maintenance tips to prevent costly repairs.</p>
           <a class="btn secondary" href="/blog/maintain-brakes.html">Read More</a>
         </div>
-
-        <!-- Blog Card 2 -->
         <div class="card">
           <h3><a href="/blog/engine-check-guide.html">Engine Diagnostics Guide</a></h3>
-          <p class="muted">January 5, 2026 | By Vehicles Tips LLC</p>
-          <p>Learn how to spot early signs of engine trouble and what diagnostic tools can help keep your car running smoothly.</p>
+          <p class="muted">January 5, 2026 | Vehicles Tips LLC</p>
+          <p>Spot early signs of engine trouble and learn which tools can help maintain your vehicle.</p>
           <a class="btn secondary" href="/blog/engine-check-guide.html">Read More</a>
         </div>
-
-        <!-- Blog Card 3 -->
         <div class="card">
           <h3><a href="/blog/battery-care-tips.html">Battery Care Tips</a></h3>
-          <p class="muted">December 28, 2025 | By Vehicles Tips LLC</p>
-          <p>Extend the life of your vehicle battery with these preventive maintenance steps and expert advice from our mobile mechanics.</p>
+          <p class="muted">December 28, 2025 | Vehicles Tips LLC</p>
+          <p>Extend the life of your car battery with preventive maintenance and expert advice.</p>
           <a class="btn secondary" href="/blog/battery-care-tips.html">Read More</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Vehicles Tips LLC. All rights reserved. <a href="/policies.html">Privacy & Policies</a></p>
   </footer>
