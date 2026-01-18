@@ -9,11 +9,12 @@
   <!-- Open Graph for social sharing -->
   <meta property="og:title" content="Engine Diagnostics Guide | Vehicles Tips LLC">
   <meta property="og:description" content="Spot early signs of engine trouble and learn which tools can help maintain your vehicle.">
-  <meta property="og:image" content="https://vehicles-tips.github.io/images/engine%20diagnostic.jpg">
+  <meta property="og:image" content="https://raw.githubusercontent.com/vehicles-tips/vehicles-tips.github.io/main/engine%20diagnostic.jpg">
   <meta property="og:image:alt" content="Engine diagnostics tips with OBD-II scanner and engine components">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://vehicles-tips.github.io/engine-diagnostics.html">
   <meta property="og:site_name" content="Vehicles Tips LLC">
+  <!-- END Open Graph -->
 
   <link rel="icon" type="image/png" href="/favicon (2).png">
 
@@ -30,7 +31,7 @@
   --elev:0 6px 16px rgba(0,0,0,.45);
 }
 
-*{box-sizing:border-box}
+*{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 
 body{
@@ -44,29 +45,28 @@ body{
   flex-direction:column;
 }
 
-a{color:var(--brand);text-decoration:none}
-a:hover{color:#fff;text-decoration:underline}
+a{color:var(--brand);text-decoration:none;}
+a:hover{color:#fff;text-decoration:underline;}
 
 /* HERO */
-header.hero{
-  background:#0e0e0e;
-  position:relative;
+.hero{
   text-align:center;
-  padding:48px 16px 36px;
+  padding:56px 16px 40px;
   border-bottom:1px solid var(--border);
 }
 
 .hero-title{
   margin:0 0 10px;
-  font-size:clamp(1.7rem,2.8vw,2.3rem);
+  font-size:clamp(1.8rem,2.8vw,2.4rem);
   color:var(--accent);
 }
 
 .hero-sub{
   margin:0;
-  font-size:1.05rem;
   color:var(--muted);
-  font-weight:600;
+  font-size:1.05rem;
+  max-width:720px;
+  margin-inline:auto;
 }
 
 /* NAV */
@@ -93,55 +93,60 @@ nav a{
   border:1px solid transparent;
 }
 
-nav a:hover{
-  border-color:#ffffff26;
-}
+nav a:hover{border-color:#ffffff26;}
 
 @media(min-width:720px){
-  nav{justify-content:center;flex-wrap:wrap}
+  nav{justify-content:center;flex-wrap:wrap;}
 }
 
 /* MAIN */
 main{
   max-width:920px;
-  margin:20px auto;
+  margin:24px auto;
   padding:0 16px;
   flex:1;
 }
 
-section{
+.card{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:14px;
   box-shadow:var(--elev);
-  padding:20px;
+  padding:24px;
 }
 
 h2{
-  margin-top:0;
-  color:var(--accent);
+  color:var(--brand);
+  margin-top:28px;
 }
 
-h3{
-  margin-top:22px;
-  color:var(--brand);
-}
+p{margin-bottom:14px;}
 
 .muted{
   color:var(--muted);
   font-size:.95rem;
 }
 
-/* BUTTONS */
+/* IMAGE */
+figure{
+  margin:24px 0;
+  text-align:center;
+}
+
+figure img{
+  max-width:100%;
+  border-radius:12px;
+}
+
+/* BUTTON */
 .btn{
   display:inline-block;
   background:var(--brand);
   color:var(--brand-ink);
-  padding:10px 16px;
+  padding:10px 18px;
   border-radius:12px;
   font-weight:800;
-  box-shadow:var(--elev);
-  margin-top:16px;
+  margin-top:20px;
 }
 
 .btn.secondary{
@@ -165,31 +170,11 @@ footer{
   font-size:.95rem;
 }
 
-footer a{color:var(--brand);font-weight:800}
-footer a:hover{color:#fff}
-
-/* Featured Image */
-figure{
-  margin:24px 0;
-  text-align:center;
-}
-
-figure img{
-  width:100%;
-  max-width:1200px;
-  display:block;
-  margin:0 auto;
-  border-radius:12px;
-  box-shadow:0 6px 16px rgba(0,0,0,.45);
-}
-
-figure figcaption{
-  margin-top:8px;
-  color:var(--muted);
-  font-size:.95rem;
-}
+footer a{color:var(--brand);}
+footer a:hover{color:#fff;}
 </style>
 </head>
+
 <body>
 
 <header class="hero">
@@ -198,60 +183,70 @@ figure figcaption{
 </header>
 
 <nav aria-label="Primary">
-    <a href="/#about">About / Trust</a>
-    <a href="/#services">Services</a>
-    <a href="/mobile-mechanic-virginia-beach.html">Mobile Mechanic</a>
-    <a href="/brake-repair-virginia-beach.html">Brake Repair</a>
-    <a href="/#diagnostics">Diagnostics & Fees</a>
-    <a href="/#complete-vehicle-analysis">Vehicle Analysis</a>
-    <a href="/#service-area">Service Area</a>
-    <a href="/#payments">Payments</a>
-    <a href="/#appointment">Appointments</a>
-    <a href="/#contact">Contact</a>
-    <a href="/policies.html">Warranty & Policies</a>
-    <a href="/affiliate.html">Shop Tools</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/digital-creator-policy.html">Creator Policy</a>
+  <a href="/#about">About / Trust</a>
+  <a href="/#services">Services</a>
+  <a href="/mobile-mechanic-virginia-beach.html">Mobile Mechanic</a>
+  <a href="/brake-repair-virginia-beach.html">Brake Repair</a>
+  <a href="/#diagnostics">Diagnostics & Fees</a>
+  <a href="/#complete-vehicle-analysis">Vehicle Analysis</a>
+  <a href="/#service-area">Service Area</a>
+  <a href="/#payments">Payments</a>
+  <a href="/#appointment">Appointments</a>
+  <a href="/#contact">Contact</a>
+  <a href="/policies.html">Warranty & Policies</a>
+  <a href="/affiliate.html">Shop Tools</a>
+  <a href="/blog.html">Blog</a>
+  <a href="/digital-creator-policy.html">Creator Policy</a>
 </nav>
 
 <main>
-  <section>
-    <p class="muted">January 17, 2026 | Vehicles Tips LLC</p>
+  <article class="card">
+    <p class="muted">Published January 18, 2026 · Vehicles Tips LLC</p>
 
     <!-- Featured Image -->
     <figure>
-      <img src="https://vehicles-tips.github.io/images/engine%20diagnostic.jpg" 
+      <img src="https://raw.githubusercontent.com/vehicles-tips/vehicles-tips.github.io/main/engine%20diagnostic.jpg" 
            alt="Engine diagnostics tips with OBD-II scanner and engine components" 
            loading="lazy">
-      <figcaption>Engine diagnostics tips to catch early signs of trouble and maintain performance.</figcaption>
+      <figcaption class="muted">Use diagnostics tools to spot early engine problems and maintain your vehicle.</figcaption>
     </figure>
 
-    <p>Engines are the heart of your vehicle. Regular diagnostics can catch small problems before they become expensive repairs. Look for unusual noises, warning lights, or reduced performance.</p>
-    <p>Tools like OBD-II scanners help identify trouble codes quickly. Combine diagnostics with regular maintenance — oil changes, fluid checks, and air filter replacements — to extend engine life and maintain safety on the road.</p>
-    <p>Always consult a certified mechanic if you notice persistent issues. Early detection saves money and keeps your vehicle reliable.</p>
-  </section>
+    <p>
+      Engines are the heart of your vehicle. Regular diagnostics can catch small problems before they become expensive repairs. Look for unusual noises, warning lights, or reduced performance.
+    </p>
 
-  <a class="btn secondary" href="/#diagnostics">← Back to Diagnostic Service</a>
+    <p>
+      Tools like OBD-II scanners help identify trouble codes quickly. Combine diagnostics with regular maintenance — oil changes, fluid checks, and air filter replacements — to extend engine life and maintain safety on the road.
+    </p>
+
+    <p>
+      Always consult a certified mechanic if you notice persistent issues. Early detection saves money and keeps your vehicle reliable.
+    </p>
+
+    <a class="btn secondary" href="/#diagnostics">← Back to Diagnostic Services</a>
+  </article>
 </main>
 
 <footer>
-    © 2026 Vehicles Tips LLC Mobile Mechanic — All Rights Reserved.
-    <div class="fnav">
-      <a href="/index.html">Home</a> |
-      <a href="/mobile-mechanic-virginia-beach.html">Mobile Mechanic</a> |
-      <a href="/brake-repair-virginia-beach.html">Brake Repair</a> |
-      <a href="/fluid-flush-virginia-beach.html">Fluid Flushes</a> |
-      <a href="/affiliate.html">Shop Tools</a> |
-      <a href="/policies.html">Warranty & Policies</a> |
-      <a href="/digital-creator-policy.html">Creator Policy</a> |
-      <a id="email-footer" href="#" data-user="VehiclesTips" data-domain="gmail.com">Contact</a>
-    </div>
-    <div class="footer-social" aria-label="Social links">
-      <a href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener">Facebook</a> |
-      <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener">Instagram</a> |
-      <a href="https://www.youtube.com/@Vehicles-Tips" target="_blank" rel="noopener">YouTube</a>
-    </div>
+  © 2026 Vehicles Tips LLC Mobile Mechanic — All Rights Reserved.
+  <div class="fnav">
+    <a href="/index.html">Home</a> |
+    <a href="/mobile-mechanic-virginia-beach.html">Mobile Mechanic</a> |
+    <a href="/brake-repair-virginia-beach.html">Brake Repair</a> |
+    <a href="/fluid-flush-virginia-beach.html">Fluid Flushes</a> |
+    <a href="/affiliate.html">Shop Tools</a> |
+    <a href="/policies.html">Warranty & Policies</a> |
+    <a href="/digital-creator-policy.html">Creator Policy</a> |
+    <a id="email-footer" href="#" data-user="VehiclesTips" data-domain="gmail.com">Contact</a>
+  </div>
+  <div class="footer-social" aria-label="Social links">
+    <a href="https://www.facebook.com/VehiclesTips" target="_blank" rel="noopener">Facebook</a> |
+    <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener">Instagram</a> |
+    <a href="https://www.youtube.com/@Vehicles-Tips" target="_blank" rel="noopener">YouTube</a>
+  </div>
 </footer>
+
 </body>
 </html>
+
 
