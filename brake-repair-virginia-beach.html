@@ -68,35 +68,40 @@
     footer{background:#111827;border-top:1px solid #2a2f3a;text-align:center;padding:20px 12px;color:#cbd5e1}
     footer a{color:var(--accent);text-decoration:none;margin:0 8px}
     footer a:hover{text-decoration:underline}
+
+    /* ✅ Banner Section */
+    .banner-brake {
+      width: 100%;
+      height: 300px;
+      background-image: url('https://raw.githubusercontent.com/vehicles-tips/vehicles-tips.github.io/main/affordable%20steering%20and%20suspension.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.45);
+      margin: 18px 0;
+      padding: 0 16px;
+    }
+
+    .banner-brake h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin: 0;
+      color: #f97316;
+    }
+
+    .banner-brake p {
+      margin-top: 6px;
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
   </style>
 </head>
-  <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWKJTPWZC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config','G-1QWKJTPWZC');
-</script>
-<!-- End Google Analytics 4 -->
 
-<!-- Facebook Pixel: JR Nunez -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','356703602087010');
-fbq('track','PageView');
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none" alt=""
-       src="https://www.facebook.com/tr?id=356703602087010&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Facebook Pixel -->
 <body>
   <header>
     <h1>Brake Repair in Virginia Beach</h1>
@@ -106,6 +111,12 @@ fbq('track','PageView');
       <a class="btn secondary" href="https://arinvoice.utilitymobileapps.com/booking?FBProject=ARI&shopID=je0TlPmkczOlLk6SvQACi8yMGtc2&version=v.15.4.14">Book Now</a>
     </div>
   </header>
+
+  <!-- Banner Section -->
+  <section class="banner-brake">
+    <h2>Affordable Brake Services in Virginia Beach</h2>
+    <p>Reliable mobile brake repair — we come to you!</p>
+  </section>
 
   <!-- ✅ New centered nav -->
   <nav aria-label="Primary">
