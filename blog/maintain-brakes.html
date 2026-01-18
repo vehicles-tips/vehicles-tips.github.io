@@ -1,172 +1,184 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>5 Tips to Maintain Your Brakes | Vehicles Tips LLC</title>
-
   <meta name="description" content="Learn how to maintain your brakes with simple tips that improve safety and reduce repair costs. Expert advice from Vehicles Tips LLC." />
 
-  <!-- PASTE THE OPEN GRAPH SECTION RIGHT BELOW THIS LINE -->
   <!-- Open Graph for SEO & Social Sharing -->
   <meta property="og:title" content="5 Tips to Maintain Your Brakes | Vehicles Tips LLC">
   <meta property="og:description" content="Simple brake maintenance tips to improve safety and avoid costly repairs.">
-  <meta property="og:image" content="https://vehicles-tips.github.io/images/brakes-tips.jpg">
+  <meta property="og:image" content="https://raw.githubusercontent.com/vehicles-tips/vehicles-tips.github.io/main/brakes-tips.jpg">
   <meta property="og:image:alt" content="Brake maintenance tips showing brake pads and rotors">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://vehicles-tips.github.io/5-tips-to-maintain-your-brakes.html">
   <meta property="og:site_name" content="Vehicles Tips LLC">
-  <!-- END OPEN GRAPH SECTION -->
+  <!-- End Open Graph -->
 
   <link rel="icon" type="image/png" href="/favicon (2).png">
 
-<style>
-:root{
-  --bg:#111111;
-  --card:#1a1a1a;
-  --ink:#ffffff;
-  --muted:#cbd5e1;
-  --brand:#f04a1d;
-  --brand-ink:#ffffff;
-  --accent:#f97316;
-  --border:#ffffff1a;
-  --elev:0 6px 16px rgba(0,0,0,.45);
-}
+  <style>
+    :root{
+      --bg:#111111;
+      --card:#1a1a1a;
+      --ink:#ffffff;
+      --muted:#cbd5e1;
+      --brand:#f04a1d;
+      --brand-ink:#ffffff;
+      --accent:#f97316;
+      --border:#ffffff1a;
+      --elev:0 6px 16px rgba(0,0,0,.45);
+    }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.65;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
 
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.65;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{color:#fff;text-decoration:underline}
 
-a{color:var(--brand);text-decoration:none}
-a:hover{color:#fff;text-decoration:underline}
+    /* HERO */
+    .hero{
+      background:#0e0e0e;
+      text-align:center;
+      padding:56px 16px 40px;
+      border-bottom:1px solid var(--border);
+    }
 
-/* HERO */
-.hero{
-  background:#0e0e0e;
-  text-align:center;
-  padding:56px 16px 40px;
-  border-bottom:1px solid var(--border);
-}
+    .hero-title{
+      margin:0 0 10px;
+      font-size:clamp(1.8rem,2.8vw,2.4rem);
+      color:var(--accent);
+    }
 
-.hero-title{
-  margin:0 0 10px;
-  font-size:clamp(1.8rem,2.8vw,2.4rem);
-  color:var(--accent);
-}
+    .hero-sub{
+      margin:0;
+      color:var(--muted);
+      font-size:1.05rem;
+      max-width:720px;
+      margin-inline:auto;
+    }
 
-.hero-sub{
-  margin:0;
-  color:var(--muted);
-  font-size:1.05rem;
-  max-width:720px;
-  margin-inline:auto;
-}
+    /* NAV */
+    nav{
+      background:#0e0e0e;
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      padding:10px;
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
 
-/* NAV */
-nav{
-  background:#0e0e0e;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  padding:10px;
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  position:sticky;
-  top:0;
-  z-index:20;
-}
+    nav::-webkit-scrollbar{display:none}
 
-nav::-webkit-scrollbar{display:none}
+    nav a{
+      font-weight:800;
+      white-space:nowrap;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
 
-nav a{
-  font-weight:800;
-  white-space:nowrap;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid transparent;
-}
+    nav a:hover{border-color:#ffffff26}
 
-nav a:hover{border-color:#ffffff26}
+    @media(min-width:720px){
+      nav{justify-content:center;flex-wrap:wrap}
+    }
 
-@media(min-width:720px){
-  nav{justify-content:center;flex-wrap:wrap}
-}
+    /* MAIN */
+    main{
+      max-width:920px;
+      margin:24px auto;
+      padding:0 16px;
+      flex:1;
+    }
 
-/* MAIN */
-main{
-  max-width:920px;
-  margin:24px auto;
-  padding:0 16px;
-  flex:1;
-}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      box-shadow:var(--elev);
+      padding:24px;
+    }
 
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  box-shadow:var(--elev);
-  padding:24px;
-}
+    h2{
+      color:var(--brand);
+      margin-top:28px;
+    }
 
-h2{
-  color:var(--brand);
-  margin-top:28px;
-}
+    p{margin-bottom:14px}
 
-p{margin-bottom:14px}
+    .muted{
+      color:var(--muted);
+      font-size:.95rem;
+    }
 
-.muted{
-  color:var(--muted);
-  font-size:.95rem;
-}
+    /* Figure (image) centering */
+    figure{
+      margin:24px auto;
+      text-align:center;
+    }
 
-/* BUTTON */
-.btn{
-  display:inline-block;
-  background:var(--brand);
-  color:var(--brand-ink);
-  padding:10px 18px;
-  border-radius:12px;
-  font-weight:800;
-  margin-top:20px;
-}
+    figure img{
+      max-width:100%;
+      height:auto;
+      display:block;
+      margin:0 auto;
+      border-radius:8px;
+    }
 
-.btn.secondary{
-  background:transparent;
-  border:1px solid var(--brand);
-  color:var(--brand);
-}
+    /* BUTTON */
+    .btn{
+      display:inline-block;
+      background:var(--brand);
+      color:var(--brand-ink);
+      padding:10px 18px;
+      border-radius:12px;
+      font-weight:800;
+      margin-top:20px;
+    }
 
-.btn.secondary:hover{
-  background:var(--brand);
-  color:#fff;
-}
+    .btn.secondary{
+      background:transparent;
+      border:1px solid var(--brand);
+      color:var(--brand);
+    }
 
-/* FOOTER */
-footer{
-  background:#111827;
-  border-top:1px solid #2a2f3a;
-  text-align:center;
-  padding:20px 12px;
-  color:var(--muted);
-  font-size:.95rem;
-}
+    .btn.secondary:hover{
+      background:var(--brand);
+      color:#fff;
+    }
 
-footer a{color:var(--brand)}
-footer a:hover{color:#fff}
-</style>
+    /* FOOTER */
+    footer{
+      background:#111827;
+      border-top:1px solid #2a2f3a;
+      text-align:center;
+      padding:20px 12px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    footer a{color:var(--brand)}
+    footer a:hover{color:#fff}
+  </style>
 </head>
 
 <body>
@@ -189,61 +201,63 @@ footer a:hover{color:#fff}
   <a href="/blog.html">Blog</a>
   <a href="/#contact">Contact</a>
 </nav>
-<article class="card">
-  <p class="muted">Published January 17, 2026 · Vehicles Tips LLC</p>
 
-  <!-- Featured Image -->
-  <figure>
-    <img 
-      src="https://vehicles-tips.github.io/images/brakes-tips.jpg" 
-      alt="Brake maintenance tips showing brake pads and rotors" 
-      loading="lazy"
-      width="1200"
-      height="630"
-    >
-    <figcaption class="muted">
-      Brake maintenance tips to improve safety and avoid costly repairs.
-    </figcaption>
-  </figure>
+<main>
+  <article class="card">
+    <p class="muted">Published January 17, 2026 · Vehicles Tips LLC</p>
 
-  <p>
-    Your braking system is one of the most critical safety components on your vehicle.
-    Regular maintenance helps prevent sudden failures, improves stopping power,
-    and reduces long-term repair costs.
-  </p>
+    <!-- Featured Image -->
+    <figure>
+      <img 
+        src="https://raw.githubusercontent.com/vehicles-tips/vehicles-tips.github.io/main/brakes-tips.jpg"
+        alt="Brake maintenance tips showing brake pads and rotors"
+        loading="lazy"
+        width="1200"
+        height="630"
+      >
+      <figcaption class="muted">
+        Brake maintenance tips to improve safety and avoid costly repairs.
+      </figcaption>
+    </figure>
 
-  <h2>1. Inspect Brake Pads Regularly</h2>
-  <p>
-    Brake pads wear down over time and should be inspected at least once a month.
-    Replace them before they reach minimum thickness to avoid damaging rotors.
-  </p>
+    <p>
+      Your braking system is one of the most critical safety components on your vehicle.
+      Regular maintenance helps prevent sudden failures, improves stopping power,
+      and reduces long-term repair costs.
+    </p>
 
-  <h2>2. Monitor Brake Fluid Condition</h2>
-  <p>
-    Brake fluid transfers force from the pedal to the brakes.
-    Low or contaminated fluid can reduce braking efficiency and cause system failure.
-  </p>
+    <h2>1. Inspect Brake Pads Regularly</h2>
+    <p>
+      Brake pads wear down over time and should be inspected at least once a month.
+      Replace them before they reach minimum thickness to avoid damaging rotors.
+    </p>
 
-  <h2>3. Pay Attention to Unusual Noises</h2>
-  <p>
-    Squealing, grinding, or vibration when braking often signals worn pads or rotors.
-    Addressing these early prevents more expensive repairs.
-  </p>
+    <h2>2. Monitor Brake Fluid Condition</h2>
+    <p>
+      Brake fluid transfers force from the pedal to the brakes.
+      Low or contaminated fluid can reduce braking efficiency and cause system failure.
+    </p>
 
-  <h2>4. Avoid Excessive Vehicle Weight</h2>
-  <p>
-    Carrying excessive cargo puts extra strain on your brakes and suspension.
-    Staying within recommended weight limits helps extend brake life.
-  </p>
+    <h2>3. Pay Attention to Unusual Noises</h2>
+    <p>
+      Squealing, grinding, or vibration when braking often signals worn pads or rotors.
+      Addressing these early prevents more expensive repairs.
+    </p>
 
-  <h2>5. Schedule Professional Brake Inspections</h2>
-  <p>
-    Even if no symptoms are present, having a professional inspect your brakes
-    annually ensures optimal performance and safety.
-  </p>
+    <h2>4. Avoid Excessive Vehicle Weight</h2>
+    <p>
+      Carrying excessive cargo puts extra strain on your brakes and suspension.
+      Staying within recommended weight limits helps extend brake life.
+    </p>
 
-  <a href="/brake-repair-virginia-beach.html">← Back to Brakes Services</a>
-</article>
+    <h2>5. Schedule Professional Brake Inspections</h2>
+    <p>
+      Even if no symptoms are present, having a professional inspect your brakes
+      annually ensures optimal performance and safety.
+    </p>
+
+    <a href="/brake-repair-virginia-beach.html">← Back to Brakes Services</a>
+  </article>
 </main>
 
 <footer>
@@ -260,4 +274,5 @@ footer a:hover{color:#fff}
 
 </body>
 </html>
+
 
