@@ -6,6 +6,15 @@
   <title>Engine Diagnostics Guide | Vehicles Tips LLC</title>
   <meta name="description" content="Spot early signs of engine trouble and learn which tools can help maintain your vehicle. Vehicles Tips LLC blog." />
 
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Engine Diagnostics Guide | Vehicles Tips LLC">
+  <meta property="og:description" content="Spot early signs of engine trouble and learn which tools can help maintain your vehicle.">
+  <meta property="og:image" content="https://vehicles-tips.github.io/images/engine%20diagnostic.jpg">
+  <meta property="og:image:alt" content="Engine diagnostics tips with OBD-II scanner and engine components">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://vehicles-tips.github.io/engine-diagnostics.html">
+  <meta property="og:site_name" content="Vehicles Tips LLC">
+
   <link rel="icon" type="image/png" href="/favicon (2).png">
 
 <style>
@@ -40,23 +49,11 @@ a:hover{color:#fff;text-decoration:underline}
 
 /* HERO */
 header.hero{
-  background:#0e0e0e url('/assets/hero/hero-800.webp') center/cover no-repeat;
+  background:#0e0e0e;
   position:relative;
   text-align:center;
   padding:48px 16px 36px;
   border-bottom:1px solid var(--border);
-}
-
-header.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.6);
-}
-
-header.hero *{
-  position:relative;
-  z-index:1;
 }
 
 .hero-title{
@@ -170,6 +167,27 @@ footer{
 
 footer a{color:var(--brand);font-weight:800}
 footer a:hover{color:#fff}
+
+/* Featured Image */
+figure{
+  margin:24px 0;
+  text-align:center;
+}
+
+figure img{
+  width:100%;
+  max-width:1200px;
+  display:block;
+  margin:0 auto;
+  border-radius:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,.45);
+}
+
+figure figcaption{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:.95rem;
+}
 </style>
 </head>
 <body>
@@ -194,20 +212,29 @@ footer a:hover{color:#fff}
     <a href="/affiliate.html">Shop Tools</a>
     <a href="/blog.html">Blog</a>
     <a href="/digital-creator-policy.html">Creator Policy</a>
-  </nav>
+</nav>
 
 <main>
   <section>
     <p class="muted">January 17, 2026 | Vehicles Tips LLC</p>
+
+    <!-- Featured Image -->
+    <figure>
+      <img src="https://vehicles-tips.github.io/images/engine%20diagnostic.jpg" 
+           alt="Engine diagnostics tips with OBD-II scanner and engine components" 
+           loading="lazy">
+      <figcaption>Engine diagnostics tips to catch early signs of trouble and maintain performance.</figcaption>
+    </figure>
+
     <p>Engines are the heart of your vehicle. Regular diagnostics can catch small problems before they become expensive repairs. Look for unusual noises, warning lights, or reduced performance.</p>
     <p>Tools like OBD-II scanners help identify trouble codes quickly. Combine diagnostics with regular maintenance — oil changes, fluid checks, and air filter replacements — to extend engine life and maintain safety on the road.</p>
     <p>Always consult a certified mechanic if you notice persistent issues. Early detection saves money and keeps your vehicle reliable.</p>
   </section>
 
-  <a class="btn secondary" href="/#diagnostics">>← Back Diagnostic Service</a>
+  <a class="btn secondary" href="/#diagnostics">← Back to Diagnostic Service</a>
 </main>
 
- <footer>
+<footer>
     © 2026 Vehicles Tips LLC Mobile Mechanic — All Rights Reserved.
     <div class="fnav">
       <a href="/index.html">Home</a> |
@@ -224,6 +251,7 @@ footer a:hover{color:#fff}
       <a href="https://www.instagram.com/vehiclestips" target="_blank" rel="noopener">Instagram</a> |
       <a href="https://www.youtube.com/@Vehicles-Tips" target="_blank" rel="noopener">YouTube</a>
     </div>
-  </footer>
+</footer>
 </body>
 </html>
+
